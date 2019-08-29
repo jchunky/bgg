@@ -4,22 +4,19 @@ class Bgg
   NUMBER_OF_MONTHS = 12
 
   def display_game?(game)
-    return true if game.ts_added.to_s > "2019-03-19"
     return false if game.voters.to_i < 3000
     return false if game.players.to_h.values.none? { |player_count| player_count >= 300 }
-    # return true if game.voters.to_i >= 1 && game.small_box
+    # return true if game.voters.to_i >= 1
     # return false if game.player_count.to_i < 1
     # return false if game.player_count.to_i < 300
     # return false if game.rating.to_f < 7.5
-    # return false unless game.ts_added
     true
   end
 
   def run
     @months = months_display
 
-    @games = snake
-      .merge(top_played) { |key, game1, game2| merge_ostructs(game1, game2) }
+    @games = top_played
       .merge(top_ranked) { |key, game1, game2| merge_ostructs(game1, game2) }
       .values
       .select(&method(:display_game?))
@@ -32,10 +29,6 @@ class Bgg
     first = (Date.today - NUMBER_OF_MONTHS.months).beginning_of_month
     last = Date.today - 1.month
     (first..last).select { |d| d.day == 1 }
-  end
-
-  def snake
-    @snake ||= Snake.new.games.map { |g| [g.key, g] }.to_h
   end
 
   def top_played
