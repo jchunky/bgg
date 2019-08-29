@@ -17,7 +17,7 @@ class Bgg
     @months = months_display
 
     @games = top_played
-      .merge(top_ranked) { |key, game1, game2| merge_ostructs(game1, game2) }
+      .merge(top_ranked) { |name, game1, game2| merge_ostructs(game1, game2) }
       .values
       .select(&method(:display_game?))
       .sort_by(&method(:rank))
@@ -32,11 +32,11 @@ class Bgg
   end
 
   def top_played
-    @top_played ||= TopPlayed.new.games.map { |g| [g.key, g] }.to_h
+    @top_played ||= TopPlayed.new.games.map { |g| [g.name, g] }.to_h
   end
 
   def top_ranked
-    @top_ranked ||= TopRanked.new.games.map { |g| [g.key, g] }.to_h
+    @top_ranked ||= TopRanked.new.games.map { |g| [g.name, g] }.to_h
   end
 
   def merge_ostructs(ostruct1, ostruct2)
@@ -45,7 +45,6 @@ class Bgg
 
   def rank(game)
     [
-      game.location.blank?.to_s,
       -game.player_count.to_i,
       game.name
     ]

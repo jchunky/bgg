@@ -35,12 +35,11 @@ class TopPlayed
       anchor = link.css('a')
       href = anchor[0]['href']
       name = anchor[0].content
-      key = Utils.generate_key(name)
       play_count = plays.css('a')[0].content.to_i
 
       next if play_count < 1
 
-      game = OpenStruct.new(href: href, name: name, key: key, players: {})
+      game = OpenStruct.new(href: href, name: name, players: {})
       game.players[month.to_s] = play_count
       game
     end.compact
