@@ -27,7 +27,7 @@
   </tr>
   <% @games.each do |game| %>
     <%
-      low_players = game.player_count.to_i < 300
+      low_players = game.player_count.to_i < 500
       low_rating = game.rating.to_f < 7.5
       low_voters = game.voters.to_i < 3000
       low_game = low_players || low_rating || low_voters
@@ -40,7 +40,7 @@
       <td class="number <%= "low" if low_rating %>"><%= game.rating %></td>
       <td class="number right-border <%= "low" if low_voters %>"><%= game.voters %></td>
       <% @months.each do |month| %>
-        <td class="number <%= "low" if game.players.to_h[month.to_s].to_i < 300 %>">
+        <td class="number <%= "low" if game.players.to_h[month.to_s].to_i < 500 %>">
           <%= game.players.to_h[month.to_s] %>
         </td>
       <% end %>

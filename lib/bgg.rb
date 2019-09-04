@@ -5,7 +5,7 @@ class Bgg
 
   def display_game?(game)
     return false if game.voters.to_i < 3000
-    return false if game.players.to_h.values.none? { |player_count| player_count >= 300 }
+    return false if game.players.to_h.values.none? { |player_count| player_count >= 500 }
     # return true if game.voters.to_i >= 1
     # return false if game.player_count.to_i < 1
     # return false if game.player_count.to_i < 300
