@@ -27,9 +27,9 @@
   </tr>
   <% @games.each do |game| %>
     <%
-      low_players = game.player_count.to_i < Bgg::MINIMUM_PLAYER_COUNT
+      low_players = game.player_count.to_i < Bgg::MINIMUM_PLAYERS
       low_rating = game.rating.to_f < 7.5
-      low_voters = game.voters.to_i < 3000
+      low_voters = game.voters.to_i < Bgg::MINIMUM_VOTERS
       low_game = low_players || low_rating || low_voters
     %>
     <tr>
@@ -40,7 +40,7 @@
       <td class="number <%= "low" if low_rating %>"><%= game.rating %></td>
       <td class="number right-border <%= "low" if low_voters %>"><%= game.voters %></td>
       <% @months.each do |month| %>
-        <td class="number <%= "low" if game.players.to_h[month.to_s].to_i < Bgg::MINIMUM_PLAYER_COUNT %>">
+        <td class="number <%= "low" if game.players.to_h[month.to_s].to_i < Bgg::MINIMUM_PLAYERS %>">
           <%= game.players.to_h[month.to_s] %>
         </td>
       <% end %>
