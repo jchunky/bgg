@@ -2,7 +2,7 @@ require_relative 'dependencies'
 
 class Bgg
   NUMBER_OF_MONTHS = 12
-  MINIMUM_PLAYERS = 300
+  MINIMUM_PLAYERS = 500
   MINIMUM_VOTERS = 10000
 
   def display_game?(game)
