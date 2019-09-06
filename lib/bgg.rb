@@ -1,13 +1,15 @@
 require_relative 'dependencies'
 
 class Bgg
+  MAX_RANK = 500
+  MIN_PLAYERS = 500
+  MIN_VOTERS = 10000
   NUMBER_OF_MONTHS = 12
-  MINIMUM_PLAYERS = 500
-  MINIMUM_VOTERS = 10000
 
   def display_game?(game)
-    return false if game.voters.to_i < MINIMUM_VOTERS
-    return false if game.players.to_h.values.none? { |player_count| player_count >= MINIMUM_PLAYERS }
+    return false if game.voters.to_i < MIN_VOTERS
+    return false if game.rank.to_i > MAX_RANK
+    return false if game.players.to_h.values.none? { |player_count| player_count >= MIN_PLAYERS }
     # return true if game.voters.to_i >= 1
     # return false if game.player_count.to_i < 1
     # return false if game.player_count.to_i < 300
