@@ -1,33 +1,20 @@
 class TopPlayed
   def games
-    months_data.product((1..10).to_a)
+    (1..1)
       .lazy
-      .map { |month, page| [month, url_for_month_and_page(month, page)] }
-      .map { |month, url| [month, Utils.read_url(url)] }
-      .map { |month, file| [month, Nokogiri::HTML(file)] }
-      .flat_map { |month, doc| games_for_doc(month, doc) }
+      .map { |page| url_for_page(page) }
+      .map { |url| Utils.read_url(url) }
+      .map { |file| Nokogiri::HTML(file) }
+      .flat_map(&method(:games_for_doc))
+      .uniq(&:name)
       .force
-      .each_with_object({}) do |game, memo|
-        memo[game.name] ||= game
-        memo[game.name].players = game.players.merge(memo[game.name].players)
-      end
-      .values
-      .tap { |games| add_player_count(games) }
   end
 
-  def months_data
-    first = Date.parse('2005-01-01')
-    last = last_month
-    (first..last)
-      .select { |d| d.day == 1 }
-      .last(Bgg::NUMBER_OF_MONTHS)
+  def url_for_page(page)
+    "https://boardgamegeek.com/plays/bygame/subtype/All/start/#{last_month.beginning_of_month}/end/#{last_month.end_of_month}/page/#{page}?sortby=distinctusers"
   end
 
-  def url_for_month_and_page(month, page)
-    "https://boardgamegeek.com/plays/bygame/subtype/All/start/#{month.beginning_of_month}/end/#{month.end_of_month}/page/#{page}?sortby=distinctusers"
-  end
-
-  def games_for_doc(month, doc)
+  def games_for_doc(doc)
     doc.css('.forum_table')[1].css('tr')[1..-1].map do |row|
       link, _, plays = row.css('td')
       anchor = link.css('a')
@@ -37,18 +24,14 @@ class TopPlayed
 
       next if play_count < 1
 
-      game = OpenStruct.new(href: href, name: name, players: {})
-      game.players[month.to_s] = play_count
-      game
+      OpenStruct.new(
+        href: href,
+        name: name,
+        player_count: play_count
+      )
     end.compact
   rescue
     []
-  end
-
-  def add_player_count(games)
-    games.each do |game|
-      game.player_count = game.players.to_h[last_month.to_s].to_i
-    end
   end
 
   def last_month

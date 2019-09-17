@@ -21,9 +21,6 @@
     <th>Rank</th>
     <th>Rating</th>
     <th>Voters</th>
-    <% @months.each do |month| %>
-      <th class="rank"><div><span><%= month.strftime("%m/%y") %></span></div></th>
-    <% end %>
   </tr>
   <% @games.each do |game| %>
     <%
@@ -38,12 +35,7 @@
       <td class="number <%= "low" if low_players %>"><%= game.player_count %></td>
       <td class="number"><%= game.rank %></td>
       <td class="number <%= "low" if low_rating %>"><%= game.rating %></td>
-      <td class="number right-border <%= "low" if low_voters %>"><%= game.voters %></td>
-      <% @months.each do |month| %>
-        <td class="number <%= "low" if game.players.to_h[month.to_s].to_i < Bgg::MIN_PLAYERS %>">
-          <%= game.players.to_h[month.to_s] %>
-        </td>
-      <% end %>
+      <td class="number <%= "low" if low_voters %>"><%= game.voters %></td>
     </tr>
   <% end %>
 </table>
