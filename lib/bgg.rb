@@ -8,7 +8,6 @@ class Bgg
   def display_game?(game)
     return false if game.voters.to_i < MIN_VOTERS
     return false if game.player_count.to_i < MIN_PLAYERS
-    return false if game.voters.to_i < 1
     # return false if game.rank.to_i > MAX_RANK
     # return false if game.rating.to_f < 7.5
     true
