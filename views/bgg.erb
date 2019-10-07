@@ -26,7 +26,7 @@
     <%
       bad_players = game.player_count.to_i < Bgg::MIN_PLAYERS
       bad_rank = !game.rank.to_i.between?(1, Bgg::MAX_RANK)
-      bad_rating = game.rating.to_f < 7.5
+      bad_rating = game.rating.to_f < Bgg::MIN_RATING
       bad_voters = game.voters.to_i < Bgg::MIN_VOTERS
       bad_game = bad_players || bad_rank || bad_rating || bad_voters
     %>

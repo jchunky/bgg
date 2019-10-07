@@ -3,6 +3,7 @@ require_relative 'dependencies'
 class Bgg
   MAX_RANK = 500
   MIN_PLAYERS = 500
+  MIN_RATING = 7.5
   MIN_VOTERS = 10_000
 
   def display_game?(game)
