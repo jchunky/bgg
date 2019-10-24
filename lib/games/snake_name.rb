@@ -1,11 +1,13 @@
 class SnakeName
   NAMES = {
+    "(BlackBox) - Exploding Kittens - 1st edition" => "Exploding Kittens",
     "Agricola (2015)" => "Agricola",
     "Alien Frontiers 5th Edition" => "Alien Frontiers",
     "Arkham Horror - 3rd Edition" => "Arkham Horror (Third Edition)",
     "Avalon" => "The Resistance: Avalon",
     "Betrayal at the House on the Hill" => "Betrayal at House on the Hill",
     "Blokus Refresh" => "Blokus",
+    "Camel Up - Second Edition" => "Camel Up",
     "Cash'N Guns" => "Ca$h 'n Guns (Second Edition)",
     "Catan (5th Edition)" => "Catan",
     "Citadels (Classic)" => "Citadels",
@@ -27,6 +29,7 @@ class SnakeName
     "Star Realms Deck-Building Game" => "Star Realms",
     "Survive: 30th Anniversary Edition" => "Survive: Escape from Atlantis!",
     "The Game: On Fire" => "The Game",
+    "Twilight Imperium 3rd Edition" => "Twilight Imperium (Fourth Edition)",
     "Vegas (formerly Las Vegas)" => "Las Vegas",
     "Welcome to... Your Perfect Home" => "Welcome to...",
   }

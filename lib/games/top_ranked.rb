@@ -1,6 +1,6 @@
 class TopRanked
   def games
-    (1..10)
+    (1..200)
       .lazy
       .map { |page| url_for_page(page) }
       .map { |url| Utils.read_url(url) }
@@ -15,7 +15,7 @@ class TopRanked
   end
 
   def games_for_doc(doc)
-    doc.css('.collection_table')[0].css('tr')[1..-1].map.with_index do |row, rank|
+    doc.css('.collection_table')[0].css('tr').drop(1).map.with_index do |row, rank|
       rank, _, title, _, rating, voters, *_, shop = row.css('td')
 
       rank = rank.css('a')[0]['name'] rescue nil

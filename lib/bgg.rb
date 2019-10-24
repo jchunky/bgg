@@ -1,9 +1,14 @@
 require_relative 'dependencies'
 
 class Bgg
+  WHITELIST = [
+    "Onitama",
+  ]
+
   def display_game?(game)
+    return true if WHITELIST.include?(game[:name])
     return true if game[:ts_added].to_s > "2019-10-08"
-    return false if game[:player_count].to_i < 300
+    return false if game[:player_count].to_i < 1
     return false unless game[:ts_added]
     # return false if game[:voters].to_i < 3000
     # return false if game[:player_count].to_i < 1
