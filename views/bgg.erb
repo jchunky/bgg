@@ -24,19 +24,19 @@
   </tr>
   <% @games.each do |game| %>
     <%
-      bad_players = game.player_count.to_i < Bgg::MIN_PLAYERS
-      bad_rank = !game.rank.to_i.between?(1, Bgg::MAX_RANK)
-      bad_rating = game.rating.to_f < Bgg::MIN_RATING
-      bad_voters = game.voters.to_i < Bgg::MIN_VOTERS
+      bad_players = game[:player_count].to_i < Bgg::MIN_PLAYERS
+      bad_rank = !game[:rank].to_i.between?(1, Bgg::MAX_RANK)
+      bad_rating = game[:rating].to_f < Bgg::MIN_RATING
+      bad_voters = game[:voters].to_i < Bgg::MIN_VOTERS
       bad_game = bad_players || bad_rank || bad_rating || bad_voters
     %>
     <tr>
-      <td class="<%= "low" if bad_game %>"><a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a></td>
-      <td class="number"><%= game.year %></td>
-      <td class="number <%= "low" if bad_players %>"><%= game.player_count %></td>
-      <td class="number <%= "low" if bad_rank %>"><%= game.rank %></td>
-      <td class="number <%= "low" if bad_rating %>"><%= game.rating %></td>
-      <td class="number <%= "low" if bad_voters %>"><%= game.voters %></td>
+      <td class="<%= "low" if bad_game %>"><a href="https://boardgamegeek.com<%= game[:href] %>"><%= game[:name] %></a></td>
+      <td class="number"><%= game[:year] %></td>
+      <td class="number <%= "low" if bad_players %>"><%= game[:player_count] %></td>
+      <td class="number <%= "low" if bad_rank %>"><%= game[:rank] %></td>
+      <td class="number <%= "low" if bad_rating %>"><%= game[:rating] %></td>
+      <td class="number <%= "low" if bad_voters %>"><%= game[:voters] %></td>
     </tr>
   <% end %>
 </table>

@@ -6,7 +6,7 @@ class TopPlayed
       .map { |url| Utils.read_url(url) }
       .map { |file| Nokogiri::HTML(file) }
       .flat_map(&method(:games_for_doc))
-      .uniq(&:name)
+      .uniq { |game| game[:name] }
       .force
   end
 
@@ -18,23 +18,18 @@ class TopPlayed
     doc.css('.forum_table')[1].css('tr')[1..-1].map do |row|
       link, _, plays = row.css('td')
       anchor = link.css('a')
-      href = anchor[0]['href']
-      name = anchor[0].content
-      play_count = plays.css('a')[0].content.to_i
 
-      next if play_count < 1
-
-      OpenStruct.new(
-        href: href,
-        name: name,
-        player_count: play_count
-      )
+      {
+        href: anchor[0]['href'],
+        name: anchor[0].content,
+        player_count: plays.css('a')[0].content.to_i
+      }
     end.compact
   rescue
     []
   end
 
   def last_month
-    @last_month ||= (Date.today - 1.month).beginning_of_month
+    (Date.today - 1.month).beginning_of_month
   end
 end

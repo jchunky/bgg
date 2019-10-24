@@ -7,16 +7,16 @@ class Bgg
   MIN_RATING = 7.5
 
   def display_game?(game)
-    return false if game.player_count.to_i < 300
-    return false if game.rank.to_i == 0
-    # return false if game.voters.to_i < 10_000
-    # return false if game.rating.to_f < 7.5
+    return false if game[:player_count].to_i < 300
+    # return false if game[:rank].to_i == 0
+    # return false if game[:voters].to_i < 10_000
+    # return false if game[:rating].to_f < 7.5
     true
   end
 
   def run
     @games = top_played
-      .merge(top_ranked) { |name, game1, game2| merge_ostructs(game1, game2) }
+      .merge(top_ranked) { |name, game1, game2| game1.merge(game2) }
       .values
       .select(&method(:display_game?))
       .sort_by(&method(:rank))
@@ -25,21 +25,17 @@ class Bgg
   end
 
   def top_played
-    @top_played ||= TopPlayed.new.games.map { |g| [g.name, g] }.to_h
+    @top_played ||= TopPlayed.new.games.map { |g| [g[:name], g] }.to_h
   end
 
   def top_ranked
-    @top_ranked ||= TopRanked.new.games.map { |g| [g.name, g] }.to_h
-  end
-
-  def merge_ostructs(ostruct1, ostruct2)
-    OpenStruct.new(ostruct1.to_h.merge(ostruct2.to_h))
+    @top_ranked ||= TopRanked.new.games.map { |g| [g[:name], g] }.to_h
   end
 
   def rank(game)
     [
-      -game.player_count.to_i,
-      game.name
+      -game[:player_count].to_i,
+      game[:name]
     ]
   end
 
