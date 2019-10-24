@@ -20,7 +20,7 @@ class TopRanked
 
       rank = rank.css('a')[0]['name'] rescue nil
       href = title.css('a')[0]['href']
-      name = title.css('a')[0].content
+      name = Utils.strip_accents(title.css('a')[0].content)
       rating = rating.content
       voters = voters.content
       ios = shop.to_s.include?("iOS App:")

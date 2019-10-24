@@ -1,8 +1,7 @@
 class TopPlayed
-  NUMBER_OF_MONTHS = 12
-
   def games
-    months_data.product((1..10).to_a)
+    months_data
+      .product((1..10).to_a)
       .lazy
       .map { |month, page| [month, url_for_month_and_page(month, page)] }
       .map { |month, url| [month, Utils.read_url(url)] }
@@ -22,7 +21,7 @@ class TopPlayed
     last = last_month
     (first..last)
       .select { |d| d.day == 1 }
-      .last(NUMBER_OF_MONTHS)
+      .last(1)
   end
 
   def url_for_month_and_page(month, page)
@@ -34,7 +33,7 @@ class TopPlayed
       link, _, plays = row.css('td')
       anchor = link.css('a')
       href = anchor[0]['href']
-      name = anchor[0].content
+      name = Utils.strip_accents(anchor[0].content)
       key = Utils.generate_key(name)
       play_count = plays.css('a')[0].content.to_i
 

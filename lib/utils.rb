@@ -16,6 +16,10 @@ class Utils
     strip_accents(read_url_raw(url))
   end
 
+  def self.strip_accents(string)
+    ActiveSupport::Inflector.transliterate(string).to_s
+  end
+
   private
 
   def self.read_url_raw(url)
@@ -30,9 +34,5 @@ class Utils
 
   def self.open(url)
     Net::HTTP.get(URI.parse(url))
-  end
-
-  def self.strip_accents(string)
-    ActiveSupport::Inflector.transliterate(string).to_s
   end
 end

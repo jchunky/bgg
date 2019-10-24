@@ -1,6 +1,6 @@
 class Snake
   CATEGORIES = ["Nostalgia", "Dexterity", "Children's", "Cooperative", "Party", "Light Strategy", "Strategy", "Word", "Abstract", "Trivia", "Greatest Hits"]
-  FILES = %w[abstract childrens cooperative dexterity greatest_hits light_strategy new_arrivals nostalgia party strategy trivia word].map { |f| "input/#{f}.json" }
+  FILES = %w[abstract childrens cooperative deck_builder dexterity greatest_hits light_strategy new_arrivals nostalgia party strategy trivia word].map { |f| "input/#{f}.json" }
   SMALL_BOX_LOCATIONS = %w[01C 02C 06C 07D 10C 11A 13C 15C 20B 20C 20D 21B 21E 22D 29B 29C 29D]
 
   def games
@@ -16,7 +16,7 @@ class Snake
   end
 
   def build_game(data)
-    name = SnakeName.normalize(data['title'])
+    name = SnakeName.normalize(Utils.strip_accents(data['title']))
 
     OpenStruct.new(
       name: name,
