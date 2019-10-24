@@ -1,6 +1,6 @@
 class TopRanked
   def games
-    (1..200)
+    (1..10)
       .lazy
       .map { |page| url_for_page(page) }
       .map { |url| Utils.read_url(url) }
