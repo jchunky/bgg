@@ -29,27 +29,27 @@
   </tr>
   <% @games.each do |game| %>
     <%
-      low_players = game.player_count.to_i < 300
-      low_rating = game.rating.to_f < 7.5
-      low_voters = game.voters.to_i < 3000
+      low_players = game[:player_count].to_i < 300
+      low_rating = game[:rating].to_f < 7.5
+      low_voters = game[:voters].to_i < 3000
       low_game = low_players || low_rating || low_voters
     %>
     <tr>
-      <td class="<%= "low" if low_game %>"><a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a></td>
-      <td class="number"><%= game.year %></td>
-      <td class="number <%= "low" if low_players %>"><%= game.player_count %></td>
-      <td class="number"><%= game.rank %></td>
-      <td class="number <%= "low" if low_rating %>"><%= game.rating %></td>
-      <td class="number <%= "low" if low_voters %>"><%= game.voters %></td>
+      <td class="<%= "low" if low_game %>"><a href="https://boardgamegeek.com<%= game[:href] %>"><%= game[:name] %></a></td>
+      <td class="number"><%= game[:year] %></td>
+      <td class="number <%= "low" if low_players %>"><%= game[:player_count] %></td>
+      <td class="number"><%= game[:rank] %></td>
+      <td class="number <%= "low" if low_rating %>"><%= game[:rating] %></td>
+      <td class="number <%= "low" if low_voters %>"><%= game[:voters] %></td>
       <td>
-        <% if game.rules_url.present? %>
-          <a href="<%= game.rules_url %>">Rules</a>
+        <% if game[:rules_url].present? %>
+          <a href="<%= game[:rules_url] %>">Rules</a>
         <% end %>
       </td>
-      <td class="number"><%= game.difficulty %></td>
-      <td class="<%= "high" if game.small_box %>"><%= game.location %></td>
-      <td><%= game.category %></td>
-      <td class="right-border"><%= game.ts_added %></td>
+      <td class="number"><%= game[:difficulty] %></td>
+      <td class="<%= "high" if game[:small_box] %>"><%= game[:location] %></td>
+      <td><%= game[:category] %></td>
+      <td class="right-border"><%= game[:ts_added] %></td>
     </tr>
   <% end %>
 </table>

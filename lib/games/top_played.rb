@@ -6,6 +6,7 @@ class TopPlayed
       .map { |url| Utils.read_url(url) }
       .map { |file| Nokogiri::HTML(file) }
       .flat_map { |doc| games_for_doc(doc) }
+      .uniq { |g| g[:key] }
       .force
   end
 
@@ -22,14 +23,12 @@ class TopPlayed
       key = Utils.generate_key(name)
       play_count = plays.css('a')[0].content.to_i
 
-      next if play_count < 1
-
-      OpenStruct.new(
+      {
         href: href,
         name: name,
         key: key,
         player_count: play_count
-      )
+      }
     end.compact
   rescue
     []

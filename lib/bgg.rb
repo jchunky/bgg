@@ -2,47 +2,43 @@ require_relative 'dependencies'
 
 class Bgg
   def display_game?(game)
-    return true if game.ts_added.to_s > "2019-10-08"
-    return false if game.player_count.to_i < 300
-    return false unless game.ts_added
-    # return false if game.voters.to_i < 3000
-    # return false if game.player_count.to_i < 1
-    # return false if game.rating.to_f < 7.5
+    return true if game[:ts_added].to_s > "2019-10-08"
+    return false if game[:player_count].to_i < 300
+    return false unless game[:ts_added]
+    # return false if game[:voters].to_i < 3000
+    # return false if game[:player_count].to_i < 1
+    # return false if game[:rating].to_f < 7.5
     true
   end
 
   def run
     @games = snake
-      .merge(top_played) { |key, game1, game2| merge_ostructs(game1, game2) }
-      .merge(top_ranked) { |key, game1, game2| merge_ostructs(game1, game2) }
+      .merge(top_played) { |key, game1, game2| game1.merge(game2) }
+      .merge(top_ranked) { |key, game1, game2| game1.merge(game2) }
       .values
       .select(&method(:display_game?))
-      .sort_by(&method(:rank))
+      .sort_by { |g| g[:rank].to_i }
 
     write_output
   end
 
   def snake
-    @snake ||= Snake.new.games.map { |g| [g.key, g] }.to_h
+    @snake ||= Snake.new.games.map { |g| [g[:key], g] }.to_h
   end
 
   def top_played
-    @top_played ||= TopPlayed.new.games.map { |g| [g.key, g] }.to_h
+    @top_played ||= TopPlayed.new.games.map { |g| [g[:key], g] }.to_h
   end
 
   def top_ranked
-    @top_ranked ||= TopRanked.new.games.map { |g| [g.key, g] }.to_h
-  end
-
-  def merge_ostructs(ostruct1, ostruct2)
-    OpenStruct.new(ostruct1.to_h.merge(ostruct2.to_h))
+    @top_ranked ||= TopRanked.new.games.map { |g| [g[:key], g] }.to_h
   end
 
   def rank(game)
     [
-      game.location.blank?.to_s,
-      -game.player_count.to_i,
-      game.name
+      game[:location].blank?.to_s,
+      -game[:player_count].to_i,
+      game[:name]
     ]
   end
 

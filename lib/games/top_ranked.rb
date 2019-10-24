@@ -6,7 +6,7 @@ class TopRanked
       .map { |url| Utils.read_url(url) }
       .map { |file| Nokogiri::HTML(file) }
       .flat_map(&method(:games_for_doc))
-      .uniq(&:key)
+      .uniq { |g| g[:key] }
       .force
   end
 
@@ -26,7 +26,7 @@ class TopRanked
       ios = shop.to_s.include?("iOS App:")
       year = title.css('span')[0].content[1..-2] rescue nil
 
-      OpenStruct.new(
+      {
         href: href,
         name: name,
         rank: rank,
@@ -35,7 +35,7 @@ class TopRanked
         key: Utils.generate_key(name),
         ios: ios,
         year: year
-      )
+      }
     end.compact
   end
 end
