@@ -2,7 +2,7 @@ require_relative 'dependencies'
 
 class Bgg
   WHITELIST = [
-    "Onitama",
+    # "Onitama",
   ]
 
   def display_game?(game)
@@ -10,6 +10,11 @@ class Bgg
     return true if game[:ts_added].to_s > "2019-10-08"
     return false if game[:player_count].to_i < 1
     return false unless game[:ts_added]
+    return false if game[:location].to_i.between?(1, 19)
+    return false if game[:location] == "Archives"
+    return false if game[:shelf_category] == "Bluffing"
+    return false if game[:shelf_category] == "Co-op"
+    return false if game[:shelf_category] == "Deck Builder"
     # return false if game[:voters].to_i < 3000
     # return false if game[:player_count].to_i < 1
     # return false if game[:rating].to_f < 7.5

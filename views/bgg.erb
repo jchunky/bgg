@@ -24,6 +24,7 @@
     <th>Rules</th>
     <th>Difficulty</th>
     <th>Location</th>
+    <th>Shelf Category</th>
     <th>Category</th>
     <th>Date Added</th>
   </tr>
@@ -48,6 +49,7 @@
       </td>
       <td class="number"><%= game[:difficulty] %></td>
       <td class="<%= "high" if game[:small_box] %>"><%= game[:location] %></td>
+      <td><%= game[:shelf_category] %></td>
       <td><%= game[:category] %></td>
       <td class="right-border"><%= game[:ts_added] %></td>
     </tr>
