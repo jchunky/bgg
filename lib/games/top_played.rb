@@ -18,16 +18,13 @@ class TopPlayed
     doc.css('.forum_table')[1].css('tr').drop(1).map do |row|
       link, _, plays = row.css('td')
       anchor = link.css('a')
-      href = anchor[0]['href']
       name = Utils.strip_accents(anchor[0].content)
-      key = Utils.generate_key(name)
-      play_count = plays.css('a')[0].content.to_i
 
       {
-        href: href,
+        href: anchor[0]['href'],
         name: name,
-        key: key,
-        player_count: play_count
+        key: Utils.generate_key(name),
+        player_count: plays.css('a')[0].content.to_i
       }
     end.compact
   rescue

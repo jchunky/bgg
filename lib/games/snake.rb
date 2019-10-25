@@ -10,7 +10,7 @@ class Snake
     (8..11) => "Party",
     (12..13) => "Dexterity",
     (14..16) => "Abstract",
-    (20..22) => "Light Strategy, Small Games",
+    (20..22) => "Small Games",
     (23..28) => "Light Strategy",
     (29..29) => "Bluffing",
     (30..31) => "Co-op",
