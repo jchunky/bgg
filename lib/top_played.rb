@@ -18,8 +18,8 @@ class TopPlayed
       .flat_map { |month, page, doc| games_for_doc(month, page, doc) }
       .force
       .each_with_object({}) do |game, memo|
-        memo[game.name] ||= game
-        memo[game.name] = game.merge(memo[game.name])
+        memo[game.key] ||= game
+        memo[game.key] = game.merge(memo[game.key])
       end
       .values
   end
@@ -40,9 +40,9 @@ class TopPlayed
       play_rank = (page - 1) * 100 + i + 1
 
       game = Game.new(
-        href: anchor[0]["href"],
+        href: href = anchor[0]["href"],
         name: name,
-        key: Utils.generate_key(name)
+        key: href
       )
       game = game.add_player_count(month, play_count, play_rank)
       game
