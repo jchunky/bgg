@@ -1,25 +1,41 @@
-class Utils
-  def self.read_url(url)
+module Utils
+  extend self
+
+  def read_url(url)
     strip_accents(read_url_raw(url))
   end
 
-  def self.strip_accents(string)
+  def strip_accents(string)
     ActiveSupport::Inflector.transliterate(string.to_s.force_encoding("UTF-8")).to_s
+  end
+
+  def cache_yaml(id)
+    filename = filename(id, "yml", "cache.")
+    store = YAML::Store.new(filename)
+    store.transaction do
+      return store[id] if store[id]
+
+      store[id] = yield
+    end
   end
 
   private
 
-  def self.read_url_raw(url)
+  def filename(id, extension, prefix = "")
+    ".data/#{prefix}#{id.gsub(%r{[:/]}, '_')}.#{extension}"
+  end
+
+  def read_url_raw(url)
     cache(url) { open(url) }
   end
 
-  def self.cache(url)
-    file = ".data/#{url.gsub(%r{[:/]}, '_')}.html"
+  def cache(id)
+    file = filename(id, "html")
     File.write(file, yield) unless File.exist?(file)
     File.read(file)
   end
 
-  def self.open(url)
+  def open(url)
     Net::HTTP.get(URI.parse(url))
   end
 end
