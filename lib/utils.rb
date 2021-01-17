@@ -10,7 +10,7 @@ module Utils
   end
 
   def cache_yaml(id)
-    filename = filename(id, "yml", "cache.")
+    filename = filename(id, "yml")
     store = YAML::Store.new(filename)
     store.transaction do
       return store[id] if store[id]
@@ -35,7 +35,7 @@ module Utils
     Net::HTTP.get(URI.parse(url))
   end
 
-  def filename(id, extension, prefix = "")
-    ".data/#{prefix}#{id.gsub(/\W/, '-')}.#{extension}"
+  def filename(id, extension)
+    ".data/#{id.gsub(/\W/, '-')}.#{extension}"
   end
 end
