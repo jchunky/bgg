@@ -9,26 +9,32 @@ module Utils
     ActiveSupport::Inflector.transliterate(string.to_s.force_encoding("UTF-8")).to_s
   end
 
-  def cache_yaml(id)
-    filename = filename(id, "yml")
-    store = YAML::Store.new(filename)
-    store.transaction do
-      return store[id] if store[id]
+  def cache_object(id)
+    file = filename(id, "yml")
+    return yaml_read(file) if File.exist?(file)
 
-      store[id] = yield
-    end
+    result = yield
+    File.write(file, YAML.dump(result))
+    result
+  end
+
+  def cache_text(id)
+    file = filename(id, "html")
+    return File.read(file) if File.exist?(file)
+
+    result = yield
+    File.write(file, result)
+    result
   end
 
   private
 
   def read_url_raw(url)
-    cache(url) { open(url) }
+    cache_text(url) { open(url) }
   end
 
-  def cache(id)
-    file = filename(id, "html")
-    File.write(file, yield) unless File.exist?(file)
-    File.read(file)
+  def yaml_read(file)
+    YAML.safe_load(File.read(file), aliases: true, permitted_classes: [Game, Symbol])
   end
 
   def open(url)

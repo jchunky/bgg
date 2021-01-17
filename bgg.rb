@@ -4,7 +4,7 @@ require "json"
 require "net/http"
 require "nokogiri"
 require "uri"
-require "yaml/store"
+require "yaml"
 Dir["lib/*.rb"].each { |f| require_relative f }
 
 class Bgg

@@ -21,7 +21,7 @@ class TopPlayed
 
   def games_for_page((month, page))
     url = url_for_year_and_page(month, page)
-    Utils.cache_yaml(url) do
+    Utils.cache_object(url) do
       file = Utils.read_url(url)
       doc = Nokogiri::HTML(file)
       games_for_doc(month, page, doc)

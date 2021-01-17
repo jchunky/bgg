@@ -7,7 +7,7 @@ class TopRanked
 
   def games_for_page(page)
     url = url_for_page(page)
-    Utils.cache_yaml(url) do
+    Utils.cache_object(url) do
       file = Utils.read_url(url)
       doc = Nokogiri::HTML(file)
       games_for_doc(doc)
