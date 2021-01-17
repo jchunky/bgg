@@ -21,10 +21,6 @@ module Utils
 
   private
 
-  def filename(id, extension, prefix = "")
-    ".data/#{prefix}#{id.gsub(%r{[:/]}, '_')}.#{extension}"
-  end
-
   def read_url_raw(url)
     cache(url) { open(url) }
   end
@@ -37,5 +33,9 @@ module Utils
 
   def open(url)
     Net::HTTP.get(URI.parse(url))
+  end
+
+  def filename(id, extension, prefix = "")
+    ".data/#{prefix}#{id.gsub(%r{[:/]}, '_')}.#{extension}"
   end
 end
