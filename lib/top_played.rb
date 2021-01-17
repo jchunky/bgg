@@ -10,22 +10,22 @@ class TopPlayed
   end
 
   def games
-    Utils.cache_yaml("top-played-games") do
-      self.class.months_data.product((1..10).to_a)
-        .flat_map(&method(:games_for_page))
-        .each_with_object({}) do |game, memo|
-          memo[game.key] ||= game
-          memo[game.key] = game.merge(memo[game.key])
-        end
-        .values
-    end
+    self.class.months_data.product((1..10).to_a)
+      .flat_map(&method(:games_for_page))
+      .each_with_object({}) do |game, memo|
+        memo[game.key] ||= game
+        memo[game.key] = game.merge(memo[game.key])
+      end
+      .values
   end
 
   def games_for_page((month, page))
     url = url_for_year_and_page(month, page)
-    file = Utils.read_url(url)
-    doc = Nokogiri::HTML(file)
-    games_for_doc(month, page, doc)
+    Utils.cache_yaml(url) do
+      file = Utils.read_url(url)
+      doc = Nokogiri::HTML(file)
+      games_for_doc(month, page, doc)
+    end
   end
 
   def url_for_year_and_page(year, page)

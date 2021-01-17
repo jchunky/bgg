@@ -1,17 +1,17 @@
 class TopRanked
   def games
-    Utils.cache_yaml("top-ranked-games") do
-      (1..10)
-        .flat_map(&method(:games_for_page))
-        .uniq(&:key)
-    end
+    (1..10)
+      .flat_map(&method(:games_for_page))
+      .uniq(&:key)
   end
 
   def games_for_page(page)
     url = url_for_page(page)
-    file = Utils.read_url(url)
-    doc = Nokogiri::HTML(file)
-    games_for_doc(doc)
+    Utils.cache_yaml(url) do
+      file = Utils.read_url(url)
+      doc = Nokogiri::HTML(file)
+      games_for_doc(doc)
+    end
   end
 
   def url_for_page(page)

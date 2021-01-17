@@ -36,6 +36,6 @@ module Utils
   end
 
   def filename(id, extension, prefix = "")
-    ".data/#{prefix}#{id.gsub(%r{[:/]}, '_')}.#{extension}"
+    ".data/#{prefix}#{id.gsub(/\W/, '-')}.#{extension}"
   end
 end
