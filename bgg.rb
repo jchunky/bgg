@@ -16,6 +16,7 @@ class Bgg
   def display_game?(game)
     return false if game.rank < 1
     return false if game.play_rank < 1
+    return false if Bga::BGA_GAMES.include?(game.name)
 
     return false unless game.was_in_top_100?
 
