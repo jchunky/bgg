@@ -10,7 +10,7 @@ Dir["lib/*.rb"].each { |f| require_relative f }
 class Bgg
   NUMBER_OF_MONTHS = 15
   PLAY_RANK_THRESHOLD = 100
-  YEARS_OLD = 4
+  YEARS_OLD = 6
   MAX_GAME_YEAR = TopPlayed.last_month.year - YEARS_OLD
 
   def display_game?(game)
