@@ -1,12 +1,12 @@
 class TopPlayed
   def self.months_data
-    first = (Date.today - (Bgg::NUMBER_OF_MONTHS - 1).months).beginning_of_month
+    first = (last_month - (Bgg::NUMBER_OF_MONTHS - 1).months).beginning_of_month
     last = last_month
     (first..last).select { |d| d.day == 1 }
   end
 
   def self.last_month
-    Date.today.beginning_of_month
+    (Date.today - 1.month).beginning_of_month
   end
 
   def games
