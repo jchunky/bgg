@@ -9,7 +9,7 @@ Dir["lib/*.rb"].each { |f| require_relative f }
 
 class Bgg
   NUMBER_OF_MONTHS = 15
-  PLAY_RANK_THRESHOLD = 100
+  PLAY_RANK_THRESHOLD = 50
   YEARS_OLD = 6
   MAX_GAME_YEAR = TopPlayed.last_month.year - YEARS_OLD
 
@@ -36,7 +36,7 @@ class Bgg
   end
 
   def self.player_rank(play_rank)
-    play_rank.to_i.between?(1, 100) ? 2 : 1
+    play_rank.to_i.between?(1, PLAY_RANK_THRESHOLD) ? 2 : 1
   end
 
   private
