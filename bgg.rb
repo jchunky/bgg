@@ -14,10 +14,11 @@ class Bgg
   MAX_GAME_YEAR = TopPlayed.last_month.year - YEARS_OLD
 
   def display_game?(game)
-    # return false if game.rank < 1
-    # return false if game.play_rank < 1
+    return false if game.rank < 1
+    return false if game.play_rank < 1
 
-    return false unless game.was_in_top_100?
+    # return false unless game.was_in_top_100?
+    return false unless game.months_in_top_100 >= 24
     # return false unless game.in_top_100?
     # return false unless game.in_top_100_for_a_year?
     # return false if game.year > Bgg::MAX_GAME_YEAR
@@ -26,7 +27,7 @@ class Bgg
   end
 
   def run
-    @months = TopPlayed.months_data
+    @months = TopPlayed.months_data_view
 
     @games = all_games
       .select(&method(:display_game?))
