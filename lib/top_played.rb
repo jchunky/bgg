@@ -1,7 +1,6 @@
 class TopPlayed
   def self.months_data
-    # first = (last_month - (Bgg::NUMBER_OF_MONTHS - 1).months).beginning_of_month
-    first = Date.parse("2005-01-01").beginning_of_month
+    first = (last_month - (Bgg::NUMBER_OF_MONTHS - 1).months).beginning_of_month
     last = last_month
     (first..last).select { |d| d.day == 1 }
   end
