@@ -27,10 +27,12 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   end
 
   def add_player_count(month, play_count, play_rank)
-    merge(Game.new(
-      players: { month.to_s => play_count },
-      play_ranks: { month.to_s => play_rank }
-    ))
+    merge(
+      Game.new(
+        players: { month.to_s => play_count },
+        play_ranks: { month.to_s => play_rank }
+      )
+    )
   end
 
   def trend
