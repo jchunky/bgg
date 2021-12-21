@@ -45,6 +45,25 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
     end
   end
 
+  def met_criteria?
+    # in_top_100_for_calendar_year? &&
+    months_in_top_100 >= 24
+  end
+
+  def in_top_100_for_calendar_year?
+    play_ranks
+      .select { |date, rank| top_ranked?(rank) }
+      .keys
+      .map { |date| Date.parse(date) }
+      .reject { |date| date.year <= release_year + 4 }
+      .group_by(&:year)
+      .any? { |year, dates| dates.size >= 12 }
+  end
+
+  def release_year
+    @release_date ||= play_ranks.keys.map { |date| Date.parse(date).year }.min
+  end
+
   def was_in_top_100?
     play_ranks.values.any?(&method(:top_ranked?))
   end

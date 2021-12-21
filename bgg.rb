@@ -18,6 +18,7 @@ class Bgg
     # return false if game.play_rank < 1
 
     return false unless game.was_in_top_100?
+    return false unless game.met_criteria?
     # return false unless game.in_top_100?
     # return false unless game.in_top_100_for_a_year?
     # return false if game.year > Bgg::MAX_GAME_YEAR
