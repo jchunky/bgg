@@ -27,6 +27,7 @@
   <tr>
     <th>Player Count</th>
     <th>Play Rank</th>
+    <th>Date in Top 50</th>
     <th>Game</th>
     <th>Play Rank</th>
     <th>Year</th>
@@ -51,6 +52,7 @@
     <tr>
       <td><svg class="sparkline sparkline-player-count-<%= i %> trend-<%= game.trend %>" width="100" height="30" stroke-width="3"></svg></td>
       <td><svg class="sparkline sparkline-play-rank-<%= i %> trend-<%= game.trend %>" width="100" height="30" stroke-width="3"></svg></td>
+      <td><%= game.date_in_top_100 %></td>
       <td class="player-rank-<%= game.trend %>">
         <a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a>
       </td>

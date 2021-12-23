@@ -47,6 +47,10 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
     end
   end
 
+  def date_in_top_100
+    play_ranks.keys.sort[23]
+  end
+
   def was_in_top_100?
     play_ranks.values.any?(&method(:top_ranked?))
   end
