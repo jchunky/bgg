@@ -8,6 +8,7 @@ ATTRS = {
   year: 0,
   players: {},
   play_ranks: {},
+  top_50_months_ranked_threshold: nil,
 }
 
 Game = Struct.new(*ATTRS.keys, keyword_init: true) do
@@ -48,7 +49,10 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   end
 
   def date_in_top_100
-    play_ranks.keys.sort[49]
+    play_ranks
+      .select { |date, rank| top_ranked?(rank) }
+      .map(&:first)
+      .sort[top_50_months_ranked_threshold - 1]
   end
 
   def was_in_top_100?
@@ -89,6 +93,6 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   end
 
   def top_ranked?(rank)
-    rank.between?(1, Bgg::PLAY_RANK_THRESHOLD)
+    rank && rank.between?(1, Bgg::PLAY_RANK_THRESHOLD)
   end
 end
