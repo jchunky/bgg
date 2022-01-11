@@ -48,7 +48,7 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   end
 
   def date_in_top_100
-    play_ranks.keys.sort[23]
+    play_ranks.keys.sort[49]
   end
 
   def was_in_top_100?
