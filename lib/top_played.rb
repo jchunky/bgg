@@ -6,9 +6,11 @@ class TopPlayed
   end
 
   def self.months_data_view
-    first = (last_month - (Bgg::NUMBER_OF_MONTHS - 1).months).beginning_of_month
-    last = last_month
-    (first..last).select { |d| d.day == 1 }
+    (first_month..last_month).select { |d| d.day == 1 }
+  end
+
+  def self.first_month
+    (last_month - (Bgg::NUMBER_OF_MONTHS - 1).months).beginning_of_month
   end
 
   def self.last_month

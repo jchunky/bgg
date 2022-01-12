@@ -37,11 +37,11 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   end
 
   def trend
-    if in_top_100? && !in_top_100_for_a_year?
+    if in_top_50? && !in_top_100_for_a_year?
       :new
-    # elsif !in_top_100? && in_top_100_last_month?
+    # elsif !in_top_50? && in_top_100_last_month?
     #   :leaving
-    elsif in_top_100?
+    elsif in_top_50?
       :top_100
     else
       :out
@@ -49,22 +49,42 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   end
 
   def date_in_top_100
+    # play_ranks
+    #   .select { |date, rank| top_ranked?(rank) }
+    #   .map(&:first)
+    #   .sort[top_50_months_ranked_threshold - 1]
     play_ranks
       .select { |date, rank| top_ranked?(rank) }
       .map(&:first)
-      .sort[top_50_months_ranked_threshold - 1]
+      .sort
+      .first
   end
 
   def was_in_top_100?
     play_ranks.values.any?(&method(:top_ranked?))
   end
 
+  def was_in_top_100_recently?
+    play_ranks
+      .select { |date, rank| top_ranked?(rank) }
+      .select { |date, rank| date >= TopPlayed.first_month.to_s }
+      .any?
+  end
+
   def in_top_100_for_a_year?
-    play_ranks.values.select(&method(:top_ranked?)).count == Bgg::NUMBER_OF_MONTHS
+    play_ranks
+      .select { |date, rank| top_ranked?(rank) }
+      .select { |date, rank| date >= TopPlayed.first_month.to_s }
+      .count == Bgg::NUMBER_OF_MONTHS
+  end
+
+  def in_top_50?
+    top_ranked_x_months_ago?(0)
   end
 
   def in_top_100?
-    top_ranked_x_months_ago?(0)
+    rank = play_rank_x_months_ago(0)
+    rank && rank.between?(1, 100)
   end
 
   def in_top_100_last_month?
