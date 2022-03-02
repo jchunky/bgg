@@ -87,7 +87,7 @@
       <%=
         @months.map do |month|
           play_rank = game.play_ranks.to_h[month.to_s].to_i
-          play_rank.zero? ? 0 : [(51 - play_rank), 0].max
+          play_rank.zero? ? 0 : [(Bgg::PLAY_RANK_THRESHOLD + 1 - play_rank), 0].max
         end.to_s
       %>
     );
