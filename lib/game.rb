@@ -45,13 +45,6 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
     end
   end
 
-  def in_top_x_for_a_year?
-    play_ranks
-      .select { |date, rank| top_ranked?(rank) }
-      .select { |date, rank| date >= TopPlayed.first_month.to_s }
-      .count == Bgg::NUMBER_OF_MONTHS
-  end
-
   def in_top_x?
     top_ranked_x_months_ago?(0)
   end
@@ -61,23 +54,30 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
     top_ranked?(rank)
   end
 
+  def in_top_x_for_a_year?
+    play_ranks
+      .select { |date, rank| top_ranked?(rank) }
+      .select { |date, rank| date >= TopPlayed.first_month.to_s }
+      .count == Bgg::NUMBER_OF_MONTHS
+  end
+
   def top_ranked?(rank)
     rank && rank.between?(1, Bgg::PLAY_RANK_THRESHOLD)
   end
 
-  def play_rank_x_months_ago(x)
-    play_ranks[(TopPlayed.last_month - x.month).to_s].to_i
-  end
-
-  def play_rank
-    play_rank_x_months_ago(0)
+  def months_in_top_x
+    play_ranks.values.count(&method(:top_ranked?))
   end
 
   def player_count
     players[TopPlayed.last_month.to_s].to_i
   end
 
-  def months_in_top_x
-    @months_in_top_x ||= play_ranks.values.count(&method(:top_ranked?))
+  def play_rank
+    play_rank_x_months_ago(0)
+  end
+
+  def play_rank_x_months_ago(x)
+    play_ranks[(TopPlayed.last_month - x.month).to_s].to_i
   end
 end
