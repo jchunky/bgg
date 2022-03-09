@@ -17,15 +17,6 @@ class Bgg
     return false if game.rank < 1
     return false if game.play_rank < 1
 
-    return false unless game.was_in_top_100_recently?
-    # return false unless game.months_in_top_100 >= 50
-    # return false unless game.months_in_top_100 >= top_50_months_ranked_threshold
-
-    return false unless game.date_in_top_100
-    # return false unless game.in_top_100?
-    # return false unless game.in_top_100_for_a_year?
-    # return false if game.year > Bgg::MAX_GAME_YEAR
-
     true
   end
 
@@ -33,7 +24,6 @@ class Bgg
     @months = TopPlayed.months_data_view
 
     @games = all_games
-      .each { |g| g.top_50_months_ranked_threshold = top_50_months_ranked_threshold }
       .select(&method(:display_game?))
       .sort_by { |g| [-g.year, g.play_rank] }
 
@@ -45,10 +35,6 @@ class Bgg
   end
 
   private
-
-  def top_50_months_ranked_threshold
-    @top_50_months_ranked_threshold ||= all_games.map(&:months_in_top_100).sort[-50]
-  end
 
   def all_games
     @all_games ||= top_ranked

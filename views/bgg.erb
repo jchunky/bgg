@@ -14,11 +14,11 @@
   .player-rank-2 { background-color: #ffb4b4; } /* red */
   .player-rank-new { background-color: #ffc68e; } /* orange */
   .player-rank-leaving { background-color: #b4b4ff; } /* blue */
-  .player-rank-top_100 { background-color: #ffb4b4; } /* red */
+  .player-rank-top_x { background-color: #ffb4b4; } /* red */
   .right-border { border-right: 1px solid #999 !important; }
   .trend-new { stroke: orange; fill: rgba(255, 198, 142, .3); }
   .trend-leaving { stroke: blue; fill: rgba(0, 0, 255, .3); }
-  .trend-top_100 { stroke: red; fill: rgba(255, 0, 0, .3); }
+  .trend-top_x { stroke: red; fill: rgba(255, 0, 0, .3); }
   .trend-out { stroke: black; fill: rgba(0, 0, 0, .3); }
   th { position: sticky; top: 0; }
 </style>
@@ -27,11 +27,9 @@
   <tr>
     <th>Player Count</th>
     <th>Play Rank</th>
-    <th>Date in Top 50</th>
     <th>Game</th>
     <th>Play Rank</th>
     <th>Year</th>
-    <th>Months in Top 50</th>
     <th>Rank</th>
     <th>Rating</th>
     <th>Voters</th>
@@ -52,13 +50,11 @@
     <tr>
       <td><svg class="sparkline sparkline-player-count-<%= i %> trend-<%= game.trend %>" width="100" height="30" stroke-width="3"></svg></td>
       <td><svg class="sparkline sparkline-play-rank-<%= i %> trend-<%= game.trend %>" width="100" height="30" stroke-width="3"></svg></td>
-      <td><%= game.date_in_top_100 %></td>
       <td class="player-rank-<%= game.trend %>">
         <a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a>
       </td>
       <td class="number player-rank-<%= game.trend %>"><%= game.play_rank %></td>
       <td class="number <%= 'low' if low_year %>"><%= game.year %></td>
-      <td class="number %>"><%= game.months_in_top_100 %></td>
       <td class="number <%= 'low' if low_rank %>"><%= game.rank %></td>
       <td class="number <%= 'low' if low_rating %>"><%= game.rating %></td>
       <td class="number <%= 'low' if low_voters %>  right-border"><%= game.voters %></td>
