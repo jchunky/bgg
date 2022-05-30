@@ -1,6 +1,6 @@
 class TopRanked
   def games
-    (1..10)
+    (1..2)
       .flat_map(&method(:games_for_page))
       .uniq(&:key)
   end
@@ -15,7 +15,7 @@ class TopRanked
   end
 
   def url_for_page(page)
-    "https://boardgamegeek.com/browse/boardgame/page/#{page}"
+    "https://boardgamegeek.com/browse/boardgame/page/#{page}?sort=numvoters&sortdir=desc"
   end
 
   def games_for_doc(doc)
