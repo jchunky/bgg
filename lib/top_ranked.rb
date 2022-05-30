@@ -1,6 +1,6 @@
 class TopRanked
   def games
-    (1..2)
+    (1..Bgg::TOP_HUNDRED_MULTIPLE)
       .flat_map(&method(:games_for_page))
       .uniq(&:key)
   end
