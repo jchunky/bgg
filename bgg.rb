@@ -8,7 +8,7 @@ require "yaml"
 Dir["lib/*.rb"].each { |f| require_relative f }
 
 class Bgg
-  TOP_HUNDRED_MULTIPLE = 1
+  TOP_HUNDRED_MULTIPLE = 2
   NUMBER_OF_MONTHS = 15
   PLAY_RANK_THRESHOLD = 50
   YEARS_OLD = 6

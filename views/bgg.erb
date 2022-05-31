@@ -33,7 +33,6 @@
     <th>Year</th>
     <th>Rank</th>
     <th>Rating</th>
-    <th>Voters</th>
     <% @months.each do |month| %>
       <th class="rank"><%= month.strftime("%m/%y") %></th>
     <% end %>
@@ -58,8 +57,7 @@
       <td class="number player-rank-<%= game.voter_trend %>"><%= game.voter_rank %></td>
       <td class="number <%= 'low' if low_year %>"><%= game.year %></td>
       <td class="number <%= 'low' if low_rank %>"><%= game.rank %></td>
-      <td class="number <%= 'low' if low_rating %>"><%= game.rating %></td>
-      <td class="number <%= 'low' if low_voters %>  right-border"><%= game.voters %></td>
+      <td class="number <%= 'low' if low_rating %>  right-border"><%= game.rating %></td>
       <% @months.each do |month| %>
         <%
           player_count = game.play_ranks.to_h[month.to_s]
