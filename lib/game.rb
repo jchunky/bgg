@@ -4,6 +4,7 @@ ATTRS = {
   href: "",
   rank: 0,
   rating: 0.0,
+  voter_rank: 0,
   voters: 0,
   year: 0,
   players: {},
@@ -39,6 +40,14 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
     if in_top_x? && !in_top_x_for_a_year?
       :new
     elsif in_top_x?
+      :top_x
+    else
+      :out
+    end
+  end
+
+  def voter_trend
+    if top_ranked?(voter_rank)
       :top_x
     else
       :out
