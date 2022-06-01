@@ -8,14 +8,14 @@ require "yaml"
 Dir["lib/*.rb"].each { |f| require_relative f }
 
 class Bgg
-  TOP_HUNDRED_MULTIPLE = 2
+  TOP_HUNDRED_MULTIPLE = 1
   NUMBER_OF_MONTHS = 15
   PLAY_RANK_THRESHOLD = 50
   YEARS_OLD = 6
   MAX_GAME_YEAR = TopPlayed.last_month.year - YEARS_OLD
 
   def display_game?(game)
-    return false if game.rank < 1
+    return false if game.voter_rank < 1
     return false if game.play_rank < 1
 
     true

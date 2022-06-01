@@ -19,7 +19,7 @@ class TopPlayed
   end
 
   def games
-    self.class.months_data.product((1..Bgg::TOP_HUNDRED_MULTIPLE).to_a)
+    self.class.months_data.product((1..10).to_a)
       .flat_map(&method(:games_for_page))
       .each_with_object({}) do |game, memo|
         memo[game.key] ||= game
