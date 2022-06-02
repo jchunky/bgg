@@ -1,5 +1,4 @@
 <script src="./views/sorttable.js"></script>
-<script src="./views/sparkline.js"></script>
 <style>
   #games { font-family: Arial; border-collapse: collapse; font-size: 8pt; }
   #games td, #games th { border: 1px solid #ddd; padding: 8px; }
@@ -25,17 +24,12 @@
 
 <table id="games" class="sortable">
   <tr>
-    <th>Player Count</th>
-    <th>Play Rank</th>
     <th>Game</th>
     <th>Play Rank</th>
     <th>Voter Rank</th>
     <th>Year</th>
     <th>Rank</th>
     <th>Rating</th>
-    <% @months.each do |month| %>
-      <th class="rank"><%= month.strftime("%m/%y") %></th>
-    <% end %>
   </tr>
   <% @games.each.with_index do |game, i| %>
     <%
@@ -48,8 +42,6 @@
       low_game = low_players
     %>
     <tr>
-      <td><svg class="sparkline sparkline-player-count-<%= i %> trend-<%= game.trend %>" width="100" height="30" stroke-width="3"></svg></td>
-      <td><svg class="sparkline sparkline-play-rank-<%= i %> trend-<%= game.trend %>" width="100" height="30" stroke-width="3"></svg></td>
       <td class="player-rank-<%= game.trend %>">
         <a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a>
       </td>
@@ -58,35 +50,6 @@
       <td class="number <%= 'low' if low_year %>"><%= game.year %></td>
       <td class="number <%= 'low' if low_rank %>"><%= game.rank %></td>
       <td class="number <%= 'low' if low_rating %>  right-border"><%= game.rating %></td>
-      <% @months.each do |month| %>
-        <%
-          player_count = game.play_ranks.to_h[month.to_s]
-          player_count_rank = Bgg.player_rank(player_count)
-        %>
-        <td class="number player-rank-<%= player_count_rank if player_count %>"><%= player_count %></td>
-      <% end %>
     </tr>
   <% end %>
 </table>
-
-<script>
-   <% @games.each.with_index do |game, i| %>
-     sparkline(
-       document.querySelector(".sparkline-player-count-<%= i %>"),
-       <%= @months[0..-2].map { |month| game.players.to_h[month.to_s].to_i }.to_s %>
-     );
-   <% end %>
-
-  <% @games.each.with_index do |game, i| %>
-    sparkline(
-      document.querySelector(".sparkline-play-rank-<%= i %>"),
-      <%=
-        @months.map do |month|
-          play_rank = game.play_ranks.to_h[month.to_s].to_i
-          play_rank.zero? ? 0 : [(Bgg::SPARKLINE_HEIGHT + 1 - play_rank), 0].max
-        end.to_s
-      %>
-    );
-  <% end %>
-</script>
-

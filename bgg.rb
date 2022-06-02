@@ -8,11 +8,9 @@ require "yaml"
 Dir["lib/*.rb"].each { |f| require_relative f }
 
 class Bgg
-  SPARKLINE_HEIGHT = 100
-  NUMBER_OF_MONTHS = 15
   PLAY_RANK_THRESHOLD = 50
   YEARS_OLD = 6
-  MAX_GAME_YEAR = TopPlayed.last_month.year - YEARS_OLD
+  MAX_GAME_YEAR = Date.today.year - YEARS_OLD
 
   def display_game?(game)
     return false if game.rank < 1
@@ -25,8 +23,6 @@ class Bgg
   end
 
   def run
-    @months = TopPlayed.months_data_view
-
     @games = all_games
       .select(&method(:display_game?))
       .sort_by { |g| [-g.year, g.play_rank] }
