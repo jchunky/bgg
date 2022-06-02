@@ -18,7 +18,8 @@ class Bgg
     return false if game.rank < 1
     return false if game.voter_rank < 1
     return false if game.play_rank < 1
-    return false if game.play_rank > 200
+    return false if game.voter_rank > 100
+    return false if game.play_rank > 100
 
     true
   end
