@@ -40,9 +40,9 @@ class Bgg
   private
 
   def all_games
-    @all_games ||= top_ranked
+    @all_games ||= top_voted
+      .merge(top_ranked, &method(:merge_hashes))
       .merge(top_played, &method(:merge_hashes))
-      .merge(top_voted, &method(:merge_hashes))
       .values
   end
 
