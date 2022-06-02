@@ -26,16 +26,14 @@ class TopPlayed
       link, _, plays = row.css("td")
       anchor = link.css("a")
       name = Utils.strip_accents(anchor[0].content)
-      player_count = plays.css("a")[0].content.to_i
-      play_rank = ((page - 1) * 100) + i + 1
 
       Game.new(
         href: href = anchor[0]["href"],
         name: name,
         key: href,
-        player_count: player_count,
+        player_count: player_count = plays.css("a")[0].content.to_i,
         players: player_count,
-        play_rank: play_rank
+        play_rank: ((page - 1) * 100) + i + 1
       )
     end
   rescue StandardError
