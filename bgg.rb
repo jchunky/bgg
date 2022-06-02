@@ -8,15 +8,17 @@ require "yaml"
 Dir["lib/*.rb"].each { |f| require_relative f }
 
 class Bgg
-  TOP_HUNDRED_MULTIPLE = 1
+  SPARKLINE_HEIGHT = 100
   NUMBER_OF_MONTHS = 15
   PLAY_RANK_THRESHOLD = 50
   YEARS_OLD = 6
   MAX_GAME_YEAR = TopPlayed.last_month.year - YEARS_OLD
 
   def display_game?(game)
+    return false if game.rank < 1
     return false if game.voter_rank < 1
     return false if game.play_rank < 1
+    return false if game.play_rank > 200
 
     true
   end
@@ -40,6 +42,7 @@ class Bgg
   def all_games
     @all_games ||= top_ranked
       .merge(top_played, &method(:merge_hashes))
+      .merge(top_voted, &method(:merge_hashes))
       .values
   end
 
@@ -49,6 +52,10 @@ class Bgg
 
   def top_played
     @top_played ||= TopPlayed.new.games.map { |g| [g.key, g] }.to_h
+  end
+
+  def top_voted
+    @top_voted ||= TopVoted.new.games.map { |g| [g.key, g] }.to_h
   end
 
   def write_output

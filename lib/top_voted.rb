@@ -1,4 +1,4 @@
-class TopRanked
+class TopVoted
   def games
     (1..10)
       .flat_map(&method(:games_for_page))
@@ -15,7 +15,7 @@ class TopRanked
   end
 
   def url_for_page(page)
-    "https://boardgamegeek.com/browse/boardgame/page/#{page}"
+    "https://boardgamegeek.com/browse/boardgame/page/#{page}?sort=numvoters&sortdir=desc"
   end
 
   def games_for_doc(doc, page)
@@ -30,7 +30,8 @@ class TopRanked
         rating: rating.content.to_f,
         voters: voters.content.to_i,
         key: href,
-        year: (title.css("span")[0].content[1..-2].to_i rescue 0)
+        year: (title.css("span")[0].content[1..-2].to_i rescue 0),
+        voter_rank: (page - 1) * 100 + i + 1
       )
     end
   end
