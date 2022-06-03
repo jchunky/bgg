@@ -31,8 +31,7 @@ class TopPlayed
         href: href = anchor[0]["href"],
         name: name,
         key: href,
-        player_count: player_count = plays.css("a")[0].content.to_i,
-        players: player_count,
+        play_count: play_count = plays.css("a")[0].content.to_i,
         play_rank: ((page - 1) * 100) + i + 1
       )
     end

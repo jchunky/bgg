@@ -33,13 +33,9 @@
   </tr>
   <% @games.each.with_index do |game, i| %>
     <%
-      low_rank = game.rank > 300
-      low_players = game.player_count < 300
-      low_rating = game.rating < 7.5
       low_year = game.year > Bgg::MAX_GAME_YEAR
-      player_count_rank = Bgg.player_rank(game.play_rank)
-      low_voters = game.voters < 3000
-      low_game = low_players
+      low_rank = game.rank > 300
+      low_rating = game.rating < 7.5
     %>
     <tr>
       <td class="player-rank-<%= game.trend %>">

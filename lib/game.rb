@@ -4,11 +4,10 @@ ATTRS = {
   href: "",
   rank: 0,
   rating: 0.0,
+  voter_count: 0,
   voter_rank: 0,
-  voters: 0,
   year: 0,
-  players: 0,
-  player_count: 0,
+  play_count: 0,
   play_rank: 0,
 }
 
