@@ -2,6 +2,7 @@ class TopRanked
   def games
     (1..10)
       .flat_map(&method(:games_for_page))
+      .compact
       .uniq(&:key)
   end
 
@@ -20,7 +21,8 @@ class TopRanked
 
   def games_for_doc(doc, page)
     doc.css(".collection_table")[0].css("tr").drop(1).map.with_index do |row, i|
-      rank, _, title, _, rating, voter_count, *_, shop = row.css("td")
+      rank, _, title, _, rating, voter_count = row.css("td")
+      next unless voter_count
       name = Utils.strip_accents(title.css("a")[0].content)
 
       Game.new(

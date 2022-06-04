@@ -2,6 +2,7 @@ class TopPlayed
   def games
     (1..10)
       .flat_map(&method(:games_for_page))
+      .compact
       .uniq(&:key)
   end
 
@@ -24,6 +25,7 @@ class TopPlayed
   def games_for_doc(doc, page)
     doc.css(".forum_table")[1].css("tr").drop(1).map.with_index do |row, i|
       link, _, plays = row.css("td")
+      next unless plays
       anchor = link.css("a")
       name = Utils.strip_accents(anchor[0].content)
 

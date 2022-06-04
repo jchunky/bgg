@@ -2,6 +2,7 @@ class TopVoted
   def games
     (1..10)
       .flat_map(&method(:games_for_page))
+      .compact
       .uniq(&:key)
   end
 
@@ -21,6 +22,7 @@ class TopVoted
   def games_for_doc(doc, page)
     doc.css(".collection_table")[0].css("tr").drop(1).map.with_index do |row, i|
       _, _, title = row.css("td")
+      next unless title
       href = title.css("a")[0]["href"]
       voter_rank = (page - 1) * 100 + i + 1
 
