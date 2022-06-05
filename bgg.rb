@@ -13,14 +13,14 @@ class Bgg
   MAX_GAME_YEAR = Date.today.year - YEARS_OLD
 
   def display_game?(game)
-    # return false if game.rank < 1
-    # return false if game.voter_rank < 1
+    # return game.play_rank < 1 && (game.rank_children >= 1 || game.voter_rank_children >= 1)
+
     return false if game.play_rank < 1
+    return false if game.rank < 1
+    return false if game.voter_rank < 1
 
-    return game.rank_children >= 1 || game.voter_rank_children >= 1
-
-    # return false if game.play_rank > 100
-    # return false if game.voter_rank > 100
+    return false if game.play_rank > 100
+    return false if game.voter_rank > 100
 
     true
   end

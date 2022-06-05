@@ -28,8 +28,10 @@
     <th>Play Rank</th>
     <th>Rank</th>
     <th>Voter Rank</th>
+    <!--
     <th>Rank Children</th>
     <th>Voter Rank Children</th>
+    -->
     <th>Year</th>
     <th>Rating</th>
   </tr>
@@ -46,8 +48,10 @@
       <td class="number player-rank-<%= game.trend %>"><%= game.play_rank %></td>
       <td class="number <%= 'low' if low_rank %>"><%= game.rank %></td>
       <td class="number player-rank-<%= game.voter_trend %>"><%= game.voter_rank %></td>
+      <!--
       <td class="number <%= 'low' if low_rank %>"><%= game.rank_children %></td>
       <td class="number player-rank-<%= game.voter_trend %>"><%= game.voter_rank_children %></td>
+      -->
       <td class="number <%= 'low' if low_year %>"><%= game.year %></td>
       <td class="number <%= 'low' if low_rating %>  right-border"><%= game.rating %></td>
     </tr>
