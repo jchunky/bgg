@@ -4,6 +4,7 @@ ATTRS = {
   href: "",
   rank: 0,
   rank_children: 0,
+  rank_thematic: 0,
   rating: 0.0,
   voter_count: 0,
   voter_rank: 0,
