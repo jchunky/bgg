@@ -14,6 +14,7 @@ class Bgg
 
   def display_game?(game)
     # return game.play_rank >= 1 && (game.rank_children >= 1 || game.voter_rank_children >= 1)
+    # return game.play_rank >= 1
 
     return false if game.play_rank < 1
     return false if game.rank < 1
