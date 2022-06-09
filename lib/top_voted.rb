@@ -6,6 +6,8 @@ class TopVoted
       .uniq(&:key)
   end
 
+  private
+
   def games_for_page(page)
     url = url_for_page(page)
     Utils.cache_object(url) do

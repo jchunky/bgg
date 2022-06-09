@@ -22,6 +22,8 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
     Game.new(members.map { |attr| [attr, merge_attr(attr, other)] }.to_h)
   end
 
+  private
+
   def merge_attr(attr, other)
     value = send(attr)
     other_value = other.send(attr)
