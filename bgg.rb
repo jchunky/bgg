@@ -8,7 +8,6 @@ require "yaml"
 Dir["lib/*.rb"].each { |f| require_relative f }
 
 class Bgg
-  PLAY_RANK_THRESHOLD = 50
   YEARS_OLD = 6
   MAX_GAME_YEAR = Date.today.year - YEARS_OLD
 
@@ -38,8 +37,9 @@ class Bgg
   private
 
   def all_games
-    by_key(TopPlayed)
+      {}
       .merge(by_key(TopChildren), &method(:merge_hashes))
+      .merge(by_key(TopPlayed), &method(:merge_hashes))
       .merge(by_key(TopRanked), &method(:merge_hashes))
       .merge(by_key(TopThematic), &method(:merge_hashes))
       .merge(by_key(TopVoted), &method(:merge_hashes))
