@@ -22,7 +22,7 @@ class TopVoted
   end
 
   def games_for_doc(doc, page)
-    doc.css(".collection_table")[0].css("tr").map.with_index do |row|
+    doc.css(".collection_table")[0].css("tr").map.with_index do |row, i|
       rank, _, title, _, rating = row.css("td")
       next unless rating
       name = Utils.strip_accents(title.css("a")[0].content)
@@ -33,7 +33,8 @@ class TopVoted
         name: name,
         rating: rating.content.to_f,
         year: (title.css("span")[0].content[1..-2].to_i rescue 0),
-        vote_rank: (rank.css("a")[0]["name"].to_i rescue 0)
+        rank: (rank.css("a")[0]["name"].to_i rescue 0),
+        vote_rank: (page - 1) * 100 + i + 1
       )
     end
   end
