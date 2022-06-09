@@ -10,6 +10,7 @@ Dir["lib/*.rb"].each { |f| require_relative f }
 class Bgg
   YEARS_OLD = 6
   MAX_GAME_YEAR = Date.today.year - YEARS_OLD
+  DOWNLOADERS = [TopChildren, TopPlayed, TopRanked, TopThematic, TopVoted]
 
   def display_game?(game)
     # return game.play_rank >= 1 && game.children_rank >= 1
@@ -37,27 +38,23 @@ class Bgg
   private
 
   def all_games
-      {}
-      .merge(by_key(TopChildren), &method(:merge_hashes))
-      .merge(by_key(TopPlayed), &method(:merge_hashes))
-      .merge(by_key(TopRanked), &method(:merge_hashes))
-      .merge(by_key(TopThematic), &method(:merge_hashes))
-      .merge(by_key(TopVoted), &method(:merge_hashes))
-      .values
+    DOWNLOADERS.reduce({}) do |hash, downloader|
+      hash.merge(by_key(downloader), &method(:merge_hashes))
+    end.values
   end
 
   def by_key(clazz)
     clazz.new.games.map { |g| [g.key, g] }.to_h
   end
 
+  def merge_hashes(_key, game1, game2)
+    game1.merge(game2)
+  end
+
   def write_output
     template = File.read("views/bgg.erb")
     html = ERB.new(template).result(binding)
     File.write("index.html", html)
-  end
-
-  def merge_hashes(_key, game1, game2)
-    game1.merge(game2)
   end
 end
 
