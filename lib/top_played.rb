@@ -23,17 +23,16 @@ class TopPlayed
   end
 
   def games_for_doc(doc, page)
-    doc.css(".forum_table")[1].css("tr").drop(1).map.with_index do |row, i|
-      link, _, plays = row.css("td")
-      next unless plays
+    doc.css(".forum_table")[1].css("tr").map.with_index do |row, i|
+      link = row.css("td")[0]
+      next unless link
       anchor = link.css("a")
       name = Utils.strip_accents(anchor[0].content)
 
       Game.new(
         href: href = anchor[0]["href"],
-        name: name,
         key: href,
-        play_count: play_count = plays.css("a")[0].content.to_i,
+        name: name,
         play_rank: ((page - 1) * 100) + i + 1
       )
     end

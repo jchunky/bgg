@@ -4,7 +4,6 @@ ATTRS = {
   href: "",
   rating: 0.0,
   year: 0,
-  voter_count: 0,
   play_count: 0,
 
   rank: 0,
@@ -12,7 +11,6 @@ ATTRS = {
   thematic_rank: 0,
   vote_rank: 0,
   play_rank: 0,
-
 }
 
 Game = Struct.new(*ATTRS.keys, keyword_init: true) do
@@ -21,31 +19,13 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   end
 
   def merge(other)
-    Game.new(members.map { |attr| [attr, merge_attr(other, attr)] }.to_h)
+    Game.new(members.map { |attr| [attr, merge_attr(attr, other)] }.to_h)
   end
 
-  def merge_attr(other, attr)
+  def merge_attr(attr, other)
     value = send(attr)
     other_value = other.send(attr)
 
-    if value.present? && value != 0
-      value
-    else
-      other_value
-    end
-  end
-
-  def trend
-    top_ranked?(play_rank) ? :top_x : :out
-  end
-
-  def voter_trend
-    top_ranked?(vote_rank) ? :top_x : :out
-  end
-
-  private
-
-  def top_ranked?(rank)
-    rank && rank.between?(1, Bgg::PLAY_RANK_THRESHOLD)
+    value.present? && value != 0 ? value : other_value
   end
 end

@@ -28,46 +28,22 @@ class Bgg
   end
 
   def run
-    @games = all_games
+    @games = map_by_key(TopPlayed)
+      .merge(map_by_key(TopChildren), &method(:merge_hashes))
+      .merge(map_by_key(TopRanked), &method(:merge_hashes))
+      .merge(map_by_key(TopThematic), &method(:merge_hashes))
+      .merge(map_by_key(TopVoted), &method(:merge_hashes))
+      .values
       .select(&method(:display_game?))
       .sort_by { |g| [-g.year, g.play_rank] }
 
     write_output
   end
 
-  def self.player_rank(play_rank)
-    play_rank.to_i.between?(1, PLAY_RANK_THRESHOLD) ? 2 : 1
-  end
-
   private
 
-  def all_games
-    @all_games ||= top_voted
-      .merge(top_ranked, &method(:merge_hashes))
-      .merge(top_played, &method(:merge_hashes))
-      .merge(top_children, &method(:merge_hashes))
-      .merge(top_thematic, &method(:merge_hashes))
-      .values
-  end
-
-  def top_ranked
-    @top_ranked ||= TopRanked.new.games.map { |g| [g.key, g] }.to_h
-  end
-
-  def top_played
-    @top_played ||= TopPlayed.new.games.map { |g| [g.key, g] }.to_h
-  end
-
-  def top_voted
-    @top_voted ||= TopVoted.new.games.map { |g| [g.key, g] }.to_h
-  end
-
-  def top_children
-    @top_children ||= TopChildren.new.games.map { |g| [g.key, g] }.to_h
-  end
-
-  def top_thematic
-    @top_thematic ||= TopThematic.new.games.map { |g| [g.key, g] }.to_h
+  def map_by_key(clazz)
+    clazz.new.games.map { |g| [g.key, g] }.to_h
   end
 
   def write_output
