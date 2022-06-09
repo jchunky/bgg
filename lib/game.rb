@@ -2,16 +2,17 @@ ATTRS = {
   key: "",
   name: "",
   href: "",
-  rank: 0,
-  rank_children: 0,
-  rank_thematic: 0,
   rating: 0.0,
-  voter_count: 0,
-  voter_rank: 0,
-  voter_rank_children: 0,
   year: 0,
+  voter_count: 0,
   play_count: 0,
+
+  rank: 0,
+  children_rank: 0,
+  thematic_rank: 0,
+  vote_rank: 0,
   play_rank: 0,
+
 }
 
 Game = Struct.new(*ATTRS.keys, keyword_init: true) do
@@ -39,7 +40,7 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   end
 
   def voter_trend
-    top_ranked?(voter_rank) ? :top_x : :out
+    top_ranked?(vote_rank) ? :top_x : :out
   end
 
   private

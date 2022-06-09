@@ -13,16 +13,16 @@ class Bgg
   MAX_GAME_YEAR = Date.today.year - YEARS_OLD
 
   def display_game?(game)
-    # return game.play_rank >= 1 && game.rank_children >= 1
-    # return game.play_rank >= 1 && game.rank_thematic >= 1
-    # return game.play_rank >= 1
+    # return game.play_rank >= 1 && game.children_rank >= 1
+    # return game.play_rank >= 1 && game.thematic_rank >= 1
+    return game.play_rank >= 1
 
     return false if game.play_rank < 1
     return false if game.rank < 1
-    return false if game.voter_rank < 1
+    return false if game.vote_rank < 1
 
     return false if game.play_rank > 100
-    return false if game.voter_rank > 100
+    return false if game.vote_rank > 100
 
     true
   end
@@ -45,8 +45,8 @@ class Bgg
     @all_games ||= top_voted
       .merge(top_ranked, &method(:merge_hashes))
       .merge(top_played, &method(:merge_hashes))
-      .merge(top_ranked_children, &method(:merge_hashes))
-      .merge(top_ranked_thematic, &method(:merge_hashes))
+      .merge(top_children, &method(:merge_hashes))
+      .merge(top_thematic, &method(:merge_hashes))
       .values
   end
 
@@ -62,12 +62,12 @@ class Bgg
     @top_voted ||= TopVoted.new.games.map { |g| [g.key, g] }.to_h
   end
 
-  def top_ranked_children
-    @top_ranked_children ||= TopRankedChildren.new.games.map { |g| [g.key, g] }.to_h
+  def top_children
+    @top_children ||= TopChildren.new.games.map { |g| [g.key, g] }.to_h
   end
 
-  def top_ranked_thematic
-    @top_ranked_thematic ||= TopRankedThematic.new.games.map { |g| [g.key, g] }.to_h
+  def top_thematic
+    @top_thematic ||= TopThematic.new.games.map { |g| [g.key, g] }.to_h
   end
 
   def write_output

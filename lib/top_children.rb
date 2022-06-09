@@ -1,4 +1,4 @@
-class TopRankedThematic
+class TopChildren
   def games
     (1..10)
       .flat_map(&method(:games_for_page))
@@ -16,7 +16,7 @@ class TopRankedThematic
   end
 
   def url_for_page(page)
-    "https://boardgamegeek.com/thematic/browse/boardgame/page/#{page}"
+    "https://boardgamegeek.com/childrensgames/browse/boardgame/page/#{page}"
   end
 
   def games_for_doc(doc, page)
@@ -28,7 +28,7 @@ class TopRankedThematic
       Game.new(
         href: href = title.css("a")[0]["href"],
         name: name,
-        rank_thematic: (rank.css("a")[0]["name"].to_i rescue 0),
+        children_rank: (rank.css("a")[0]["name"].to_i rescue 0),
         rating: rating.content.to_f,
         voter_count: voter_count.content.to_i,
         key: href,
