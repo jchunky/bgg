@@ -28,12 +28,7 @@ class Bgg
   end
 
   def run
-    @games = map_by_key(TopPlayed)
-      .merge(map_by_key(TopChildren), &method(:merge_hashes))
-      .merge(map_by_key(TopRanked), &method(:merge_hashes))
-      .merge(map_by_key(TopThematic), &method(:merge_hashes))
-      .merge(map_by_key(TopVoted), &method(:merge_hashes))
-      .values
+    @games = all_games
       .select(&method(:display_game?))
       .sort_by { |g| [-g.year, g.play_rank] }
 
@@ -42,7 +37,16 @@ class Bgg
 
   private
 
-  def map_by_key(clazz)
+  def all_games
+    by_key(TopPlayed)
+      .merge(by_key(TopChildren), &method(:merge_hashes))
+      .merge(by_key(TopRanked), &method(:merge_hashes))
+      .merge(by_key(TopThematic), &method(:merge_hashes))
+      .merge(by_key(TopVoted), &method(:merge_hashes))
+      .values
+  end
+
+  def by_key(clazz)
     clazz.new.games.map { |g| [g.key, g] }.to_h
   end
 
