@@ -10,6 +10,7 @@ class TopPlayed < GamepageDownloader
     doc.css(".forum_table")[1].css("tr").map.with_index do |row, i|
       link = row.css("td")[0]
       next unless link
+
       anchor = link.css("a")
       name = Utils.strip_accents(anchor[0].content)
 

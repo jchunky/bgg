@@ -44,7 +44,7 @@ class Bgg
   end
 
   def by_key(clazz)
-    clazz.new.games.map { |g| [g.key, g] }.to_h
+    clazz.new.games.to_h { |g| [g.key, g] }
   end
 
   def merge_hashes(_key, game1, game2)

@@ -15,11 +15,11 @@ ATTRS = {
 
 Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   def initialize(args)
-    super(ATTRS.map { |attr, default| [attr, args.fetch(attr, default)] }.to_h)
+    super(ATTRS.to_h { |attr, default| [attr, args.fetch(attr, default)] })
   end
 
   def merge(other)
-    Game.new(members.map { |attr| [attr, merge_attr(attr, other)] }.to_h)
+    Game.new(members.to_h { |attr| [attr, merge_attr(attr, other)] })
   end
 
   private

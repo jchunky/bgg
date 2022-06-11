@@ -3,10 +3,11 @@ class TopRanked < GamepageDownloader
     "https://boardgamegeek.com/browse/boardgame/page/#{page}"
   end
 
-  def games_for_doc(doc, page)
-    doc.css(".collection_table")[0].css("tr").map.with_index do |row|
+  def games_for_doc(doc, _page)
+    doc.css(".collection_table")[0].css("tr").map do |row|
       rank, _, title, _, rating = row.css("td")
       next unless rating
+
       name = Utils.strip_accents(title.css("a")[0].content)
 
       Game.new(
