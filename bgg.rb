@@ -10,10 +10,22 @@ Dir["lib/*.rb"].each { |f| require_relative f }
 class Bgg
   YEARS_OLD = 6
   MAX_GAME_YEAR = Date.today.year - YEARS_OLD
-  DOWNLOADERS = [TopChildren, TopPlayed, TopRanked, TopThematic, TopVoted]
+  DOWNLOADERS = [
+    TopChildren,
+    TopFamily,
+    TopParty,
+    TopPlayed,
+    TopRanked,
+    TopStrategy,
+    TopThematic,
+    TopVoted,
+  ]
 
   def display_game?(game)
     # return game.play_rank >= 1 && game.children_rank >= 1
+    # return game.play_rank >= 1 && game.family_rank >= 1
+    # return game.play_rank >= 1 && game.party_rank >= 1
+    # return game.play_rank >= 1 && game.strategy_rank >= 1
     # return game.play_rank >= 1 && game.thematic_rank >= 1
     # return game.play_rank >= 1
 

@@ -8,9 +8,12 @@ ATTRS = {
 
   rank: 0,
   children_rank: 0,
+  family_rank: 0,
+  party_rank: 0,
+  play_rank: 0,
+  strategy_rank: 0,
   thematic_rank: 0,
   vote_rank: 0,
-  play_rank: 0,
 }
 
 Game = Struct.new(*ATTRS.keys, keyword_init: true) do
