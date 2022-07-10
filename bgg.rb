@@ -22,19 +22,17 @@ class Bgg
   ]
 
   def display_game?(game)
-    # return game.play_rank >= 1 && game.children_rank >= 1
-    # return game.play_rank >= 1 && game.family_rank >= 1
-    # return game.play_rank >= 1 && game.party_rank >= 1
-    # return game.play_rank >= 1 && game.strategy_rank >= 1
-    # return game.play_rank >= 1 && game.thematic_rank >= 1
-    # return game.play_rank >= 1
-
     return false if game.play_rank < 1
-    return false if game.rank < 1
-    return false if game.vote_rank < 1
 
-    return false if game.play_rank > 200
-    # return false if game.vote_rank > 100
+    # return game.children_rank >= 1
+    # return game.family_rank >= 1
+    # return game.party_rank >= 1
+    # return game.strategy_rank >= 1
+    # return game.thematic_rank >= 1
+
+    return false unless game.play_rank.between?(1, 100)
+    return false unless game.rank.between?(1, 1000)
+    return false unless game.vote_rank.between?(1, 1000)
 
     true
   end
