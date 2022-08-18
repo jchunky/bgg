@@ -33,8 +33,8 @@ class Bgg
     # return game.thematic_rank >= 1
 
     return false unless game.play_rank.between?(1, 200)
-    return false unless game.vote_rank.between?(1, 1000)
     return false unless game.rank.between?(1, 200)
+    return false unless game.vote_rank.between?(1, 1000)
 
     true
   end
