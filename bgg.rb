@@ -23,8 +23,8 @@ class Bgg
 
   def display_game?(game)
     return false if game.play_rank < 1
-    # return false if game.rank < 1
-    # return false if game.vote_rank < 1
+    return false if game.rank < 1
+    return false if game.vote_rank < 1
 
     # return game.children_rank >= 1
     # return game.family_rank >= 1
