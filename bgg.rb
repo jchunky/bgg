@@ -8,8 +8,7 @@ require "yaml"
 Dir["lib/*.rb"].each { |f| require_relative f }
 
 class Bgg
-  YEARS_OLD = 6
-  MAX_GAME_YEAR = Date.today.year - YEARS_OLD
+  MIN_GAME_YEAR = Date.today.year - 3
   DOWNLOADERS = [
     TopChildren,
     TopFamily,
@@ -22,9 +21,11 @@ class Bgg
   ]
 
   def display_game?(game)
+    return false unless game.year.to_i >= MIN_GAME_YEAR
+
     return false unless game.play_rank > 0
-    return false unless game.rank > 0
-    return false unless game.vote_rank > 0
+    # return false unless game.rank > 0
+    # return false unless game.vote_rank > 0
 
     # return game.children_rank >= 1
     # return game.family_rank >= 1
@@ -32,9 +33,12 @@ class Bgg
     # return game.strategy_rank >= 1
     # return game.thematic_rank >= 1
 
-    return false unless game.year.to_i > Date.today.year - 4
-    return false unless game.play_rank.between?(1, 200)
+    return false unless game.play_rank.between?(1, 50)
+    # return false unless game.play_rank.between?(1, 200)
+
     return false unless game.rank.between?(1, 200)
+    # return false unless game.rank.between?(1, 500)
+
     # return false unless game.vote_rank.between?(1, 200)
 
     true
