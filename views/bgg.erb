@@ -30,6 +30,7 @@
     <th>Vote Rank</th>
     <th>Year</th>
     <th>Rating</th>
+    <th>Rating Count</th>
   </tr>
   <% @games.each.with_index do |game, i| %>
     <%
@@ -38,6 +39,7 @@
       low_rank = !game.rank.between?(1, 200)
       low_year = game.year < Bgg::MIN_GAME_YEAR
       low_rating = game.rating < 7.5
+      low_rating_count = game.rating_count.to_i < 1000
     %>
     <tr>
       <td class="<%= 'low' if low_play_rank %>">
@@ -48,6 +50,7 @@
       <td class="number <%= 'low' if low_vote_rank %>"><%= game.vote_rank %></td>
       <td class="number <%= 'low' if low_year %>"><%= game.year %></td>
       <td class="number <%= 'low' if low_rating %>  right-border"><%= game.rating %></td>
+      <td class="number <%= 'low' if low_rating_count %>  right-border"><%= game.rating_count %></td>
     </tr>
   <% end %>
 </table>

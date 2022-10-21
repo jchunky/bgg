@@ -21,15 +21,15 @@ class Bgg
   ]
 
   def display_game?(game)
-    return false unless game.year.to_i >= MIN_GAME_YEAR
-    return false unless game.play_rank > 0
-
+    # return false unless game.play_rank > 0
     # return game.children_rank >= 1
 
-    # return false unless game.rank > 0
-    # return false unless game.vote_rank > 0
+    # return false unless game.year.to_i >= MIN_GAME_YEAR
+    # return false unless game.play_rank.between?(1, 200)
+    # return false unless game.rank.between?(1, 200)
     # return game.thematic_rank >= 1
 
+    return false unless game.year.to_i >= MIN_GAME_YEAR
     return false unless game.play_rank.between?(1, 50)
     return false unless game.rank.between?(1, 200)
 
