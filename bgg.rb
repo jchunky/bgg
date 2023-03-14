@@ -11,11 +11,8 @@ class Bgg
   MIN_GAME_YEAR = Date.today.year - 3
   DOWNLOADERS = [
     TopChildren,
-    TopFamily,
-    TopParty,
     TopPlayed,
     TopRanked,
-    TopStrategy,
     TopThematic,
     TopVoted,
   ]
