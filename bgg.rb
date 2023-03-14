@@ -22,7 +22,7 @@ class Bgg
     return false unless game.play_rank > 0
     return false unless game.rank > 0
     return false unless game.play_rank <= 50
-    return false unless game.rank <= 100
+    # return false unless game.rank <= 100
 
     # return game.children_rank >= 1
     # return game.thematic_rank >= 1
