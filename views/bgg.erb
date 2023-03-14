@@ -35,8 +35,8 @@
   <% @games.each.with_index do |game, i| %>
     <%
       low_play_rank = !game.play_rank.between?(1, 50)
-      low_vote_rank = !game.vote_rank.between?(1, 200)
-      low_rank = !game.rank.between?(1, 200)
+      low_vote_rank = !game.vote_rank.between?(1, 100)
+      low_rank = !game.rank.between?(1, 100)
       low_year = game.year < Bgg::MIN_GAME_YEAR
       low_rating = game.rating < 7.5
       low_rating_count = game.rating_count.to_i < 1000
