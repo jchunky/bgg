@@ -14,6 +14,8 @@ ATTRS = {
   strategy_rank: 0,
   thematic_rank: 0,
   vote_rank: 0,
+  solo_rank: 0,
+  couples_rank: 0,
   rating_count: 0,
 }
 
