@@ -19,7 +19,9 @@ class Bgg
 
   def display_game?(game)
     # return false unless game.year.to_i < MAX_GAME_YEAR
-    return false unless game.couples_rank > 0 || game.solo_rank > 0
+    # return false unless game.couples_rank > 0 || game.solo_rank > 0
+    # return false unless game.rank > 200 && game.vote_rank > 200
+    return false unless game.rank <= 200 || game.vote_rank <= 200
     return false unless game.play_rank <= 200
     return false unless game.play_rank > 0
     return false unless game.rank <= 1000
