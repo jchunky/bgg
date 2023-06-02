@@ -10,11 +10,11 @@ Dir["lib/*.rb"].each { |f| require_relative f }
 class Bgg
   MAX_GAME_YEAR = Date.today.year - 5
   DOWNLOADERS = [
-    TopPlayed,
-    TopRanked,
-    TopVoted,
-    TopCouples,
-    TopSolo,
+    TopPlayed.new,
+    TopRanked.new,
+    TopVoted.new,
+    GeekList.new(prefix: 'couples', listid: 307302),
+    GeekList.new(prefix: 'solo', listid: 306154),
   ]
 
   def display_game?(game)
@@ -47,7 +47,7 @@ class Bgg
   end
 
   def by_key(clazz)
-    clazz.new.games.to_h { |g| [g.key, g] }
+    clazz.games.to_h { |g| [g.key, g] }
   end
 
   def merge_hashes(_key, game1, game2)

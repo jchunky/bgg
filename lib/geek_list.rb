@@ -1,4 +1,4 @@
-class TopCouples
+class GeekList < Struct.new(:listid, :prefix, keyword_init: true)
   def games
     (1..8)
       .flat_map(&method(:games_for_page))
@@ -17,7 +17,7 @@ class TopCouples
   end
 
   def url_for_page(page)
-    "https://api.geekdo.com/api/listitems?page=#{page}&listid=307302"
+    "https://api.geekdo.com/api/listitems?listid=#{listid}&page=#{page}"
   end
 
   def games_for_file(file, page)
@@ -28,7 +28,7 @@ class TopCouples
         name: Utils.strip_accents(record["item"]["name"]),
         rating: record["stats"]["average"].to_f,
         rank: record["stats"]["rank"].to_i,
-        couples_rank: (page - 1) * 25 + i + 1
+        "#{prefix}_rank": (page - 1) * 25 + i + 1
       )
     end
   end
