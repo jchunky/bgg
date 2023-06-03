@@ -14,7 +14,7 @@ class Bgg
     GameSearch.new(prefix: "vote", search_criteria: "sort=numvoters&sortdir=desc"),
     GameSearch.new(prefix: "bgg", search_criteria: "sort=rank"),
     GameSearch.new(prefix: "child", search_criteria: "sort=rank&familyids[0]=4665"),
-    GameSearch.new(prefix: "campaign", search_criteria:   "sort=rank" +
+    GameSearch.new(prefix: "campaign", search_criteria: "sort=rank" +
       "&range[minplayers][max]=1" + # 1-player
       "&propertyids[0]=2023" + # cooperative
       "&propertyids[1]=2822" + # scenario / mission / campaign game
@@ -27,12 +27,15 @@ class Bgg
   def display_game?(game)
     return false unless game.year.to_i < MAX_GAME_YEAR
 
-    # return false unless game.solo_rank > 0
+    # return false unless game.campaign_rank > 0
+    # return false unless game.child_rank > 0
     return false unless game.couples_rank > 0
+    return false unless game.play_rank > 0
+    # return false unless game.solo_rank > 0
+    return false unless game.vote_rank > 0
 
     return false unless game.play_rank.between?(1, 200)
     return false unless game.rank.between?(1, 1000)
-    return false unless game.vote_rank > 0
 
     return true
   end
