@@ -1,4 +1,8 @@
 class TopPlayed < GamepageDownloader
+  def prefix
+    'play'
+  end
+
   def url_for_page(page)
     end_date = Date.today
     start_date = end_date - 30.days

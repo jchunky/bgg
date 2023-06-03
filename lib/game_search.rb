@@ -1,6 +1,15 @@
-class TopVoted < GamepageDownloader
+require_relative "gamepage_downloader"
+
+class GameSearch < GamepageDownloader
+  attr_reader :prefix, :search_criteria
+
+  def initialize(prefix:, search_criteria:)
+    @prefix = prefix
+    @search_criteria = search_criteria
+  end
+
   def url_for_page(page)
-    "https://boardgamegeek.com/browse/boardgame/page/#{page}?sort=numvoters&sortdir=desc"
+    "https://boardgamegeek.com/search/boardgame/page/#{page}?&advsearch=1&#{search_criteria}"
   end
 
   def games_for_doc(doc, page)
@@ -18,7 +27,7 @@ class TopVoted < GamepageDownloader
           rating_count: rating_count.content.to_i,
           year: (title.css("span")[0].content[1..-2].to_i rescue 0),
           rank: (rank.css("a")[0]["name"].to_i rescue 0),
-          vote_rank: ((page - 1) * 100) + i + 1
+          "#{prefix}_rank": ((page - 1) * 100) + i + 1
         )
       end
   end

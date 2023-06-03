@@ -11,8 +11,15 @@ class Bgg
   MAX_GAME_YEAR = Date.today.year - 5
   DOWNLOADERS = [
     TopPlayed.new,
-    TopRanked.new,
-    TopVoted.new,
+    GameSearch.new(prefix: "vote", search_criteria: "sort=numvoters&sortdir=desc"),
+    GameSearch.new(prefix: "bgg", search_criteria: "sort=rank"),
+    GameSearch.new(prefix: "child", search_criteria: "sort=rank&familyids[0]=4665"),
+    GameSearch.new(prefix: "campaign", search_criteria:   "sort=rank" +
+      "&range[minplayers][max]=1" + # 1-player
+      "&propertyids[0]=2023" + # cooperative
+      "&propertyids[1]=2822" + # scenario / mission / campaign game
+      "&nopropertyids[0]=2027" # no 'storytelling'
+    ),
     GeekList.new(prefix: 'couples', listid: 307302),
     GeekList.new(prefix: 'solo', listid: 306154),
   ]
