@@ -3,7 +3,7 @@
   #games { font-family: Arial; border-collapse: collapse; font-size: 8pt; margin-top: 20px; }
   #games td, #games th { border: 1px solid #ddd; padding: 8px; }
   #games tr:nth-child(even) { background-color: #f2f2f2; }
-  #games tr:hover * { background-color: rgb(194, 149, 141) !important; }
+  #games tbody tr:hover * { background-color: rgb(194, 149, 141) !important; }
   #games th { background-color: #4CAF50; color: white; }
   #games td { white-space: nowrap; }
   .number { text-align: right; }
@@ -25,36 +25,40 @@
 <% lists = %w[play vote solo couples campaign child] %>
 
 <table id="games" class="sortable">
-  <tr>
-    <th>Game</th>
-    <th>Rank</th>
-    <% lists.each do |list| %>
-      <th><%= list.titlecase %> Rank</th>
-    <% end %>
-    <th>Year</th>
-    <th>Rating</th>
-    <th>Rating Count</th>
-  </tr>
-  <% @games.each.with_index do |game, i| %>
-    <%
-      low_play_rank = !game.play_rank.between?(1, 50)
-      low_rank = !game.rank.between?(1, 100)
-      low_year = game.year >= Bgg::MAX_GAME_YEAR
-      low_rating = game.rating < 7.5
-      low_rating_count = game.rating_count.to_i < 1000
-    %>
+  <thead>
     <tr>
-      <td class="<%= 'low' if low_play_rank %>">
-        <a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a>
-      </td>
-      <td class="number <%= 'low' if low_rank %>"><%= game.rank %></td>
+      <th>Game</th>
+      <th>Rank</th>
       <% lists.each do |list| %>
-        <% low_list_rank = !game.send("#{list}_rank").to_i.between?(1, 50) %>
-        <td class="number <%= 'low' if low_list_rank %>"><%= game.send("#{list}_rank") %></td>
+        <th><%= list.titlecase %> Rank</th>
       <% end %>
-      <td class="number <%= 'low' if low_year %>"><%= game.year %></td>
-      <td class="number <%= 'low' if low_rating %>  right-border"><%= game.rating %></td>
-      <td class="number <%= 'low' if low_rating_count %>  right-border"><%= game.rating_count %></td>
+      <th>Year</th>
+      <th>Rating</th>
+      <th>Rating Count</th>
     </tr>
-  <% end %>
+  </thead>
+  <tbody>
+    <% @games.each.with_index do |game, i| %>
+      <%
+        low_play_rank = !game.play_rank.between?(1, 50)
+        low_rank = !game.rank.between?(1, 100)
+        low_year = game.year >= Bgg::MAX_GAME_YEAR
+        low_rating = game.rating < 7.5
+        low_rating_count = game.rating_count.to_i < 1000
+      %>
+      <tr>
+        <td class="<%= 'low' if low_play_rank %>">
+          <a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a>
+        </td>
+        <td class="number <%= 'low' if low_rank %>"><%= game.rank %></td>
+        <% lists.each do |list| %>
+          <% low_list_rank = !game.send("#{list}_rank").to_i.between?(1, 50) %>
+          <td class="number <%= 'low' if low_list_rank %>"><%= game.send("#{list}_rank") %></td>
+        <% end %>
+        <td class="number <%= 'low' if low_year %>"><%= game.year %></td>
+        <td class="number <%= 'low' if low_rating %>  right-border"><%= game.rating %></td>
+        <td class="number <%= 'low' if low_rating_count %>  right-border"><%= game.rating_count %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
