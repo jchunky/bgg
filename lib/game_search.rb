@@ -30,5 +30,7 @@ class GameSearch < GamepageDownloader
           "#{prefix}_rank": ((page - 1) * 100) + i + 1
         )
       end
+  rescue StandardError
+    []
   end
 end
