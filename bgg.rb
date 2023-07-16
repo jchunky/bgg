@@ -17,6 +17,7 @@ class Bgg
     GameSearch.new(prefix: "bgg", search_criteria: "sort=rank"),
     GameSearch.new(prefix: "child", search_criteria: "sort=rank&familyids[0]=4665"),
     GameSearch.new(prefix: "light", search_criteria: "sort=rank&floatrange[avgweight][max]=3"),
+    GameSearch.new(prefix: "five", search_criteria: "sort=rank&playerrangetype=normal&range[maxplayers][min]=5"),
     GameSearch.new(prefix: "campaign", search_criteria: "sort=rank" +
       "&range[minplayers][max]=1" + # 1-player
       "&propertyids[0]=2023" + # cooperative
@@ -30,6 +31,7 @@ class Bgg
 
     # return false unless game.year.to_i < MAX_GAME_YEAR
     # return false unless game.couples_rank > 0
+    # return false unless game.five_rank > 0
     # return false unless game.light_rank > 0
     # return false unless game.vote_rank > 0
     # return false unless game.play_rank.between?(1, 200)
