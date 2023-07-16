@@ -12,6 +12,7 @@ ATTRS = {
   campaign_rank: 0,
   child_rank: 0,
   couples_rank: 0,
+  light_rank: 0,
   play_rank: 0,
   solo_rank: 0,
   vote_rank: 0,
