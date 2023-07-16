@@ -15,6 +15,7 @@ class Bgg
     GameSearch.new(prefix: "bgg", search_criteria: "sort=rank"),
     GameSearch.new(prefix: "child", search_criteria: "sort=rank&familyids[0]=4665"),
     GameSearch.new(prefix: "campaign", search_criteria: "sort=rank" +
+      "&floatrange[avgweight][max]=3" + # weight <= 3
       "&range[minplayers][max]=1" + # 1-player
       "&propertyids[0]=2023" + # cooperative
       "&propertyids[1]=2822" + # scenario / mission / campaign game
