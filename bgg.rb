@@ -53,6 +53,7 @@ class Bgg
     # return false unless game.year.to_i < MAX_GAME_YEAR
     # return false unless game.light_rank > 0
     # return false unless game.rank > 0
+    # return false unless game.vote_rank > 0
 
     # 2-player
     # return false unless game.couples_rank > 0
