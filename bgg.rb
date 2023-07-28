@@ -18,36 +18,51 @@ class Bgg
     GameSearch.new(prefix: "child", search_criteria: "sort=rank&familyids[0]=4665"),
     GameSearch.new(prefix: "light", search_criteria: "sort=rank&floatrange[avgweight][max]=3"),
     GameSearch.new(prefix: "five", search_criteria: "sort=rank&playerrangetype=normal&range[maxplayers][min]=5"),
+    GameSearch.new(prefix: "cyoa", search_criteria: "sort=rank" +
+      "&range[minplayers][max]=1" + # 1-player
+      "&propertyids[0]=2023" + # cooperative
+      "&propertyids[1]=2851" + # narrative choice / paragraph
+      "&nopropertyids[0]=2027" # no storytelling
+    ),
     GameSearch.new(prefix: "campaign", search_criteria: "sort=rank" +
       "&range[minplayers][max]=1" + # 1-player
       "&propertyids[0]=2023" + # cooperative
       "&propertyids[1]=2822" + # scenario / mission / campaign game
-      "&nopropertyids[0]=2027" # no 'storytelling'
+      "&nopropertyids[0]=2027" # no storytelling
     ),
   ]
 
   def display_game?(game)
     # return false unless game.year.to_i < MAX_GAME_YEAR
     # return false unless game.solo_rank > 0
-    return false unless game.play_rank > 0
 
+    # Campaign
     return false unless game.campaign_rank > 0
     return false unless game.light_rank > 0
+    return false unless game.play_rank > 0
 
+    # Kids
     # return false unless game.child_rank > 0
+    # return false unless game.play_rank > 0
 
+    # Narrative choice
+    # return false unless game.cyoa_rank > 0
+    # return false unless game.rank > 0
+
+    # 2-player
     # return false unless game.couples_rank > 0
+    # return false unless game.light_rank > 0
+    # return false unless game.vote_rank > 0
     # return false unless game.play_rank.between?(1, 200)
     # return false unless game.rank.between?(1, 200)
-    # return false unless game.vote_rank > 0
-    # return false unless game.light_rank > 0
 
+    # Party
     # return false unless game.five_rank > 0
     # return false unless game.couples_rank <= 0
+    # return false unless game.light_rank > 0
     # return false unless game.vote_rank > 0
     # return false unless game.play_rank.between?(1, 200)
     # return false unless game.rank.between?(1, 500)
-    # return false unless game.light_rank > 0
 
     return true
   end
