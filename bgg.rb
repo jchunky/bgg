@@ -33,42 +33,24 @@ class Bgg
   ]
 
   def display_game?(game)
+    # return false unless game.couples_rank > 0
+    # return false unless game.cyoa_rank > 0
+    # return false unless game.five_rank > 0
+    # return false unless game.play_rank > 0
+    # return false unless game.rank > 0
     # return false unless game.solo_rank > 0
+    return false unless game.light_rank > 0
+    return false unless game.vote_rank.between?(1, 100)
+    return false unless game.year.to_i >= MAX_GAME_YEAR
 
     # Campaign
-    return false unless game.campaign_rank > 0
-    return false unless game.light_rank > 0
-    return false unless game.play_rank > 0
+    # return false unless game.campaign_rank > 0
+    # return false unless game.light_rank > 0
+    # return false unless game.play_rank > 0
 
     # Kids
     # return false unless game.child_rank > 0
     # return false unless game.play_rank > 0
-
-    # Narrative choice
-    # return false unless game.cyoa_rank > 0
-    # return false unless game.rank > 0
-
-    # Top played classic
-    # return false unless game.play_rank.between?(1, 100)
-    # return false unless game.year.to_i < MAX_GAME_YEAR
-    # return false unless game.light_rank > 0
-    # return false unless game.rank > 0
-    # return false unless game.vote_rank > 0
-
-    # 2-player
-    # return false unless game.couples_rank > 0
-    # return false unless game.light_rank > 0
-    # return false unless game.vote_rank > 0
-    # return false unless game.play_rank.between?(1, 200)
-    # return false unless game.rank.between?(1, 200)
-
-    # Party
-    # return false unless game.five_rank > 0
-    # return false unless game.couples_rank <= 0
-    # return false unless game.light_rank > 0
-    # return false unless game.vote_rank > 0
-    # return false unless game.play_rank.between?(1, 200)
-    # return false unless game.rank.between?(1, 500)
 
     return true
   end
