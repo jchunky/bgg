@@ -46,10 +46,12 @@ class Bgg
     # Campaign
     # return false unless game.campaign_rank > 0
     # return false unless game.light_rank > 0
+    # return false unless game.vote_rank > 0
     # return false unless game.play_rank > 0
 
     # Kids
     # return false unless game.child_rank > 0
+    # return false unless game.vote_rank > 0
     # return false unless game.play_rank > 0
 
     return true
