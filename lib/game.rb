@@ -29,6 +29,14 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
     Game.new(members.to_h { |attr| [attr, merge_attr(attr, other)] })
   end
 
+  def votes_per_year
+    return 0 if year.zero?
+    years = (Date.today.year + 1) - year
+    years = 1 if years < 1
+
+    rating_count / years
+  end
+
   private
 
   def merge_attr(attr, other)

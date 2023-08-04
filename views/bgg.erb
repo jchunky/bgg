@@ -34,17 +34,19 @@
       <% end %>
       <th>Year</th>
       <th>Rating</th>
-      <th>Rating Count</th>
+      <th>Votes</th>
+      <th>Votes Per Year</th>
     </tr>
   </thead>
   <tbody>
     <% @games.each.with_index do |game, i| %>
       <%
-        low_play_rank = !game.play_rank.between?(1, 50)
+        low_play_rank = !game.play_rank.between?(1, 100)
         low_rank = !game.rank.between?(1, 100)
         low_year = game.year >= Bgg::MAX_GAME_YEAR
         low_rating = game.rating < 7.5
-        low_rating_count = game.rating_count.to_i < 1000
+        low_votes = !game.vote_rank.between?(1, 100)
+        low_votes_per_year = game.votes_per_year < 3165
       %>
       <tr>
         <td class="<%= 'low' if low_play_rank %>">
@@ -52,12 +54,13 @@
         </td>
         <td class="number <%= 'low' if low_rank %>"><%= game.rank %></td>
         <% lists.each do |list| %>
-          <% low_list_rank = !game.send("#{list}_rank").to_i.between?(1, 50) %>
+          <% low_list_rank = !game.send("#{list}_rank").to_i.between?(1, 100) %>
           <td class="number <%= 'low' if low_list_rank %>"><%= game.send("#{list}_rank") %></td>
         <% end %>
         <td class="number <%= 'low' if low_year %>"><%= game.year %></td>
-        <td class="number <%= 'low' if low_rating %>  right-border"><%= game.rating %></td>
-        <td class="number <%= 'low' if low_rating_count %>  right-border"><%= game.rating_count %></td>
+        <td class="number <%= 'low' if low_rating %> right-border"><%= format("%0.2f", game.rating) %></td>
+        <td class="number <%= 'low' if low_votes %> right-border"><%= game.rating_count %></td>
+        <td class="number <%= 'low' if low_votes_per_year %> right-border"><%= game.votes_per_year %></td>
       </tr>
     <% end %>
   </tbody>
