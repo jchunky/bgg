@@ -18,6 +18,7 @@ ATTRS = {
   play_rank: 0,
   solo_rank: 0,
   vote_rank: 0,
+  votes_per_year_rank: 0,
 }
 
 Game = Struct.new(*ATTRS.keys, keyword_init: true) do

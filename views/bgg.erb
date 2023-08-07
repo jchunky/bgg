@@ -36,6 +36,7 @@
       <th>Rating</th>
       <th>Votes</th>
       <th>Votes Per Year</th>
+      <th>Votes Per Year Rank</th>
     </tr>
   </thead>
   <tbody>
@@ -46,7 +47,8 @@
         low_year = game.year >= Bgg::MAX_GAME_YEAR
         low_rating = game.rating < 7.5
         low_votes = !game.vote_rank.between?(1, 100)
-        low_votes_per_year = game.votes_per_year < 3165
+        low_votes_per_year = !game.votes_per_year_rank.between?(1, 100)
+        low_votes_per_year_rank = !game.votes_per_year_rank.between?(1, 100)
       %>
       <tr>
         <td class="<%= 'low' if low_play_rank %>">
@@ -61,6 +63,7 @@
         <td class="number <%= 'low' if low_rating %> right-border"><%= format("%0.2f", game.rating) %></td>
         <td class="number <%= 'low' if low_votes %> right-border"><%= game.rating_count %></td>
         <td class="number <%= 'low' if low_votes_per_year %> right-border"><%= game.votes_per_year %></td>
+        <td class="number <%= 'low' if low_votes_per_year_rank %> right-border"><%= game.votes_per_year_rank %></td>
       </tr>
     <% end %>
   </tbody>

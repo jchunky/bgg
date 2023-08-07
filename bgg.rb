@@ -41,8 +41,8 @@ class Bgg
     # return false unless game.solo_rank > 0
     return false unless game.light_rank > 0
     return false unless game.play_rank.between?(1, 100)
-    return false unless game.vote_rank.between?(1, 100)
-    return false unless game.votes_per_year >= 3165
+    # return false unless game.vote_rank.between?(1, 100)
+    return false unless game.votes_per_year_rank.between?(1, 100)
     return false unless game.year.to_i >= MAX_GAME_YEAR
 
     # Campaign
@@ -68,9 +68,18 @@ class Bgg
   private
 
   def all_games
-    DOWNLOADERS.reduce({}) do |hash, downloader|
-      hash.merge(by_key(downloader), &method(:merge_hashes))
-    end.values
+    result = DOWNLOADERS
+      .reduce({}) do |hash, downloader|
+        hash.merge(by_key(downloader), &method(:merge_hashes))
+      end
+      .values
+
+    result
+      .select { |g| g.votes_per_year.positive? }
+      .sort_by { |g| -g.votes_per_year }
+      .each_with_index { |g, i| g.votes_per_year_rank = i + 1 }
+
+    result
   end
 
   def by_key(clazz)
