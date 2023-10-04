@@ -16,6 +16,7 @@ class Bgg
     GameSearch.new(prefix: "vote", search_criteria: "sort=numvoters&sortdir=desc"),
     GameSearch.new(prefix: "bgg", search_criteria: "sort=rank"),
     GameSearch.new(prefix: "child", search_criteria: "sort=rank&familyids[0]=4665"),
+    GameSearch.new(prefix: "family", search_criteria: "sort=rank&familyids[0]=5499"),
     GameSearch.new(prefix: "light", search_criteria: "sort=rank&floatrange[avgweight][max]=3"),
     GameSearch.new(prefix: "five", search_criteria: "sort=rank&playerrangetype=normal&range[maxplayers][min]=5"),
     GameSearch.new(prefix: "cyoa", search_criteria: "sort=rank" +
@@ -35,6 +36,7 @@ class Bgg
   def display_game?(game)
     # return false unless game.couples_rank > 0
     # return false unless game.cyoa_rank > 0
+    # return false unless game.family_rank > 0
     # return false unless game.five_rank > 0
     # return false unless game.rank > 0
     # return false unless game.rating_count > 0
@@ -47,7 +49,7 @@ class Bgg
 
     # Campaign
     return false unless game.campaign_rank > 0
-    return false unless game.light_rank > 0
+    # return false unless game.light_rank > 0
     return false unless game.play_rank > 0
 
     # Kids
