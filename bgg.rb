@@ -31,6 +31,11 @@ class Bgg
       "&propertyids[1]=2822" + # scenario / mission / campaign game
       "&nopropertyids[0]=2027" # no storytelling
     ),
+    GameSearch.new(prefix: "legacy", search_criteria: "sort=rank" +
+      "&range[minplayers][max]=1" + # 1-player
+      "&propertyids[0]=2023" + # cooperative
+      "&propertyids[1]=2824"  # legacy
+    ),
   ]
 
   def display_game?(game)
@@ -49,7 +54,7 @@ class Bgg
 
     # Campaign
     return false unless game.campaign_rank > 0
-    # return false unless game.light_rank > 0
+    return false unless game.light_rank > 0
     return false unless game.play_rank > 0
 
     # Kids

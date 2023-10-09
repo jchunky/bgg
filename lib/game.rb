@@ -15,6 +15,7 @@ ATTRS = {
   cyoa_rank: 0,
   family_rank: 0,
   five_rank: 0,
+  legacy_rank: 0,
   light_rank: 0,
   play_rank: 0,
   solo_rank: 0,
