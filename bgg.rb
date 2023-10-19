@@ -15,44 +15,29 @@ class Bgg
     GameSearch.new(prefix: "family", search_criteria: "sort=rank&familyids[0]=5499"),
     GameSearch.new(prefix: "light", search_criteria: "sort=rank&floatrange[avgweight][max]=3"),
     GameSearch.new(prefix: "five", search_criteria: "sort=rank&playerrangetype=normal&range[maxplayers][min]=5"),
-    GameSearch.new(prefix: "cyoa", search_criteria: "sort=rank" +
-      "&range[minplayers][max]=1" + # 1-player
-      "&propertyids[0]=2023" + # cooperative
-      "&propertyids[1]=2851" + # narrative choice / paragraph
-      "&nopropertyids[0]=2027" # no storytelling
-    ),
     GameSearch.new(prefix: "campaign", search_criteria: "sort=rank" +
       "&range[minplayers][max]=1" + # 1-player
       "&propertyids[0]=2023" + # cooperative
       "&propertyids[1]=2822" + # scenario / mission / campaign game
       "&nopropertyids[0]=2027" # no storytelling
     ),
-    GameSearch.new(prefix: "legacy", search_criteria: "sort=rank" +
-      "&range[minplayers][max]=1" + # 1-player
-      "&propertyids[0]=2023" + # cooperative
-      "&propertyids[1]=2824"  # legacy
-    ),
   ]
 
   def display_game?(game)
-    # return false unless game.cyoa_rank > 0
     # return false unless game.family_rank > 0
     # return false unless game.five_rank > 0
+    # return false unless game.light_rank > 0
     # return false unless game.rank > 0
     # return false unless game.rating_count > 0
+    # return false unless game.vote_rank.between?(1, 100)
     # return false unless game.votes_per_year_rank.between?(1, 100)
     # return false unless game.year.to_i >= MAX_GAME_YEAR
-    # return false unless game.light_rank > 0
-    # return false unless game.vote_rank.between?(1, 100)
 
     # Campaign
     return false unless game.campaign_rank > 0
     return false unless game.vote_rank > 0
     return false unless game.rank > 0
     # return false unless game.light_rank > 0
-
-    # Kids
-    # return false unless game.child_rank > 0
 
     return true
   end

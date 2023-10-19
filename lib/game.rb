@@ -9,11 +9,8 @@ ATTRS = {
 
   bgg_rank: 0,
   campaign_rank: 0,
-  child_rank: 0,
-  cyoa_rank: 0,
   family_rank: 0,
   five_rank: 0,
-  legacy_rank: 0,
   light_rank: 0,
   vote_rank: 0,
   votes_per_year_rank: 0,
