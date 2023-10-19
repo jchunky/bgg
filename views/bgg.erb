@@ -9,11 +9,6 @@
   .number { text-align: right; }
   .low { background-color: silver; }
   .high { background-color: rgb(183, 214 ,170); }
-  .player-rank-1 { background-color: #b4b4ff; } /* blue */
-  .player-rank-2 { background-color: #ffb4b4; } /* red */
-  .player-rank-new { background-color: #ffc68e; } /* orange */
-  .player-rank-leaving { background-color: #b4b4ff; } /* blue */
-  .player-rank-top_x { background-color: #ffb4b4; } /* red */
   .right-border { border-right: 1px solid #999 !important; }
   .trend-new { stroke: orange; fill: rgba(255, 198, 142, .3); }
   .trend-leaving { stroke: blue; fill: rgba(0, 0, 255, .3); }
@@ -22,7 +17,7 @@
   th { position: sticky; top: 20; }
 </style>
 
-<% lists = %w[play vote solo couples campaign child family] %>
+<% lists = %w[vote campaign child family] %>
 
 <table id="games" class="sortable">
   <thead>
@@ -42,7 +37,6 @@
   <tbody>
     <% @games.each.with_index do |game, i| %>
       <%
-        low_play_rank = !game.play_rank.between?(1, 100)
         low_rank = !game.rank.between?(1, 100)
         low_year = game.year >= Bgg::MAX_GAME_YEAR
         low_rating = game.rating < 7.5
@@ -51,7 +45,7 @@
         low_votes_per_year_rank = !game.votes_per_year_rank.between?(1, 100)
       %>
       <tr>
-        <td class="<%= 'low' if low_play_rank %>">
+        <td>
           <a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a>
         </td>
         <td class="number <%= 'low' if low_rank %>"><%= game.rank %></td>

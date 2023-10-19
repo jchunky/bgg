@@ -10,12 +10,8 @@ Dir["lib/*.rb"].each { |f| require_relative f }
 class Bgg
   MAX_GAME_YEAR = Date.today.year - 5
   DOWNLOADERS = [
-    TopPlayed.new,
-    GeekList.new(prefix: 'couples', listid: 307302),
-    GeekList.new(prefix: 'solo', listid: 306154),
     GameSearch.new(prefix: "vote", search_criteria: "sort=numvoters&sortdir=desc"),
     GameSearch.new(prefix: "bgg", search_criteria: "sort=rank"),
-    GameSearch.new(prefix: "child", search_criteria: "sort=rank&familyids[0]=4665"),
     GameSearch.new(prefix: "family", search_criteria: "sort=rank&familyids[0]=5499"),
     GameSearch.new(prefix: "light", search_criteria: "sort=rank&floatrange[avgweight][max]=3"),
     GameSearch.new(prefix: "five", search_criteria: "sort=rank&playerrangetype=normal&range[maxplayers][min]=5"),
@@ -39,27 +35,24 @@ class Bgg
   ]
 
   def display_game?(game)
-    # return false unless game.couples_rank > 0
     # return false unless game.cyoa_rank > 0
     # return false unless game.family_rank > 0
     # return false unless game.five_rank > 0
     # return false unless game.rank > 0
     # return false unless game.rating_count > 0
-    # return false unless game.solo_rank > 0
     # return false unless game.votes_per_year_rank.between?(1, 100)
     # return false unless game.year.to_i >= MAX_GAME_YEAR
     # return false unless game.light_rank > 0
-    # return false unless game.play_rank.between?(1, 100)
     # return false unless game.vote_rank.between?(1, 100)
 
     # Campaign
     return false unless game.campaign_rank > 0
-    return false unless game.light_rank > 0
-    return false unless game.play_rank > 0
+    return false unless game.vote_rank > 0
+    return false unless game.rank > 0
+    # return false unless game.light_rank > 0
 
     # Kids
     # return false unless game.child_rank > 0
-    # return false unless game.play_rank > 0
 
     return true
   end
@@ -67,7 +60,7 @@ class Bgg
   def run
     @games = all_games
       .select(&method(:display_game?))
-      .sort_by { |g| [-g.year, g.play_rank] }
+      .sort_by { |g| [-g.year, g.rank] }
 
     write_output
   end
