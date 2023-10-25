@@ -18,8 +18,13 @@ class Bgg
     GameSearch.new(prefix: "campaign", search_criteria: "sort=rank" +
       "&range[minplayers][max]=1" + # 1-player
       "&propertyids[0]=2023" + # cooperative
-      "&propertyids[1]=2822" + # scenario / mission / campaign game
-      "&nopropertyids[0]=2027" # no storytelling
+      "&propertyids[1]=2822"  # scenario / mission / campaign game
+      # "&nopropertyids[0]=2027" # no storytelling
+    ),
+    GameSearch.new(prefix: "campaign_card", search_criteria: "sort=rank" +
+      "&range[minplayers][max]=1" + # 1-player
+      "&propertyids[0]=2023" + # cooperative
+      "&propertyids[1]=2018"  # campaign / battle card drive
     ),
   ]
 
@@ -34,9 +39,10 @@ class Bgg
     # return false unless game.year.to_i >= MAX_GAME_YEAR
 
     # Campaign
-    return false unless game.campaign_rank > 0
+    return false unless game.campaign_card_rank > 0 || game.campaign_rank > 0
     return false unless game.vote_rank > 0
-    return false unless game.rank > 0
+    # return false unless game.rank > 0
+    return false unless game.rank.between?(1, 1000)
     # return false unless game.light_rank > 0
 
     return true
