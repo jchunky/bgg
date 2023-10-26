@@ -20,6 +20,7 @@ class Bgg
     GameSearch.new(prefix: "campaign", search_criteria: "sort=rank&propertyids[0]=2822"),
     GameSearch.new(prefix: "card_driven", search_criteria: "sort=rank&propertyids[0]=2018"),
     GameSearch.new(prefix: "coop", search_criteria: "sort=rank&propertyids[0]=2023"),
+    GameSearch.new(prefix: "dice", search_criteria: "sort=rank&propertyids[0]=2072"),
     GameSearch.new(prefix: "legacy", search_criteria: "sort=rank&propertyids[0]=2824"),
     GameSearch.new(prefix: "storytelling", search_criteria: "sort=rank&propertyids[0]=2027"),
   ]

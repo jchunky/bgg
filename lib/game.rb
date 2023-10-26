@@ -11,6 +11,7 @@ ATTRS = {
   campaign_rank: 0,
   card_driven_rank: 0,
   coop_rank: 0,
+  dice_rank: 0,
   family_rank: 0,
   five_player_rank: 0,
   legacy_rank: 0,
