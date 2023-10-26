@@ -10,6 +10,7 @@ ATTRS = {
   bgg_rank: 0,
   campaign_rank: 0,
   campaign_card_rank: 0,
+  coop_rank: 0,
   family_rank: 0,
   five_rank: 0,
   light_rank: 0,
