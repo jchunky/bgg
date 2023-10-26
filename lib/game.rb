@@ -15,7 +15,7 @@ ATTRS = {
   five_player_rank: 0,
   legacy_rank: 0,
   light_rank: 0,
-  one_player_rank: 0,
+  solo_rank: 0,
   storytelling_rank: 0,
   vote_rank: 0,
 

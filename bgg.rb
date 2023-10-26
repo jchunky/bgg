@@ -14,7 +14,7 @@ class Bgg
     GameSearch.new(prefix: "vote", search_criteria: "sort=numvoters&sortdir=desc"),
     GameSearch.new(prefix: "family", search_criteria: "sort=rank&familyids[0]=5499"),
     GameSearch.new(prefix: "light", search_criteria: "sort=rank&floatrange[avgweight][max]=3"),
-    GameSearch.new(prefix: "one_player", search_criteria: "sort=rank&range[minplayers][max]=1"),
+    GameSearch.new(prefix: "solo", search_criteria: "sort=rank&range[minplayers][max]=1"),
     GameSearch.new(prefix: "five_player", search_criteria: "sort=rank&playerrangetype=normal&range[maxplayers][min]=5"),
 
     GameSearch.new(prefix: "campaign", search_criteria: "sort=rank&propertyids[0]=2822"),
@@ -30,7 +30,7 @@ class Bgg
     # return false unless game.rank > 0
     # return false unless game.light_rank > 0
     # return false unless game.vote_rank > 0
-    # return false unless game.campaign_card_rank > 0 || game.campaign_rank > 0
+    # return false unless game.card_driven_rank > 0 || game.campaign_rank > 0
     return false unless game.rank.between?(1, 1000)
 
     return true
