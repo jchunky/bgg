@@ -9,12 +9,16 @@ ATTRS = {
 
   bgg_rank: 0,
   campaign_rank: 0,
-  campaign_card_rank: 0,
+  card_driven_rank: 0,
   coop_rank: 0,
   family_rank: 0,
-  five_rank: 0,
+  five_player_rank: 0,
+  legacy_rank: 0,
   light_rank: 0,
+  one_player_rank: 0,
+  storytelling_rank: 0,
   vote_rank: 0,
+
   votes_per_year_rank: 0,
 }
 

@@ -10,34 +10,27 @@ Dir["lib/*.rb"].each { |f| require_relative f }
 class Bgg
   MAX_GAME_YEAR = Date.today.year - 5
   DOWNLOADERS = [
-    GameSearch.new(prefix: "vote", search_criteria: "sort=numvoters&sortdir=desc"),
     GameSearch.new(prefix: "bgg", search_criteria: "sort=rank"),
+    GameSearch.new(prefix: "vote", search_criteria: "sort=numvoters&sortdir=desc"),
     GameSearch.new(prefix: "family", search_criteria: "sort=rank&familyids[0]=5499"),
     GameSearch.new(prefix: "light", search_criteria: "sort=rank&floatrange[avgweight][max]=3"),
-    GameSearch.new(prefix: "five", search_criteria: "sort=rank&playerrangetype=normal&range[maxplayers][min]=5"),
-    GameSearch.new(prefix: "coop", search_criteria: "sort=rank" +
-      "&range[minplayers][max]=1" + # 1-player
-      "&propertyids[0]=2023" # cooperative
-    ),
-    GameSearch.new(prefix: "campaign", search_criteria: "sort=rank" +
-      "&range[minplayers][max]=1" + # 1-player
-      "&propertyids[0]=2023" + # cooperative
-      "&propertyids[1]=2822"  # scenario / mission / campaign game
-      # "&nopropertyids[0]=2027" # no storytelling
-    ),
-    GameSearch.new(prefix: "campaign_card", search_criteria: "sort=rank" +
-      "&range[minplayers][max]=1" + # 1-player
-      "&propertyids[0]=2023" + # cooperative
-      "&propertyids[1]=2018"  # campaign / battle card drive
-    ),
+    GameSearch.new(prefix: "one_player", search_criteria: "sort=rank&range[minplayers][max]=1"),
+    GameSearch.new(prefix: "five_player", search_criteria: "sort=rank&playerrangetype=normal&range[maxplayers][min]=5"),
+
+    GameSearch.new(prefix: "campaign", search_criteria: "sort=rank&propertyids[0]=2822"),
+    GameSearch.new(prefix: "card_driven", search_criteria: "sort=rank&propertyids[0]=2018"),
+    GameSearch.new(prefix: "coop", search_criteria: "sort=rank&propertyids[0]=2023"),
+    GameSearch.new(prefix: "legacy", search_criteria: "sort=rank&propertyids[0]=2824"),
+    GameSearch.new(prefix: "storytelling", search_criteria: "sort=rank&propertyids[0]=2027"),
   ]
 
   def display_game?(game)
-    # return false unless game.coop_rank > 0
-    # return false unless game.light_rank > 0
+    return false unless game.coop_rank > 0
+    return false unless game.solo_rank > 0
     # return false unless game.rank > 0
+    # return false unless game.light_rank > 0
     # return false unless game.vote_rank > 0
-    return false unless game.campaign_card_rank > 0 || game.campaign_rank > 0
+    # return false unless game.campaign_card_rank > 0 || game.campaign_rank > 0
     return false unless game.rank.between?(1, 1000)
 
     return true
