@@ -25,13 +25,13 @@ class Bgg
   ]
 
   def display_game?(game)
+    return false unless game.card_driven_rank > 0 || game.campaign_rank > 0
     return false unless game.coop_rank > 0
-    return false unless game.solo_rank > 0
-    # return false unless game.rank > 0
     # return false unless game.light_rank > 0
-    # return false unless game.vote_rank > 0
-    # return false unless game.card_driven_rank > 0 || game.campaign_rank > 0
+    return false unless game.rank > 0
     return false unless game.rank.between?(1, 1000)
+    return false unless game.solo_rank > 0
+    return false unless game.vote_rank > 0
 
     return true
   end
