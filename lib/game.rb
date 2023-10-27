@@ -138,7 +138,59 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   end
 
   def campaign?
-    card_driven_rank > 0 || campaign_rank > 0
+    campaign_rank > 0
+  end
+
+  def card_driven?
+    card_driven_rank > 0
+  end
+
+  def coop?
+    coop_rank > 0
+  end
+
+  def dice?
+    dice_rank > 0
+  end
+
+  def legacy?
+    legacy_rank > 0
+  end
+
+  def storytelling?
+    storytelling_rank > 0
+  end
+
+  def thematic?
+    thematic_rank > 0
+  end
+
+  def abstract?
+    abstract_rank > 0
+  end
+
+  def child?
+    child_rank > 0
+  end
+
+  def customizable?
+    customizable_rank > 0
+  end
+
+  def family?
+    family_rank > 0
+  end
+
+  def party?
+    party_rank > 0
+  end
+
+  def strategy?
+    strategy_rank > 0
+  end
+
+  def war?
+    war_rank > 0
   end
 
   private
