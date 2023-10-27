@@ -25,13 +25,13 @@ class Bgg
     GameSearch.new(prefix: "legacy", search_criteria: "sort=rank&propertyids[0]=2824"),
     GameSearch.new(prefix: "storytelling", search_criteria: "sort=rank&propertyids[0]=2027"),
 
+    GameSearch.new(prefix: "thematic", search_criteria: "sort=rank&familyids[0]=5496"),
     GameSearch.new(prefix: "abstract", search_criteria: "sort=rank&familyids[0]=4666"),
     GameSearch.new(prefix: "child", search_criteria: "sort=rank&familyids[0]=4665"),
     GameSearch.new(prefix: "customizable", search_criteria: "sort=rank&familyids[0]=4667"),
     GameSearch.new(prefix: "family", search_criteria: "sort=rank&familyids[0]=5499"),
     GameSearch.new(prefix: "party", search_criteria: "sort=rank&familyids[0]=5498"),
     GameSearch.new(prefix: "strategy", search_criteria: "sort=rank&familyids[0]=5497"),
-    GameSearch.new(prefix: "thematic", search_criteria: "sort=rank&familyids[0]=5496"),
     GameSearch.new(prefix: "war", search_criteria: "sort=rank&familyids[0]=4664"),
   ]
 
