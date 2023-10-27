@@ -54,7 +54,7 @@ class Bgg
     # return false unless game.light_rank > 0
     return false unless game.rank > 0
     return false unless game.rank.between?(1, 1000)
-    return false unless game.solo_rank > 0
+    return false unless game.solo?
     return false unless game.vote_rank > 0
 
     return true

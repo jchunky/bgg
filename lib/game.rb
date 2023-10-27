@@ -78,7 +78,7 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   def player_count
     return unless player_count_min && player_count_max
 
-    [player_count_min, player_count_max].join(" - ")
+    [player_count_min, player_count_max].join("-")
   end
 
   def player_count_min
@@ -127,6 +127,10 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
       ("strategy" if strategy_rank > 0),
       ("war" if war_rank > 0),
     ].compact
+  end
+
+  def solo?
+    player_count_min.to_i == 1
   end
 
   private
