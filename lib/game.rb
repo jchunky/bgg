@@ -8,19 +8,29 @@ ATTRS = {
   rank: 0,
 
   bgg_rank: 0,
+  vote_rank: 0,
+  votes_per_year_rank: 0,
+
+  light_rank: 0,
+
+  solo_rank: 0,
+  five_player_rank: 0,
+
+  coop_rank: 0,
   campaign_rank: 0,
   card_driven_rank: 0,
-  coop_rank: 0,
   dice_rank: 0,
-  family_rank: 0,
-  five_player_rank: 0,
   legacy_rank: 0,
-  light_rank: 0,
-  solo_rank: 0,
   storytelling_rank: 0,
-  vote_rank: 0,
 
-  votes_per_year_rank: 0,
+  abstract_rank: 0,
+  child_rank: 0,
+  customizable_rank: 0,
+  family_rank: 0,
+  party_rank: 0,
+  strategy_rank: 0,
+  thematic_rank: 0,
+  war_rank: 0,
 }
 
 Game = Struct.new(*ATTRS.keys, keyword_init: true) do
@@ -63,7 +73,16 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   end
 
   def subdomain
-    return "family" if family_rank > 0
+    [
+      ("abstract" if abstract_rank > 0),
+      ("child" if child_rank > 0),
+      ("customizable" if customizable_rank > 0),
+      ("family" if family_rank > 0),
+      ("party" if party_rank > 0),
+      ("strategy" if strategy_rank > 0),
+      ("thematic" if thematic_rank > 0),
+      ("war" if war_rank > 0),
+    ].compact
   end
 
   private

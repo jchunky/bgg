@@ -13,8 +13,6 @@ class Bgg
     GameSearch.new(prefix: "bgg", search_criteria: "sort=rank"),
     GameSearch.new(prefix: "vote", search_criteria: "sort=numvoters&sortdir=desc"),
 
-    GameSearch.new(prefix: "family", search_criteria: "sort=rank&familyids[0]=5499"),
-
     GameSearch.new(prefix: "light", search_criteria: "sort=rank&floatrange[avgweight][max]=3"),
 
     GameSearch.new(prefix: "solo", search_criteria: "sort=rank&range[minplayers][max]=1"),
@@ -26,6 +24,15 @@ class Bgg
     GameSearch.new(prefix: "dice", search_criteria: "sort=rank&propertyids[0]=2072"),
     GameSearch.new(prefix: "legacy", search_criteria: "sort=rank&propertyids[0]=2824"),
     GameSearch.new(prefix: "storytelling", search_criteria: "sort=rank&propertyids[0]=2027"),
+
+    GameSearch.new(prefix: "abstract", search_criteria: "sort=rank&familyids[0]=4666"),
+    GameSearch.new(prefix: "child", search_criteria: "sort=rank&familyids[0]=4665"),
+    GameSearch.new(prefix: "customizable", search_criteria: "sort=rank&familyids[0]=4667"),
+    GameSearch.new(prefix: "family", search_criteria: "sort=rank&familyids[0]=5499"),
+    GameSearch.new(prefix: "party", search_criteria: "sort=rank&familyids[0]=5498"),
+    GameSearch.new(prefix: "strategy", search_criteria: "sort=rank&familyids[0]=5497"),
+    GameSearch.new(prefix: "thematic", search_criteria: "sort=rank&familyids[0]=5496"),
+    GameSearch.new(prefix: "war", search_criteria: "sort=rank&familyids[0]=4664"),
   ]
 
   def display_game?(game)
