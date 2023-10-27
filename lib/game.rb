@@ -133,6 +133,14 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
     player_count_min.to_i == 1
   end
 
+  def coop?
+    coop_rank > 0
+  end
+
+  def campaign?
+    card_driven_rank > 0 || campaign_rank > 0
+  end
+
   private
 
   def merge_attr(attr, other)
