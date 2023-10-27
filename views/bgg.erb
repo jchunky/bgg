@@ -57,8 +57,8 @@
         <td class="number <%= 'low' if low_votes_per_year_rank %> right-border"><%= game.votes_per_year_rank %></td>
 
         <td><%= game.weight %></td>
-        <td><%= game.player_count %></td>
-        <td><%= game.mechanics %></td>
+        <td><%= game.player_count.join(", ") %></td>
+        <td><%= game.mechanics.join(", ") %></td>
         <td><%= game.subdomain %></td>
       </tr>
     <% end %>
