@@ -24,14 +24,15 @@
     <tr>
       <th>Game</th>
       <th>Rank</th>
-      <% lists.each do |list| %>
-        <th><%= list.titlecase %> Rank</th>
-      <% end %>
       <th>Year</th>
       <th>Rating</th>
       <th>Votes</th>
       <th>Votes Per Year</th>
       <th>Votes Per Year Rank</th>
+      <th>Weight</th>
+      <th>Player Count</th>
+      <th>Mechanics</th>
+      <th>Subdomain</th>
     </tr>
   </thead>
   <tbody>
@@ -49,15 +50,16 @@
           <a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a>
         </td>
         <td class="number <%= 'low' if low_rank %>"><%= game.rank %></td>
-        <% lists.each do |list| %>
-          <% low_list_rank = !game.send("#{list}_rank").to_i.between?(1, 100) %>
-          <td class="number <%= 'low' if low_list_rank %>"><%= game.send("#{list}_rank") %></td>
-        <% end %>
         <td class="number <%= 'low' if low_year %>"><%= game.year %></td>
         <td class="number <%= 'low' if low_rating %> right-border"><%= format("%0.2f", game.rating) %></td>
         <td class="number <%= 'low' if low_votes %> right-border"><%= game.rating_count %></td>
         <td class="number <%= 'low' if low_votes_per_year %> right-border"><%= game.votes_per_year %></td>
         <td class="number <%= 'low' if low_votes_per_year_rank %> right-border"><%= game.votes_per_year_rank %></td>
+
+        <td><%= game.weight %></td>
+        <td><%= game.player_count %></td>
+        <td><%= game.mechanics %></td>
+        <td><%= game.subdomain %></td>
       </tr>
     <% end %>
   </tbody>

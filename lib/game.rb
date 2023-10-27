@@ -40,6 +40,32 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
     rating_count / years
   end
 
+  def weight
+    return "light" if light_rank > 0
+  end
+
+  def player_count
+    [
+      ("solo" if solo_rank > 0),
+      ("five_player" if five_player_rank > 0)
+    ].compact
+  end
+
+  def mechanics
+    [
+      ("coop" if coop_rank > 0),
+      ("campaign" if campaign_rank > 0),
+      ("card_driven" if card_driven_rank > 0),
+      ("dice" if dice_rank > 0),
+      ("legacy" if legacy_rank > 0),
+      ("storytelling" if storytelling_rank > 0),
+    ].compact
+  end
+
+  def subdomain
+    return "family" if family_rank > 0
+  end
+
   private
 
   def merge_attr(attr, other)
