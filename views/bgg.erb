@@ -8,12 +8,6 @@
   #games td { white-space: nowrap; }
   .number { text-align: right; }
   .low { background-color: silver; }
-  .high { background-color: rgb(183, 214 ,170); }
-  .right-border { border-right: 1px solid #999 !important; }
-  .trend-new { stroke: orange; fill: rgba(255, 198, 142, .3); }
-  .trend-leaving { stroke: blue; fill: rgba(0, 0, 255, .3); }
-  .trend-top_x { stroke: red; fill: rgba(255, 0, 0, .3); }
-  .trend-out { stroke: black; fill: rgba(0, 0, 0, .3); }
   th { position: sticky; top: 20; }
 </style>
 
@@ -46,9 +40,7 @@
         low_votes_per_year_rank = !game.votes_per_year_rank.between?(1, 100)
       %>
       <tr>
-        <td>
-          <a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a>
-        </td>
+        <td><a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a></td>
         <td class="number <%= 'low' if low_rank %>"><%= game.rank %></td>
         <td class="number <%= 'low' if low_year %>"><%= game.year %></td>
         <td class="number <%= 'low' if low_rating %>"><%= format("%0.2f", game.rating) %></td>
@@ -56,7 +48,7 @@
         <td class="number <%= 'low' if low_votes_rank %>"><%= game.vote_rank %></td>
         <td class="number <%= 'low' if low_votes_per_year %>"><%= game.votes_per_year %></td>
         <td class="number <%= 'low' if low_votes_per_year_rank %>"><%= game.votes_per_year_rank %></td>
-        <td><%= game.weight %></td>
+        <td class="number"><%= game.weight %></td>
         <td><%= game.player_count %></td>
         <td><%= game.mechanics.join(", ") %></td>
         <td><%= game.subdomain.join(", ") %></td>
