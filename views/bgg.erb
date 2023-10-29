@@ -38,7 +38,7 @@
         low_votes_rank = !game.vote_rank.between?(1, 100)
         low_votes_per_year = !game.votes_per_year_rank.between?(1, 100)
         low_votes_per_year_rank = !game.votes_per_year_rank.between?(1, 100)
-        low_weight = game.weight >= 3.5
+        low_weight = game.weight.to_f >= 3
       %>
       <tr>
         <td><a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a></td>
