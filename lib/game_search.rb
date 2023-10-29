@@ -9,7 +9,7 @@ class GameSearch < GamepageDownloader
   end
 
   def url_for_page(page)
-    "https://boardgamegeek.com/search/boardgame/page/#{page}?&advsearch=1&#{search_criteria}"
+    "https://boardgamegeek.com/search/boardgame/page/#{page}?advsearch=1&#{search_criteria}"
   end
 
   def games_for_doc(doc, page)

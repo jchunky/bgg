@@ -15,51 +15,51 @@ class Bgg
   SORTBY_VOTES = "#{NO_EXPANSIONS}&sort=numvoters&sortdir=desc"
 
   DOWNLOADERS = [
-    GameSearch.new(prefix: "bgg", search_criteria: "#{SORT_BY_RANK}"),
+    GameSearch.new(prefix: "bgg", search_criteria: "#{SORTBY_RANK}"),
     GameSearch.new(prefix: "vote", search_criteria: "#{SORTBY_VOTES}"),
 
-    # GameSearch.new(prefix: "weight_1_0", search_criteria: "#{SORT_BY_RANK}&floatrange[avgweight][max]=1.0&floatrange[avgweight][max]=1.5"),
-    # GameSearch.new(prefix: "weight_1_5", search_criteria: "#{SORT_BY_RANK}&floatrange[avgweight][max]=1.5&floatrange[avgweight][max]=2.0"),
-    # GameSearch.new(prefix: "weight_2_0", search_criteria: "#{SORT_BY_RANK}&floatrange[avgweight][max]=2.0&floatrange[avgweight][max]=2.5"),
-    # GameSearch.new(prefix: "weight_2_5", search_criteria: "#{SORT_BY_RANK}&floatrange[avgweight][max]=2.5&floatrange[avgweight][max]=3.0"),
-    # GameSearch.new(prefix: "weight_3_0", search_criteria: "#{SORT_BY_RANK}&floatrange[avgweight][max]=3.0&floatrange[avgweight][max]=3.5"),
-    # GameSearch.new(prefix: "weight_3_5", search_criteria: "#{SORT_BY_RANK}&floatrange[avgweight][max]=3.5&floatrange[avgweight][max]=4.0"),
-    # GameSearch.new(prefix: "weight_4_0", search_criteria: "#{SORT_BY_RANK}&floatrange[avgweight][max]=4.0&floatrange[avgweight][max]=4.5"),
-    # GameSearch.new(prefix: "weight_4_5", search_criteria: "#{SORT_BY_RANK}&floatrange[avgweight][max]=4.5&floatrange[avgweight][max]=5.0"),
+    GameSearch.new(prefix: "weight_1_0", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][max]=1.0&floatrange[avgweight][max]=1.5"),
+    GameSearch.new(prefix: "weight_1_5", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][max]=1.5&floatrange[avgweight][max]=2.0"),
+    GameSearch.new(prefix: "weight_2_0", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][max]=2.0&floatrange[avgweight][max]=2.5"),
+    GameSearch.new(prefix: "weight_2_5", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][max]=2.5&floatrange[avgweight][max]=3.0"),
+    GameSearch.new(prefix: "weight_3_0", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][max]=3.0&floatrange[avgweight][max]=3.5"),
+    GameSearch.new(prefix: "weight_3_5", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][max]=3.5&floatrange[avgweight][max]=4.0"),
+    GameSearch.new(prefix: "weight_4_0", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][max]=4.0&floatrange[avgweight][max]=4.5"),
+    GameSearch.new(prefix: "weight_4_5", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][max]=4.5&floatrange[avgweight][max]=5.0"),
 
-    # GameSearch.new(prefix: "player_count_1", search_criteria: "#{SORT_BY_RANK}&playerrangetype=normal&range[maxplayers][min]=1"),
-    # GameSearch.new(prefix: "player_count_2", search_criteria: "#{SORT_BY_RANK}&playerrangetype=normal&range[maxplayers][min]=2"),
-    # GameSearch.new(prefix: "player_count_3", search_criteria: "#{SORT_BY_RANK}&playerrangetype=normal&range[maxplayers][min]=3"),
-    # GameSearch.new(prefix: "player_count_4", search_criteria: "#{SORT_BY_RANK}&playerrangetype=normal&range[maxplayers][min]=4"),
-    # GameSearch.new(prefix: "player_count_5", search_criteria: "#{SORT_BY_RANK}&playerrangetype=normal&range[maxplayers][min]=5"),
-    # GameSearch.new(prefix: "player_count_6", search_criteria: "#{SORT_BY_RANK}&playerrangetype=normal&range[maxplayers][min]=6"),
-    # GameSearch.new(prefix: "player_count_7", search_criteria: "#{SORT_BY_RANK}&playerrangetype=normal&range[maxplayers][min]=7"),
-    # GameSearch.new(prefix: "player_count_8", search_criteria: "#{SORT_BY_RANK}&playerrangetype=normal&range[maxplayers][min]=8"),
+    GameSearch.new(prefix: "player_count_1", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=1&range[minplayers][max]=1"),
+    GameSearch.new(prefix: "player_count_2", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=2&range[minplayers][max]=2"),
+    GameSearch.new(prefix: "player_count_3", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=3&range[minplayers][max]=3"),
+    GameSearch.new(prefix: "player_count_4", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=4&range[minplayers][max]=4"),
+    GameSearch.new(prefix: "player_count_5", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=5&range[minplayers][max]=5"),
+    GameSearch.new(prefix: "player_count_6", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=6&range[minplayers][max]=6"),
+    GameSearch.new(prefix: "player_count_7", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=7&range[minplayers][max]=7"),
+    GameSearch.new(prefix: "player_count_8", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=8&range[minplayers][max]=8"),
 
-    # GameSearch.new(prefix: "coop", search_criteria: "#{SORT_BY_RANK}&propertyids[0]=2023"),
-    # GameSearch.new(prefix: "campaign", search_criteria: "#{SORT_BY_RANK}&propertyids[0]=2822"),
-    # GameSearch.new(prefix: "card_driven", search_criteria: "#{SORT_BY_RANK}&propertyids[0]=2018"),
-    # GameSearch.new(prefix: "dice", search_criteria: "#{SORT_BY_RANK}&propertyids[0]=2072"),
-    # GameSearch.new(prefix: "legacy", search_criteria: "#{SORT_BY_RANK}&propertyids[0]=2824"),
-    # GameSearch.new(prefix: "storytelling", search_criteria: "#{SORT_BY_RANK}&propertyids[0]=2027"),
+    GameSearch.new(prefix: "coop", search_criteria: "#{SORTBY_RANK}&propertyids[0]=2023"),
+    GameSearch.new(prefix: "campaign", search_criteria: "#{SORTBY_RANK}&propertyids[0]=2822"),
+    GameSearch.new(prefix: "card_driven", search_criteria: "#{SORTBY_RANK}&propertyids[0]=2018"),
+    GameSearch.new(prefix: "dice", search_criteria: "#{SORTBY_RANK}&propertyids[0]=2072"),
+    GameSearch.new(prefix: "legacy", search_criteria: "#{SORTBY_RANK}&propertyids[0]=2824"),
+    GameSearch.new(prefix: "storytelling", search_criteria: "#{SORTBY_RANK}&propertyids[0]=2027"),
 
-    # GameSearch.new(prefix: "thematic", search_criteria: "#{SORT_BY_RANK}&familyids[0]=5496"),
-    # GameSearch.new(prefix: "abstract", search_criteria: "#{SORT_BY_RANK}&familyids[0]=4666"),
-    # GameSearch.new(prefix: "child", search_criteria: "#{SORT_BY_RANK}&familyids[0]=4665"),
-    # GameSearch.new(prefix: "customizable", search_criteria: "#{SORT_BY_RANK}&familyids[0]=4667"),
-    # GameSearch.new(prefix: "family", search_criteria: "#{SORT_BY_RANK}&familyids[0]=5499"),
-    # GameSearch.new(prefix: "party", search_criteria: "#{SORT_BY_RANK}&familyids[0]=5498"),
-    # GameSearch.new(prefix: "strategy", search_criteria: "#{SORT_BY_RANK}&familyids[0]=5497"),
-    # GameSearch.new(prefix: "war", search_criteria: "#{SORT_BY_RANK}&familyids[0]=4664"),
+    GameSearch.new(prefix: "thematic", search_criteria: "#{SORTBY_RANK}&familyids[0]=5496"),
+    GameSearch.new(prefix: "abstract", search_criteria: "#{SORTBY_RANK}&familyids[0]=4666"),
+    GameSearch.new(prefix: "child", search_criteria: "#{SORTBY_RANK}&familyids[0]=4665"),
+    GameSearch.new(prefix: "customizable", search_criteria: "#{SORTBY_RANK}&familyids[0]=4667"),
+    GameSearch.new(prefix: "family", search_criteria: "#{SORTBY_RANK}&familyids[0]=5499"),
+    GameSearch.new(prefix: "party", search_criteria: "#{SORTBY_RANK}&familyids[0]=5498"),
+    GameSearch.new(prefix: "strategy", search_criteria: "#{SORTBY_RANK}&familyids[0]=5497"),
+    GameSearch.new(prefix: "war", search_criteria: "#{SORTBY_RANK}&familyids[0]=4664"),
   ]
 
   def display_game?(game)
-    # return false unless game.campaign? || game.card_driven? || game.legacy? || game.storytelling?
-    # return false unless game.coop?
-    # return false unless game.rank > 0
-    # return false unless game.rank.between?(1, 1000)
+    return false unless game.campaign? || game.card_driven? || game.legacy? || game.storytelling?
+    return false unless game.coop?
+    return false unless game.rank > 0
+    return false unless game.rank.between?(1, 1000)
     # return false unless game.solo?
-    # return false unless game.thematic?
+    return false unless game.thematic?
     # return false unless game.vote_rank > 0
 
     return true
