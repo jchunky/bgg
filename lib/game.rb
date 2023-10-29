@@ -77,6 +77,7 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
 
   def player_count
     return unless player_count_min && player_count_max
+    return player_count_min if player_count_min == player_count_max
 
     [player_count_min, player_count_max].join("-")
   end
