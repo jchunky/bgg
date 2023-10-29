@@ -22,6 +22,8 @@
       <th>Votes Rank</th>
       <th>Votes Per Year</th>
       <th>Votes Per Year Rank</th>
+      <th>Couples Rank</th>
+      <th>Solo Rank</th>
       <th>Weight</th>
       <th>Player Count</th>
       <th>Mechanics</th>
@@ -49,6 +51,8 @@
         <td class="number <%= 'low' if low_votes_rank %>"><%= game.vote_rank %></td>
         <td class="number <%= 'low' if low_votes_per_year %>"><%= game.votes_per_year %></td>
         <td class="number <%= 'low' if low_votes_per_year_rank %>"><%= game.votes_per_year_rank %></td>
+        <td class="number"><%= game.couples_rank %></td>
+        <td class="number"><%= game.solo_rank %></td>
         <td class="number <%= 'low' if low_weight %>"><%= game.weight %></td>
         <td><%= game.player_count %></td>
         <td><%= game.mechanics.join(", ") %></td>

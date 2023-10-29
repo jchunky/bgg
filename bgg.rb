@@ -15,6 +15,9 @@ class Bgg
   SORTBY_VOTES = "#{NO_EXPANSIONS}&sort=numvoters&sortdir=desc"
 
   DOWNLOADERS = [
+    GeekList.new(prefix: 'couples', listid: 307302),
+    GeekList.new(prefix: 'solo', listid: 306154),
+
     GameSearch.new(prefix: "bgg", search_criteria: "#{SORTBY_RANK}"),
     GameSearch.new(prefix: "vote", search_criteria: "#{SORTBY_VOTES}"),
 

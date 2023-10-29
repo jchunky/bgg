@@ -7,6 +7,9 @@ ATTRS = {
   rating_count: 0,
   rank: 0,
 
+  couples_rank: 0,
+  solo_rank: 0,
+
   bgg_rank: 0,
   vote_rank: 0,
   votes_per_year_rank: 0,
