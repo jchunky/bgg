@@ -59,12 +59,14 @@ class Bgg
   ]
 
   def display_game?(game)
-    return false unless game.campaign? || game.card_driven? || game.legacy? || game.storytelling?
+    # return false unless game.campaign? || game.card_driven? || game.legacy? || game.storytelling?
     return false unless game.coop?
+    # return false unless game.couples_rank > 0
     return false unless game.rank.between?(1, 1000)
     return false unless game.solo?
+    return false unless game.solo_rank > 0
     # return false unless game.thematic?
-    # return false unless game.vote_rank > 0
+    return false unless game.vote_rank > 0
 
     return true
   end
