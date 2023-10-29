@@ -28,6 +28,8 @@ ATTRS = {
   player_count_6_rank: 0,
   player_count_7_rank: 0,
   player_count_8_rank: 0,
+  player_count_9_rank: 0,
+  player_count_10_rank: 0,
 
   coop_rank: 0,
   campaign_rank: 0,
@@ -91,11 +93,15 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
     elsif player_count_6_rank > 0 then 6
     elsif player_count_7_rank > 0 then 7
     elsif player_count_8_rank > 0 then 8
+    elsif player_count_9_rank > 0 then 9
+    elsif player_count_10_rank > 0 then 10
     end
   end
 
   def player_count_max
-    if player_count_8_rank > 0 then 8
+    if player_count_10_rank > 0 then 10
+    elsif player_count_9_rank > 0 then 9
+    elsif player_count_8_rank > 0 then 8
     elsif player_count_7_rank > 0 then 7
     elsif player_count_6_rank > 0 then 6
     elsif player_count_5_rank > 0 then 5

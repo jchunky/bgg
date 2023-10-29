@@ -35,6 +35,8 @@ class Bgg
     GameSearch.new(prefix: "player_count_6", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=6&range[minplayers][max]=6"),
     GameSearch.new(prefix: "player_count_7", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=7&range[minplayers][max]=7"),
     GameSearch.new(prefix: "player_count_8", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=8&range[minplayers][max]=8"),
+    GameSearch.new(prefix: "player_count_9", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=9&range[minplayers][max]=9"),
+    GameSearch.new(prefix: "player_count_10", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=10&range[minplayers][max]=10"),
 
     GameSearch.new(prefix: "coop", search_criteria: "#{SORTBY_RANK}&propertyids[0]=2023"),
     GameSearch.new(prefix: "campaign", search_criteria: "#{SORTBY_RANK}&propertyids[0]=2822"),
