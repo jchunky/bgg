@@ -74,7 +74,7 @@ class Bgg
   def run
     @games = all_games
       .select(&method(:display_game?))
-      .sort_by { |g| [-g.year, g.rank] }
+      .sort_by { |g| [-g.year, g.play_rank] }
 
     write_output
   end
