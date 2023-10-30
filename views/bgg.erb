@@ -22,6 +22,7 @@
       <th>Votes Rank</th>
       <th>Votes Per Year</th>
       <th>Votes Per Year Rank</th>
+      <th>Play Rank</th>
       <th>Couples Rank</th>
       <th>Solo Rank</th>
       <th>Weight</th>
@@ -40,6 +41,7 @@
         low_votes_rank = !game.vote_rank.between?(1, 100)
         low_votes_per_year = !game.votes_per_year_rank.between?(1, 100)
         low_votes_per_year_rank = !game.votes_per_year_rank.between?(1, 100)
+        low_play_rank = !game.play_rank.between?(1, 100)
         low_weight = game.weight.to_f >= 3
       %>
       <tr>
@@ -51,6 +53,7 @@
         <td class="number <%= 'low' if low_votes_rank %>"><%= game.vote_rank %></td>
         <td class="number <%= 'low' if low_votes_per_year %>"><%= game.votes_per_year %></td>
         <td class="number <%= 'low' if low_votes_per_year_rank %>"><%= game.votes_per_year_rank %></td>
+        <td class="number <%= 'low' if low_play_rank %>"><%= game.play_rank %></td>
         <td class="number"><%= game.couples_rank %></td>
         <td class="number"><%= game.solo_rank %></td>
         <td class="number <%= 'low' if low_weight %>"><%= game.weight %></td>

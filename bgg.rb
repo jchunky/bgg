@@ -15,6 +15,8 @@ class Bgg
   SORTBY_VOTES = "#{NO_EXPANSIONS}&sort=numvoters&sortdir=desc"
 
   DOWNLOADERS = [
+    TopPlayed.new,
+
     GeekList.new(prefix: 'couples', listid: 307302),
     GeekList.new(prefix: 'solo', listid: 306154),
 
@@ -59,10 +61,12 @@ class Bgg
   ]
 
   def display_game?(game)
-    return false unless game.campaign?
+    return false unless game.campaign? || game.card_driven? || game.legacy? || game.storytelling?
     return false unless game.coop?
-    return false unless game.solo?
+    return false unless game.play_rank > 0
     return false unless game.rank.between?(1, 1000)
+    return false unless game.solo?
+    # return false unless game.vote_rank > 0
 
     return true
   end

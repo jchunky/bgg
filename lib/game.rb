@@ -4,6 +4,7 @@ ATTRS = {
   href: "",
   rating: 0.0,
   year: 0,
+  play_count: 0,
   rating_count: 0,
   rank: 0,
 
@@ -12,6 +13,7 @@ ATTRS = {
 
   bgg_rank: 0,
   vote_rank: 0,
+  play_rank: 0,
   votes_per_year_rank: 0,
 
   weight_1_0_rank: 0,
