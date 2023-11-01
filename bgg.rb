@@ -2,8 +2,6 @@
 # - upgrade sortanle
 # - use cdn for sortable
 # - use struct for categories
-# - extract categories to module
-# - extract game_fields from game
 
 require "active_support/all"
 require "erb"
