@@ -1,6 +1,4 @@
 # TODO:
-# - upgrade sortanle
-# - use cdn for sortable
 # - use struct for categories
 
 require "active_support/all"
