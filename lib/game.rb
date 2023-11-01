@@ -1,6 +1,3 @@
-CATEGORIES = MECHANICS.keys + SUBDOMAINS.keys
-RANK_FIELDS = CATEGORIES + PLAYER_COUNT_FIELDS.keys + WEIGHT_FIELDS.keys
-
 ATTRS = {
   key: "",
   name: "",
@@ -19,10 +16,12 @@ ATTRS = {
   play_rank: 0,
   votes_per_year_rank: 0,
 
-  **RANK_FIELDS.to_h { |name| ["#{name}_rank".to_sym, 0] },
+  **Categories::RANK_FIELDS.to_h { |name| ["#{name}_rank".to_sym, 0] },
 }
 
-Game = Struct.new(*ATTRS.keys, keyword_init: true) do
+class Game < Struct.new(*ATTRS.keys, keyword_init: true)
+  include Categories
+
   def initialize(args)
     super(ATTRS.to_h { |attr, default| [attr, args.fetch(attr, default)] })
   end
@@ -61,7 +60,7 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   end
 
   def player_count_max
-    PLAYER_COUNT_FIELDS.reverse.each do |field, i|
+    PLAYER_COUNT_FIELDS.reverse_each do |field, i|
       return i if send("#{field}_rank") > 0
     end
     nil
@@ -79,7 +78,7 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
     player_count_min.to_i == 1
   end
 
-  CATEGORIES.each do |category|
+  Categories::CATEGORIES.each do |category|
     define_method("#{category}?") do
       send("#{category}_rank") > 0
     end

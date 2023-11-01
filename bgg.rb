@@ -1,3 +1,10 @@
+# TODO:
+# - upgrade sortanle
+# - use cdn for sortable
+# - use struct for categories
+# - extract categories to module
+# - extract game_fields from game
+
 require "active_support/all"
 require "erb"
 require "json"
@@ -6,36 +13,11 @@ require "nokogiri"
 require "uri"
 require "yaml"
 
-MECHANICS = {
-  coop: 2023,
-  campaign: 2822,
-  card_driven: 2018,
-  dice: 2072,
-  flicking: 2860,
-  legacy: 2824,
-  narrative_choice: 2851,
-  realtime: 2831,
-  stacking: 2988,
-  storytelling: 2027,
-}
-
-SUBDOMAINS = {
-  thematic: 5496,
-  abstract: 4666,
-  child: 4665,
-  customizable: 4667,
-  family: 5499,
-  party: 5498,
-  strategy: 5497,
-  war: 4664,
-}
-
-PLAYER_COUNT_FIELDS = 1.upto(10).to_h { |i| ["player_count_#{i}", i] }
-WEIGHT_FIELDS = (1..4.5).step(0.5).to_h { |i| ["weight_#{i.to_s.split('.').join('_')}", i] }
-
 Dir["lib/*.rb"].each { |f| require_relative f }
 
 class Bgg
+  include Categories
+
   MAX_GAME_YEAR = Date.today.year - 5
 
   NO_EXPANSIONS = "nosubtypes[]=boardgameexpansion"
