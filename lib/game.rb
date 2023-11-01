@@ -1,7 +1,7 @@
 CATEGORIES = MECHANICS.keys + SUBDOMAINS.keys
 
-PLAYER_COUNT_RANKS = (1..10).step(0.5).map { |i| ["player_count_#{i}_rank".to_sym, 0] }.to_h
-WEIGHT_RANKS = (1..4.5).step(0.5).map { |i| ["weight_#{i.to_s.split('.').join('_')}_rank".to_sym, 0] }.to_h
+PLAYER_COUNT_RANKS = (1..10).step(0.5).to_h { |i| ["player_count_#{i}_rank".to_sym, 0] }
+WEIGHT_RANKS = (1..4.5).step(0.5).to_h { |i| ["weight_#{i.to_s.split('.').join('_')}_rank".to_sym, 0] }
 
 ATTRS = {
   key: "",
