@@ -47,6 +47,13 @@ class Bgg
     GameSearch.new(prefix: subdomain, search_criteria: "#{SORTBY_RANK}&familyids[0]=#{subdomain_id}")
   end
 
+  PLAYER_COUNT_SEARCHES = (1..10).map do |i|
+    GameSearch.new(prefix: "player_count_#{i}", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=#{i}&range[minplayers][max]=#{i}")
+  end
+
+  WEIGHT_SEARCHES = (1..4.5).step(0.5).map do |i|
+    GameSearch.new(prefix: "weight_#{i.to_s.split(".").join('_')}", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][min]=#{i}&floatrange[avgweight][max]=#{i + 0.5}")
+  end
 
   DOWNLOADERS = [
     TopPlayed.new,
@@ -57,26 +64,8 @@ class Bgg
     GameSearch.new(prefix: "bgg", search_criteria: "#{SORTBY_RANK}"),
     GameSearch.new(prefix: "vote", search_criteria: "#{SORTBY_VOTES}"),
 
-    GameSearch.new(prefix: "weight_1_0", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][min]=1.0&floatrange[avgweight][max]=1.5"),
-    GameSearch.new(prefix: "weight_1_5", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][min]=1.5&floatrange[avgweight][max]=2.0"),
-    GameSearch.new(prefix: "weight_2_0", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][min]=2.0&floatrange[avgweight][max]=2.5"),
-    GameSearch.new(prefix: "weight_2_5", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][min]=2.5&floatrange[avgweight][max]=3.0"),
-    GameSearch.new(prefix: "weight_3_0", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][min]=3.0&floatrange[avgweight][max]=3.5"),
-    GameSearch.new(prefix: "weight_3_5", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][min]=3.5&floatrange[avgweight][max]=4.0"),
-    GameSearch.new(prefix: "weight_4_0", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][min]=4.0&floatrange[avgweight][max]=4.5"),
-    GameSearch.new(prefix: "weight_4_5", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][min]=4.5&floatrange[avgweight][max]=5.0"),
-
-    GameSearch.new(prefix: "player_count_1", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=1&range[minplayers][max]=1"),
-    GameSearch.new(prefix: "player_count_2", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=2&range[minplayers][max]=2"),
-    GameSearch.new(prefix: "player_count_3", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=3&range[minplayers][max]=3"),
-    GameSearch.new(prefix: "player_count_4", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=4&range[minplayers][max]=4"),
-    GameSearch.new(prefix: "player_count_5", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=5&range[minplayers][max]=5"),
-    GameSearch.new(prefix: "player_count_6", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=6&range[minplayers][max]=6"),
-    GameSearch.new(prefix: "player_count_7", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=7&range[minplayers][max]=7"),
-    GameSearch.new(prefix: "player_count_8", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=8&range[minplayers][max]=8"),
-    GameSearch.new(prefix: "player_count_9", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=9&range[minplayers][max]=9"),
-    GameSearch.new(prefix: "player_count_10", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=10&range[minplayers][max]=10"),
-
+    *WEIGHT_SEARCHES,
+    *PLAYER_COUNT_SEARCHES,
     *MECHANIC_SEARCHES,
     *SUBDOMAIN_SEARCHES,
   ]
