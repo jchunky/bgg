@@ -1,7 +1,5 @@
 CATEGORIES = MECHANICS.keys + SUBDOMAINS.keys
-
-PLAYER_COUNT_RANKS = (1..10).step(0.5).to_h { |i| ["player_count_#{i}_rank".to_sym, 0] }
-WEIGHT_RANKS = (1..4.5).step(0.5).to_h { |i| ["weight_#{i.to_s.split('.').join('_')}_rank".to_sym, 0] }
+RANK_FIELDS = CATEGORIES + PLAYER_COUNT_FIELDS.keys + WEIGHT_FIELDS.keys
 
 ATTRS = {
   key: "",
@@ -21,11 +19,7 @@ ATTRS = {
   play_rank: 0,
   votes_per_year_rank: 0,
 
-  **PLAYER_COUNT_RANKS,
-  **WEIGHT_RANKS,
-
-  **MECHANICS.keys.to_h { |m| ["#{m}_rank".to_sym, 0] },
-  **SUBDOMAINS.keys.to_h { |s| ["#{s}_rank".to_sym, 0] },
+  **RANK_FIELDS.to_h { |name| ["#{name}_rank".to_sym, 0] },
 }
 
 Game = Struct.new(*ATTRS.keys, keyword_init: true) do
@@ -46,8 +40,8 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   end
 
   def weight
-    (1..4.5).step(0.5) do |i|
-      return i if send("weight_#{i.to_s.split('.').join('_')}_rank") > 0
+    WEIGHT_FIELDS.each do |field, i|
+      return i if send("#{field}_rank") > 0
     end
     nil
   end
@@ -60,15 +54,15 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   end
 
   def player_count_min
-    1.upto(10) do |i|
-      return i if send("player_count_#{i}_rank") > 0
+    PLAYER_COUNT_FIELDS.each do |field, i|
+      return i if send("#{field}_rank") > 0
     end
     nil
   end
 
   def player_count_max
-    10.downto(1) do |i|
-      return i if send("player_count_#{i}_rank") > 0
+    PLAYER_COUNT_FIELDS.reverse.each do |field, i|
+      return i if send("#{field}_rank") > 0
     end
     nil
   end

@@ -30,6 +30,9 @@ SUBDOMAINS = {
   war: 4664,
 }
 
+PLAYER_COUNT_FIELDS = 1.upto(10).to_h { |i| ["player_count_#{i}", i] }
+WEIGHT_FIELDS = (1..4.5).step(0.5).to_h { |i| ["weight_#{i.to_s.split('.').join('_')}", i] }
+
 Dir["lib/*.rb"].each { |f| require_relative f }
 
 class Bgg
@@ -47,12 +50,12 @@ class Bgg
     GameSearch.new(prefix: subdomain, search_criteria: "#{SORTBY_RANK}&familyids[0]=#{subdomain_id}")
   end
 
-  PLAYER_COUNT_SEARCHES = (1..10).map do |i|
-    GameSearch.new(prefix: "player_count_#{i}", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=#{i}&range[minplayers][max]=#{i}")
+  PLAYER_COUNT_SEARCHES = PLAYER_COUNT_FIELDS.map do |name, i|
+    GameSearch.new(prefix: name, search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=#{i}&range[minplayers][max]=#{i}")
   end
 
-  WEIGHT_SEARCHES = (1..4.5).step(0.5).map do |i|
-    GameSearch.new(prefix: "weight_#{i.to_s.split(".").join('_')}", search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][min]=#{i}&floatrange[avgweight][max]=#{i + 0.5}")
+  WEIGHT_SEARCHES = WEIGHT_FIELDS.map do |name, i|
+    GameSearch.new(prefix: name, search_criteria: "#{SORTBY_RANK}&floatrange[avgweight][min]=#{i}&floatrange[avgweight][max]=#{i + 0.5}")
   end
 
   DOWNLOADERS = [
