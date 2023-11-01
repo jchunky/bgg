@@ -1,5 +1,8 @@
 CATEGORIES = MECHANICS.keys + SUBDOMAINS.keys
 
+PLAYER_COUNT_RANKS = (1..10).step(0.5).map { |i| ["player_count_#{i}_rank".to_sym, 0] }.to_h
+WEIGHT_RANKS = (1..4.5).step(0.5).map { |i| ["weight_#{i.to_s.split('.').join('_')}_rank".to_sym, 0] }.to_h
+
 ATTRS = {
   key: "",
   name: "",
@@ -18,25 +21,8 @@ ATTRS = {
   play_rank: 0,
   votes_per_year_rank: 0,
 
-  weight_1_0_rank: 0,
-  weight_1_5_rank: 0,
-  weight_2_0_rank: 0,
-  weight_2_5_rank: 0,
-  weight_3_0_rank: 0,
-  weight_3_5_rank: 0,
-  weight_4_0_rank: 0,
-  weight_4_5_rank: 0,
-
-  player_count_1_rank: 0,
-  player_count_2_rank: 0,
-  player_count_3_rank: 0,
-  player_count_4_rank: 0,
-  player_count_5_rank: 0,
-  player_count_6_rank: 0,
-  player_count_7_rank: 0,
-  player_count_8_rank: 0,
-  player_count_9_rank: 0,
-  player_count_10_rank: 0,
+  **PLAYER_COUNT_RANKS,
+  **WEIGHT_RANKS,
 
   **MECHANICS.keys.to_h { |m| ["#{m}_rank".to_sym, 0] },
   **SUBDOMAINS.keys.to_h { |s| ["#{s}_rank".to_sym, 0] },
@@ -60,15 +46,10 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   end
 
   def weight
-    if weight_1_0_rank > 0 then 1.0
-    elsif weight_1_5_rank > 0 then 1.5
-    elsif weight_2_0_rank > 0 then 2.0
-    elsif weight_2_5_rank > 0 then 2.5
-    elsif weight_3_0_rank > 0 then 3.0
-    elsif weight_3_5_rank > 0 then 3.5
-    elsif weight_4_0_rank > 0 then 4.0
-    elsif weight_4_5_rank > 0 then 4.5
+    (1..4.5).step(0.5) do |i|
+      return i if send("weight_#{i.to_s.split('.').join('_')}_rank") > 0
     end
+    nil
   end
 
   def player_count
@@ -79,31 +60,17 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   end
 
   def player_count_min
-    if player_count_1_rank > 0 then 1
-    elsif player_count_2_rank > 0 then 2
-    elsif player_count_3_rank > 0 then 3
-    elsif player_count_4_rank > 0 then 4
-    elsif player_count_5_rank > 0 then 5
-    elsif player_count_6_rank > 0 then 6
-    elsif player_count_7_rank > 0 then 7
-    elsif player_count_8_rank > 0 then 8
-    elsif player_count_9_rank > 0 then 9
-    elsif player_count_10_rank > 0 then 10
+    1.upto(10) do |i|
+      return i if send("player_count_#{i}_rank") > 0
     end
+    nil
   end
 
   def player_count_max
-    if player_count_10_rank > 0 then 10
-    elsif player_count_9_rank > 0 then 9
-    elsif player_count_8_rank > 0 then 8
-    elsif player_count_7_rank > 0 then 7
-    elsif player_count_6_rank > 0 then 6
-    elsif player_count_5_rank > 0 then 5
-    elsif player_count_4_rank > 0 then 4
-    elsif player_count_3_rank > 0 then 3
-    elsif player_count_2_rank > 0 then 2
-    elsif player_count_1_rank > 0 then 1
+    10.downto(1) do |i|
+      return i if send("player_count_#{i}_rank") > 0
     end
+    nil
   end
 
   def mechanics
