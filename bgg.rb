@@ -5,6 +5,31 @@ require "net/http"
 require "nokogiri"
 require "uri"
 require "yaml"
+
+MECHANICS = {
+  coop: 2023,
+  campaign: 2822,
+  card_driven: 2018,
+  dice: 2072,
+  flicking: 2860,
+  legacy: 2824,
+  narrative_choice: 2851,
+  realtime: 2831,
+  stacking: 2988,
+  storytelling: 2027,
+}
+
+SUBDOMAINS = {
+  thematic: 5496,
+  abstract: 4666,
+  child: 4665,
+  customizable: 4667,
+  family: 5499,
+  party: 5498,
+  strategy: 5497,
+  war: 4664,
+}
+
 Dir["lib/*.rb"].each { |f| require_relative f }
 
 class Bgg
@@ -13,6 +38,15 @@ class Bgg
   NO_EXPANSIONS = "nosubtypes[]=boardgameexpansion"
   SORTBY_RANK = "#{NO_EXPANSIONS}&sort=rank"
   SORTBY_VOTES = "#{NO_EXPANSIONS}&sort=numvoters&sortdir=desc"
+
+  MECHANIC_SEARCHES = MECHANICS.map do |mechanic, mechanic_id|
+    GameSearch.new(prefix: mechanic, search_criteria: "#{SORTBY_RANK}&propertyids[0]=#{mechanic_id}")
+  end
+
+  SUBDOMAIN_SEARCHES = SUBDOMAINS.map do |subdomain, subdomain_id|
+    GameSearch.new(prefix: subdomain, search_criteria: "#{SORTBY_RANK}&familyids[0]=#{subdomain_id}")
+  end
+
 
   DOWNLOADERS = [
     TopPlayed.new,
@@ -43,25 +77,11 @@ class Bgg
     GameSearch.new(prefix: "player_count_9", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=9&range[minplayers][max]=9"),
     GameSearch.new(prefix: "player_count_10", search_criteria: "#{SORTBY_RANK}&playerrangetype=normal&range[maxplayers][min]=10&range[minplayers][max]=10"),
 
-    GameSearch.new(prefix: "coop", search_criteria: "#{SORTBY_RANK}&propertyids[0]=2023"),
-    GameSearch.new(prefix: "campaign", search_criteria: "#{SORTBY_RANK}&propertyids[0]=2822"),
-    GameSearch.new(prefix: "card_driven", search_criteria: "#{SORTBY_RANK}&propertyids[0]=2018"),
-    GameSearch.new(prefix: "dice", search_criteria: "#{SORTBY_RANK}&propertyids[0]=2072"),
-    GameSearch.new(prefix: "legacy", search_criteria: "#{SORTBY_RANK}&propertyids[0]=2824"),
-    GameSearch.new(prefix: "storytelling", search_criteria: "#{SORTBY_RANK}&propertyids[0]=2027"),
-
-    GameSearch.new(prefix: "thematic", search_criteria: "#{SORTBY_RANK}&familyids[0]=5496"),
-    GameSearch.new(prefix: "abstract", search_criteria: "#{SORTBY_RANK}&familyids[0]=4666"),
-    GameSearch.new(prefix: "child", search_criteria: "#{SORTBY_RANK}&familyids[0]=4665"),
-    GameSearch.new(prefix: "customizable", search_criteria: "#{SORTBY_RANK}&familyids[0]=4667"),
-    GameSearch.new(prefix: "family", search_criteria: "#{SORTBY_RANK}&familyids[0]=5499"),
-    GameSearch.new(prefix: "party", search_criteria: "#{SORTBY_RANK}&familyids[0]=5498"),
-    GameSearch.new(prefix: "strategy", search_criteria: "#{SORTBY_RANK}&familyids[0]=5497"),
-    GameSearch.new(prefix: "war", search_criteria: "#{SORTBY_RANK}&familyids[0]=4664"),
+    *MECHANIC_SEARCHES,
+    *SUBDOMAIN_SEARCHES,
   ]
 
   def display_game?(game)
-    # return false unless game.campaign? || game.card_driven? || game.storytelling? || game.legacy?
     return false unless game.coop?
     return false unless game.play_rank > 0
     # return false unless game.rank.between?(1, 1000)

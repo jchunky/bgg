@@ -1,3 +1,5 @@
+CATEGORIES = MECHANICS.keys + SUBDOMAINS.keys
+
 ATTRS = {
   key: "",
   name: "",
@@ -36,21 +38,8 @@ ATTRS = {
   player_count_9_rank: 0,
   player_count_10_rank: 0,
 
-  coop_rank: 0,
-  campaign_rank: 0,
-  card_driven_rank: 0,
-  dice_rank: 0,
-  legacy_rank: 0,
-  storytelling_rank: 0,
-
-  thematic_rank: 0,
-  abstract_rank: 0,
-  child_rank: 0,
-  customizable_rank: 0,
-  family_rank: 0,
-  party_rank: 0,
-  strategy_rank: 0,
-  war_rank: 0,
+  **MECHANICS.keys.to_h { |m| ["#{m}_rank".to_sym, 0] },
+  **SUBDOMAINS.keys.to_h { |s| ["#{s}_rank".to_sym, 0] },
 }
 
 Game = Struct.new(*ATTRS.keys, keyword_init: true) do
@@ -118,91 +107,21 @@ Game = Struct.new(*ATTRS.keys, keyword_init: true) do
   end
 
   def mechanics
-    [
-      ("coop" if coop_rank > 0),
-      ("campaign" if campaign_rank > 0),
-      ("card_driven" if card_driven_rank > 0),
-      ("dice" if dice_rank > 0),
-      ("legacy" if legacy_rank > 0),
-      ("storytelling" if storytelling_rank > 0),
-    ].compact
+    MECHANICS.keys.select { |m| send("#{m}_rank") > 0 }
   end
 
   def subdomain
-    [
-      ("thematic" if thematic_rank > 0),
-      ("abstract" if abstract_rank > 0),
-      ("child" if child_rank > 0),
-      ("customizable" if customizable_rank > 0),
-      ("family" if family_rank > 0),
-      ("party" if party_rank > 0),
-      ("strategy" if strategy_rank > 0),
-      ("war" if war_rank > 0),
-    ].compact
+    SUBDOMAINS.keys.select { |s| send("#{s}_rank") > 0 }
   end
 
   def solo?
     player_count_min.to_i == 1
   end
 
-  def coop?
-    coop_rank > 0
-  end
-
-  def campaign?
-    campaign_rank > 0
-  end
-
-  def card_driven?
-    card_driven_rank > 0
-  end
-
-  def coop?
-    coop_rank > 0
-  end
-
-  def dice?
-    dice_rank > 0
-  end
-
-  def legacy?
-    legacy_rank > 0
-  end
-
-  def storytelling?
-    storytelling_rank > 0
-  end
-
-  def thematic?
-    thematic_rank > 0
-  end
-
-  def abstract?
-    abstract_rank > 0
-  end
-
-  def child?
-    child_rank > 0
-  end
-
-  def customizable?
-    customizable_rank > 0
-  end
-
-  def family?
-    family_rank > 0
-  end
-
-  def party?
-    party_rank > 0
-  end
-
-  def strategy?
-    strategy_rank > 0
-  end
-
-  def war?
-    war_rank > 0
+  CATEGORIES.each do |category|
+    define_method("#{category}?") do
+      send("#{category}_rank") > 0
+    end
   end
 
   private
