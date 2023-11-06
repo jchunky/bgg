@@ -60,6 +60,10 @@ class Game < Struct.new(*GameFields::FIELDS.keys, keyword_init: true)
     player_count_min.to_i == 1
   end
 
+  def corridor?
+    corridor_rank.to_i > 0
+  end
+
   Categories::CATEGORIES.each do |category|
     define_method("#{category}?") do
       send("#{category}_rank") > 0

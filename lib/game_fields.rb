@@ -9,6 +9,7 @@ module GameFields
     rating_count: 0,
     rank: 0,
 
+    corridor_rank: 0,
     couples_rank: 0,
     solo_rank: 0,
 
