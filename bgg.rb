@@ -16,8 +16,11 @@ class Bgg
 
   def display_game?(game)
     return false unless game.coop?
-    return false unless game.play_rank > 0
+    # return false unless game.play_rank > 0
+    return false unless game.rank.between?(1, 300)
+    # return false unless game.rank.between?(1, 1000)
     return false unless game.solo?
+    # return false unless game.vote_rank.between?(1, 1000)
 
     return true
   end
