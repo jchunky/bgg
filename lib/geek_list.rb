@@ -1,9 +1,10 @@
-class GeekList < Struct.new(:listid, :prefix, keyword_init: true)
+class GeekList < Struct.new(:listid, :prefix, :reverse_rank, keyword_init: true)
   def games
-    (1..8)
-      .flat_map(&method(:games_for_page))
-      .compact
-      .uniq(&:key)
+    result = (1..8).flat_map(&method(:games_for_page)).compact.uniq(&:key)
+    result = result.reverse if reverse_rank
+    result.each.with_index do |game, i|
+      game["#{prefix}_rank"] = i + 1
+    end
   end
 
   private
@@ -21,14 +22,13 @@ class GeekList < Struct.new(:listid, :prefix, keyword_init: true)
   end
 
   def games_for_file(file, page)
-    JSON.parse(file)["data"].map.with_index do |record, i|
+    JSON.parse(file)["data"].map do |record|
       Game.new(
         href: href = record["item"]["href"],
         key: href,
         name: Utils.strip_accents(record["item"]["name"]),
         rating: record["stats"]["average"].to_f,
         rank: record["stats"]["rank"].to_i,
-        "#{prefix}_rank": (page - 1) * 25 + i + 1
       )
     end
   end
