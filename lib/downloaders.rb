@@ -30,7 +30,7 @@ module Downloaders
 
     GeekList.new(prefix: 'corridor', listid: 324833),
     GeekList.new(prefix: 'couples', listid: 307302),
-    GeekList.new(prefix: 'solo', listid: 306154),
+    GeekList.new(prefix: 'solo', listid: 324731),
 
     GameSearch.new(prefix: "bgg", search_criteria: "#{SORTBY_RANK}"),
     GameSearch.new(prefix: "vote", search_criteria: "#{SORTBY_VOTES}"),
