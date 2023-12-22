@@ -28,7 +28,7 @@ module Downloaders
   DOWNLOADERS = [
     TopPlayed.new,
 
-    GeekList.new(prefix: 'corridor', listid: 324833, reverse_rank: false),
+    GeekList.new(prefix: 'corridor', listid: 326536, reverse_rank: false),
     GeekList.new(prefix: 'couples', listid: 307302, reverse_rank: false),
     GeekList.new(prefix: 'solo', listid: 324731, reverse_rank: true),
 
