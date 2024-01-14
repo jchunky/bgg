@@ -28,8 +28,8 @@ module Downloaders
   DOWNLOADERS = [
     TopPlayed.new,
 
-    GeekList.new(prefix: 'corridor', listid: 326536, reverse_rank: false),
-    GeekList.new(prefix: 'couples', listid: 307302, reverse_rank: false),
+    GeekList.new(prefix: 'corridor', listid: 329038, reverse_rank: false),
+    GeekList.new(prefix: 'couples', listid: 328691, reverse_rank: false),
     GeekList.new(prefix: 'solo', listid: 324731, reverse_rank: true),
 
     GameSearch.new(prefix: "bgg", search_criteria: "#{SORTBY_RANK}"),
