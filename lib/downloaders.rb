@@ -29,7 +29,7 @@ module Downloaders
     TopPlayed.new,
 
     GeekList.new(prefix: 'corridor', listid: 329038, reverse_rank: false),
-    GeekList.new(prefix: 'couples', listid: 328691, reverse_rank: true),
+    GeekList.new(prefix: 'couples', listid: 328691, reverse_rank: false),
     GeekList.new(prefix: 'solo', listid: 324731, reverse_rank: false),
 
     GameSearch.new(prefix: "bgg", search_criteria: "#{SORTBY_RANK}"),
