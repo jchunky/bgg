@@ -25,7 +25,7 @@ class Bgg
     return false unless game.campaign_rank > 0
     return false if game.dice_rank > 0
     return false if game.realtime_rank > 0
-    # return false unless game.storytelling_rank > 0
+    return false if game.storytelling_rank > 0
 
     return true
   end
