@@ -1,8 +1,9 @@
 module Categories
   MECHANICS = {
-    coop: 2023,
+    action_points: 2001,
     campaign: 2822,
     card_driven: 2018,
+    coop: 2023,
     dice: 2072,
     flicking: 2860,
     legacy: 2824,
@@ -13,13 +14,13 @@ module Categories
   }
 
   SUBDOMAINS = {
-    thematic: 5496,
     abstract: 4666,
     child: 4665,
     customizable: 4667,
     family: 5499,
     party: 5498,
     strategy: 5497,
+    thematic: 5496,
     war: 4664,
   }
 

@@ -17,15 +17,20 @@ class Bgg
   def display_game?(game)
     return false unless game.coop?
     return false unless game.solo?
+
     # return false unless game.play_rank > 0
     # return false unless game.rank.between?(1, 1000)
     # return false unless game.rank.between?(1, 300)
     # return false unless game.vote_rank.between?(1, 1000)
     # return false unless game.votes_per_year_rank.between?(1, 1000)
+
+    return false unless game.action_points_rank == 0
     return false unless game.campaign_rank > 0
-    return false if game.dice_rank > 0
-    return false if game.realtime_rank > 0
-    return false if game.storytelling_rank > 0
+    # return false unless game.dice_rank == 0
+    # return false unless game.realtime_rank == 0
+    # return false unless game.storytelling_rank == 0
+
+    # return false unless game.weight < 3
 
     return true
   end
