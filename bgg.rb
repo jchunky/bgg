@@ -26,9 +26,9 @@ class Bgg
 
     return false unless game.action_points_rank == 0
     return false unless game.campaign_rank > 0
-    # return false unless game.dice_rank == 0
-    # return false unless game.realtime_rank == 0
-    # return false unless game.storytelling_rank == 0
+    return false unless game.dice_rank == 0
+    return false unless game.realtime_rank == 0
+    return false unless game.storytelling_rank == 0
 
     # return false unless game.weight < 3
 
