@@ -36,6 +36,10 @@ class Bgg
   end
 
   def run
+    Downloaders::DOWNLOADERS.each do |downloader|
+      p [downloader.prefix, downloader.games.size]
+    end
+
     @games = all_games
       .select(&method(:display_game?))
       .sort_by { |g| [-g.year, g.play_rank] }
