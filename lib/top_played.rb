@@ -4,7 +4,7 @@ class TopPlayed < GamepageDownloader
   end
 
   def url_for_page(page)
-    end_date = Date.today
+    end_date = Date.yesterday
     start_date = end_date - 30.days
 
     "https://boardgamegeek.com/plays/bygame/subtype/All/start/#{start_date}/end/#{end_date}/page/#{page}?sortby=distinctusers"
