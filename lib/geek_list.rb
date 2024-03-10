@@ -13,7 +13,8 @@ class GeekList < Struct.new(:listid, :prefix, :reverse_rank, keyword_init: true)
     url = url_for_page(page)
     Utils.cache_object(url) do
       file = Utils.read_html(url)
-      games_for_file(file, page)
+      doc = JSON.parse(file)
+      games_for_file(doc, page)
     end
   end
 
@@ -21,8 +22,8 @@ class GeekList < Struct.new(:listid, :prefix, :reverse_rank, keyword_init: true)
     "https://api.geekdo.com/api/listitems?listid=#{listid}&page=#{page}"
   end
 
-  def games_for_file(file, page)
-    JSON.parse(file)["data"].map do |record|
+  def games_for_file(doc, page)
+    doc["data"].map do |record|
       Game.new(
         href: href = record["item"]["href"],
         key: href,

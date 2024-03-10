@@ -41,7 +41,5 @@ class TopBga
         bga_rank: ((page - 1) * ITEMS_PER_PAGE) + i + 1
       )
     end
-  rescue StandardError
-    []
   end
 end
