@@ -1,8 +1,4 @@
 # TODO
-# - replace mechanics and subdomain html with json
-# - move bga_rank into bga tag in 'family' column
-# - drop weight and player_count
-# - get weight, rating, votes, rank by looking up game details from json
 # - determine 10% percentile playcount from json for solo/coop games
 
 require "active_support/all"
@@ -30,16 +26,14 @@ class Bgg
     # return false unless game.votes_per_year_rank > 0
 
     # return false unless game.action_points_rank == 0
+    # return false unless game.app_rank == 0
     # return false unless game.bga_rank == 0
-
-    # return false unless game.campaign_rank > 0
+    return false unless game.campaign_rank > 0
     # return false unless game.dice_rank == 0
     # return false unless game.flicking_rank == 0
     # return false unless game.realtime_rank == 0
     # return false unless game.stacking_rank == 0
     # return false unless game.storytelling_rank == 0
-
-    # return false unless game.weight < 3
 
     true
   end
