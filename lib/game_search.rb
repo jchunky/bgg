@@ -1,13 +1,28 @@
-require_relative "gamepage_downloader"
-
-class GameSearch < GamepageDownloader
+class GameSearch
   attr_reader :listid, :prefix, :search_criteria
 
   def initialize(prefix:, search_criteria:, listid: nil)
-    super()
     @prefix = prefix
     @search_criteria = search_criteria
     @listid = listid
+  end
+
+  def games
+    (1..10)
+      .flat_map(&method(:games_for_page))
+      .compact
+      .uniq(&:key)
+  end
+
+  private
+
+  def games_for_page(page)
+    url = url_for_page(page)
+    Utils.cache_object(url) do
+      file = Utils.read_file(url, extension: "html")
+      doc = Nokogiri::HTML(file)
+      games_for_doc(doc, page)
+    end
   end
 
   def url_for_page(page)
