@@ -10,11 +10,11 @@ module Downloaders
   SORTBY_VOTES = "#{NO_EXPANSIONS}&sort=numvoters&sortdir=desc"
 
   MECHANIC_SEARCHES = MECHANICS.map do |mechanic, mechanic_id|
-    GameSearch.new(prefix: mechanic, search_criteria: "#{SORTBY_RANK}&propertyids[0]=#{mechanic_id}")
+    GameSearch.new(prefix: mechanic, listid: mechanic_id, search_criteria: "#{SORTBY_RANK}&propertyids[0]=#{mechanic_id}")
   end
 
   SUBDOMAIN_SEARCHES = SUBDOMAINS.map do |subdomain, subdomain_id|
-    GameSearch.new(prefix: subdomain, search_criteria: "#{SORTBY_RANK}&familyids[0]=#{subdomain_id}")
+    GameSearch.new(prefix: subdomain, listid: subdomain_id, search_criteria: "#{SORTBY_RANK}&familyids[0]=#{subdomain_id}")
   end
 
   PLAYER_COUNT_SEARCHES = PLAYER_COUNT_FIELDS.map do |name, i|

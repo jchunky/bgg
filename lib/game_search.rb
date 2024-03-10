@@ -1,11 +1,12 @@
 require_relative "gamepage_downloader"
 
 class GameSearch < GamepageDownloader
-  attr_reader :prefix, :search_criteria
+  attr_reader :listid, :prefix, :search_criteria
 
-  def initialize(prefix:, search_criteria:)
+  def initialize(prefix:, search_criteria:, listid: nil)
     @prefix = prefix
     @search_criteria = search_criteria
+    @listid = listid
   end
 
   def url_for_page(page)
