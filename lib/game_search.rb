@@ -19,7 +19,7 @@ class GameSearch < GamepageDownloader
       .select { |row| row.css("td")[4] }
       .map.with_index do |row, i|
         rank, _, title, _, rating, rating_count = row.css("td")
-        name = Utils.strip_accents(title.css("a")[0].content)
+        name = title.css("a")[0].content
 
         Game.new(
           href: href = title.css("a")[0]["href"],

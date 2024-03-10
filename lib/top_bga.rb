@@ -22,7 +22,7 @@ class TopBga
   def games_for_page(page)
     url = url_for_page(page)
     Utils.cache_object(url) do
-      file = Utils.read_json(url)
+      file = Utils.read_file(url, extension: "json")
       doc = JSON.parse(file)
       games_for_doc(doc, page)
     end
@@ -37,7 +37,7 @@ class TopBga
       Game.new(
         href: href = item["href"],
         key: href,
-        name: Utils.strip_accents(item["name"]),
+        name: item["name"],
         bga_rank: ((page - 1) * ITEMS_PER_PAGE) + i + 1
       )
     end

@@ -12,7 +12,7 @@ class GeekList < Struct.new(:listid, :prefix, :reverse_rank, keyword_init: true)
   def games_for_page(page)
     url = url_for_page(page)
     Utils.cache_object(url) do
-      file = Utils.read_html(url)
+      file = Utils.read_file(url, extension: "html")
       doc = JSON.parse(file)
       games_for_file(doc, page)
     end
@@ -27,7 +27,7 @@ class GeekList < Struct.new(:listid, :prefix, :reverse_rank, keyword_init: true)
       Game.new(
         href: href = record["item"]["href"],
         key: href,
-        name: Utils.strip_accents(record["item"]["name"]),
+        name: record["item"]["name"],
         rating: record["stats"]["average"].to_f,
         rank: record["stats"]["rank"].to_i
       )

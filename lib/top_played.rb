@@ -27,7 +27,7 @@ class TopPlayed < GamepageDownloader
 
   def game_for_row(row)
     anchor = row.css("td")[0].css("a")[0]
-    name = Utils.strip_accents(anchor.content)
+    name = anchor.content
     unique_users = row.css("td")[2].css("a")[0].content.to_i
 
     Game.new(

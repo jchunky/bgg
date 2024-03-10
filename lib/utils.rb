@@ -1,14 +1,13 @@
-require 'open-uri'
+require "open-uri"
 
 module Utils
   extend self
 
-  def read_html(url)
-    strip_accents(read_html_raw(url))
-  end
-
-  def read_json(url)
-    strip_accents(read_json_raw(url))
+  def read_file(url, extension:)
+    cache_text(url, extension:) do
+      file_contents = URI.open(url).read
+      strip_accents(file_contents)
+    end
   end
 
   def strip_accents(string)
@@ -24,6 +23,8 @@ module Utils
     result
   end
 
+  private
+
   def cache_text(id, extension:)
     file = filename(id, extension)
     return File.read(file) if File.exist?(file)
@@ -31,16 +32,6 @@ module Utils
     result = yield
     File.write(file, result)
     result
-  end
-
-  private
-
-  def read_html_raw(url)
-    cache_text(url, extension: "html") { URI.open(url).read }
-  end
-
-  def read_json_raw(url)
-    cache_text(url, extension: "json") { URI.open(url).read }
   end
 
   def yaml_read(file)

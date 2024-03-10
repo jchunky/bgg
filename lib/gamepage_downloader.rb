@@ -11,7 +11,7 @@ class GamepageDownloader
   def games_for_page(page)
     url = url_for_page(page)
     Utils.cache_object(url) do
-      file = Utils.read_html(url)
+      file = Utils.read_file(url, extension: "html")
       doc = Nokogiri::HTML(file)
       games_for_doc(doc, page)
     end
