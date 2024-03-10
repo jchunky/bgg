@@ -29,7 +29,11 @@ class BggGames < Struct.new(:listid, :prefix, :page_count, :object_type, keyword
         href: href = item["href"],
         key: href,
         name: item["name"],
-        "#{prefix}_rank": ((page - 1) * ITEMS_PER_PAGE) + i + 1
+        rank: item["rank"].to_i,
+        rating: item["average"].to_f,
+        rating_count: item["usersrated"].to_i,
+        year: item["yearpublished"].to_i,
+        "#{prefix}_rank": ((page - 1) * ITEMS_PER_PAGE) + i + 1,
       )
     end
   end
