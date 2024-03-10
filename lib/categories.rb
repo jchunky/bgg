@@ -17,7 +17,9 @@ module Categories
   ]
 
   FAMILIES = [
-    BggGames.new(object_type: "family", prefix: "bga", listid: 70360, page_count: 17),
+    BggGames.new(object_type: "family", prefix: "app", listid: 41489, page_count: 20),
+    BggGames.new(object_type: "family", prefix: "bga", listid: 70360, page_count: 20),
+    BggGames.new(object_type: "family", prefix: "kickstarter", listid: 8374, page_count: 20),
   ]
 
   CATEGORIES = MECHANICS.map(&:prefix) + FAMILIES.map(&:prefix)
