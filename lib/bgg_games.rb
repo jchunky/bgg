@@ -33,7 +33,7 @@ class BggGames < Struct.new(:listid, :prefix, :page_count, :object_type, keyword
         rating: item["average"].to_f,
         rating_count: item["usersrated"].to_i,
         year: item["yearpublished"].to_i,
-        "#{prefix}_rank": ((page - 1) * ITEMS_PER_PAGE) + i + 1,
+        "#{prefix}_rank": ((page - 1) * ITEMS_PER_PAGE) + i + 1
       )
     end
   end
