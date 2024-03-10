@@ -1,4 +1,5 @@
 # TODO
+# - replace mechanics and subdomain html with json
 # - move bga_rank into bga tag in 'family' column
 # - drop weight and player_count
 # - get weight, rating, votes, rank by looking up game details from json

@@ -40,16 +40,7 @@ module Utils
   end
 
   def read_json_raw(url)
-    cache_text(url, extension: "json") do
-      url = URI.parse(url)
-      response = Net::HTTP.get_response(url)
-
-      unless response.is_a?(Net::HTTPSuccess)
-        raise "Failed to retrieve JSON data. HTTP Error: #{response.code}"
-      end
-
-      response.body
-    end
+    cache_text(url, extension: "json") { URI.open(url).read }
   end
 
   def yaml_read(file)
