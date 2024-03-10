@@ -9,7 +9,7 @@
   #games th { background-color: #4CAF50; color: white; }
   #games td { white-space: nowrap; }
   .number { text-align: right; }
-  .low { background-color: silver; }
+  .bad { background-color: silver; }
   th { position: sticky; top: 20; }
 </style>
 
@@ -25,6 +25,7 @@
       <th>Votes Per Year</th>
       <th>Votes Per Year Rank</th>
       <th>Rating</th>
+      <th>Weight</th>
       <th>Mechanics</th>
       <th>Families</th>
     </tr>
@@ -32,26 +33,28 @@
   <tbody>
     <% @games.each.with_index do |game, i| %>
       <%
-        low_game = !game.rank.between?(1, 1000) || !game.play_rank.between?(1, 1000) || !game.vote_rank.between?(1, 1000)
-        low_play_rank = !game.play_rank.between?(1, 400)
-        low_rank = !game.rank.between?(1, 300)
-        low_rating = game.rating < 7.5
-        low_votes_per_year = !game.votes_per_year_rank.between?(1, 300)
-        low_votes_per_year_rank = low_votes_per_year
-        low_votes = game.vote_rank.zero?
-        low_votes_rank = low_votes
-        low_year = game.year >= Bgg::MAX_GAME_YEAR
+        bad_game = !game.rank.between?(1, 1000) || !game.play_rank.between?(1, 1000) || !game.vote_rank.between?(1, 1000)
+        bad_play_rank = !game.play_rank.between?(1, 400)
+        bad_rank = !game.rank.between?(1, 300)
+        bad_rating = game.rating < 7.5
+        bad_votes_per_year = !game.votes_per_year_rank.between?(1, 300)
+        bad_votes_per_year_rank = bad_votes_per_year
+        bad_votes = game.vote_rank.zero?
+        bad_votes_rank = bad_votes
+        bad_weight = game.weight >= 3
+        bad_year = game.year >= Bgg::MAX_GAME_YEAR
       %>
       <tr>
-        <td class="number <%= 'low' if low_year %>"><%= game.year %></td>
-        <td class="number <%= 'low' if low_play_rank %>"><%= game.play_rank %></td>
-        <td class="<%= 'low' if low_game %>"><a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a></td>
-        <td class="number <%= 'low' if low_votes %>"><%= game.rating_count %></td>
-        <td class="number <%= 'low' if low_votes_rank %>"><%= game.vote_rank %></td>
-        <td class="number <%= 'low' if low_rank %>"><%= game.rank %></td>
-        <td class="number <%= 'low' if low_votes_per_year %>"><%= game.votes_per_year %></td>
-        <td class="number <%= 'low' if low_votes_per_year_rank %>"><%= game.votes_per_year_rank %></td>
-        <td class="number <%= 'low' if low_rating %>"><%= format("%0.2f", game.rating) %></td>
+        <td class="number <%= 'bad' if bad_year %>"><%= game.year %></td>
+        <td class="number <%= 'bad' if bad_play_rank %>"><%= game.play_rank %></td>
+        <td class="<%= 'bad' if bad_game %>"><a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a></td>
+        <td class="number <%= 'bad' if bad_votes %>"><%= game.rating_count %></td>
+        <td class="number <%= 'bad' if bad_votes_rank %>"><%= game.vote_rank %></td>
+        <td class="number <%= 'bad' if bad_rank %>"><%= game.rank %></td>
+        <td class="number <%= 'bad' if bad_votes_per_year %>"><%= game.votes_per_year %></td>
+        <td class="number <%= 'bad' if bad_votes_per_year_rank %>"><%= game.votes_per_year_rank %></td>
+        <td class="number <%= 'bad' if bad_rating %>"><%= format("%0.2f", game.rating) %></td>
+        <td class="number <%= 'bad' if bad_weight %>"><%= format("%0.2f", game.weight) %></td>
         <td><%= game.mechanics.join(", ") %></td>
         <td><%= game.families.join(", ") %></td>
       </tr>

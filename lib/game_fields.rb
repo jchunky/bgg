@@ -4,6 +4,7 @@ module GameFields
     name: "",
     href: "",
     rating: 0.0,
+    weight: 0.0,
     year: 0,
     play_count: 0,
     rating_count: 0,
