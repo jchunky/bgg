@@ -12,7 +12,7 @@ class GeekList < Struct.new(:listid, :prefix, :reverse_rank, keyword_init: true)
   def games_for_page(page)
     url = url_for_page(page)
     Utils.cache_object(url) do
-      file = Utils.read_url(url)
+      file = Utils.read_html(url)
       games_for_file(file, page)
     end
   end

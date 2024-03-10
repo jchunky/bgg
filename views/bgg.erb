@@ -22,6 +22,7 @@
       <th>Votes</th>
       <th>Votes Rank</th>
       <th>Rank</th>
+      <th>BGA Rank</th>
       <th>Votes Per Year</th>
       <th>Votes Per Year Rank</th>
       <th>Corridor Rank</th>
@@ -55,6 +56,7 @@
         <td class="number <%= 'low' if low_votes %>"><%= game.rating_count %></td>
         <td class="number <%= 'low' if low_votes_rank %>"><%= game.vote_rank %></td>
         <td class="number <%= 'low' if low_rank %>"><%= game.rank %></td>
+        <td class="number"><%= game.bga_rank %></td>
         <td class="number <%= 'low' if low_votes_per_year %>"><%= game.votes_per_year %></td>
         <td class="number <%= 'low' if low_votes_per_year_rank %>"><%= game.votes_per_year_rank %></td>
         <td class="number"><%= game.corridor_rank %></td>

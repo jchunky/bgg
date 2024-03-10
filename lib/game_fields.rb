@@ -14,6 +14,7 @@ module GameFields
     couples_rank: 0,
     solo_rank: 0,
 
+    bga_rank: 0,
     bgg_rank: 0,
     vote_rank: 0,
     play_rank: 0,

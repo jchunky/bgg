@@ -1,5 +1,6 @@
 require_relative "game_search"
 require_relative "geek_list"
+require_relative "top_bga"
 require_relative "top_played"
 
 module Downloaders
@@ -26,6 +27,7 @@ module Downloaders
   end
 
   DOWNLOADERS = [
+    TopBga.new,
     TopPlayed.new,
 
     GeekList.new(prefix: 'corridor', listid: 332958, reverse_rank: false),

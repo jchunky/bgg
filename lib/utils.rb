@@ -1,8 +1,12 @@
 module Utils
   extend self
 
-  def read_url(url)
-    strip_accents(read_url_raw(url))
+  def read_html(url)
+    strip_accents(read_html_raw(url))
+  end
+
+  def read_json(url)
+    strip_accents(read_json_raw(url))
   end
 
   def strip_accents(string)
@@ -18,8 +22,8 @@ module Utils
     result
   end
 
-  def cache_text(id)
-    file = filename(id, "html")
+  def cache_text(id, extension:)
+    file = filename(id, extension)
     return File.read(file) if File.exist?(file)
 
     result = yield
@@ -29,8 +33,21 @@ module Utils
 
   private
 
-  def read_url_raw(url)
-    cache_text(url) { open(url) }
+  def read_html_raw(url)
+    cache_text(url, extension: "html") { open(url) }
+  end
+
+  def read_json_raw(url)
+    cache_text(url, extension: "json") do
+      url = URI.parse(url)
+      response = Net::HTTP.get_response(url)
+
+      unless response.is_a?(Net::HTTPSuccess)
+        raise "Failed to retrieve JSON data. HTTP Error: #{response.code}"
+      end
+
+      response.body
+    end
   end
 
   def yaml_read(file)
