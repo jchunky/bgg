@@ -1,32 +1,25 @@
+require_relative "bgg_games"
+
 module Categories
-  MECHANICS = {
-    action_points: 2001,
-    campaign: 2822,
-    card_driven: 2018,
-    coop: 2023,
-    dice: 2072,
-    flicking: 2860,
-    legacy: 2824,
-    narrative_choice: 2851,
-    realtime: 2831,
-    stacking: 2988,
-    storytelling: 2027,
-  }
+  MECHANICS = [
+    BggGames.new(object_type: "property", prefix: "action_points", listid: 2001, page_count: 20),
+    BggGames.new(object_type: "property", prefix: "campaign", listid: 2822, page_count: 20),
+    BggGames.new(object_type: "property", prefix: "card_driven", listid: 2018, page_count: 20),
+    BggGames.new(object_type: "property", prefix: "coop", listid: 2023, page_count: 20),
+    BggGames.new(object_type: "property", prefix: "dice", listid: 2072, page_count: 20),
+    BggGames.new(object_type: "property", prefix: "flicking", listid: 2860, page_count: 20),
+    BggGames.new(object_type: "property", prefix: "legacy", listid: 2824, page_count: 20),
+    BggGames.new(object_type: "property", prefix: "narrative_choice", listid: 2851, page_count: 20),
+    BggGames.new(object_type: "property", prefix: "realtime", listid: 2831, page_count: 20),
+    BggGames.new(object_type: "property", prefix: "solo", listid: 2819, page_count: 20),
+    BggGames.new(object_type: "property", prefix: "stacking", listid: 2988, page_count: 20),
+    BggGames.new(object_type: "property", prefix: "storytelling", listid: 2027, page_count: 20),
+  ]
 
-  SUBDOMAINS = {
-    abstract: 4666,
-    child: 4665,
-    customizable: 4667,
-    family: 5499,
-    party: 5498,
-    strategy: 5497,
-    thematic: 5496,
-    war: 4664,
-  }
+  FAMILIES = [
+    BggGames.new(object_type: "family", prefix: "bga", listid: 70360, page_count: 17),
+  ]
 
-  PLAYER_COUNT_FIELDS = 1.upto(10).to_h { |i| ["player_count_#{i}", i] }
-  WEIGHT_FIELDS = (1..4.5).step(0.5).to_h { |i| ["weight_#{i.to_s.split('.').join('_')}", i] }
-
-  CATEGORIES = MECHANICS.keys + SUBDOMAINS.keys
-  RANK_FIELDS = CATEGORIES + PLAYER_COUNT_FIELDS.keys + WEIGHT_FIELDS.keys
+  CATEGORIES = MECHANICS.map(&:prefix) + FAMILIES.map(&:prefix)
+  RANK_FIELDS = CATEGORIES
 end

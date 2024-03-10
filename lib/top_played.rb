@@ -10,6 +10,10 @@ class TopPlayed
     "play"
   end
 
+  def listid
+    "plays"
+  end
+
   private
 
   def games_for_page(page)

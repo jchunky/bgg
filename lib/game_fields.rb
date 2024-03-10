@@ -10,11 +10,6 @@ module GameFields
     rank: 0,
     unique_users: 0,
 
-    corridor_rank: 0,
-    couples_rank: 0,
-    solo_rank: 0,
-
-    bga_rank: 0,
     bgg_rank: 0,
     vote_rank: 0,
     play_rank: 0,

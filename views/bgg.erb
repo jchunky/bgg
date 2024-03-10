@@ -22,17 +22,11 @@
       <th>Votes</th>
       <th>Votes Rank</th>
       <th>Rank</th>
-      <th>BGA Rank</th>
       <th>Votes Per Year</th>
       <th>Votes Per Year Rank</th>
-      <th>Corridor Rank</th>
-      <th>Couples Rank</th>
-      <th>Solo Rank</th>
       <th>Rating</th>
-      <th>Weight</th>
-      <th>Player Count</th>
       <th>Mechanics</th>
-      <th>Subdomain</th>
+      <th>Families</th>
     </tr>
   </thead>
   <tbody>
@@ -46,7 +40,6 @@
         low_votes_per_year_rank = low_votes_per_year
         low_votes = game.vote_rank.zero?
         low_votes_rank = low_votes
-        low_weight = game.weight.to_f >= 3
         low_year = game.year >= Bgg::MAX_GAME_YEAR
       %>
       <tr>
@@ -56,17 +49,11 @@
         <td class="number <%= 'low' if low_votes %>"><%= game.rating_count %></td>
         <td class="number <%= 'low' if low_votes_rank %>"><%= game.vote_rank %></td>
         <td class="number <%= 'low' if low_rank %>"><%= game.rank %></td>
-        <td class="number"><%= game.bga_rank %></td>
         <td class="number <%= 'low' if low_votes_per_year %>"><%= game.votes_per_year %></td>
         <td class="number <%= 'low' if low_votes_per_year_rank %>"><%= game.votes_per_year_rank %></td>
-        <td class="number"><%= game.corridor_rank %></td>
-        <td class="number"><%= game.couples_rank %></td>
-        <td class="number"><%= game.solo_rank %></td>
         <td class="number <%= 'low' if low_rating %>"><%= format("%0.2f", game.rating) %></td>
-        <td class="number <%= 'low' if low_weight %>"><%= game.weight %></td>
-        <td><%= game.player_count %></td>
         <td><%= game.mechanics.join(", ") %></td>
-        <td><%= game.subdomain.join(", ") %></td>
+        <td><%= game.families.join(", ") %></td>
       </tr>
     <% end %>
   </tbody>

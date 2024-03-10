@@ -21,48 +21,12 @@ class Game < Struct.new(*GameFields::FIELDS.keys, keyword_init: true)
     rating_count / years
   end
 
-  def weight
-    WEIGHT_FIELDS.each do |field, i|
-      return i if send("#{field}_rank") > 0
-    end
-    nil
-  end
-
-  def player_count
-    return unless player_count_min && player_count_max
-    return player_count_min if player_count_min == player_count_max
-
-    [player_count_min, player_count_max].join("-")
-  end
-
-  def player_count_min
-    PLAYER_COUNT_FIELDS.each do |field, i|
-      return i if send("#{field}_rank") > 0
-    end
-    nil
-  end
-
-  def player_count_max
-    PLAYER_COUNT_FIELDS.reverse_each do |field, i|
-      return i if send("#{field}_rank") > 0
-    end
-    nil
-  end
-
   def mechanics
-    MECHANICS.keys.select { |m| send("#{m}_rank") > 0 }
+    MECHANICS.map(&:prefix).select { |m| send("#{m}_rank") > 0 }
   end
 
-  def subdomain
-    SUBDOMAINS.keys.select { |s| send("#{s}_rank") > 0 }
-  end
-
-  def solo?
-    player_count_min.to_i == 1
-  end
-
-  def corridor?
-    corridor_rank.to_i > 0
+  def families
+    FAMILIES.map(&:prefix).select { |f| send("#{f}_rank") > 0 }
   end
 
   Categories::CATEGORIES.each do |category|
