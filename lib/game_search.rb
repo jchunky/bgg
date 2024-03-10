@@ -4,6 +4,7 @@ class GameSearch < GamepageDownloader
   attr_reader :listid, :prefix, :search_criteria
 
   def initialize(prefix:, search_criteria:, listid: nil)
+    super()
     @prefix = prefix
     @search_criteria = search_criteria
     @listid = listid

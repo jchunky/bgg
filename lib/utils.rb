@@ -1,3 +1,5 @@
+require 'open-uri'
+
 module Utils
   extend self
 
@@ -34,7 +36,7 @@ module Utils
   private
 
   def read_html_raw(url)
-    cache_text(url, extension: "html") { open(url) }
+    cache_text(url, extension: "html") { URI.open(url).read }
   end
 
   def read_json_raw(url)

@@ -22,7 +22,7 @@ class GeekList < Struct.new(:listid, :prefix, :reverse_rank, keyword_init: true)
     "https://api.geekdo.com/api/listitems?listid=#{listid}&page=#{page}"
   end
 
-  def games_for_file(doc, page)
+  def games_for_file(doc, _page)
     doc["data"].map do |record|
       Game.new(
         href: href = record["item"]["href"],
