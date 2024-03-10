@@ -20,6 +20,6 @@ module GameFields
     play_rank: 0,
     votes_per_year_rank: 0,
 
-    **Categories::RANK_FIELDS.to_h { |name| ["#{name}_rank".to_sym, 0] },
+    **Categories::RANK_FIELDS.to_h { |name| [:"#{name}_rank", 0] },
   }
 end

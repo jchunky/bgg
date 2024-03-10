@@ -1,6 +1,6 @@
 class TopPlayed < GamepageDownloader
   def prefix
-    'play'
+    "play"
   end
 
   def url_for_page(page)
@@ -21,8 +21,8 @@ class TopPlayed < GamepageDownloader
         Game.new(
           href: href = anchor["href"],
           key: href,
-          name: name,
-          unique_users: unique_users
+          name:,
+          unique_users:
         )
       end
       .sort_by(&:unique_users)

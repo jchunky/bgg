@@ -23,7 +23,7 @@ class GameSearch < GamepageDownloader
         Game.new(
           href: href = title.css("a")[0]["href"],
           key: href,
-          name: name,
+          name:,
           rating: rating.content.to_f,
           rating_count: rating_count.content.to_i,
           year: (title.css("span")[0].content[1..-2].to_i rescue 0),

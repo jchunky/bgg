@@ -14,6 +14,7 @@ class Game < Struct.new(*GameFields::FIELDS.keys, keyword_init: true)
 
   def votes_per_year
     return 0 if year.zero?
+
     years = (Date.today.year + 1) - year
     years = 1 if years < 1
 

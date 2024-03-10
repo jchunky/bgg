@@ -3,7 +3,7 @@ class TopBga
   OBJECTID = 70360
 
   def prefix
-    'bga'
+    "bga"
   end
 
   def listid

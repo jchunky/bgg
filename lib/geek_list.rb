@@ -29,7 +29,7 @@ class GeekList < Struct.new(:listid, :prefix, :reverse_rank, keyword_init: true)
         key: href,
         name: Utils.strip_accents(record["item"]["name"]),
         rating: record["stats"]["average"].to_f,
-        rank: record["stats"]["rank"].to_i,
+        rank: record["stats"]["rank"].to_i
       )
     end
   end

@@ -51,7 +51,7 @@ module Utils
   end
 
   def yaml_read(file)
-    YAML.safe_load(File.read(file), aliases: true, permitted_classes: [Game, Symbol])
+    YAML.safe_load_file(file, aliases: true, permitted_classes: [Game, Symbol])
   end
 
   def open(url)
