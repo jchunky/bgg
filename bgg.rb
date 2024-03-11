@@ -17,9 +17,9 @@ class Bgg
   def display_game?(game)
     return false unless game.play_rank > 0
 
-    return false unless game.campaign?
-    return false unless game.coop?
-    return false unless game.solo?
+    # return false unless game.campaign?
+    # return false unless game.coop?
+    # return false unless game.solo?
 
     # return false if game.action_points?
     # return false if game.app?

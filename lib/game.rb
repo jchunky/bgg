@@ -43,10 +43,8 @@ class Game < Struct.new(*GameFields::FIELDS.keys, keyword_init: true)
       rows = doc.css('.forum_table td.lf a')
       if rows.count.zero?
         0
-      elsif last_page == 10
-        rows[-1].content.to_i
       else
-        index = (last_page % 10) / 10.0 * rows.count
+        index = (page_count % 10) / 10.0 * rows.count
         rows[index].content.to_i
       end
     end
@@ -55,10 +53,14 @@ class Game < Struct.new(*GameFields::FIELDS.keys, keyword_init: true)
   private
 
   def tenth_percentile_page
-    (last_page / 10.0).ceil
+    if page_count >= 10 && page_count % 10 == 0
+      page_count / 10 + 1
+    else
+      (page_count / 10.0).ceil
+    end
   end
 
-  def last_page
+  def page_count
     url = "https://boardgamegeek.com/playstats/thing/#{objectid}/page/1"
     Utils.cache_object(url + "_last_page") do
       file = Utils.read_file(url, extension: "html")
