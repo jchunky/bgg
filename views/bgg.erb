@@ -26,6 +26,7 @@
       <th>Votes Per Year Rank</th>
       <th>Rating</th>
       <th>Weight</th>
+      <th>Replays</th>
       <th>Mechanics</th>
       <th>Families</th>
     </tr>
@@ -42,6 +43,7 @@
         bad_votes = game.vote_rank.zero?
         bad_votes_rank = bad_votes
         bad_weight = game.weight >= 3
+        bad_replays = game.replays < 10
         bad_year = game.year >= Bgg::MAX_GAME_YEAR
       %>
       <tr>
@@ -55,6 +57,7 @@
         <td class="number <%= 'bad' if bad_votes_per_year_rank %>"><%= game.votes_per_year_rank %></td>
         <td class="number <%= 'bad' if bad_rating %>"><%= format("%0.2f", game.rating) %></td>
         <td class="number <%= 'bad' if bad_weight %>"><%= format("%0.2f", game.weight) %></td>
+        <td class="number <%= 'bad' if bad_replays %>"><%= game.replays %></td>
         <td><%= game.mechanics.join(", ") %></td>
         <td><%= game.families.join(", ") %></td>
       </tr>
