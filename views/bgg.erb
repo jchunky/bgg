@@ -43,7 +43,7 @@
         bad_votes = game.vote_rank.zero?
         bad_votes_rank = bad_votes
         bad_weight = game.weight >= 3
-        bad_replays = game.replays < 10
+        bad_replays = game.replays < 20
         bad_year = game.year >= Bgg::MAX_GAME_YEAR
       %>
       <tr>
