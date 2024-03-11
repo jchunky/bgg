@@ -18,11 +18,9 @@ class GameSearch
 
   def games_for_page(page)
     url = url_for_page(page)
-    Utils.cache_object(url) do
-      file = Utils.read_file(url, extension: "html")
-      doc = Nokogiri::HTML(file)
-      games_for_doc(doc, page)
-    end
+    file = Utils.read_file(url, extension: "html")
+    doc = Nokogiri::HTML(file)
+    games_for_doc(doc, page)
   end
 
   def url_for_page(page)

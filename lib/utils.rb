@@ -10,15 +10,6 @@ module Utils
     end
   end
 
-  def cache_object(id)
-    file = filename(id, "yml")
-    return yaml_read(file) if File.exist?(file)
-
-    result = yield
-    File.write(file, YAML.dump(result))
-    result
-  end
-
   private
 
   def strip_accents(string)
@@ -32,14 +23,6 @@ module Utils
     result = yield
     File.write(file, result)
     result
-  end
-
-  def yaml_read(file)
-    YAML.safe_load_file(file, aliases: true, permitted_classes: [Game, Symbol])
-  end
-
-  def open(url)
-    Net::HTTP.get(URI.parse(url))
   end
 
   def filename(id, extension)
