@@ -40,7 +40,7 @@ class Game < Struct.new(*GameFields::FIELDS.keys, keyword_init: true)
     Utils.cache_object(url) do
       file = Utils.read_file(url, extension: "html")
       doc = Nokogiri::HTML(file)
-      rows = doc.css('.forum_table td.lf a')
+      rows = doc.css(".forum_table td.lf a")
       if rows.count.zero?
         0
       else
@@ -54,7 +54,7 @@ class Game < Struct.new(*GameFields::FIELDS.keys, keyword_init: true)
 
   def tenth_percentile_page
     if page_count >= 10 && page_count % 10 == 0
-      page_count / 10 + 1
+      (page_count / 10) + 1
     else
       (page_count / 10.0).ceil
     end
@@ -62,11 +62,11 @@ class Game < Struct.new(*GameFields::FIELDS.keys, keyword_init: true)
 
   def page_count
     url = "https://boardgamegeek.com/playstats/thing/#{objectid}/page/1"
-    Utils.cache_object(url + "_last_page") do
+    Utils.cache_object("#{url}_last_page") do
       file = Utils.read_file(url, extension: "html")
       doc = Nokogiri::HTML(file)
       last_page_anchor = doc.css('#maincontent p a[title="last page"]')
-      pagination_anchors = doc.css('#maincontent p a')
+      pagination_anchors = doc.css("#maincontent p a")
       if last_page_anchor.count >= 1
         last_page_anchor.first.content.scan(/\d+/).first.to_i
       elsif pagination_anchors.count >= 2
