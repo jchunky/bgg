@@ -1,6 +1,3 @@
-# TODO
-# - determine 10% percentile playcount from json for solo/coop games
-
 require "active_support/all"
 require "erb"
 require "json"
