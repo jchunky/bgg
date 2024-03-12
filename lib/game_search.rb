@@ -36,11 +36,12 @@ class GameSearch
       .select { |row| row.css("td")[4] }
       .map.with_index do |row, i|
         rank, _, title, _, rating, rating_count = row.css("td")
-        name = title.css("a")[0].content
+        anchor = title.css("a")[0]
+        name = anchor.content
 
         Game.new(
-          href: href = title.css("a")[0]["href"],
-          key: href,
+          href: anchor["href"],
+          key: anchor["href"],
           name:,
           rating: rating.content.to_f,
           rating_count: rating_count.content.to_i,

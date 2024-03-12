@@ -28,8 +28,8 @@ class BggGames < Struct.new(:listid, :prefix, :page_count, :object_type, keyword
   def games_for_doc(doc, page)
     doc["items"].map.with_index do |item, i|
       Game.new(
-        href: href = item["href"],
-        key: href,
+        href: item["href"],
+        key: item["href"],
         name: item["name"],
         rank: item["rank"].to_i,
         rating: item["average"].to_f,

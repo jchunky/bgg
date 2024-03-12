@@ -53,8 +53,8 @@ class TopPlayed
     unique_users = row.css("td")[2].css("a")[0].content.to_i
 
     Game.new(
-      href: href = anchor["href"],
-      key: href,
+      href: anchor["href"],
+      key: anchor["href"],
       name:,
       unique_users:
     )
