@@ -8,7 +8,7 @@ class Game
   end
 
   def merge(other)
-    Game.new(attributes.merge(other.attributes)) { |_key, val1, val2| null?(val1) ? val2 : val1 }
+    Game.new(attributes.merge(other.attributes)) { |_, a, b| null?(a) ? b : a }
   end
 
   Categories::CATEGORIES.each do |category|
