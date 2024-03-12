@@ -1,5 +1,6 @@
-require_relative "game_search"
-require_relative "top_played"
+require_relative "downloaders/category_games"
+require_relative "downloaders/game_search"
+require_relative "downloaders/top_played"
 
 module Downloaders
   NO_EXPANSIONS = "nosubtypes[]=boardgameexpansion"

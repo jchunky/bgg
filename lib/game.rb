@@ -1,4 +1,4 @@
-require_relative "replays_fetcher"
+require_relative "downloaders/replays_fetcher"
 
 class Game
   DEFAULT_VALUES = {
@@ -48,7 +48,7 @@ class Game
   end
 
   def replays
-    @replays ||= ReplaysFetcher.new(href:).replays
+    @replays ||= Downloaders::ReplaysFetcher.new(href:).replays
   end
 
   Categories::CATEGORIES.each do |category|
