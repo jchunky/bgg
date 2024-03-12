@@ -1,11 +1,8 @@
 require_relative "game_fields"
 
 class Game < Struct.new(*GameFields::FIELDS.keys, keyword_init: true)
-  include Categories
-  include GameFields
-
   def initialize(args)
-    super(FIELDS.to_h { |attr, default| [attr, args.fetch(attr, default)] })
+    super(GameFields::FIELDS.to_h { |attr, default| [attr, args.fetch(attr, default)] })
   end
 
   def merge(other)
@@ -22,11 +19,11 @@ class Game < Struct.new(*GameFields::FIELDS.keys, keyword_init: true)
   end
 
   def mechanics
-    MECHANICS.map(&:prefix).select { |m| send("#{m}_rank") > 0 }
+    Categories::MECHANICS.map(&:prefix).select { |m| send("#{m}_rank") > 0 }
   end
 
   def families
-    FAMILIES.map(&:prefix).select { |f| send("#{f}_rank") > 0 }
+    Categories::FAMILIES.map(&:prefix).select { |f| send("#{f}_rank") > 0 }
   end
 
   Categories::CATEGORIES.each do |category|
