@@ -30,7 +30,6 @@ module Downloaders
       doc["items"].map.with_index do |item, i|
         Game.new(
           href: item["href"],
-          key: item["href"],
           name: item["name"],
           rank: item["rank"].to_i,
           rating: item["average"].to_f,

@@ -42,7 +42,6 @@ module Downloaders
 
           Game.new(
             href: anchor["href"],
-            key: anchor["href"],
             name:,
             rating: rating.content.to_f,
             rating_count: rating_count.content.to_i,

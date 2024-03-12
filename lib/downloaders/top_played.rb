@@ -47,7 +47,6 @@ module Downloaders
 
       Game.new(
         href: anchor["href"],
-        key: anchor["href"],
         name:,
         unique_users:
       )

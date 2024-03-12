@@ -41,6 +41,10 @@ class Game
     @replays ||= Downloaders::ReplaysFetcher.new(href:).replays
   end
 
+  def key
+    href
+  end
+
   Categories::CATEGORIES.each do |category|
     define_method("#{category}?") do
       read_rank_attribute(category) > 0
