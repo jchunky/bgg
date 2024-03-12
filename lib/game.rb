@@ -1,18 +1,10 @@
 require_relative "downloaders/replays_fetcher"
 
 class Game
-  DEFAULT_VALUES = {
-    href: "",
-    key: "",
-    name: "",
-    rating: 0.0,
-    weight: 0.0,
-  }
-
   attr_reader :attributes
 
   def initialize(args)
-    @attributes = Hash.new(0).merge(DEFAULT_VALUES).merge(args)
+    @attributes = Hash.new(0).merge(args)
   end
 
   def method_missing(method_name, *args)
