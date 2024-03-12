@@ -13,7 +13,7 @@ class Game
 
   Categories::CATEGORIES.each do |category|
     define_method("#{category}?") do
-      read_rank_attribute(category) > 0
+      ranked_in_category?(category)
     end
   end
 
@@ -36,11 +36,11 @@ class Game
   end
 
   def mechanics
-    Categories::MECHANICS.keys.select { |c| read_rank_attribute(c) > 0 }
+    Categories::MECHANICS.keys.select(&method(:ranked_in_category?))
   end
 
   def families
-    Categories::FAMILIES.keys.select { |c| read_rank_attribute(c) > 0 }
+    Categories::FAMILIES.keys.select(&method(:ranked_in_category?))
   end
 
   def replays
@@ -57,7 +57,11 @@ class Game
     !value || value.zero?
   end
 
-  def read_rank_attribute(prefix)
-    send("#{prefix}_rank")
+  def ranked_in_category?(category)
+    category_rank(category) > 0
+  end
+
+  def category_rank(category)
+    send("#{category}_rank")
   end
 end
