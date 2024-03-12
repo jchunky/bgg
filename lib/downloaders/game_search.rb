@@ -1,13 +1,5 @@
 module Downloaders
-  class GameSearch
-    attr_reader :listid, :prefix, :search_criteria
-
-    def initialize(prefix:, search_criteria:, listid: nil)
-      @prefix = prefix
-      @search_criteria = search_criteria
-      @listid = listid
-    end
-
+  class GameSearch < Struct.new(:listid, :prefix, :search_criteria, keyword_init: true)
     def games
       (1..10)
         .flat_map(&method(:games_for_page))

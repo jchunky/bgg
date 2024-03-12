@@ -7,6 +7,16 @@ class Game
     @attributes = Hash.new(0).merge(args)
   end
 
+  def merge(other)
+    Game.new(attributes.merge(other.attributes)) { |_key, val1, val2| null?(val1) ? val2 : val1 }
+  end
+
+  Categories::CATEGORIES.each do |category|
+    define_method("#{category}?") do
+      read_rank_attribute(category) > 0
+    end
+  end
+
   def method_missing(method_name, *args)
     attribute_name = method_name.to_s.chomp("=").to_sym
     if method_name.to_s.end_with?("=")
@@ -14,10 +24,6 @@ class Game
     else
       attributes[attribute_name]
     end
-  end
-
-  def merge(other)
-    Game.new(attributes.merge(other.attributes, &method(:merge_attr)))
   end
 
   def votes_per_year
@@ -45,16 +51,10 @@ class Game
     href
   end
 
-  Categories::CATEGORIES.each do |category|
-    define_method("#{category}?") do
-      read_rank_attribute(category) > 0
-    end
-  end
-
   private
 
-  def merge_attr(_key, oldval, newval)
-    oldval.present? && oldval != 0 ? oldval : newval
+  def null?(value)
+    !value || value.zero?
   end
 
   def read_rank_attribute(prefix)
