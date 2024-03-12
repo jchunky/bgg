@@ -27,10 +27,7 @@ class Game
   end
 
   def votes_per_year
-    return 0 if year.zero?
-
-    years = (Date.today.year + 1) - year
-    years = years.clamp(1..)
+    return 0 if years.zero?
 
     rating_count / years
   end
@@ -52,6 +49,11 @@ class Game
   end
 
   private
+
+  def years
+    result = (Date.today.year + 1) - year
+    result.clamp(1..)
+  end
 
   def null?(value)
     !value || value.zero?
