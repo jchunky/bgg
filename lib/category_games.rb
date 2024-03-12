@@ -1,4 +1,4 @@
-class BggGames < Struct.new(:listid, :prefix, :page_count, :object_type, keyword_init: true)
+class CategoryGames < Struct.new(:listid, :prefix, :page_count, :object_type, keyword_init: true)
   ITEMS_PER_PAGE = 50
 
   def games

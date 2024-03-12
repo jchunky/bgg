@@ -1,5 +1,3 @@
-require_relative "bgg_games"
-
 module Categories
   MECHANICS = {
     action_points: 2001,
