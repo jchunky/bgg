@@ -32,8 +32,7 @@ class Bgg
 
   def run
     Downloaders::DOWNLOADERS.each do |downloader|
-      listid = (downloader.listid rescue nil)
-      p [downloader.prefix, ("listid: #{listid}" if listid), downloader.games.size].compact
+      p [downloader.prefix, "listid: #{downloader.listid}", downloader.games.size]
     end
 
     @games = all_games
