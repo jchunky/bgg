@@ -4,12 +4,7 @@ module Downloaders
       @replays ||= begin
         doc = fetch_page_data(tenth_percentile_page)
         rows = doc.css(".forum_table td.lf a")
-        if rows.count.zero?
-          0
-        else
-          index = (page_count % 10) / 10.0 * rows.count
-          rows[index].content.to_i
-        end
+        rows.count.zero? ? 0 : rows[row_index(rows)].content.to_i
       end
     end
 
@@ -21,6 +16,10 @@ module Downloaders
       else
         (page_count / 10.0).ceil
       end
+    end
+
+    def row_index(rows)
+      (page_count % 10) / 10.0 * rows.count
     end
 
     def page_count
