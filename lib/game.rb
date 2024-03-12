@@ -36,11 +36,11 @@ class Game
   end
 
   def mechanics
-    Categories::MECHANICS.keys.select { |m| read_rank_attribute(m) > 0 }
+    Categories::MECHANICS.keys.select { |c| read_rank_attribute(c) > 0 }
   end
 
   def families
-    Categories::FAMILIES.keys.select { |f| read_rank_attribute(f) > 0 }
+    Categories::FAMILIES.keys.select { |c| read_rank_attribute(c) > 0 }
   end
 
   def replays
