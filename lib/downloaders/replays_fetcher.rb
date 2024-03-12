@@ -39,9 +39,12 @@ module Downloaders
     end
 
     def fetch_page_data(page)
-      url = "https://boardgamegeek.com/playstats/thing/#{objectid}/page/#{page}"
-      file = Utils.read_file(url, extension: "html")
-      Nokogiri::HTML(file)
+      url = url_for_page(page)
+      Utils.fetch_html_data(url)
+    end
+
+    def url_for_page(page)
+      "https://boardgamegeek.com/playstats/thing/#{objectid}/page/#{page}"
     end
 
     def objectid

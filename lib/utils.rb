@@ -3,6 +3,16 @@ require "open-uri"
 module Utils
   extend self
 
+  def fetch_json_data(url)
+    file = Utils.read_file(url, extension: "json")
+    JSON.parse(file)
+  end
+
+  def fetch_html_data(url)
+    file = Utils.read_file(url, extension: "html")
+    Nokogiri::HTML(file)
+  end
+
   def read_file(url, extension:)
     cache_text(url, extension:) do
       file_contents = URI.open(url).read
