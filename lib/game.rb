@@ -1,3 +1,5 @@
+require_relative "replays_fetcher"
+
 class Game
   DEFAULT_VALUES = {
     href: "",
@@ -45,6 +47,10 @@ class Game
     Categories::FAMILIES.keys.select { |f| read_rank_attribute(f) > 0 }
   end
 
+  def replays
+    @replays ||= ReplaysFetcher.new(href:).replays
+  end
+
   Categories::CATEGORIES.each do |category|
     define_method("#{category}?") do
       read_rank_attribute(category) > 0
@@ -59,55 +65,5 @@ class Game
 
   def read_rank_attribute(prefix)
     send("#{prefix}_rank")
-  end
-
-  concerning :Replays do
-    def replays
-      @replays ||= begin
-        doc = fetch_page_data(tenth_percentile_page)
-        rows = doc.css(".forum_table td.lf a")
-        if rows.count.zero?
-          0
-        else
-          index = (page_count % 10) / 10.0 * rows.count
-          rows[index].content.to_i
-        end
-      end
-    end
-
-    private
-
-    def tenth_percentile_page
-      if page_count >= 10 && page_count % 10 == 0
-        (page_count / 10) + 1
-      else
-        (page_count / 10.0).ceil
-      end
-    end
-
-    def page_count
-      @page_count ||= begin
-        doc = fetch_page_data(1)
-        last_page_anchor = doc.css('#maincontent p a[title="last page"]')
-        pagination_anchors = doc.css("#maincontent p a")
-        if last_page_anchor.count >= 1
-          last_page_anchor.first.content.scan(/\d+/).first.to_i
-        elsif pagination_anchors.count >= 2
-          pagination_anchors[-2].content.to_i
-        else
-          1
-        end
-      end
-    end
-
-    def fetch_page_data(page)
-      url = "https://boardgamegeek.com/playstats/thing/#{objectid}/page/#{page}"
-      file = Utils.read_file(url, extension: "html")
-      Nokogiri::HTML(file)
-    end
-
-    def objectid
-      href.scan(/\b\d+\b/).first.to_i
-    end
   end
 end
