@@ -23,5 +23,4 @@ module Categories
   ].map { |prefix, listid| BggGames.new(prefix:, listid:, page_count: 20, object_type: "family") }
 
   CATEGORIES = MECHANICS.map(&:prefix) + FAMILIES.map(&:prefix)
-  RANK_FIELDS = CATEGORIES
 end

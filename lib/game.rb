@@ -1,12 +1,31 @@
-require_relative "game_fields"
+class Game
+  DEFAULT_VALUES = {
+    href: "",
+    key: "",
+    name: "",
+    rating: 0.0,
+    weight: 0.0,
+  }
 
-class Game < Struct.new(*GameFields::FIELDS.keys, keyword_init: true)
+  attr_reader :attributes
+
   def initialize(args)
-    super(GameFields::FIELDS.to_h { |attr, default| [attr, args.fetch(attr, default)] })
+    @attributes = Hash.new do |hash, key|
+      hash[key.to_sym] = DEFAULT_VALUES.fetch(key.to_sym, 0)
+    end.merge(args)
+  end
+
+  def method_missing(method_name, *args)
+    attribute_name = method_name.to_s.chomp("=").to_sym
+    if method_name.to_s.end_with?("=")
+      attributes[attribute_name] = args.first
+    else
+      attributes[attribute_name]
+    end
   end
 
   def merge(other)
-    Game.new(members.to_h { |attr| [attr, merge_attr(attr, other)] })
+    Game.new(attributes.merge(other.attributes, &method(:merge_attr)))
   end
 
   def votes_per_year
@@ -34,11 +53,8 @@ class Game < Struct.new(*GameFields::FIELDS.keys, keyword_init: true)
 
   private
 
-  def merge_attr(attr, other)
-    value = send(attr)
-    other_value = other.send(attr)
-
-    value.present? && value != 0 ? value : other_value
+  def merge_attr(_key, oldval, newval)
+    oldval.present? && oldval != 0 ? oldval : newval
   end
 
   concerning :Replays do
