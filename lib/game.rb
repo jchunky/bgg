@@ -16,7 +16,7 @@ class Game < Struct.new(*GameFields::FIELDS.keys, keyword_init: true)
     return 0 if year.zero?
 
     years = (Date.today.year + 1) - year
-    years = 1 if years < 1
+    years = years.clamp(1..)
 
     rating_count / years
   end
@@ -47,9 +47,7 @@ class Game < Struct.new(*GameFields::FIELDS.keys, keyword_init: true)
   concerning :Replays do
     def replays
       @replays ||= begin
-        url = "https://boardgamegeek.com/playstats/thing/#{objectid}/page/#{tenth_percentile_page}"
-        file = Utils.read_file(url, extension: "html")
-        doc = Nokogiri::HTML(file)
+        doc = fetch_page_data(tenth_percentile_page)
         rows = doc.css(".forum_table td.lf a")
         if rows.count.zero?
           0
@@ -72,9 +70,7 @@ class Game < Struct.new(*GameFields::FIELDS.keys, keyword_init: true)
 
     def page_count
       @page_count ||= begin
-        url = "https://boardgamegeek.com/playstats/thing/#{objectid}/page/1"
-        file = Utils.read_file(url, extension: "html")
-        doc = Nokogiri::HTML(file)
+        doc = fetch_page_data(1)
         last_page_anchor = doc.css('#maincontent p a[title="last page"]')
         pagination_anchors = doc.css("#maincontent p a")
         if last_page_anchor.count >= 1
@@ -85,6 +81,12 @@ class Game < Struct.new(*GameFields::FIELDS.keys, keyword_init: true)
           1
         end
       end
+    end
+
+    def fetch_page_data(page)
+      url = "https://boardgamegeek.com/playstats/thing/#{objectid}/page/#{page}"
+      file = Utils.read_file(url, extension: "html")
+      Nokogiri::HTML(file)
     end
 
     def objectid

@@ -17,10 +17,14 @@ class GameSearch
   private
 
   def games_for_page(page)
+    doc = fetch_page_data(page)
+    games_for_doc(doc, page)
+  end
+
+  def fetch_page_data(page)
     url = url_for_page(page)
     file = Utils.read_file(url, extension: "html")
     doc = Nokogiri::HTML(file)
-    games_for_doc(doc, page)
   end
 
   def url_for_page(page)
