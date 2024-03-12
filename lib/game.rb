@@ -38,16 +38,16 @@ class Game
   end
 
   def mechanics
-    Categories::MECHANICS.map(&:prefix).select { |m| send("#{m}_rank") > 0 }
+    Categories::MECHANICS.keys.select { |m| read_rank_attribute(m) > 0 }
   end
 
   def families
-    Categories::FAMILIES.map(&:prefix).select { |f| send("#{f}_rank") > 0 }
+    Categories::FAMILIES.keys.select { |f| read_rank_attribute(f) > 0 }
   end
 
   Categories::CATEGORIES.each do |category|
     define_method("#{category}?") do
-      send("#{category}_rank") > 0
+      read_rank_attribute(category) > 0
     end
   end
 
@@ -55,6 +55,10 @@ class Game
 
   def merge_attr(_key, oldval, newval)
     oldval.present? && oldval != 0 ? oldval : newval
+  end
+
+  def read_rank_attribute(prefix)
+    send("#{prefix}_rank")
   end
 
   concerning :Replays do

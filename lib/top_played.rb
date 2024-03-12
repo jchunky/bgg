@@ -1,17 +1,9 @@
-class TopPlayed
+class TopPlayed < Struct.new(:prefix, :listid, keyword_init: true)
   def games
     (1..10)
       .flat_map(&method(:games_for_page))
       .compact
       .uniq(&:key)
-  end
-
-  def prefix
-    "play"
-  end
-
-  def listid
-    "plays"
   end
 
   private

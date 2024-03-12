@@ -7,12 +7,12 @@ module Downloaders
   SORTBY_VOTES = "#{NO_EXPANSIONS}&sort=numvoters&sortdir=desc"
 
   DOWNLOADERS = [
-    TopPlayed.new,
+    TopPlayed.new(prefix: "play", listid: "plays"),
 
-    GameSearch.new(prefix: "bgg", search_criteria: SORTBY_RANK, listid: "rank"),
-    GameSearch.new(prefix: "vote", search_criteria: SORTBY_VOTES, listid: "numvoters"),
+    GameSearch.new(prefix: "bgg", listid: "rank", search_criteria: SORTBY_RANK),
+    GameSearch.new(prefix: "vote", listid: "numvoters", search_criteria: SORTBY_VOTES),
 
-    *Categories::MECHANICS,
-    *Categories::FAMILIES,
+    *(Categories::MECHANICS.map { |prefix, listid| BggGames.new(prefix:, listid:, page_count: 20, object_type: "property") }),
+    *(Categories::FAMILIES.map { |prefix, listid| BggGames.new(prefix:, listid:, page_count: 20, object_type: "family") }),
   ]
 end
