@@ -12,9 +12,7 @@ class Game
   attr_reader :attributes
 
   def initialize(args)
-    @attributes = Hash.new do |hash, key|
-      hash[key.to_sym] = DEFAULT_VALUES.fetch(key.to_sym, 0)
-    end.merge(args)
+    @attributes = Hash.new(0).merge(DEFAULT_VALUES).merge(args)
   end
 
   def method_missing(method_name, *args)
