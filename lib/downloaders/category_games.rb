@@ -49,7 +49,7 @@ module Downloaders
         rating: row["average"].to_f,
         rating_count: row["usersrated"].to_i,
         weight: row["avgweight"].to_f,
-        year: row["yearpublished"].to_i,
+        year: row["yearpublished"].to_i
       )
     end
   end
