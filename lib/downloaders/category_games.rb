@@ -18,7 +18,15 @@ module Downloaders
     end
 
     def url_for_page(page)
-      "https://api.geekdo.com/api/geekitem/linkeditems?linkdata_index=boardgame&objectid=#{listid}&objecttype=#{object_type}&showcount=#{ITEMS_PER_PAGE}&sort=rank&pageid=#{page}"
+      <<~URL.remove(/\s/)
+        https://api.geekdo.com/api/geekitem/linkeditems
+          ?linkdata_index=boardgame
+          &objectid=#{listid}
+          &objecttype=#{object_type}
+          &showcount=#{ITEMS_PER_PAGE}
+          &sort=rank
+          &pageid=#{page}
+      URL
     end
 
     def games_for_doc(doc, page)
