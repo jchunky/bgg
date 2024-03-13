@@ -22,11 +22,15 @@ module Downloaders
     end
 
     def games_for_doc(doc, page)
-      doc["items"]
+      rows(doc)
         .map(&method(:build_game))
         .each.with_index do |game, i|
           Utils.generate_rank(game, prefix, page, ITEMS_PER_PAGE, i)
         end
+    end
+
+    def rows(doc)
+      doc["items"]
     end
 
     def build_game(row)

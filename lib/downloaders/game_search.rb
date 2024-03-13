@@ -22,14 +22,20 @@ module Downloaders
     end
 
     def games_for_doc(doc, page)
-      doc.css(".collection_table")[0].css("tr")
-        .select { |row| row.css("td")[4] }
+      rows(doc)
         .map(&method(:build_game))
         .each.with_index do |game, i|
           Utils.generate_rank(game, prefix, page, ITEMS_PER_PAGE, i)
         end
     rescue StandardError
       []
+    end
+
+    def rows(doc)
+      doc
+        .css(".collection_table")[0]
+        .css("tr")
+        .select { |row| row.css("td")[4] }
     end
 
     def build_game(row)

@@ -25,8 +25,7 @@ module Downloaders
     end
 
     def games_for_doc(doc, page)
-      doc.css(".forum_table")[1].css("tr")
-        .select { |row| row.css("td")[0] }
+      rows(doc)
         .map(&method(:build_game))
         .sort_by(&:unique_users)
         .reverse
@@ -35,6 +34,13 @@ module Downloaders
         end
     rescue StandardError
       []
+    end
+
+    def rows(doc)
+      doc
+        .css(".forum_table")[1]
+        .css("tr")
+        .select { |row| row.css("td")[0] }
     end
 
     def build_game(row)
