@@ -23,20 +23,22 @@ module Downloaders
 
     def games_for_doc(doc, page)
       doc["items"]
-        .map do |game|
-          Game.new(
-            href: game["href"],
-            name: game["name"],
-            rank: game["rank"].to_i,
-            rating: game["average"].to_f,
-            rating_count: game["usersrated"].to_i,
-            weight: game["avgweight"].to_f,
-            year: game["yearpublished"].to_i,
-          )
-        end
+        .map(&method(:build_game))
         .each.with_index do |game, i|
-          game.send("#{prefix}_rank=", ((page - 1) * ITEMS_PER_PAGE) + i + 1)
+          Utils.generate_rank(game, prefix, page, ITEMS_PER_PAGE, i)
         end
+    end
+
+    def build_game(row)
+      Game.new(
+        href: row["href"],
+        name: row["name"],
+        rank: row["rank"].to_i,
+        rating: row["average"].to_f,
+        rating_count: row["usersrated"].to_i,
+        weight: row["avgweight"].to_f,
+        year: row["yearpublished"].to_i,
+      )
     end
   end
 end

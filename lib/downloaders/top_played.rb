@@ -27,17 +27,17 @@ module Downloaders
     def games_for_doc(doc, page)
       doc.css(".forum_table")[1].css("tr")
         .select { |row| row.css("td")[0] }
-        .map(&method(:game_for_row))
+        .map(&method(:build_game))
         .sort_by(&:unique_users)
         .reverse
         .each.with_index do |game, i|
-          game.send("#{prefix}_rank=", ((page - 1) * ITEMS_PER_PAGE) + i + 1)
+          Utils.generate_rank(game, prefix, page, ITEMS_PER_PAGE, i)
         end
     rescue StandardError
       []
     end
 
-    def game_for_row(row)
+    def build_game(row)
       c1, _, c3 = row.css("td")
       a1 = c1.css("a")[0]
       a3 = c3.css("a")[0]

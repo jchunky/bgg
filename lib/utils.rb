@@ -3,14 +3,14 @@ require "open-uri"
 module Utils
   extend self
 
-  def fetch_json_data(url)
-    file = Utils.read_file(url, extension: "json")
-    JSON.parse(file)
-  end
-
   def fetch_html_data(url)
     file = Utils.read_file(url, extension: "html")
     Nokogiri::HTML(file)
+  end
+
+  def fetch_json_data(url)
+    file = Utils.read_file(url, extension: "json")
+    JSON.parse(file)
   end
 
   def read_file(url, extension:)
@@ -18,6 +18,10 @@ module Utils
       file_contents = URI.open(url).read
       strip_accents(file_contents)
     end
+  end
+
+  def generate_rank(game, prefix, page, items_per_page, i)
+    game.send("#{prefix}_rank=", ((page - 1) * items_per_page) + i + 1)
   end
 
   private
