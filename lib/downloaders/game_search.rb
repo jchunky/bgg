@@ -3,7 +3,9 @@ module Downloaders
     ITEMS_PER_PAGE = 100
 
     def games
-      (1..10)
+      page_count = 1000 / ITEMS_PER_PAGE
+
+      (1..page_count)
         .flat_map(&method(:games_for_page))
         .compact
         .uniq(&:key)
