@@ -22,15 +22,15 @@ module Downloaders
     end
 
     def games_for_doc(doc, page)
-      doc["items"].map.with_index do |item, i|
+      doc["items"].map.with_index do |game, i|
         Game.new(
-          href: item["href"],
-          name: item["name"],
-          rank: item["rank"].to_i,
-          rating: item["average"].to_f,
-          rating_count: item["usersrated"].to_i,
-          weight: item["avgweight"].to_f,
-          year: item["yearpublished"].to_i,
+          href: game["href"],
+          name: game["name"],
+          rank: game["rank"].to_i,
+          rating: game["average"].to_f,
+          rating_count: game["usersrated"].to_i,
+          weight: game["avgweight"].to_f,
+          year: game["yearpublished"].to_i,
           "#{prefix}_rank": ((page - 1) * ITEMS_PER_PAGE) + i + 1
         )
       end
