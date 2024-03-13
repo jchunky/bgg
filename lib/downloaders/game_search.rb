@@ -1,5 +1,7 @@
 module Downloaders
   class GameSearch < Struct.new(:listid, :prefix, :search_criteria, keyword_init: true)
+    ITEMS_PER_PAGE = 100
+
     def games
       (1..10)
         .flat_map(&method(:games_for_page))
@@ -22,7 +24,7 @@ module Downloaders
     def games_for_doc(doc, page)
       doc.css(".collection_table")[0].css("tr")
         .select { |row| row.css("td")[4] }
-        .map.with_index do |row, i|
+        .map do |row|
           c1, _, c3, _, c5, c6 = row.css("td")
           a1 = c1.css("a")[0]
           a3 = c3.css("a")[0]
@@ -35,8 +37,10 @@ module Downloaders
             rating_count: c6.content.to_i,
             year: (span3.content[1..-2].to_i rescue 0),
             rank: (a1["name"].to_i rescue 0),
-            "#{prefix}_rank": ((page - 1) * 100) + i + 1
           )
+        end
+        .each.with_index do |game, i|
+          game.send("#{prefix}_rank=", ((page - 1) * ITEMS_PER_PAGE) + i + 1)
         end
     rescue StandardError
       []

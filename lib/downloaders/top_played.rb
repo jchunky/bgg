@@ -1,5 +1,7 @@
 module Downloaders
   class TopPlayed < Struct.new(:prefix, :listid, keyword_init: true)
+    ITEMS_PER_PAGE = 100
+
     def games
       (1..10)
         .flat_map(&method(:games_for_page))
@@ -29,7 +31,7 @@ module Downloaders
         .sort_by(&:unique_users)
         .reverse
         .each.with_index do |game, i|
-          game.play_rank = ((page - 1) * 100) + i + 1
+          game.send("#{prefix}_rank=", ((page - 1) * ITEMS_PER_PAGE) + i + 1)
         end
     rescue StandardError
       []
