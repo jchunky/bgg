@@ -41,7 +41,7 @@ class Game
   end
 
   def replays
-    @replays ||= Downloaders::ReplaysFetcher.new(href:).replays
+    @replays ||= Downloaders::ReplaysFetcher.new(objectid:).replays
   end
 
   def key
@@ -49,6 +49,10 @@ class Game
   end
 
   private
+
+  def objectid
+    href.scan(/\b\d+\b/).first.to_i
+  end
 
   def years
     result = (Date.today.year + 1) - year
