@@ -13,7 +13,7 @@ module Downloaders
     GameSearch.new(prefix: "bgg", listid: "rank", search_criteria: SORTBY_RANK),
     GameSearch.new(prefix: "vote", listid: "numvoters", search_criteria: SORTBY_VOTES),
 
-    *(Categories::MECHANICS.map { |prefix, listid| CategoryGames.new(prefix:, listid:, page_count: 20, object_type: "property") }),
-    *(Categories::FAMILIES.map { |prefix, listid| CategoryGames.new(prefix:, listid:, page_count: 20, object_type: "family") }),
+    *(Categories::MECHANICS.map { |prefix, listid| CategoryGames.new(prefix:, listid:, object_type: "property") }),
+    *(Categories::FAMILIES.map { |prefix, listid| CategoryGames.new(prefix:, listid:, object_type: "family") }),
   ]
 end

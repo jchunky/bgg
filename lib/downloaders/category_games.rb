@@ -1,8 +1,10 @@
 module Downloaders
-  class CategoryGames < Struct.new(:listid, :prefix, :page_count, :object_type, keyword_init: true)
+  class CategoryGames < Struct.new(:listid, :prefix, :object_type, keyword_init: true)
     ITEMS_PER_PAGE = 50
 
     def games
+      page_count = 1000 / ITEMS_PER_PAGE
+
       (1..page_count)
         .flat_map(&method(:games_for_page))
         .compact
