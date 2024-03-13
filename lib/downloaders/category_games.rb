@@ -12,12 +12,14 @@ module Downloaders
     private
 
     def games_for_page(page)
-      url = url_for_page(page)
-      doc = Utils.fetch_json_data(url)
-      games_for_doc(doc, page)
+      Array(listid).flat_map do |listid|
+        url = url_for_page(page, listid)
+        doc = Utils.fetch_json_data(url)
+        games_for_doc(doc, page)
+      end
     end
 
-    def url_for_page(page)
+    def url_for_page(page, listid)
       <<~URL.remove(/\s/)
         https://api.geekdo.com/api/geekitem/linkeditems
           ?linkdata_index=boardgame
@@ -30,11 +32,7 @@ module Downloaders
     end
 
     def games_for_doc(doc, page)
-      rows(doc)
-        .map(&method(:build_game))
-        .each.with_index do |game, i|
-          Utils.generate_rank(game, prefix, page, ITEMS_PER_PAGE, i)
-        end
+      rows(doc).map(&method(:build_game))
     end
 
     def rows(doc)
@@ -49,7 +47,8 @@ module Downloaders
         rating: row["average"].to_f,
         rating_count: row["usersrated"].to_i,
         weight: row["avgweight"].to_f,
-        year: row["yearpublished"].to_i
+        year: row["yearpublished"].to_i,
+        "#{prefix}_rank": row["rank"].to_i
       )
     end
   end

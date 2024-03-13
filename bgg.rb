@@ -21,6 +21,7 @@ class Bgg
     # return false if game.action_points?
     # return false if game.app?
     # return false if game.bga?
+    # return false if game.crowdfunding?
     # return false if game.dice?
     # return false if game.flicking?
     # return false if game.realtime?
