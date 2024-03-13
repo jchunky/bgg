@@ -23,17 +23,18 @@ module Downloaders
       doc.css(".collection_table")[0].css("tr")
         .select { |row| row.css("td")[4] }
         .map.with_index do |row, i|
-          rank, _, title, _, rating, rating_count = row.css("td")
-          anchor = title.css("a")[0]
-          name = anchor.content
+          c1, _, c3, _, c5, c6 = row.css("td")
+          a1 = c1.css("a")[0]
+          a3 = c3.css("a")[0]
+          span3 = c3.css("span")[0]
 
           Game.new(
-            href: anchor["href"],
-            name:,
-            rating: rating.content.to_f,
-            rating_count: rating_count.content.to_i,
-            year: (title.css("span")[0].content[1..-2].to_i rescue 0),
-            rank: (rank.css("a")[0]["name"].to_i rescue 0),
+            href: a3["href"],
+            name: a3.content,
+            rating: c5.content.to_f,
+            rating_count: c6.content.to_i,
+            year: (span3.content[1..-2].to_i rescue 0),
+            rank: (a1["name"].to_i rescue 0),
             "#{prefix}_rank": ((page - 1) * 100) + i + 1
           )
         end

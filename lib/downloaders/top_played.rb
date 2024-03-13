@@ -36,14 +36,14 @@ module Downloaders
     end
 
     def game_for_row(row)
-      anchor = row.css("td")[0].css("a")[0]
-      name = anchor.content
-      unique_users = row.css("td")[2].css("a")[0].content.to_i
+      c1, _, c3 = row.css("td")
+      a1 = c1.css("a")[0]
+      a3 = c3.css("a")[0]
 
       Game.new(
-        href: anchor["href"],
-        name:,
-        unique_users:
+        href: a1["href"],
+        name: a1.content,
+        unique_users: a3.content.to_i
       )
     end
   end
