@@ -35,16 +35,16 @@
     <% @games.each.with_index do |game, i| %>
       <%
         bad_play_rank = !game.play_rank.between?(1, 400)
-        bad_game = bad_play_rank
         bad_rank = !game.rank.between?(1, 300)
         bad_rating = game.rating < 7.5
+        bad_replays = game.replays < 20
+        bad_votes = game.vote_rank.zero?
         bad_votes_per_year = !game.votes_per_year_rank.between?(1, 300)
         bad_votes_per_year_rank = bad_votes_per_year
-        bad_votes = game.vote_rank.zero?
         bad_votes_rank = bad_votes
         bad_weight = game.weight >= 3
-        bad_replays = game.replays < 20
         bad_year = game.year >= Bgg::MAX_GAME_YEAR
+        bad_game = bad_replays || bad_play_rank
       %>
       <tr>
         <td class="number <%= 'bad' if bad_year %>"><%= game.year %></td>
