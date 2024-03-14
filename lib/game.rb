@@ -48,6 +48,10 @@ class Game
     href
   end
 
+  def solo?
+    solo_rank > 0
+  end
+
   private
 
   def objectid
