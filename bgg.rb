@@ -28,6 +28,8 @@ class Bgg
     # return false if game.stacking?
     # return false if game.storytelling?
 
+    # return false unless game.weight < 3
+
     true
   end
 
