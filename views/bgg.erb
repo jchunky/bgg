@@ -34,8 +34,8 @@
   <tbody>
     <% @games.each.with_index do |game, i| %>
       <%
-        bad_game = !game.rank.between?(1, 1000) || !game.play_rank.between?(1, 1000) || !game.vote_rank.between?(1, 1000)
         bad_play_rank = !game.play_rank.between?(1, 400)
+        bad_game = bad_play_rank
         bad_rank = !game.rank.between?(1, 300)
         bad_rating = game.rating < 7.5
         bad_votes_per_year = !game.votes_per_year_rank.between?(1, 300)
