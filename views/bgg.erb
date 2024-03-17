@@ -44,7 +44,7 @@
         bad_votes_per_year_rank = !game.votes_per_year_rank.between?(1, 100)
         bad_weight = game.weight >= 3
         bad_year = game.year >= Bgg::MAX_GAME_YEAR
-        bad_game = bad_replays
+        bad_game = bad_play_rank
       %>
       <tr>
         <td class="number <%= 'bad' if bad_year %>"><%= game.year %></td>
