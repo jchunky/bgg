@@ -45,7 +45,7 @@ class Game
   end
 
   def key
-    href
+    href.scan(/\/(\d+)\//).first.first
   end
 
   def solo?
