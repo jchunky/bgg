@@ -26,7 +26,7 @@ class Bgg
     return false if game.flicking?
     return false if game.realtime?
     return false if game.stacking?
-    # return false if game.storytelling?
+    return false if game.storytelling?
 
     # return false unless game.weight < 3
 
