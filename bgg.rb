@@ -13,8 +13,6 @@ class Bgg
 
   def display_game?(game)
     return false unless game.play_rank > 0
-    # return false unless game.rank > 0
-    # return false unless game.weight < 3
 
     return false unless game.campaign?
     return false unless game.coop?
