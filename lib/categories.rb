@@ -17,6 +17,7 @@ module Categories
     app: 41489,
     bga: 70360,
     crowdfunding: [8374, 66292],
+    dungeon_crawl: 59218,
   }
 
   CATEGORIES = MECHANICS.keys + FAMILIES.keys
