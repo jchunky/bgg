@@ -25,6 +25,7 @@ class Bgg
     # return false if game.bga?
     # return false if game.crowdfunding?
     # return false if game.dice?
+    # return false unless game.dungeon_crawl?
     return false if game.flicking?
     return false if game.realtime?
     return false if game.stacking?
