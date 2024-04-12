@@ -49,7 +49,11 @@ class Game
   end
 
   def solo?
-    solo_rank > 0
+    solo_rank > 0 || one_player?
+  end
+
+  def one_player?
+    one_player_rank > 0
   end
 
   private
