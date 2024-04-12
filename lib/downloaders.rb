@@ -12,6 +12,7 @@ module Downloaders
 
     GameSearch.new(prefix: "bgg", listid: "rank", search_criteria: SORTBY_RANK),
     GameSearch.new(prefix: "vote", listid: "numvoters", search_criteria: SORTBY_VOTES),
+    GameSearch.new(prefix: "child", listid: "4665", search_criteria: "#{SORTBY_RANK}&familyids[]=4665"),
     GameSearch.new(prefix: "solo", listid: "playerrangetype", search_criteria: "#{SORTBY_RANK}&range[minplayers][max]=1&range[maxplayers][min]=1&playerrangetype=normal"),
     GameSearch.new(prefix: "one_player", listid: "playerrangetype", search_criteria: "#{SORTBY_RANK}&range[minplayers][max]=1&range[maxplayers][min]=1&playerrangetype=exclusive"),
 

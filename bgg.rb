@@ -14,20 +14,21 @@ class Bgg
   def display_game?(game)
     return false unless game.play_rank > 0
 
+    # return false unless game.child?
+    # return false unless game.dungeon_crawl?
     return false unless (game.coop? || game.one_player?)
     return false unless game.campaign?
     return false unless game.solo?
 
-    return false if game.action_points?
-    return false if game.app?
     # return false if game.bga?
     # return false if game.crowdfunding?
     # return false if game.dice?
-    # return false unless game.dungeon_crawl?
+    # return false if game.storytelling?
+    return false if game.action_points?
+    return false if game.app?
     return false if game.flicking?
     return false if game.realtime?
     return false if game.stacking?
-    # return false if game.storytelling?
 
     true
   end

@@ -56,6 +56,10 @@ class Game
     one_player_rank > 0
   end
 
+  def child?
+    child_rank > 0
+  end
+
   private
 
   def objectid
