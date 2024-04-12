@@ -3,7 +3,7 @@ module Downloaders
     ITEMS_PER_PAGE = 100
 
     def games
-      page_count = 1000 / ITEMS_PER_PAGE
+      page_count = 2200 / ITEMS_PER_PAGE
 
       (1..page_count)
         .flat_map(&method(:games_for_page))
