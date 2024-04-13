@@ -3,15 +3,23 @@ module Downloaders
     ITEMS_PER_PAGE = 50
 
     def games
-      page_count = 1000 / ITEMS_PER_PAGE
-
-      (1..page_count)
-        .flat_map(&method(:games_for_page))
+      content_for_pages(&method(:games_for_page))
         .compact
         .uniq(&:key)
     end
 
     private
+
+    def content_for_pages(&block)
+      page = 1
+      result = []
+      loop do
+        games = block.call(page)
+        return result unless (games.any? { |g| g.rank.positive? })
+        result += games
+        page += 1
+      end
+    end
 
     def games_for_page(page)
       Array(listid).flat_map do |listid|
