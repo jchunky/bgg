@@ -11,13 +11,10 @@ module Downloaders
     private
 
     def content_for_pages(&block)
-      page = 1
-      result = []
-      loop do
+      (1..).each.with_object([]) do |page, result|
         games = block.call(page)
-        return result unless (games.any? { |g| g.rank.positive? })
-        result += games
-        page += 1
+        return result if games.none? { |g| g.rank.positive? }
+        result.concat(games)
       end
     end
 
