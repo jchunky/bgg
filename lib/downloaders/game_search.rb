@@ -4,8 +4,8 @@ module Downloaders
 
     def games
       content_for_pages(&method(:games_for_page))
-        .compact
         .uniq(&:key)
+        .reject { |g| g.rank.zero? }
     end
 
     private
