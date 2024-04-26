@@ -13,6 +13,7 @@ class Bgg
 
   def display_game?(game)
     return false unless game.play_rank > 0
+    return false unless game.weight < 3
 
     # return false unless game.child?
     # return false unless game.dungeon_crawl?
@@ -24,7 +25,7 @@ class Bgg
     # return false if game.crowdfunding?
     # return false if game.dice?
     # return false if game.storytelling?
-    return false if game.action_points?
+    # return false if game.action_points?
     return false if game.app?
     return false if game.flicking?
     return false if game.one_player?
