@@ -17,6 +17,7 @@
   <thead>
     <tr>
       <th>Year</th>
+      <th>Plays</th>
       <th>Play Rank</th>
       <th>Game</th>
       <th>Votes</th>
@@ -34,7 +35,8 @@
   <tbody>
     <% @games.each.with_index do |game, i| %>
       <%
-        bad_play_rank = !game.play_rank.between?(1, 100)
+        bad_plays = !game.play_rank.between?(1, 100)
+        bad_plays_rank = !game.play_rank.between?(1, 100)
         bad_rank = !game.rank.between?(1, 100)
         bad_rating = game.rating < 7.5
         bad_replays = game.replays < 18
@@ -44,11 +46,12 @@
         bad_votes_per_year_rank = !game.votes_per_year_rank.between?(1, 100)
         bad_weight = game.weight >= 3
         bad_year = game.year >= Bgg::MAX_GAME_YEAR
-        bad_game = bad_play_rank
+        bad_game = bad_plays_rank
       %>
       <tr>
         <td class="number <%= 'bad' if bad_year %>"><%= game.year %></td>
-        <td class="number <%= 'bad' if bad_play_rank %>"><%= game.play_rank %></td>
+        <td class="number <%= 'bad' if bad_plays %>"><%= game.unique_users %></td>
+        <td class="number <%= 'bad' if bad_plays_rank %>"><%= game.play_rank %></td>
         <td class="<%= 'bad' if bad_game %>"><a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a></td>
         <td class="number <%= 'bad' if bad_votes %>"><%= game.rating_count %></td>
         <td class="number <%= 'bad' if bad_votes_rank %>"><%= game.vote_rank %></td>

@@ -9,6 +9,11 @@ module Downloaders
         .flat_map(&method(:games_for_page))
         .compact
         .uniq(&:key)
+        .sort_by(&:unique_users)
+        .reverse
+        .each.with_index do |game, i|
+          game.send("#{prefix}_rank=", i + 1)
+        end
     end
 
     private
