@@ -18,7 +18,7 @@ class Bgg
     # return false unless game.child?
     # return false unless game.dungeon_crawl?
     return false unless (game.coop? || game.one_player?)
-    return false unless game.campaign?
+    # return false unless game.campaign?
     # return false unless game.solo?
 
     # return false if game.bga?

@@ -41,6 +41,7 @@ class Game
   end
 
   def replays
+    # return 0
     @replays ||= Downloaders::ReplaysFetcher.new(objectid:).replays
   end
 
