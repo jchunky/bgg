@@ -12,11 +12,13 @@ class Bgg
   MAX_GAME_YEAR = Date.today.year - 5
 
   def display_game?(game)
-    # return false unless game.child?
-    # return false unless game.dungeon_crawl?
-    # return false unless game.campaign?
-    # return false unless game.solo?
-    return false unless game.coop?
+    return false unless (
+      game.coop? ||
+      game.campaign? ||
+      game.child? ||
+      game.dungeon_crawl? ||
+      game.solo?
+    )
 
     return false if game.action_points?
     return false if game.app?
@@ -39,8 +41,8 @@ class Bgg
     end
 
     @games = all_games
-      .select(&method(:display_game?))
-      .sort_by { |g| [-g.year, g.play_rank] }
+    .select(&method(:display_game?))
+    .sort_by { |g| [-g.year, g.play_rank] }
 
     write_output
   end
@@ -49,15 +51,15 @@ class Bgg
 
   def all_games
     result = Downloaders::DOWNLOADERS
-      .reduce({}) do |hash, downloader|
-        hash.merge(by_key(downloader), &method(:merge_hashes))
-      end
-      .values
+    .reduce({}) do |hash, downloader|
+      hash.merge(by_key(downloader), &method(:merge_hashes))
+    end
+    .values
 
     result
-      .select { |g| g.votes_per_year.positive? }
-      .sort_by { |g| -g.votes_per_year }
-      .each_with_index { |g, i| g.votes_per_year_rank = i + 1 }
+    .select { |g| g.votes_per_year.positive? }
+    .sort_by { |g| -g.votes_per_year }
+    .each_with_index { |g, i| g.votes_per_year_rank = i + 1 }
 
     result
   end
