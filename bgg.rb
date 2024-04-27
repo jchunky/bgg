@@ -12,28 +12,23 @@ class Bgg
   MAX_GAME_YEAR = Date.today.year - 5
 
   def display_game?(game)
-    # return false unless game.replays >= 13
-    # return false unless game.replays >= 18
-    return false unless game.play_rank > 0
-    return false unless game.rank > 0
-    return false unless game.weight < 3
-
     # return false unless game.child?
     # return false unless game.dungeon_crawl?
-    return false unless (game.coop? || game.one_player?)
     # return false unless game.campaign?
     # return false unless game.solo?
+    return false unless game.coop?
 
-    # return false if game.bga?
-    # return false if game.crowdfunding?
-    # return false if game.dice?
-    # return false if game.storytelling?
     return false if game.action_points?
     return false if game.app?
     return false if game.flicking?
-    return false if game.one_player?
     return false if game.realtime?
     return false if game.stacking?
+
+    return false unless game.play_rank > 0
+    return false unless game.rating >= 7
+    return false unless game.weight.between?(1.5, 3)
+    return false unless game.year >= 2000
+    return false unless game.replays >= 13
 
     true
   end
