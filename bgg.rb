@@ -15,7 +15,6 @@ class Bgg
     return false unless (
       game.coop? ||
       game.campaign? ||
-      game.child? ||
       game.dungeon_crawl? ||
       game.solo?
     )
