@@ -38,8 +38,8 @@
         bad_plays = !game.play_rank.between?(1, 100)
         bad_plays_rank = !game.play_rank.between?(1, 100)
         bad_rank = !game.rank.between?(1, 100)
-        bad_rating = game.rating < 7.5
-        bad_replays = game.replays < 18
+        bad_rating = game.rating < 8
+        bad_replays = game.replays < 20
         bad_votes = !game.vote_rank.between?(1, 100)
         bad_votes_rank = !game.vote_rank.between?(1, 100)
         bad_votes_per_year = !game.votes_per_year_rank.between?(1, 100)
