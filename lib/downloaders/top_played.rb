@@ -28,7 +28,7 @@ module Downloaders
       end_date = Date.yesterday
       start_date = end_date - 30.days
 
-      "https://boardgamegeek.com/plays/bygame/subtype/All/start/#{start_date}/end/#{end_date}/page/#{page}"
+      "https://boardgamegeek.com/plays/bygame/subtype/boardgame/start/#{start_date}/end/#{end_date}/page/#{page}"
     end
 
     def games_for_doc(doc, page)
