@@ -25,7 +25,9 @@ class Bgg
     return false unless game.play_rank > 0
     return false unless game.rating >= 7
     return false unless game.weight.between?(1.5, 3)
-    return false unless game.year >= 2000
+    return false unless game.year >= 2010
+
+    # return false unless game.replays >= 18
     return false unless game.replays >= 13
 
     true
