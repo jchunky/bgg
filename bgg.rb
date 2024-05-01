@@ -37,8 +37,8 @@ class Bgg
     end
 
     @games = all_games
-    .select(&method(:display_game?))
-    .sort_by { |g| [-g.year, g.play_rank] }
+      .select(&method(:display_game?))
+      .sort_by { |g| [-g.year, g.play_rank] }
 
     write_output
   end
@@ -47,15 +47,15 @@ class Bgg
 
   def all_games
     result = Downloaders::DOWNLOADERS
-    .reduce({}) do |hash, downloader|
-      hash.merge(by_key(downloader), &method(:merge_hashes))
-    end
-    .values
+      .reduce({}) do |hash, downloader|
+        hash.merge(by_key(downloader), &method(:merge_hashes))
+      end
+      .values
 
     result
-    .select { |g| g.votes_per_year.positive? }
-    .sort_by { |g| -g.votes_per_year }
-    .each_with_index { |g, i| g.votes_per_year_rank = i + 1 }
+      .select { |g| g.votes_per_year.positive? }
+      .sort_by { |g| -g.votes_per_year }
+      .each_with_index { |g, i| g.votes_per_year_rank = i + 1 }
 
     result
   end
