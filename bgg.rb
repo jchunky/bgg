@@ -14,7 +14,16 @@ class Bgg
   def display_game?(game)
     # return false unless game.campaign?
     # return false unless game.solo?
-    return false unless game.coop?
+    # return false unless game.coop?
+
+    return false unless (
+      game.ccg? ||
+      game.deck_building? ||
+      game.flip_and_write? ||
+      game.legacy? ||
+      game.solitaire? ||
+      game.tableau_building?
+    )
 
     return false if game.action_points?
     return false if game.app?
@@ -23,12 +32,12 @@ class Bgg
     return false if game.stacking?
 
     return false unless game.play_rank > 0
-    return false unless game.rating >= 7
-    return false unless game.weight.between?(1.5, 3)
-    return false unless game.year >= 2010
+    # return false unless game.rating >= 7
+    # return false unless game.weight.between?(1.5, 3)
+    # return false unless game.year >= 2010
 
     # return false unless game.replays >= 18
-    return false unless game.replays >= 13
+    # return false unless game.replays >= 13
 
     true
   end

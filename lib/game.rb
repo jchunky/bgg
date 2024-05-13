@@ -57,6 +57,17 @@ class Game
     one_player_rank > 0
   end
 
+  def subdomains
+    [
+      ("ccg" if ccg?),
+      ("child" if child?)
+    ].compact
+  end
+
+  def ccg?
+    child_rank > 0
+  end
+
   def child?
     child_rank > 0
   end
