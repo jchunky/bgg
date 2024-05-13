@@ -13,8 +13,8 @@ module Categories
     solitaire: 2819,
     stacking: 2988,
     storytelling: 2027,
-    variable_player_powers: 2015,
-    variable_setup: 2897,
+    # variable_player_powers: 2015,
+    # variable_setup: 2897,
     worker_placement: 2082,
   }
 

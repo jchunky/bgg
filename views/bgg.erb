@@ -40,7 +40,7 @@
         bad_plays_rank = !game.play_rank.between?(1, 100)
         bad_rank = !game.rank.between?(1, 100)
         bad_rating = game.rating < 8
-        bad_replays = 0 #game.replays < 20
+        bad_replays = game.replays < 20
         bad_votes = !game.vote_rank.between?(1, 100)
         bad_votes_rank = !game.vote_rank.between?(1, 100)
         bad_votes_per_year = !game.votes_per_year_rank.between?(1, 100)
@@ -61,7 +61,7 @@
         <td class="number <%= 'bad' if bad_votes_per_year_rank %>"><%= game.votes_per_year_rank %></td>
         <td class="number <%= 'bad' if bad_rating %>"><%= format("%0.2f", game.rating) %></td>
         <td class="number <%= 'bad' if bad_weight %>"><%= format("%0.2f", game.weight) %></td>
-        <td class="number <%= 'bad' if bad_replays %>"><%#= game.replays %></td>
+        <td class="number <%= 'bad' if bad_replays %>"><%= game.replays %></td>
         <td><%= game.mechanics.join(", ") %></td>
         <td><%= game.families.join(", ") %></td>
         <td><%= game.subdomains.join(", ") %></td>
