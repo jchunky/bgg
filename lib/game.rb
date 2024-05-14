@@ -26,6 +26,10 @@ class Game
     end
   end
 
+  def play_rating
+    unique_users * replays
+  end
+
   def votes_per_year
     return 0 if years.zero?
 

@@ -65,6 +65,12 @@ class Bgg
       .values
 
     result
+      .select { |g| g.play_rank.positive? }
+      .select { |g| g.play_rating.positive? }
+      .sort_by { |g| -g.play_rating }
+      .each_with_index { |g, i| g.play_rating_rank = i + 1 }
+
+    result
       .select { |g| g.votes_per_year.positive? }
       .sort_by { |g| -g.votes_per_year }
       .each_with_index { |g, i| g.votes_per_year_rank = i + 1 }

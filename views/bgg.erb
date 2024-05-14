@@ -28,6 +28,8 @@
       <th>Rating</th>
       <th>Weight</th>
       <th>Replays</th>
+      <th>Play Rating</th>
+      <th>Play Rating Rank</th>
       <th>Mechanics</th>
       <th>Families</th>
       <th>Subdomain</th>
@@ -62,6 +64,8 @@
         <td class="number <%= 'bad' if bad_rating %>"><%= format("%0.2f", game.rating) %></td>
         <td class="number <%= 'bad' if bad_weight %>"><%= format("%0.2f", game.weight) %></td>
         <td class="number <%= 'bad' if bad_replays %>"><%= game.replays %></td>
+        <td class="number"><%= game.play_rating %></td>
+        <td class="number"><%= game.play_rating_rank %></td>
         <td><%= game.mechanics.join(", ") %></td>
         <td><%= game.families.join(", ") %></td>
         <td><%= game.subdomains.join(", ") %></td>
