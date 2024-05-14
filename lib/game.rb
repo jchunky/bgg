@@ -65,7 +65,7 @@ class Game
   end
 
   def ccg?
-    child_rank > 0
+    ccg_rank > 0
   end
 
   def child?
