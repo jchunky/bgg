@@ -12,7 +12,7 @@ class Bgg
   MAX_GAME_YEAR = Date.today.year - 5
 
   def display_game?(game)
-    return game.own? && game.rank < 10_000
+    return game.own?
 
     # return false unless game.campaign?
     # return false unless game.solo?
@@ -63,6 +63,11 @@ class Bgg
         hash.merge(by_key(downloader), &method(:merge_hashes))
       end
       .values
+
+    result = result
+      .select { |g| g.rank.positive? }
+      .sort_by(&:rank)
+      .uniq(&:name)
 
     result
       .select { |g| g.play_rank.positive? }
