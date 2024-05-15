@@ -37,7 +37,6 @@ class Bgg
     return false unless game.weight.between?(1.5, 3)
     return false unless game.year >= 2010
 
-    # return false unless game.replays >= 18
     return false unless game.replays >= 13
 
     true
@@ -74,6 +73,18 @@ class Bgg
       .select { |g| g.play_rating.positive? }
       .sort_by { |g| -g.play_rating }
       .each_with_index { |g, i| g.play_rating_rank = i + 1 }
+
+    result
+      .select { |g| g.play_rank.positive? }
+      .select { |g| g.replays.positive? }
+      .sort_by { |g| -g.replays }
+      .each_with_index { |g, i| g.replay_rank = i + 1 }
+
+    result
+      .select { |g| g.play_rank.positive? }
+      .select { |g| g.rating.positive? }
+      .sort_by { |g| -g.rating }
+      .each_with_index { |g, i| g.rating_rank = i + 1 }
 
     result
       .select { |g| g.votes_per_year.positive? }

@@ -41,16 +41,12 @@
     <% @games.each.with_index do |game, i| %>
       <%
         bad_rank = !game.rank.between?(1, 100)
-        bad_plays = !game.play_rank.between?(1, 100)
-        bad_plays_rank = !game.play_rank.between?(1, 100)
-        bad_votes = !game.vote_rank.between?(1, 100)
-        bad_votes_rank = !game.vote_rank.between?(1, 100)
-        bad_votes_per_year = !game.votes_per_year_rank.between?(1, 100)
-        bad_votes_per_year_rank = !game.votes_per_year_rank.between?(1, 100)
-        bad_play_rating = !game.play_rating_rank.between?(1, 100)
-        bad_play_rating_rank = !game.play_rating_rank.between?(1, 100)
-        bad_rating = game.rating < 8
-        bad_replays = game.replays < 20
+        bad_plays = bad_plays_rank = !game.play_rank.between?(1, 100)
+        bad_votes = bad_votes_rank = !game.vote_rank.between?(1, 100)
+        bad_votes_per_year = bad_votes_per_year_rank = !game.votes_per_year_rank.between?(1, 100)
+        bad_play_rating = bad_play_rating_rank = !game.play_rating_rank.between?(1, 100)
+        bad_rating = !game.rating_rank.between?(1, 100)
+        bad_replays = !game.replay_rank.between?(1, 100)
         bad_weight = game.weight >= 3
         bad_year = game.year >= Bgg::MAX_GAME_YEAR
         bad_game = bad_plays_rank
