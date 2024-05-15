@@ -11,7 +11,7 @@ class Game
     Game.new(attributes.merge(other.attributes)) { |_, a, b| null?(a) ? b : a }
   end
 
-  Categories::CATEGORIES.each do |category|
+  Downloaders::DOWNLOADERS.map(&:prefix).each do |category|
     define_method("#{category}?") do
       ranked_in_category?(category)
     end
@@ -44,6 +44,10 @@ class Game
     Categories::FAMILIES.keys.select(&method(:ranked_in_category?)).join(", ")
   end
 
+  def subdomains
+    Downloaders::SUBDOMAINS.map(&:prefix).select(&method(:ranked_in_category?)).join(", ")
+  end
+
   def replays
     # return 0
     @replays ||= Downloaders::ReplaysFetcher.new(objectid:).replays
@@ -51,27 +55,6 @@ class Game
 
   def key
     href.scan(/\/(\d+)\//).first.first
-  end
-
-  def solo?
-    solo_rank > 0 || one_player?
-  end
-
-  def one_player?
-    one_player_rank > 0
-  end
-
-  def subdomains
-    [
-      ("abstract" if abstract?),
-      ("ccg" if ccg?),
-      ("child" if child?),
-      ("family" if family?),
-      ("party" if party?),
-      ("strategy" if strategy?),
-      ("thematic" if thematic?),
-      ("war" if war?),
-    ].compact.join(", ")
   end
 
   def player_count
@@ -118,86 +101,6 @@ class Game
 
   def own?
     OwnedGames.include?(self)
-  end
-
-  def player_1?
-    player_1_rank > 0
-  end
-
-  def player_2?
-    player_2_rank > 0
-  end
-
-  def player_3?
-    player_3_rank > 0
-  end
-
-  def player_4?
-    player_4_rank > 0
-  end
-
-  def player_5?
-    player_5_rank > 0
-  end
-
-  def player_6?
-    player_6_rank > 0
-  end
-
-  def player_7?
-    player_7_rank > 0
-  end
-
-  def player_8?
-    player_8_rank > 0
-  end
-
-  def player_9?
-    player_9_rank > 0
-  end
-
-  def player_10?
-    player_10_rank > 0
-  end
-
-  def player_11?
-    player_11_rank > 0
-  end
-
-  def player_12?
-    player_12_rank > 0
-  end
-
-  def abstract?
-    abstract_rank > 0
-  end
-
-  def family?
-    family_rank > 0
-  end
-
-  def thematic?
-    thematic_rank > 0
-  end
-
-  def party?
-    party_rank > 0
-  end
-
-  def war?
-    war_rank > 0
-  end
-
-  def strategy?
-    strategy_rank > 0
-  end
-
-  def ccg?
-    ccg_rank > 0
-  end
-
-  def child?
-    child_rank > 0
   end
 
   private

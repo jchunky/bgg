@@ -13,8 +13,6 @@ module Categories
     solitaire: 2819,
     stacking: 2988,
     storytelling: 2027,
-    # variable_player_powers: 2015,
-    # variable_setup: 2897,
     worker_placement: 2082,
   }
 
@@ -27,5 +25,14 @@ module Categories
     tableau_building: 27646,
   }
 
-  CATEGORIES = MECHANICS.keys + FAMILIES.keys
+  SUBDOMAINS = {
+    abstract: 4666,
+    ccg: 4667,
+    child: 4665,
+    family: 5499,
+    party: 5498,
+    strategy: 5497,
+    thematic: 5496,
+    war: 4664,
+  }
 end

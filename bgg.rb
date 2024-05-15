@@ -12,10 +12,10 @@ class Bgg
   MAX_GAME_YEAR = Date.today.year - 5
 
   def display_game?(game)
-    return game.own?
+    # return game.own?
 
     # return false unless game.campaign?
-    # return false unless game.solo?
+    # return false unless game.player_1?
     return false unless game.coop?
 
     # return false if game.bga?
