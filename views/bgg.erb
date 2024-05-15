@@ -47,7 +47,7 @@
         bad_votes_per_year = bad_votes_per_year_rank = !game.votes_per_year_rank.between?(1, 100)
         bad_rating = !game.rating_rank.between?(1, 100)
         bad_replays = !game.replay_rank.between?(1, 100)
-        bad_weight = !game.weight_rank.between?(101, @games.map(&:weight_rank).max - 100)
+        bad_weight = !game.weight_rank.between?(101, @weight_rank_upper_bound)
         bad_year = game.year >= Bgg::MAX_GAME_YEAR
         bad_game = bad_plays_rank
       %>

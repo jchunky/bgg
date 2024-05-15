@@ -51,53 +51,57 @@ class Bgg
       .select(&method(:display_game?))
       .sort_by { |g| [-g.year, g.play_rank] }
 
+    @weight_rank_upper_bound = all_games.map(&:weight_rank).max - 100
+
     write_output
   end
 
   private
 
   def all_games
-    result = Downloaders::DOWNLOADERS
-      .reduce({}) do |hash, downloader|
-        hash.merge(by_key(downloader), &method(:merge_hashes))
-      end
-      .values
+    @all_games ||= begin
+      result = Downloaders::DOWNLOADERS
+        .reduce({}) do |hash, downloader|
+          hash.merge(by_key(downloader), &method(:merge_hashes))
+        end
+        .values
 
-    result = result
-      .select { |g| g.rank.positive? }
-      .sort_by(&:rank)
-      .uniq(&:name)
+      result = result
+        .select { |g| g.rank.positive? }
+        .sort_by(&:rank)
+        .uniq(&:name)
 
-    result
-      .select { |g| g.play_rank.positive? }
-      .select { |g| g.play_rating.positive? }
-      .sort_by { |g| -g.play_rating }
-      .each_with_index { |g, i| g.play_rating_rank = i + 1 }
+      result
+        .select { |g| g.play_rank.positive? }
+        .select { |g| g.play_rating.positive? }
+        .sort_by { |g| -g.play_rating }
+        .each_with_index { |g, i| g.play_rating_rank = i + 1 }
 
-    result
-      .select { |g| g.play_rank.positive? }
-      .select { |g| g.replays.positive? }
-      .sort_by { |g| -g.replays }
-      .each_with_index { |g, i| g.replay_rank = i + 1 }
+      result
+        .select { |g| g.play_rank.positive? }
+        .select { |g| g.replays.positive? }
+        .sort_by { |g| -g.replays }
+        .each_with_index { |g, i| g.replay_rank = i + 1 }
 
-    result
-      .select { |g| g.play_rank.positive? }
-      .select { |g| g.rating.positive? }
-      .sort_by { |g| -g.rating }
-      .each_with_index { |g, i| g.rating_rank = i + 1 }
+      result
+        .select { |g| g.play_rank.positive? }
+        .select { |g| g.rating.positive? }
+        .sort_by { |g| -g.rating }
+        .each_with_index { |g, i| g.rating_rank = i + 1 }
 
-    result
-      .select { |g| g.play_rank.positive? }
-      .select { |g| g.weight.positive? }
-      .sort_by { |g| -g.weight }
-      .each_with_index { |g, i| g.weight_rank = i + 1 }
+      result
+        .select { |g| g.play_rank.positive? }
+        .select { |g| g.weight.positive? }
+        .sort_by { |g| -g.weight }
+        .each_with_index { |g, i| g.weight_rank = i + 1 }
 
-    result
-      .select { |g| g.votes_per_year.positive? }
-      .sort_by { |g| -g.votes_per_year }
-      .each_with_index { |g, i| g.votes_per_year_rank = i + 1 }
+      result
+        .select { |g| g.votes_per_year.positive? }
+        .sort_by { |g| -g.votes_per_year }
+        .each_with_index { |g, i| g.votes_per_year_rank = i + 1 }
 
-    result
+      result
+    end
   end
 
   def by_key(clazz)
