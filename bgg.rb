@@ -16,7 +16,7 @@ class Bgg
 
     # return false unless game.campaign?
     # return false unless game.player_1?
-    # return false unless game.coop?
+    return false unless game.coop?
 
     # return false if game.bga?
     # return false if game.ccg?
