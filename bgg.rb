@@ -16,7 +16,7 @@ class Bgg
 
     # return false unless game.campaign?
     # return false unless game.player_1?
-    return false unless game.coop?
+    # return false unless game.coop?
 
     # return false if game.bga?
     # return false if game.ccg?
@@ -85,6 +85,12 @@ class Bgg
       .select { |g| g.rating.positive? }
       .sort_by { |g| -g.rating }
       .each_with_index { |g, i| g.rating_rank = i + 1 }
+
+    result
+      .select { |g| g.play_rank.positive? }
+      .select { |g| g.weight.positive? }
+      .sort_by { |g| -g.weight }
+      .each_with_index { |g, i| g.weight_rank = i + 1 }
 
     result
       .select { |g| g.votes_per_year.positive? }
