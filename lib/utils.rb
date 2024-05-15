@@ -20,10 +20,6 @@ module Utils
     end
   end
 
-  def generate_rank(game, prefix, page, items_per_page, i)
-    game.send("#{prefix}_rank=", ((page - 1) * items_per_page) + i + 1)
-  end
-
   private
 
   def strip_accents(string)

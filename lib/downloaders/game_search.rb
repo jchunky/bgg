@@ -1,10 +1,11 @@
 module Downloaders
   class GameSearch < Struct.new(:listid, :prefix, :search_criteria, keyword_init: true)
-    ITEMS_PER_PAGE = 100
-
     def games
       content_for_pages(&method(:games_for_page))
         .uniq(&:key)
+        .each.with_index do |game, i|
+          game.send("#{prefix}_rank=", i + 1)
+        end
         .reject { |g| g.rank.zero? }
     end
 
@@ -29,11 +30,7 @@ module Downloaders
     end
 
     def games_for_doc(doc, page)
-      rows(doc)
-        .map(&method(:build_game))
-        .each.with_index do |game, i|
-          Utils.generate_rank(game, prefix, page, ITEMS_PER_PAGE, i)
-        end
+      rows(doc).map(&method(:build_game))
     rescue StandardError
       []
     end

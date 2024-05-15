@@ -1,11 +1,7 @@
 module Downloaders
   class TopPlayed < Struct.new(:prefix, :listid, keyword_init: true)
-    ITEMS_PER_PAGE = 100
-
     def games
-      page_count = 1000 / ITEMS_PER_PAGE
-
-      (1..page_count)
+      (1..10)
         .flat_map(&method(:games_for_page))
         .compact
         .uniq(&:key)
@@ -32,13 +28,7 @@ module Downloaders
     end
 
     def games_for_doc(doc, page)
-      rows(doc)
-        .map(&method(:build_game))
-        .sort_by(&:unique_users)
-        .reverse
-        .each.with_index do |game, i|
-          Utils.generate_rank(game, prefix, page, ITEMS_PER_PAGE, i)
-        end
+      rows(doc).map(&method(:build_game))
     rescue StandardError
       []
     end
