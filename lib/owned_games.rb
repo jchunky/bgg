@@ -83,7 +83,7 @@ class OwnedGames
     "Zombie Dice",
   ]
 
-  def self.own?(game)
+  def self.include?(game)
     OWNED_GAMES.include?(game.name)
   end
 end
