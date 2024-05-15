@@ -63,6 +63,33 @@ class Game
     [min_player_count, max_player_count].compact.uniq.join("-")
   end
 
+  def own?
+    OwnedGames.include?(self)
+  end
+
+  private
+
+  def objectid
+    href.scan(/\b\d+\b/).first.to_i
+  end
+
+  def years
+    result = (Date.today.year + 1) - year
+    result.clamp(1..)
+  end
+
+  def null?(value)
+    !value || value.zero?
+  end
+
+  def ranked_in_category?(category)
+    category_rank(category) > 0
+  end
+
+  def category_rank(category)
+    send("#{category}_rank")
+  end
+
   def min_player_count
     case
     when player_1? then 1
@@ -97,32 +124,5 @@ class Game
     when player_1? then 1
     else 0
     end
-  end
-
-  def own?
-    OwnedGames.include?(self)
-  end
-
-  private
-
-  def objectid
-    href.scan(/\b\d+\b/).first.to_i
-  end
-
-  def years
-    result = (Date.today.year + 1) - year
-    result.clamp(1..)
-  end
-
-  def null?(value)
-    !value || value.zero?
-  end
-
-  def ranked_in_category?(category)
-    category_rank(category) > 0
-  end
-
-  def category_rank(category)
-    send("#{category}_rank")
   end
 end
