@@ -13,7 +13,7 @@ class Bgg
     # return game.own?
 
     # return false unless game.campaign?
-    return false unless game.player_1?
+    # return false unless game.player_1?
     return false unless game.coop?
 
     # return false if game.bga?
