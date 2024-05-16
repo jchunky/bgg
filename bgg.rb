@@ -9,13 +9,11 @@ require "yaml"
 Dir["lib/*.rb"].each { |f| require_relative f }
 
 class Bgg
-  MAX_GAME_YEAR = Date.today.year - 5
-
   def display_game?(game)
     # return game.own?
 
     # return false unless game.campaign?
-    # return false unless game.player_1?
+    return false unless game.player_1?
     return false unless game.coop?
 
     # return false if game.bga?
@@ -33,11 +31,13 @@ class Bgg
     return false if game.stacking?
 
     return false unless game.play_rank > 0
+    return false unless game.rank.in?(1..5000)
+    return false unless game.vote_rank.in?(1..5000)
     return false unless game.rating >= 7
     return false unless game.weight.between?(1.5, 3)
     return false unless game.year >= 2010
 
-    return false unless game.replays >= 12
+    # return false unless game.replays >= 12
 
     true
   end
@@ -50,8 +50,6 @@ class Bgg
     @games = all_games
       .select(&method(:display_game?))
       .sort_by { |g| [-g.year, g.play_rank] }
-
-    @weight_rank_upper_bound = all_games.map(&:weight_rank).max - 100
 
     write_output
   end
@@ -71,34 +69,35 @@ class Bgg
         .sort_by(&:rank)
         .uniq(&:name)
 
-      result
-        .select { |g| g.play_rank.positive? }
-        .select { |g| g.play_rating.positive? }
-        .sort_by { |g| -g.play_rating }
-        .each_with_index { |g, i| g.play_rating_rank = i + 1 }
+      top_played = result.select { |g| g.play_rank.positive? }
 
-      result
-        .select { |g| g.play_rank.positive? }
+      top_played
         .select { |g| g.replays.positive? }
         .sort_by { |g| -g.replays }
         .each_with_index { |g, i| g.replay_rank = i + 1 }
+        .tap { |games| @replays_lower_bound = games[-100].replays }
+        .tap { |games| @replays_upper_bound = games[100].replays }
 
-      result
-        .select { |g| g.play_rank.positive? }
+      top_played
         .select { |g| g.rating.positive? }
         .sort_by { |g| -g.rating }
         .each_with_index { |g, i| g.rating_rank = i + 1 }
+        .tap { |games| @rating_lower_bound = games[-100].rating }
+        .tap { |games| @rating_upper_bound = games[100].rating }
 
-      result
-        .select { |g| g.play_rank.positive? }
+      top_played
         .select { |g| g.weight.positive? }
         .sort_by { |g| -g.weight }
         .each_with_index { |g, i| g.weight_rank = i + 1 }
+        .tap { |games| @weight_lower_bound = games[-100].weight }
+        .tap { |games| @weight_upper_bound = games[100].weight }
 
-      result
-        .select { |g| g.votes_per_year.positive? }
-        .sort_by { |g| -g.votes_per_year }
-        .each_with_index { |g, i| g.votes_per_year_rank = i + 1 }
+      top_played
+        .select { |g| g.year.positive? }
+        .sort_by { |g| -g.year }
+        .each_with_index { |g, i| g.year_rank = i + 1 }
+        .tap { |games| @year_lower_bound = games[-100].year }
+        .tap { |games| @year_upper_bound = games[100].year }
 
       result
     end

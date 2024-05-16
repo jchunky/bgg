@@ -26,16 +26,6 @@ class Game
     end
   end
 
-  def play_rating
-    unique_users * replays
-  end
-
-  def votes_per_year
-    return 0 if years.zero?
-
-    rating_count / years
-  end
-
   def mechanics
     Categories::MECHANICS.keys.select(&method(:ranked_in_category?)).join(", ")
   end
