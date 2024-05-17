@@ -41,7 +41,7 @@
         bad_votes = bad_votes_rank = !game.vote_rank.between?(1, 100)
         bad_rating = !game.rating.in?(@rating_upper_bound..)
         bad_replays = !game.replays.in?(@replays_upper_bound..)
-        bad_weight = !game.weight.in?(@weight_lower_bound..@weight_upper_bound)
+        bad_weight = !game.weight.in?(@weight_lower_bound...@weight_upper_bound)
         bad_year = !game.year.in?(@year_lower_bound...@year_upper_bound)
         bad_game = bad_plays_rank
       %>

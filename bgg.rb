@@ -76,7 +76,7 @@ class Bgg
           .select { |g| g.send(category).positive? }
           .sort_by { |g| -g.send(category) }
           .tap { |games| instance_variable_set("@#{category}_lower_bound ", games[-100].send(category)) }
-          .tap { |games| instance_variable_set("@#{category}_upper_bound ", games[100].send(category)) }
+          .tap { |games| instance_variable_set("@#{category}_upper_bound ", games[99].send(category)) }
       end
 
       result
