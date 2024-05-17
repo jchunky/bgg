@@ -3,6 +3,8 @@ require "open-uri"
 module Utils
   extend self
 
+  BGG_CRAWL_DELAY = 5
+
   def fetch_html_data(url)
     file = Utils.read_file(url, extension: "html")
     Nokogiri::HTML(file)
@@ -15,6 +17,8 @@ module Utils
 
   def read_file(url, extension:)
     cache_text(url, extension:) do
+      sleep BGG_CRAWL_DELAY
+      print "."
       file_contents = URI.open(url).read
       strip_accents(file_contents)
     end
