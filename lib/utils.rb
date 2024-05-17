@@ -17,7 +17,7 @@ module Utils
 
   def read_file(url, extension:)
     cache_text(url, extension:) do
-      sleep BGG_CRAWL_DELAY
+      # sleep BGG_CRAWL_DELAY
       print "."
       file_contents = URI.open(url).read
       strip_accents(file_contents)
