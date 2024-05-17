@@ -27,49 +27,81 @@ class Game
   end
 
   def mechanics
-    Categories::MECHANICS.keys.select(&method(:ranked_in_category?)).join(", ")
+    @mechanics ||= Categories::MECHANICS.keys.select(&method(:ranked_in_category?)).join(", ")
   end
 
   def families
-    Categories::FAMILIES.keys.select(&method(:ranked_in_category?)).join(", ")
+    @families ||= Categories::FAMILIES.keys.select(&method(:ranked_in_category?)).join(", ")
   end
 
   def subdomains
-    Downloaders::SUBDOMAINS.map(&:prefix).select(&method(:ranked_in_category?)).join(", ")
+    @subdomains ||= Downloaders::SUBDOMAINS.map(&:prefix).select(&method(:ranked_in_category?)).join(", ")
   end
 
   def replays
     # return 0
-    @replays ||= Downloaders::ReplaysFetcher.new(objectid:).replays
+    @replays ||= Downloaders::ReplaysFetcher.new(objectid: key).replays
   end
 
   def key
-    href.scan(/\/(\d+)\//).first.first
+    @key ||= href.scan(/\b\d+\b/).first.to_i
   end
 
   def player_count
-    return if min_player_count.zero?
+    return @player_count if defined?(@player_count)
 
-    [min_player_count, max_player_count].compact.uniq.join("-")
+    @player_count =
+      if min_player_count.zero?
+        nil
+      else
+        [min_player_count, max_player_count].compact.uniq.join("-")
+      end
   end
 
   def own?
-    OwnedGames.include?(self)
+    return @own if defined?(@own)
+
+    @own = OwnedGames.include?(self)
   end
 
   private
 
-  def objectid
-    href.scan(/\b\d+\b/).first.to_i
+  def min_player_count
+    @min_player_count ||=
+      case
+      when player_1? then 1
+      when player_2? then 2
+      when player_3? then 3
+      when player_4? then 4
+      when player_5? then 5
+      when player_6? then 6
+      when player_7? then 7
+      when player_8? then 8
+      when player_9? then 9
+      when player_10? then 10
+      when player_11? then 11
+      when player_12? then 12
+      else 0
+      end
   end
 
-  def years
-    result = (Date.today.year + 1) - year
-    result.clamp(1..)
-  end
-
-  def null?(value)
-    !value || value.zero?
+  def max_player_count
+    @max_player_count ||=
+      case
+      when player_12? then 12
+      when player_11? then 11
+      when player_10? then 10
+      when player_9? then 9
+      when player_8? then 8
+      when player_7? then 7
+      when player_6? then 6
+      when player_5? then 5
+      when player_4? then 4
+      when player_3? then 3
+      when player_2? then 2
+      when player_1? then 1
+      else 0
+      end
   end
 
   def ranked_in_category?(category)
@@ -80,39 +112,7 @@ class Game
     send("#{category}_rank")
   end
 
-  def min_player_count
-    case
-    when player_1? then 1
-    when player_2? then 2
-    when player_3? then 3
-    when player_4? then 4
-    when player_5? then 5
-    when player_6? then 6
-    when player_7? then 7
-    when player_8? then 8
-    when player_9? then 9
-    when player_10? then 10
-    when player_11? then 11
-    when player_12? then 12
-    else 0
-    end
-  end
-
-  def max_player_count
-    case
-    when player_12? then 12
-    when player_11? then 11
-    when player_10? then 10
-    when player_9? then 9
-    when player_8? then 8
-    when player_7? then 7
-    when player_6? then 6
-    when player_5? then 5
-    when player_4? then 4
-    when player_3? then 3
-    when player_2? then 2
-    when player_1? then 1
-    else 0
-    end
+  def null?(value)
+    !value || value.zero?
   end
 end
