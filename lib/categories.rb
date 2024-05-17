@@ -1,4 +1,29 @@
 module Categories
+  CROWDFUNDING = [
+    16972,
+    18211,
+    20530,
+    22135,
+    22152,
+    22706,
+    23287,
+    25292,
+    27053,
+    28659,
+    44353,
+    50203,
+    50563,
+    66292,
+    67121,
+    68115,
+    70949,
+    73331,
+    75218,
+    76292,
+    77267,
+    8374,
+  ]
+
   MECHANICS = {
     action_points: 2001,
     campaign: 2822,
@@ -19,7 +44,7 @@ module Categories
   FAMILIES = {
     app: 41489,
     bga: 70360,
-    crowdfunding: [8374, 66292],
+    crowdfunding: CROWDFUNDING,
     dungeon_crawl: 59218,
     flip_and_write: 66143,
     tableau_building: 27646,
