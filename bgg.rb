@@ -71,33 +71,13 @@ class Bgg
 
       top_played = result.select { |g| g.play_rank.positive? }
 
-      top_played
-        .select { |g| g.replays.positive? }
-        .sort_by { |g| -g.replays }
-        .each_with_index { |g, i| g.replay_rank = i + 1 }
-        .tap { |games| @replays_lower_bound = games[-100].replays }
-        .tap { |games| @replays_upper_bound = games[100].replays }
-
-      top_played
-        .select { |g| g.rating.positive? }
-        .sort_by { |g| -g.rating }
-        .each_with_index { |g, i| g.rating_rank = i + 1 }
-        .tap { |games| @rating_lower_bound = games[-100].rating }
-        .tap { |games| @rating_upper_bound = games[100].rating }
-
-      top_played
-        .select { |g| g.weight.positive? }
-        .sort_by { |g| -g.weight }
-        .each_with_index { |g, i| g.weight_rank = i + 1 }
-        .tap { |games| @weight_lower_bound = games[-100].weight }
-        .tap { |games| @weight_upper_bound = games[100].weight }
-
-      top_played
-        .select { |g| g.year.positive? }
-        .sort_by { |g| -g.year }
-        .each_with_index { |g, i| g.year_rank = i + 1 }
-        .tap { |games| @year_lower_bound = games[-100].year }
-        .tap { |games| @year_upper_bound = games[100].year }
+      %i[rating replays weight year].each do |category|
+        top_played
+          .select { |g| g.send(category).positive? }
+          .sort_by { |g| -g.send(category) }
+          .tap { |games| instance_variable_set("@#{category}_lower_bound ", games[-100].send(category)) }
+          .tap { |games| instance_variable_set("@#{category}_upper_bound ", games[100].send(category)) }
+      end
 
       result
     end
