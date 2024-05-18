@@ -1,11 +1,11 @@
 module Downloaders
   class CategoryGames < Struct.new(:listid, :prefix, :object_type, keyword_init: true)
-    ITEMS_PER_PAGE = 50
+    ITEMS_PER_PAGE = 25
 
     def games
       content_for_pages(&method(:games_for_page))
         .uniq(&:key)
-        .reject { |g| g.rank.zero? }
+        .select { |g| g.rank.between?(1, 5000) }
     end
 
     private
@@ -13,8 +13,8 @@ module Downloaders
     def content_for_pages(&block)
       (1..).each.with_object([]) do |page, result|
         games = block.call(page)
-        return result if games.none? { |g| g.rank.positive? }
         result.concat(games)
+        return result if games.any? { |g| !g.rank.between?(1, 5000) }
       end
     end
 

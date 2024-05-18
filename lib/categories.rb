@@ -24,6 +24,10 @@ module Categories
     8374,
   ]
 
+  CATEGORIES = {
+    cards: 1002,
+  }
+
   MECHANICS = {
     action_points: 2001,
     campaign: 2822,
