@@ -41,7 +41,7 @@ class Bgg
     return false unless game.weight.between?(1.5, 3)
     return false unless game.year >= 2010
 
-    # return false unless game.replays >= 12
+    return false unless game.replays >= 10
 
     true
   end
