@@ -11,13 +11,13 @@ module Downloaders
   FAMILIES = Categories::FAMILIES.map { |prefix, listid| CategoryGames.new(prefix:, listid:, object_type: "family") }
   SUBDOMAINS = Categories::SUBDOMAINS.map { |prefix, listid| CategoryGames.new(prefix:, listid:, object_type: "family") }
   PLAYER_COUNTS = (1..12).map do |count|
-    GameSearch.new(prefix: "player_#{count}", listid: "playerrangetype", search_criteria: "#{SORTBY_RANK}&range[minplayers][max]=#{count}&range[maxplayers][min]=#{count}&playerrangetype=normal")
+    GameSearch.new(prefix: :"player_#{count}", listid: "playerrangetype", search_criteria: "#{SORTBY_RANK}&range[minplayers][max]=#{count}&range[maxplayers][min]=#{count}&playerrangetype=normal")
   end
 
   DOWNLOADERS = [
-    TopPlayed.new(prefix: "play", listid: "plays"),
-    GameSearch.new(prefix: "bgg", listid: "rank", search_criteria: SORTBY_RANK),
-    GameSearch.new(prefix: "vote", listid: "numvoters", search_criteria: SORTBY_VOTES),
+    TopPlayed.new(prefix: :play, listid: "plays"),
+    GameSearch.new(prefix: :bgg, listid: "rank", search_criteria: SORTBY_RANK),
+    GameSearch.new(prefix: :vote, listid: "numvoters", search_criteria: SORTBY_VOTES),
     *CATEGORIES,
     *MECHANICS,
     *FAMILIES,
