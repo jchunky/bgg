@@ -27,11 +27,11 @@ class Game
   end
 
   def mechanics
-    @mechanics ||= Categories::MECHANICS.keys.select(&method(:ranked_in_category?)).join(", ")
+    @mechanics ||= Downloaders::MECHANICS.map(&:prefix).select(&method(:ranked_in_category?)).join(", ")
   end
 
   def families
-    @families ||= Categories::FAMILIES.keys.select(&method(:ranked_in_category?)).join(", ")
+    @families ||= Downloaders::FAMILIES.map(&:prefix).select(&method(:ranked_in_category?)).join(", ")
   end
 
   def subdomains

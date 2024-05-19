@@ -24,44 +24,44 @@ module Categories
     8374,
   ]
 
-  CATEGORIES = {
-    cards: 1002,
-  }
+  CATEGORIES = [
+    [:cards, 1002, 50],
+  ]
 
-  MECHANICS = {
-    action_points: 2001,
-    campaign: 2822,
-    card_driven: 2018,
-    coop: 2023,
-    deck_building: 2664,
-    dice: 2072,
-    flicking: 2860,
-    legacy: 2824,
-    narrative_choice: 2851,
-    realtime: 2831,
-    solitaire: 2819,
-    stacking: 2988,
-    storytelling: 2027,
-    worker_placement: 2082,
-  }
+  MECHANICS = [
+    [:action_points, 2001, 50],
+    [:campaign, 2822, 50],
+    [:card_driven, 2018, 50],
+    [:coop, 2023, 50],
+    [:deck_building, 2664, 50],
+    [:dice, 2072, 50],
+    [:flicking, 2860, 25],
+    [:legacy, 2824, 10],
+    [:narrative_choice, 2851, 50],
+    [:realtime, 2831, 50],
+    [:solitaire, 2819, 50],
+    [:stacking, 2988, 25],
+    [:storytelling, 2027, 50],
+    [:worker_placement, 2082, 50],
+  ]
 
-  FAMILIES = {
-    app: 41489,
-    bga: 70360,
-    crowdfunding: CROWDFUNDING,
-    dungeon_crawl: 59218,
-    flip_and_write: 66143,
-    tableau_building: 27646,
-  }
+  FAMILIES = [
+    [:app, 41489, 25],
+    [:bga, 70360, 10],
+    [:crowdfunding, CROWDFUNDING, 50],
+    [:dungeon_crawl, 59218, 50],
+    [:flip_and_write, 66143, 50],
+    [:tableau_building, 27646, 25],
+  ]
 
-  SUBDOMAINS = {
-    abstract: 4666,
-    ccg: 4667,
-    child: 4665,
-    family: 5499,
-    party: 5498,
-    strategy: 5497,
-    thematic: 5496,
-    war: 4664,
-  }
+  SUBDOMAINS = [
+    [:abstract, 4666, 50],
+    [:ccg, 4667, 50],
+    [:child, 4665, 50],
+    [:family, 5499, 50],
+    [:party, 5498, 50],
+    [:strategy, 5497, 50],
+    [:thematic, 5496, 50],
+    [:war, 4664, 50],
+  ]
 end

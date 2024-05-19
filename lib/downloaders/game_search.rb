@@ -6,7 +6,7 @@ module Downloaders
         .each.with_index do |game, i|
           game.send("#{prefix}_rank=", i + 1)
         end
-        .reject { |g| g.rank.zero? }
+        .select { |g| g.rank.between?(1, 5000) }
     end
 
     private
@@ -14,8 +14,14 @@ module Downloaders
     def content_for_pages(&block)
       (1..).each.with_object([]) do |page, result|
         games = block.call(page)
-        return result if games.none? { |g| g.rank.positive? }
         result.concat(games)
+        done =
+          if search_criteria.include?("sort=rank")
+            games.none? { |g| g.rank.between?(1, 5000) }
+          else
+            games.none?
+          end
+        return result if done
       end
     end
 

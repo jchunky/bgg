@@ -1,7 +1,5 @@
 module Downloaders
-  class CategoryGames < Struct.new(:listid, :prefix, :object_type, keyword_init: true)
-    ITEMS_PER_PAGE = 10
-
+  class CategoryGames < Struct.new(:listid, :prefix, :items_per_page, :object_type, keyword_init: true)
     def games
       content_for_pages(&method(:games_for_page))
         .uniq(&:key)
@@ -14,7 +12,7 @@ module Downloaders
       (1..).each.with_object([]) do |page, result|
         games = block.call(page)
         result.concat(games)
-        return result if games.any? { |g| !g.rank.between?(1, 5000) }
+        return result if games.none? { |g| g.rank.between?(1, 5000) }
       end
     end
 
@@ -32,7 +30,7 @@ module Downloaders
           ?linkdata_index=boardgame
           &objectid=#{listid}
           &objecttype=#{object_type}
-          &showcount=#{ITEMS_PER_PAGE}
+          &showcount=#{items_per_page}
           &sort=rank
           &pageid=#{page}
       URL
