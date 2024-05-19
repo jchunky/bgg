@@ -1,6 +1,6 @@
 module Downloaders
   class CategoryGames < Struct.new(:listid, :prefix, :object_type, keyword_init: true)
-    ITEMS_PER_PAGE = 25
+    ITEMS_PER_PAGE = 10
 
     def games
       content_for_pages(&method(:games_for_page))
