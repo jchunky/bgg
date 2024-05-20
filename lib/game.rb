@@ -68,6 +68,48 @@ class Game
     @own = OwnedGames.include?(self)
   end
 
+  def min_age
+    @min_age ||= (1..24).find { |age| send("age_#{age}?") } || 0
+  end
+
+  def max_playtime_label
+    @max_playtime_label ||=
+      case max_playtime
+      when 15 then "15 minutes"
+      when 30 then "30 minutes"
+      when 45 then "45 minutes"
+      when 60 then "60 minutes"
+      when 90 then "1.5 hours"
+      when 120 then "2 hours"
+      when 150 then "1.5 hours"
+      when 180 then "3 hours"
+      when 210 then "3.5 hours"
+      when 240 then "4 hours"
+      when 300 then "5 hours"
+      when 360 then "6+ hours"
+      else ""
+      end
+  end
+
+  def max_playtime
+    @max_playtime ||=
+      case
+      when playtime_15? then 15
+      when playtime_30? then 30
+      when playtime_45? then 45
+      when playtime_60? then 60
+      when playtime_90? then 90
+      when playtime_120? then 120
+      when playtime_150? then 150
+      when playtime_180? then 180
+      when playtime_210? then 210
+      when playtime_240? then 240
+      when playtime_300? then 300
+      when playtime_360? then 360
+      else 0
+      end
+  end
+
   def min_player_count
     @min_player_count ||=
       case
