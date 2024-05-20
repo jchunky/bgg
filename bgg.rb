@@ -17,26 +17,34 @@ class Bgg
     # return false unless game.player_1?
     return false unless game.coop?
 
+    # return false if game.abstract?
     # return false if game.bga?
     # return false if game.ccg?
     # return false if game.deck_building?
     # return false if game.dungeon_crawl?
     # return false if game.legacy?
+    # return false if game.memory?
     # return false if game.narrative_choice?
     # return false if game.solitaire?
     # return false if game.storytelling?
     # return false if game.tableau_building?
+    # return false if game.take_that?
+    # return false if game.thematic?
     # return false if game.worker_placement?
+
+    # return false if game.child?
+    # return false if game.party?
 
     return false if game.action_points?
     return false if game.app?
+    return false if game.dexterity?
     return false if game.flicking?
     return false if game.flip_and_write?
-    return false if game.memory?
     return false if game.realtime?
     return false if game.stacking?
-    return false if game.take_that?
     return false if game.traitor?
+    return false if game.war?
+    return false if game.wargame?
 
     return false unless game.play_rank > 0
     return false unless game.rank.in?(1..5000)

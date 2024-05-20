@@ -25,20 +25,26 @@ module Categories
   ]
 
   CATEGORIES = [
+    [:bluffing, 1023, 50],
     [:cards, 1002, 50],
+    [:negotiation, 1026, 50],
+    [:wargame, 1019, 50],
   ]
 
   MECHANICS = [
     [:action_points, 2001, 50],
+    [:bidding, 2012, 50],
     [:campaign, 2822, 50],
     [:card_driven, 2018, 50],
     [:coop, 2023, 50],
     [:deck_building, 2664, 50],
+    [:dexterity, 1032, 50],
     [:dice, 2072, 50],
     [:flicking, 2860, 25],
     [:legacy, 2824, 10],
     [:memory, 2047, 50],
     [:narrative_choice, 2851, 50],
+    [:push_your_luck, 2661, 50],
     [:realtime, 2831, 50],
     [:solitaire, 2819, 50],
     [:stacking, 2988, 25],

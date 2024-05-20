@@ -27,9 +27,10 @@
       <th>Weight</th>
       <th>Replays</th>
       <th>Player Count</th>
-      <th>Mechanics</th>
-      <th>Families</th>
-      <th>Subdomain</th>
+      <th>Category</th>
+      <th>Mechanism</th>
+      <th>Family</th>
+      <th>Type</th>
       <th>Own</th>
     </tr>
   </thead>
@@ -57,6 +58,7 @@
         <td class="number <%= 'bad' if bad_weight %>"><%= format("%0.2f", game.weight) %></td>
         <td class="number <%= 'bad' if bad_replays %>"><%= game.replays %></td>
         <td class="number"><%= game.player_count %></td>
+        <td><%= game.categories %></td>
         <td><%= game.mechanics %></td>
         <td><%= game.families %></td>
         <td><%= game.subdomains %></td>

@@ -26,6 +26,10 @@ class Game
     end
   end
 
+  def categories
+    @categories ||= Downloaders::CATEGORIES.map(&:prefix).select(&method(:ranked_in_category?)).join(", ")
+  end
+
   def mechanics
     @mechanics ||= Downloaders::MECHANICS.map(&:prefix).select(&method(:ranked_in_category?)).join(", ")
   end
