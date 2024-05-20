@@ -20,20 +20,19 @@ class Bgg
     # return false if game.abstract?
     # return false if game.bga?
     # return false if game.ccg?
+    # return false if game.child?
     # return false if game.deck_building?
     # return false if game.dungeon_crawl?
     # return false if game.legacy?
     # return false if game.memory?
     # return false if game.narrative_choice?
+    # return false if game.party?
     # return false if game.solitaire?
     # return false if game.storytelling?
     # return false if game.tableau_building?
     # return false if game.take_that?
     # return false if game.thematic?
     # return false if game.worker_placement?
-
-    # return false if game.child?
-    # return false if game.party?
 
     return false if game.action_points?
     return false if game.app?
