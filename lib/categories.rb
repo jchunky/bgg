@@ -37,11 +37,14 @@ module Categories
     [:dice, 2072, 50],
     [:flicking, 2860, 25],
     [:legacy, 2824, 10],
+    [:memory, 2047, 50],
     [:narrative_choice, 2851, 50],
     [:realtime, 2831, 50],
     [:solitaire, 2819, 50],
     [:stacking, 2988, 25],
     [:storytelling, 2027, 50],
+    [:take_that, 2686, 50],
+    [:traitor, 2814, 50],
     [:worker_placement, 2082, 50],
   ]
 

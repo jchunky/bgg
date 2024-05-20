@@ -13,6 +13,7 @@ class Bgg
     # return game.own?
 
     # return false unless game.campaign?
+    # return false unless game.min_player_count >= 3
     # return false unless game.player_1?
     return false unless game.coop?
 
@@ -31,8 +32,11 @@ class Bgg
     return false if game.app?
     return false if game.flicking?
     return false if game.flip_and_write?
+    return false if game.memory?
     return false if game.realtime?
     return false if game.stacking?
+    return false if game.take_that?
+    return false if game.traitor?
 
     return false unless game.play_rank > 0
     return false unless game.rank.in?(1..5000)

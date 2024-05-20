@@ -64,8 +64,6 @@ class Game
     @own = OwnedGames.include?(self)
   end
 
-  private
-
   def min_player_count
     @min_player_count ||=
       case
@@ -103,6 +101,8 @@ class Game
       else 0
       end
   end
+
+  private
 
   def ranked_in_category?(category)
     category_rank(category) > 0
