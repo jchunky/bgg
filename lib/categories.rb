@@ -36,6 +36,7 @@ module Categories
     [:bidding, 2012, 50],
     [:campaign, 2822, 50],
     [:card_driven, 2018, 50],
+    [:communication_limits, 2893, 50],
     [:coop, 2023, 50],
     [:deck_building, 2664, 50],
     [:dexterity, 1032, 50],
