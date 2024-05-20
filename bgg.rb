@@ -13,7 +13,8 @@ class Bgg
     # return game.own?
 
     # return false unless game.campaign?
-    # return false unless game.min_player_count >= 3
+    # return false unless game.min_age.zero?
+    # return false unless game.min_player_count.in?(3..)
     # return false unless game.player_1?
     return false unless game.coop?
 
@@ -45,14 +46,15 @@ class Bgg
     return false if game.war?
     return false if game.wargame?
 
-    return false unless game.play_rank > 0
+    return false unless game.play_rank.in?(1..)
     return false unless game.rank.in?(1..5000)
     return false unless game.vote_rank.in?(1..5000)
-    return false unless game.rating >= 7
-    return false unless game.weight.between?(1.5, 3)
-    return false unless game.year >= 2010
+    return false unless game.rating.in?(7..)
+    return false unless game.weight.in?(1.5..)
+    return false unless game.year.in?(2010..)
+    return false unless game.max_playtime.in?(1..60)
 
-    return false unless game.replays >= 10
+    return false unless game.replays.in?(10..)
 
     true
   end

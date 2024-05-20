@@ -69,7 +69,7 @@ class Game
   end
 
   def min_age
-    @min_age ||= (1..24).find { |age| send("age_#{age}?") } || 0
+    @min_age ||= (1..18).find { |age| send("age_#{age}?") } || 0
   end
 
   def max_playtime_label
