@@ -40,6 +40,8 @@ class Bgg
     return false if game.dexterity?
     return false if game.flicking?
     return false if game.flip_and_write?
+    return false if game.max_player_count == 1
+    return false if game.max_player_count == 2 && !game.coop?
     return false if game.realtime?
     return false if game.stacking?
     return false if game.traitor?
