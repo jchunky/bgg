@@ -1,5 +1,6 @@
 module Categories
   CROWDFUNDING = [
+    8374,
     16972,
     18211,
     20530,
@@ -21,7 +22,6 @@ module Categories
     75218,
     76292,
     77267,
-    8374,
   ]
 
   CATEGORIES = [
