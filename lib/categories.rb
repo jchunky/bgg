@@ -39,6 +39,7 @@ module Categories
     [:communication_limits, 2893, 50],
     [:coop, 2023, 50],
     [:deck_building, 2664, 50],
+    [:deduction, 3002, 50],
     [:dexterity, 1032, 50],
     [:dice, 2072, 50],
     [:flicking, 2860, 25],
