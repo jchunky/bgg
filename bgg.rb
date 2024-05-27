@@ -24,7 +24,6 @@ class Bgg
     # return false if game.child?
     # return false if game.deck_building?
     # return false if game.dungeon_crawl?
-    # return false if game.legacy?
     # return false if game.memory?
     # return false if game.narrative_choice?
     # return false if game.party?
@@ -35,6 +34,9 @@ class Bgg
     # return false if game.thematic?
     # return false if game.worker_placement?
 
+    # return false if game.campaign?
+    # return false if game.legacy?
+    # return false if game.min_player_count == 1
     return false if game.action_points?
     return false if game.app?
     return false if game.dexterity?
