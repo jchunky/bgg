@@ -13,6 +13,7 @@ class Bgg
     # return game.own?
 
     # return false unless game.campaign?
+    # return false unless game.legacy?
     # return false unless game.min_age.zero?
     # return false unless game.min_player_count.in?(3..)
     # return false unless game.player_1?
