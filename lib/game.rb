@@ -62,10 +62,23 @@ class Game
       end
   end
 
+  def ownership
+    case
+    when own? then "own"
+    when played? then "played"
+    end
+  end
+
   def own?
     return @own if defined?(@own)
 
     @own = OwnedGames.include?(self)
+  end
+
+  def played?
+    return @played if defined?(@played)
+
+    @played = PlayedGames.include?(self)
   end
 
   def min_age
