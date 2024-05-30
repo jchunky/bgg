@@ -66,6 +66,7 @@ class Game
     case
     when own? then "own"
     when played? then "played"
+    when online? then "online"
     end
   end
 
@@ -79,6 +80,12 @@ class Game
     return @played if defined?(@played)
 
     @played = PlayedGames.include?(self)
+  end
+
+  def online?
+    return @online if defined?(@online)
+
+    @online = OnlineGames.include?(self)
   end
 
   def min_age
