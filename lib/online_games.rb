@@ -54,7 +54,6 @@ class OnlineGames
     "Piraten Kapern",
     "Potion Explosion",
     "Puerto Rico",
-    "Railroad Ink Challenge: Lush Green Edition",
     "Railroad Ink: Blazing Red Edition",
     "Railroad Ink: Deep Blue Edition",
     "Rallyman: GT",
@@ -83,10 +82,8 @@ class OnlineGames
     "Troyes Dice",
     "Turing Machine",
     "Via Magica",
-    "Viticulture",
     "Viticulture Essential Edition",
     "Welcome To...",
-    "Welcome To...: Collector's Edition",
     "Wingspan",
     "Wizard",
   ]

@@ -62,6 +62,7 @@ module Categories
     [:crowdfunding, CROWDFUNDING, 50],
     [:dungeon_crawl, 59218, 50],
     [:flip_and_write, 66143, 50],
+    [:roll_and_write, 41222, 50],
     [:tableau_building, 27646, 25],
   ]
 
