@@ -29,11 +29,11 @@
       <th>Player Count</th>
       <th>Max Playtime</th>
       <th>Min Age</th>
+      <th>Subdomain</th>
+      <th>Own</th>
       <th>Category</th>
       <th>Mechanism</th>
       <th>Family</th>
-      <th>Subdomain</th>
-      <th>Own</th>
     </tr>
   </thead>
   <tbody>
@@ -62,11 +62,11 @@
         <td class="number"><%= game.player_count %></td>
         <td class="number"><%= game.max_playtime %></td>
         <td class="number"><%= game.min_age %></td>
+        <td><%= game.subdomains %></td>
+        <td><%= game.ownership %></td>
         <td><%= game.categories %></td>
         <td><%= game.mechanics %></td>
         <td><%= game.families %></td>
-        <td><%= game.subdomains %></td>
-        <td><%= game.ownership %></td>
       </tr>
     <% end %>
   </tbody>
