@@ -14,6 +14,7 @@ class Bgg
     # return game.ownership.present?
 
     # return false unless game.campaign?
+    # return false unless game.dungeon_crawl?
     # return false unless game.legacy?
     # return false unless game.min_age.zero?
     # return false unless game.min_player_count.in?(3..)
