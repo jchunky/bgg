@@ -29,6 +29,10 @@ class Game
     @min_age ||= (1..18).find { |age| send("age_#{age}?") } || 0
   end
 
+  def max_playtime
+    @max_playtime ||= (15..360).step(15).find { |time| send("playtime_#{time}?") == true } || 0
+  end
+
   concerning :Merge do
     def merge(other)
       Game.new(attributes.merge(other.attributes)) { |_, a, b| null?(a) ? b : a }
@@ -118,62 +122,11 @@ class Game
     end
 
     def min_player_count
-      @min_player_count ||=
-        case
-        when player_1? then 1
-        when player_2? then 2
-        when player_3? then 3
-        when player_4? then 4
-        when player_5? then 5
-        when player_6? then 6
-        when player_7? then 7
-        when player_8? then 8
-        when player_9? then 9
-        when player_10? then 10
-        when player_11? then 11
-        when player_12? then 12
-        else 0
-        end
+      @min_player_count ||= (1..12).find { |count| send("player_#{count}?") == true } || 0
     end
 
     def max_player_count
-      @max_player_count ||=
-        case
-        when player_12? then 12
-        when player_11? then 11
-        when player_10? then 10
-        when player_9? then 9
-        when player_8? then 8
-        when player_7? then 7
-        when player_6? then 6
-        when player_5? then 5
-        when player_4? then 4
-        when player_3? then 3
-        when player_2? then 2
-        when player_1? then 1
-        else 0
-        end
-    end
-  end
-
-  concerning :Playtime do
-    def max_playtime
-      @max_playtime ||=
-        case
-        when playtime_15? then 15
-        when playtime_30? then 30
-        when playtime_45? then 45
-        when playtime_60? then 60
-        when playtime_90? then 90
-        when playtime_120? then 120
-        when playtime_150? then 150
-        when playtime_180? then 180
-        when playtime_210? then 210
-        when playtime_240? then 240
-        when playtime_300? then 300
-        when playtime_360? then 360
-        else 0
-        end
+      @max_player_count ||= (1..12).to_a.reverse.find { |count| send("player_#{count}?") == true } || 0
     end
   end
 end
