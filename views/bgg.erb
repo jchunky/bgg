@@ -52,22 +52,22 @@
         bad_game = bad_plays_rank
       %>
       <tr>
-        <td class="number <%= 'bad' if bad_year %>"><%= game.year %></td>
-        <td class="number <%= 'bad' if bad_plays %>"><%= game.unique_users %></td>
-        <td class="number <%= 'bad' if bad_plays_rank %>"><%= game.play_rank %></td>
+        <td class="number <%= 'bad' if bad_year %>"><%= int(game.year) %></td>
+        <td class="number <%= 'bad' if bad_plays %>"><%= int(game.unique_users) %></td>
+        <td class="number <%= 'bad' if bad_plays_rank %>"><%= int(game.play_rank) %></td>
         <td class="<%= 'bad' if bad_game %>"><a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a></td>
-        <td class="number <%= 'bad' if bad_votes %>"><%= game.rating_count %></td>
-        <td class="number <%= 'bad' if bad_votes_rank %>"><%= game.vote_rank %></td>
-        <td class="number <%= 'bad' if bad_rank %>"><%= game.rank %></td>
-        <td class="number <%= 'bad' if bad_rating %>"><%= format("%0.2f", game.rating) %></td>
-        <td class="number <%= 'bad' if bad_weight %>"><%= format("%0.2f", game.weight) %></td>
-        <td class="number <%= 'bad' if bad_replays %>"><%= game.replays %></td>
-        <td class="number"><%= game.player_count %></td>
-        <td class="number"><%= game.max_playtime %></td>
-        <td class="number"><%= game.min_age %></td>
-        <td class="number"><%= game.corridor_rank %></td>
-        <td class="number"><%= game.couples_rank %></td>
-        <td class="number"><%= game.solo_rank %></td>
+        <td class="number <%= 'bad' if bad_votes %>"><%= int(game.rating_count) %></td>
+        <td class="number <%= 'bad' if bad_votes_rank %>"><%= int(game.vote_rank) %></td>
+        <td class="number <%= 'bad' if bad_rank %>"><%= int(game.rank) %></td>
+        <td class="number <%= 'bad' if bad_rating %>"><%= float(game.rating) %></td>
+        <td class="number <%= 'bad' if bad_weight %>"><%= float(game.weight) %></td>
+        <td class="number <%= 'bad' if bad_replays %>"><%= int(game.replays) %></td>
+        <td class="number"><%= int(game.player_count) %></td>
+        <td class="number"><%= int(game.max_playtime) %></td>
+        <td class="number"><%= int(game.min_age) %></td>
+        <td class="number"><%= int(game.corridor_rank) %></td>
+        <td class="number"><%= int(game.couples_rank) %></td>
+        <td class="number"><%= int(game.solo_rank) %></td>
         <td><%= game.subdomains %></td>
         <td><%= game.ownership %></td>
         <td><%= game.categories %></td>

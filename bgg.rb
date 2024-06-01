@@ -121,6 +121,14 @@ class Bgg
     html = ERB.new(template).result(binding)
     File.write("index.html", html)
   end
+
+  def int(value)
+    value.to_i.zero? ? "" : value
+  end
+
+  def float(value)
+    value.to_f.zero? ? "" : format("%0.2f", value)
+  end
 end
 
 Bgg.new.run
