@@ -1,5 +1,5 @@
 module Downloaders
-  class ReplaysFetcher < Struct.new(:objectid, keyword_init: true)
+  class ReplaysFetcher < Struct.new(:game, keyword_init: true)
     def replays
       @replays ||= begin
         doc = fetch_page_data(tenth_percentile_page)
@@ -43,7 +43,7 @@ module Downloaders
     end
 
     def url_for_page(page)
-      "https://boardgamegeek.com/playstats/thing/#{objectid}/page/#{page}"
+      "https://boardgamegeek.com/playstats/thing/#{game.key}/page/#{page}"
     end
   end
 end

@@ -1,3 +1,4 @@
+require_relative "downloaders/game_fetcher"
 require_relative "downloaders/replays_fetcher"
 
 class Game
@@ -10,7 +11,7 @@ class Game
   concerning :Stats do
     def replays
       # return 0
-      @replays ||= Downloaders::ReplaysFetcher.new(objectid: key).replays
+      @replays ||= Downloaders::ReplaysFetcher.new(game: self).replays
     end
 
     def min_age
