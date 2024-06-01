@@ -10,6 +10,7 @@ Dir["lib/*.rb"].each { |f| require_relative f }
 
 class Bgg
   def display_game?(game)
+    # return game.corridor? || game.solo? || game.couples?
     # return game.own?
     # return game.ownership.present?
 
