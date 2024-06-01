@@ -1,4 +1,3 @@
-require_relative "downloaders/game_fetcher"
 require_relative "downloaders/replays_fetcher"
 
 class Game
