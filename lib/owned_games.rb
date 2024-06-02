@@ -42,7 +42,6 @@ class OwnedGames
     "Patchwork",
     "Potion Explosion",
     "Qwirkle",
-    "Race for the Galaxy",
     "Race to the Raft",
     "San Juan",
     "SCOUT",
