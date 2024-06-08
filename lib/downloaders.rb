@@ -24,7 +24,7 @@ module Downloaders
     TopPlayed.new(prefix: :play, listid: "plays"),
     GameSearch.new(prefix: :bgg, listid: "rank", search_criteria: SORTBY_RANK),
     GameSearch.new(prefix: :vote, listid: "numvoters", search_criteria: SORTBY_VOTES),
-    GeekList.new(prefix: "corridor", listid: 336137, reverse_rank: false),
+    GeekList.new(prefix: "corridor", listid: 337579, reverse_rank: false),
     GeekList.new(prefix: "couples", listid: 328691, reverse_rank: false),
     GeekList.new(prefix: "solo", listid: 324731, reverse_rank: false),
     *PLAYER_COUNTS,
