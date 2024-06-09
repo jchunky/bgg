@@ -80,16 +80,20 @@ class Game
       end
     end
 
+    def category_label
+      @category_label ||= (categories + mechanics + families).sort.join(", ")
+    end
+
     def categories
-      @categories ||= Downloaders::CATEGORIES.map(&:prefix).select(&method(:ranked_in_category?)).join(", ")
+      @categories ||= Downloaders::CATEGORIES.map(&:prefix).select(&method(:ranked_in_category?))
     end
 
     def mechanics
-      @mechanics ||= Downloaders::MECHANICS.map(&:prefix).select(&method(:ranked_in_category?)).join(", ")
+      @mechanics ||= Downloaders::MECHANICS.map(&:prefix).select(&method(:ranked_in_category?))
     end
 
     def families
-      @families ||= Downloaders::FAMILIES.map(&:prefix).select(&method(:ranked_in_category?)).join(", ")
+      @families ||= Downloaders::FAMILIES.map(&:prefix).select(&method(:ranked_in_category?))
     end
 
     def subdomains

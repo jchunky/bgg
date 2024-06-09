@@ -16,6 +16,7 @@
     $(function() {
       $('#games').DataTable({
         fixedHeader: true,
+        order: [[0, 'desc'], [2, 'asc']],
         paging: false
       });
     });
@@ -44,8 +45,6 @@
         <th>Subdomain</th>
         <th>Own</th>
         <th>Category</th>
-        <th>Mechanism</th>
-        <th>Family</th>
       </tr>
     </thead>
     <tbody>
@@ -79,9 +78,7 @@
           <td class="number"><%= int(game.solo_rank) %></td>
           <td><%= game.subdomains %></td>
           <td><%= game.ownership %></td>
-          <td><%= game.categories %></td>
-          <td><%= game.mechanics %></td>
-          <td><%= game.families %></td>
+          <td><%= game.category_label %></td>
         </tr>
       <% end %>
     </tbody>
