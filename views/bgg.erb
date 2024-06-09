@@ -57,7 +57,8 @@
           bad_replays = !game.replays.in?(@replays_upper_bound..)
           bad_weight = !game.weight.in?(@weight_lower_bound...@weight_upper_bound)
           bad_year = !game.year.in?(@year_lower_bound...@year_upper_bound)
-          bad_game = bad_plays_rank
+          bad_playtime = !game.max_playtime.in?(1..60)
+          bad_game = bad_playtime
         %>
         <tr>
           <td class="number <%= 'bad' if bad_year %>"><%= int(game.year) %></td>
@@ -71,7 +72,7 @@
           <td class="number <%= 'bad' if bad_weight %>"><%= float(game.weight) %></td>
           <td class="number <%= 'bad' if bad_replays %>"><%= int(game.replays) %></td>
           <td class="number"><%= int(game.player_count) %></td>
-          <td class="number"><%= int(game.max_playtime) %></td>
+          <td class="number <%= 'bad' if bad_playtime %>"><%= int(game.max_playtime) %></td>
           <td class="number"><%= int(game.min_age) %></td>
           <td class="number"><%= int(game.corridor_rank) %></td>
           <td class="number"><%= int(game.couples_rank) %></td>
