@@ -105,6 +105,6 @@ class Game
   end
 
   def key
-    @key ||= href.scan(/\b\d+\b/).first.to_i
+    @key ||= href.scan(/\b\d+\b/).first.to_i rescue 0
   end
 end
