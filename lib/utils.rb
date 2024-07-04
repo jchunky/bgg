@@ -3,7 +3,7 @@ require "open-uri"
 module Utils
   extend self
 
-  BGG_CRAWL_DELAY = 5
+  BGG_CRAWL_DELAY = 2
 
   def fetch_html_data(url)
     file = Utils.read_file(url, extension: "html")
@@ -17,7 +17,7 @@ module Utils
 
   def read_file(url, extension:)
     cache_text(url, extension:) do
-      # sleep BGG_CRAWL_DELAY
+      sleep BGG_CRAWL_DELAY
       print "."
       file_contents = URI.open(url).read
       strip_accents(file_contents)
