@@ -99,6 +99,7 @@ class PlayedGames
     "No Thanks!",
     "Oh My Goods!",
     "Oltréé",
+    "One Deck Dungeon",
     "Onirim (Second Edition)",
     "Onitama",
     "Orléans",
