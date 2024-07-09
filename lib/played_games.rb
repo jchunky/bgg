@@ -31,6 +31,7 @@ class PlayedGames
     "Carcassonne",
     "Cascadia",
     "Castle Panic",
+    "Castles of Mad King Ludwig",
     "Cat in the Box: Deluxe Edition",
     "CATAN",
     "Century: Spice Road",
