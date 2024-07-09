@@ -99,7 +99,7 @@ class PlayedGames
     "NMBR 9",
     "No Thanks!",
     "Oh My Goods!",
-    "Oltréé",
+    "Oltree",
     "One Deck Dungeon",
     "Onirim (Second Edition)",
     "Onitama",
