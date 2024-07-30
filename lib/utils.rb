@@ -16,7 +16,7 @@ module Utils
   end
 
   def read_file(url, extension:)
-    cache_text(url, extension:) do
+    cache_text(url, extension: extension) do
       sleep BGG_CRAWL_DELAY
       print "."
       file_contents = URI.open(url).read

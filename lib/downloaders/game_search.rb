@@ -3,9 +3,9 @@ module Downloaders
     def games
       content_for_pages(&method(:games_for_page))
         .uniq(&:key)
-        .each.with_index do |game, i|
+        .each.with_index { |game, i|
           game.send("#{prefix}_rank=", i + 1)
-        end
+        }
         .select { |g| g.rank.between?(1, 5000) }
     end
 

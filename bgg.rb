@@ -66,9 +66,9 @@ class Bgg
   def all_games
     @all_games ||= begin
       result = Downloaders::DOWNLOADERS
-        .reduce({}) do |hash, downloader|
+        .reduce({}) { |hash, downloader|
           hash.merge(by_key(downloader), &method(:merge_hashes))
-        end
+        }
         .values
 
       result = result
