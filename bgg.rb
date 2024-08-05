@@ -36,7 +36,7 @@ class Bgg
     # return false unless game.rating.in?(7..)
     # return false unless game.weight.in?(1.5..)
     # return false unless game.year.in?(2010..)
-    # return false unless game.max_playtime.in?(1..60)
+    return false unless game.max_playtime.in?(1..60)
 
     return false unless game.replays.in?(10..)
 
