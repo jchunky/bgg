@@ -14,7 +14,7 @@ class Bgg
     # return game.own?
     # return game.ownership.present?
 
-    return false unless game.coop?
+    return false unless game.coop? || game.max_player_count == 1
 
     # return false if game.max_player_count == 1
     # return false if game.max_player_count == 2 && !game.coop?
