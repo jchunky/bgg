@@ -123,6 +123,7 @@ class PlayedGames
     "Railroad Ink: Deep Blue Edition",
     "Railroad Ink: Blazing Red Edition",
     "Reef",
+    "Resist!",
     "Rhino Hero",
     "Roll For It!",
     "Roll for the Galaxy",
