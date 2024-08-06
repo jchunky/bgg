@@ -33,6 +33,6 @@ module Downloaders
     *CATEGORIES,
     *MECHANICS,
     *FAMILIES,
-    # *SUBDOMAINS,
+    *SUBDOMAINS,
   ]
 end
