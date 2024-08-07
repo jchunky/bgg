@@ -50,15 +50,15 @@
     <tbody>
       <% @games.each.with_index do |game, i| %>
         <%
-          bad_rank = !game.rank.between?(1, 100)
-          bad_plays = bad_plays_rank = !game.play_rank.between?(1, 100)
-          bad_votes = bad_votes_rank = !game.vote_rank.between?(1, 100)
-          bad_rating = !game.rating.in?(@rating_upper_bound..)
-          bad_replays = !game.replays.in?(@replays_upper_bound..)
-          bad_weight = !game.weight.in?(@weight_lower_bound...@weight_upper_bound)
+          bad_rank = !game.rank.in?(1..2000)
+          bad_plays = bad_plays_rank = !game.unique_users.in?(100..)
+          bad_votes = bad_votes_rank = !game.rating_count.in?(1000..)
+          bad_rating = !game.rating.in?(7..)
+          bad_replays = !game.replays.in?(10..)
+          bad_weight = !game.weight.in?(..2.5)
           bad_year = !game.year.in?(@year_lower_bound...@year_upper_bound)
           bad_playtime = !game.max_playtime.in?(1..60)
-          bad_game = bad_playtime
+          bad_game = bad_rank || bad_plays || bad_votes || bad_rating || bad_replays || bad_weight || bad_playtime
         %>
         <tr>
           <td class="number <%= 'bad' if bad_year %>"><%= int(game.year) %></td>
