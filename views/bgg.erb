@@ -50,9 +50,9 @@
     <tbody>
       <% @games.each.with_index do |game, i| %>
         <%
-          bad_rank = !game.rank.in?(1..1000)
+          bad_rank = !game.rank.in?(1..2000)
           bad_plays = bad_plays_rank = !game.unique_users.in?(100..)
-          bad_votes = bad_votes_rank = !game.vote_rank.in?(1..1000)
+          bad_votes = bad_votes_rank = !game.rating_count.in?(1000..)
           bad_rating = !game.rating.in?(7..)
           bad_replays = !game.replays.in?(10..)
           bad_weight = !game.weight.in?(..2.5)
