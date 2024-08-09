@@ -58,7 +58,7 @@
           bad_replays = !game.replays.in?(10..)
           bad_votes = bad_votes_rank = !game.rating_count.in?(1000..)
           bad_weight = !game.weight.in?(..2.5)
-          bad_year = !game.year.in?(2009..Time.now.year - 2)
+          bad_year = !game.year.in?(2010..Time.now.year - 2)
           bad_game = [
             bad_player_count,
             bad_plays,
