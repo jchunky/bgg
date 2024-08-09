@@ -68,28 +68,14 @@ class Bgg
 
   def all_games
     @all_games ||= begin
-      result = Downloaders::DOWNLOADERS
+      Downloaders::DOWNLOADERS
         .reduce({}) { |hash, downloader|
           hash.merge(by_key(downloader), &method(:merge_hashes))
         }
         .values
-
-      result = result
         .select { |g| g.rank.positive? }
         .sort_by(&:rank)
         .uniq(&:name)
-
-      top_played = result.select { |g| g.play_rank.positive? }
-
-      %i[rating replays weight year].each do |category|
-        top_played
-          .select { |g| g.send(category).positive? }
-          .sort_by { |g| -g.send(category) }
-          .tap { |games| instance_variable_set("@#{category}_lower_bound", games[-100]&.send(category) || 0) }
-          .tap { |games| instance_variable_set("@#{category}_upper_bound", games[99]&.send(category) || 0) }
-      end
-
-      result
     end
   end
 
