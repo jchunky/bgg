@@ -27,7 +27,7 @@ module Downloaders
     # GeekList.new(prefix: "corridor", listid: 340430, reverse_rank: false),
     # GeekList.new(prefix: "couples", listid: 328691, reverse_rank: false),
     # GeekList.new(prefix: "solo", listid: 324731, reverse_rank: false),
-    # *PLAYER_COUNTS,
+    *PLAYER_COUNTS,
     *PLAYTIMES,
     # *AGES,
     *CATEGORIES,

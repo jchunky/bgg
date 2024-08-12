@@ -11,8 +11,6 @@ Dir["lib/*.rb"].each { |f| require_relative f }
 class Bgg
   def display_game?(game)
     # return game.played?
-    # return game.own?
-    # return game.ownership.present?
     return false unless game.coop? || game.solitaire? || game.max_player_count == 1
 
     return false if game.action_points?
@@ -28,7 +26,7 @@ class Bgg
     return false if game.wargame?
 
     # return false unless game.min_player_count.in?(1..2)
-    # return false unless game.rank.in?(1..1000)
+    # return false unless game.rank.in?(1..500)
     # return false unless game.rating.in?(7..)
     # return false unless game.rating_count.in?(1000..)
     # return false unless game.unique_users.in?(100..)
