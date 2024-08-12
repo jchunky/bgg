@@ -53,7 +53,7 @@
           bad_player_count = !game.min_player_count.in?(1..2)
           bad_plays = bad_plays_rank = !game.unique_users.in?(100..)
           bad_playtime = !game.max_playtime.in?(1..60)
-          bad_rank = !game.rank.in?(1..2000)
+          bad_rank = !game.rank.in?(1..500)
           bad_rating = !game.rating.in?(7..)
           bad_replays = !game.replays.in?(10..)
           bad_votes = bad_votes_rank = !game.rating_count.in?(1000..)

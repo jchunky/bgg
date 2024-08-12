@@ -13,11 +13,8 @@ class Bgg
     # return game.played?
     # return game.own?
     # return game.ownership.present?
-
     return false unless game.coop? || game.solitaire? || game.max_player_count == 1
 
-    # return false if game.max_player_count == 1
-    # return false if game.max_player_count == 2 && !game.coop?
     return false if game.action_points?
     return false if game.app?
     return false if game.dexterity?
@@ -37,9 +34,9 @@ class Bgg
     # return false unless game.unique_users.in?(100..)
     # return false unless game.vote_rank.in?(1..1000)
     # return false unless game.weight.in?(..2.5)
+    # return false unless game.year.in?(2010..)
     return false unless game.max_playtime.in?(1..60)
     return false unless game.play_rank.in?(1..)
-    return false unless game.year.in?(2010..)
 
     return false unless game.replays.in?(10..)
 
