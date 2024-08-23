@@ -25,7 +25,7 @@ module Downloaders
     GameSearch.new(prefix: :vote, listid: "numvoters", search_criteria: SORTBY_VOTES),
     *PLAYER_COUNTS,
     *PLAYTIMES,
-    *AGES,
+    # *AGES,
     *CATEGORIES,
     *MECHANICS,
     *FAMILIES,
