@@ -14,6 +14,7 @@ class Bgg
     return false unless game.coop? || game.max_player_count == 1
     return false unless game.min_player_count == 1
 
+    # return false if game.solitaire?
     return false if game.action_points?
     return false if game.app?
     return false if game.dexterity?
