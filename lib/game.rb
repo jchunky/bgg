@@ -116,6 +116,8 @@ class Game
       attribute_name = method_name.to_s.chomp("=").to_sym
       if method_name.to_s.end_with?("=")
         attributes[attribute_name] = args.first
+      elsif method_name.to_s.end_with?("?")
+        false
       else
         attributes[attribute_name]
       end
