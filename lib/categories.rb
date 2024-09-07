@@ -1,8 +1,5 @@
 module Categories
   CATEGORIES = [
-    [:bluffing, 1023, 50],
-    [:negotiation, 1026, 50],
-    [:wargame, 1019, 50],
   ]
 
   MECHANICS = [
@@ -11,9 +8,12 @@ module Categories
     [:coop, 2023, 50],
     [:dexterity, 1032, 50],
     [:flicking, 2860, 25],
+    [:legacy, 2824, 10],
+    [:narrative_choice, 2851, 50],
     [:realtime, 2831, 50],
     [:solitaire, 2819, 50],
     [:stacking, 2988, 25],
+    [:storytelling, 2027, 50],
     [:traitor, 2814, 50],
   ]
 
@@ -23,7 +23,6 @@ module Categories
     [:dungeon_crawl, 59218, 50],
     [:flip_and_write, 66143, 50],
     [:roll_and_write, 41222, 50],
-    [:tableau_building, 27646, 25],
   ]
 
   SUBDOMAINS = [
