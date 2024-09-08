@@ -80,7 +80,6 @@ class PlayedGames
     "Zombicide: 2nd Edition" => :own,
     "Zombie Dice" => :own,
 
-    "6 nimmt!" => :bga,
     "7 Wonders (Second Edition)" => :bga,
     "7 Wonders" => :bga,
     "7 Wonders: Architects" => :bga,
@@ -170,7 +169,6 @@ class PlayedGames
     "Wingspan" => :bga,
     "Wizard" => :bga,
 
-    "6 nimmt!" => :played,
     "7 Wonders" => :played,
     "A Fake Artist Goes to New York" => :played,
     "A Feast for Odin" => :played,
@@ -292,7 +290,6 @@ class PlayedGames
     "Stone Age" => :played,
     "Sushi Go Party!" => :played,
     "Sushi Go!" => :played,
-    "Take" => :played,
     "Takenoko" => :played,
     "Targi" => :played,
     "Terraforming Mars: Ares Expedition" => :played,
