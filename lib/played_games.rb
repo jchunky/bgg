@@ -50,7 +50,6 @@ class PlayedGames
     "Marvel Champions: The Card Game" => :own,
     "MicroMacro: Crime City" => :own,
     "No Thanks!" => :own,
-    "Oltree" => :own,
     "Oltréé" => :own,
     "One Deck Dungeon" => :own,
     "Paleo" => :own,
