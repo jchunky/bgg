@@ -17,9 +17,8 @@ class Bgg
     return false if game.app?
     return false if game.dexterity?
     return false if game.flicking?
-    return false if game.flip_and_write?
+    return false if game.paper_n_pencil?
     return false if game.realtime?
-    return false if game.roll_and_write?
     return false if game.stacking?
     return false if game.traitor?
     return false if game.war?

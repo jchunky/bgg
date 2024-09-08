@@ -10,6 +10,7 @@ module Categories
     [:flicking, 2860, 25],
     [:legacy, 2824, 10],
     [:narrative_choice, 2851, 50],
+    [:paper_n_pencil, 2055, 50],
     [:realtime, 2831, 50],
     [:solitaire, 2819, 50],
     [:stacking, 2988, 25],
@@ -21,8 +22,6 @@ module Categories
     [:app, 41489, 25],
     [:bga, 70360, 10],
     [:dungeon_crawl, 59218, 50],
-    [:flip_and_write, 66143, 50],
-    [:roll_and_write, 41222, 50],
   ]
 
   SUBDOMAINS = [
