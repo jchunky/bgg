@@ -24,29 +24,15 @@ class Game
 
   concerning :Ownership do
     def ownership
-      case
-      when own? then "own"
-      when played? then "played"
-      when online? then "online"
-      end
-    end
+      return @ownership if defined?(@ownership)
 
-    def own?
-      return @own if defined?(@own)
-
-      @own = OwnedGames.include?(self)
+      @ownership = PlayedGames.ownership(self)
     end
 
     def played?
       return @played if defined?(@played)
 
       @played = PlayedGames.include?(self)
-    end
-
-    def online?
-      return @online if defined?(@online)
-
-      @online = OnlineGames.include?(self)
     end
   end
 
