@@ -26,7 +26,6 @@ class Bgg
     return false if game.storytelling?
     return false if game.traitor?
     return false if game.war?
-    return false if game.wargame?
 
     # return false unless game.max_playtime.in?(1..60)
     return false unless game.play_rank.in?(1..)

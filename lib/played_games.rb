@@ -1,5 +1,22 @@
 class PlayedGames
   PLAYED_GAMES = [
+    "Adventure Games: Monochrome Inc.",
+    "Adventure Games: The Dungeon",
+    "Adventure Games: The Grand Hotel Abaddon",
+    "Aftermath",
+    "Cantaloop: Book 1 – Breaking into Prison",
+    "Choose Your Own Adventure: House of Danger",
+    "Detective: City of Angels",
+    "Escape Tales: Children of Wyrmwoods",
+    "Escape Tales: Low Memory",
+    "Escape Tales: The Awakening",
+    "Legacy of Dragonholt",
+    "Sleeping Gods",
+    "T.I.M.E Stories",
+    "The Adventures of Robin Hood",
+    "This War of Mine: The Board Game",
+    "TIME Stories Revolution: The Hadal Project",
+
     "6 nimmt!",
     "7 Wonders",
     "A Fake Artist Goes to New York",
