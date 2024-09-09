@@ -58,12 +58,7 @@
           bad_weight = !game.weight.in?(..2.5)
           bad_year = !game.year.in?(2010..Time.now.year - 2)
           bad_game = [
-            bad_plays,
-            bad_playtime,
-            bad_rank,
-            bad_rating,
             bad_replays,
-            bad_votes,
             bad_weight,
           ].reduce { |acc, obj| acc || obj }
         %>
