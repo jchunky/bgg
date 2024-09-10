@@ -13,6 +13,11 @@ module Utils
   def fetch_json_data(url)
     file = Utils.read_file(url, extension: "json")
     JSON.parse(file)
+  rescue => ex
+    p 'x' * 80
+    file = filename(url, "json")
+    p file
+    exit
   end
 
   def read_file(url, extension:)
