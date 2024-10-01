@@ -39,12 +39,6 @@
         <th>Replays</th>
         <th>Player Count</th>
         <th>Max Playtime</th>
-        <th>Min Age</th>
-        <th>Subdomain</th>
-        <th>Own</th>
-        <th>Corridor Rank</th>
-        <th>Couples Rank</th>
-        <th>Solo Rank</th>
         <th>Category</th>
       </tr>
     </thead>
@@ -78,12 +72,6 @@
           <td class="number <%= 'bad' if bad_replays %>"><%= int(game.replays) %></td>
           <td class="number <%= 'bad' if bad_player_count %>"><%= int(game.player_count) %></td>
           <td class="number <%= 'bad' if bad_playtime %>"><%= int(game.max_playtime) %></td>
-          <td class="number"><%= int(game.min_age) %></td>
-          <td><%= game.subdomains %></td>
-          <td><%= game.ownership %></td>
-          <td class="number"><%= int(game.corridor_rank) %></td>
-          <td class="number"><%= int(game.couples_rank) %></td>
-          <td class="number"><%= int(game.solo_rank) %></td>
           <td><%= game.category_label %></td>
         </tr>
       <% end %>

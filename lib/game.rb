@@ -13,26 +13,8 @@ class Game
       @replays ||= Downloaders::ReplaysFetcher.new(game: self).replays
     end
 
-    def min_age
-      @min_age ||= (2..18).find { |age| send("age_#{age}?") } || 0
-    end
-
     def max_playtime
       @max_playtime ||= (15..360).step(15).find { |time| send("playtime_#{time}?") == true } || 0
-    end
-  end
-
-  concerning :Ownership do
-    def ownership
-      return @ownership if defined?(@ownership)
-
-      @ownership = PlayedGames.ownership(self)
-    end
-
-    def played?
-      return @played if defined?(@played)
-
-      @played = PlayedGames.include?(self)
     end
   end
 
@@ -67,23 +49,11 @@ class Game
     end
 
     def category_label
-      @category_label ||= (categories + mechanics + families).sort.join(", ")
-    end
-
-    def categories
-      @categories ||= Downloaders::CATEGORIES.map(&:prefix).select(&method(:ranked_in_category?))
+      @category_label ||= mechanics.sort.join(", ")
     end
 
     def mechanics
       @mechanics ||= Downloaders::MECHANICS.map(&:prefix).select(&method(:ranked_in_category?))
-    end
-
-    def families
-      @families ||= Downloaders::FAMILIES.map(&:prefix).select(&method(:ranked_in_category?))
-    end
-
-    def subdomains
-      @subdomains ||= Downloaders::SUBDOMAINS.map(&:prefix).select(&method(:ranked_in_category?)).join(", ")
     end
 
     private
