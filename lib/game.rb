@@ -22,12 +22,7 @@ class Game
     def player_count
       return @player_count if defined?(@player_count)
 
-      @player_count =
-        if min_player_count.zero?
-          nil
-        else
-          [min_player_count, max_player_count].compact.uniq.join("-")
-        end
+      @player_count = calculate_player_count
     end
 
     def min_player_count
@@ -36,6 +31,14 @@ class Game
 
     def max_player_count
       @max_player_count ||= (1..12).to_a.reverse.find { |count| send("player_#{count}?") == true } || 0
+    end
+
+    private
+
+    def calculate_player_count
+      return nil if min_player_count.zero?
+
+      [min_player_count, max_player_count].compact.uniq.join("-")
     end
   end
 

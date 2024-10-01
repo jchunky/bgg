@@ -1,5 +1,5 @@
 <head>
-  <style type="text/css">
+  <style>
     body { width: 60%; }
     .dataTable { font-family: Arial; border-collapse: collapse; font-size: 8pt; margin-top: 20px; }
     .dataTable tr:nth-child(even) { background-color: #f2f2f2; }
@@ -11,9 +11,9 @@
   </style>
   <link href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js" type="text/javascript"></script>
-  <script src="https://cdn.datatables.net/fixedheader/4.0.1/js/dataTables.fixedHeader.min.js" type="text/javascript"></script>
-  <script type="text/javascript">
+  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/fixedheader/4.0.1/js/dataTables.fixedHeader.min.js"></script>
+  <script>
     $(function() {
       $('#games').DataTable({
         fixedHeader: true,
@@ -45,33 +45,32 @@
     <tbody>
       <% @games.each.with_index do |game, i| %>
         <%
-          bad_player_count = !game.min_player_count.in?(1..2)
-          bad_plays = bad_plays_rank = !game.unique_users.in?(100..)
-          bad_playtime = !game.max_playtime.in?(1..60)
-          bad_rank = !game.rank.in?(1..500)
-          bad_rating = !game.rating.in?(7..)
-          bad_replays = !game.replays.in?(10..)
-          bad_votes = bad_votes_rank = !game.rating_count.in?(1000..)
-          bad_weight = !game.weight.in?(..2.5)
-          bad_year = !game.year.in?(2010..Time.now.year - 2)
-          bad_game = [
-            bad_replays,
-            bad_weight,
-          ].reduce { |acc, obj| acc || obj }
+          bad_conditions = {
+            bad_player_count: !game.min_player_count.in?(1..2),
+            bad_plays: !game.unique_users.in?(100..),
+            bad_playtime: !game.max_playtime.in?(1..60),
+            bad_rank: !game.rank.in?(1..500),
+            bad_rating: !game.rating.in?(7..),
+            bad_replays: !game.replays.in?(10..),
+            bad_votes: !game.rating_count.in?(1000..),
+            bad_weight: !game.weight.in?(..2.5),
+            bad_year: !game.year.in?(2010..Time.now.year - 2)
+          }
+          bad_game = bad_conditions[:bad_replays] || bad_conditions[:bad_weight]
         %>
         <tr>
-          <td class="number <%= 'bad' if bad_year %>"><%= int(game.year) %></td>
-          <td class="number <%= 'bad' if bad_plays %>"><%= int(game.unique_users) %></td>
-          <td class="number <%= 'bad' if bad_plays_rank %>"><%= int(game.play_rank) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_year] %>"><%= int(game.year) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_plays] %>"><%= int(game.unique_users) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_plays_rank] %>"><%= int(game.play_rank) %></td>
           <td class="<%= 'bad' if bad_game %>"><a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a></td>
-          <td class="number <%= 'bad' if bad_votes %>"><%= int(game.rating_count) %></td>
-          <td class="number <%= 'bad' if bad_votes_rank %>"><%= int(game.vote_rank) %></td>
-          <td class="number <%= 'bad' if bad_rank %>"><%= int(game.rank) %></td>
-          <td class="number <%= 'bad' if bad_rating %>"><%= float(game.rating) %></td>
-          <td class="number <%= 'bad' if bad_weight %>"><%= float(game.weight) %></td>
-          <td class="number <%= 'bad' if bad_replays %>"><%= int(game.replays) %></td>
-          <td class="number <%= 'bad' if bad_player_count %>"><%= int(game.player_count) %></td>
-          <td class="number <%= 'bad' if bad_playtime %>"><%= int(game.max_playtime) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_votes] %>"><%= int(game.rating_count) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_votes_rank] %>"><%= int(game.vote_rank) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_rank] %>"><%= int(game.rank) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_rating] %>"><%= float(game.rating) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_weight] %>"><%= float(game.weight) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_replays] %>"><%= int(game.replays) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_player_count] %>"><%= int(game.player_count) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_playtime] %>"><%= int(game.max_playtime) %></td>
           <td><%= game.category_label %></td>
         </tr>
       <% end %>

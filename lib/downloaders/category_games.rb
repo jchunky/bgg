@@ -1,16 +1,16 @@
 module Downloaders
   class CategoryGames < Struct.new(:listid, :prefix, :items_per_page, :object_type, keyword_init: true)
     def games
-      content_for_pages(&method(:games_for_page))
+      content_for_pages
         .uniq(&:key)
         .select { |g| g.rank.between?(1, 5000) }
     end
 
     private
 
-    def content_for_pages(&block)
+    def content_for_pages
       (1..).each.with_object([]) do |page, result|
-        games = block.call(page)
+        games = games_for_page(page)
         result.concat(games)
         return result if games.none? { |g| g.rank.between?(1, 5000) }
       end
@@ -25,15 +25,16 @@ module Downloaders
     end
 
     def url_for_page(page, listid)
-      <<~URL.remove(/\s/)
-        https://api.geekdo.com/api/geekitem/linkeditems
-          ?linkdata_index=boardgame
-          &objectid=#{listid}
-          &objecttype=#{object_type}
-          &showcount=#{items_per_page}
-          &sort=rank
-          &pageid=#{page}
-      URL
+      base_url = 'https://api.geekdo.com/api/geekitem/linkeditems'
+      query_params = {
+        linkdata_index: 'boardgame',
+        objectid: listid,
+        objecttype: object_type,
+        showcount: items_per_page,
+        sort: 'rank',
+        pageid: page
+      }
+      "#{base_url}?#{URI.encode_www_form(query_params)}"
     end
 
     def games_for_doc(doc, page)

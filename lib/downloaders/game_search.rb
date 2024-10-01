@@ -1,7 +1,7 @@
 module Downloaders
   class GameSearch < Struct.new(:listid, :prefix, :search_criteria, keyword_init: true)
     def games
-      content_for_pages(&method(:games_for_page))
+      content_for_pages
         .uniq(&:key)
         .each.with_index { |game, i|
           game.send("#{prefix}_rank=", i + 1)
@@ -11,9 +11,9 @@ module Downloaders
 
     private
 
-    def content_for_pages(&block)
+    def content_for_pages
       (1..).each.with_object([]) do |page, result|
-        games = block.call(page)
+        games = games_for_page(page)
         result.concat(games)
         done =
           if search_criteria.include?("sort=rank")

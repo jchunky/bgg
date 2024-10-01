@@ -4,7 +4,7 @@ module Downloaders
       @replays ||= begin
         doc = fetch_page_data(tenth_percentile_page)
         rows = doc.css(".forum_table td.lf a")
-        rows.count.zero? ? 0 : rows[row_index(rows)].content.to_i
+        rows.any? ? rows[row_index(rows)].content.to_i : 0
       end
     end
 
