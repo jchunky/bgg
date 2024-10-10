@@ -6,7 +6,7 @@ module Downloaders
         .compact
         .uniq(&:key)
         .sort_by(&:unique_users)
-        .reverse_each.with_index(1) { |g, i| g.send("#{prefix}_rank=", i) }
+        .reverse_each.with_index(1) { |game, index| game.send("#{prefix}_rank=", index) }
     end
 
     private

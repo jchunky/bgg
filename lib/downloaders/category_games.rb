@@ -3,7 +3,7 @@ module Downloaders
     def games
       @games ||= content_for_pages
         .uniq(&:key)
-        .select { |g| g.rank.between?(1, 5000) }
+        .select { |game| game.rank.between?(1, 5000) }
     end
 
     private
@@ -32,14 +32,14 @@ module Downloaders
     end
 
     def url_for_page(page, listid)
-      base_url = 'https://api.geekdo.com/api/geekitem/linkeditems'
+      base_url = "https://api.geekdo.com/api/geekitem/linkeditems"
       query_params = {
-        linkdata_index: 'boardgame',
+        linkdata_index: "boardgame",
         objectid: listid,
         objecttype: object_type,
         showcount: items_per_page,
-        sort: 'rank',
-        pageid: page
+        sort: "rank",
+        pageid: page,
       }
       "#{base_url}?#{URI.encode_www_form(query_params)}"
     end

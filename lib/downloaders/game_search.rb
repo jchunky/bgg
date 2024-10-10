@@ -3,8 +3,8 @@ module Downloaders
     def games
       @games ||= content_for_pages
         .uniq(&:key)
-        .each.with_index(1) { |game, i| game.send("#{prefix}_rank=", i) }
-        .select { |g| g.rank.between?(1, 5000) }
+        .each.with_index(1) { |game, index| game.send("#{prefix}_rank=", index) }
+        .select { |game| game.rank.between?(1, 5000) }
     end
 
     private
