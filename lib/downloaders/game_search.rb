@@ -1,11 +1,9 @@
 module Downloaders
   class GameSearch < Struct.new(:listid, :prefix, :search_criteria, keyword_init: true)
     def games
-      content_for_pages
+      @games ||= content_for_pages
         .uniq(&:key)
-        .each.with_index { |game, i|
-          game.send("#{prefix}_rank=", i + 1)
-        }
+        .each.with_index(1) { |game, i| game.send("#{prefix}_rank=", i) }
         .select { |g| g.rank.between?(1, 5000) }
     end
 
@@ -13,32 +11,35 @@ module Downloaders
 
     def content_for_pages
       (1..).each.with_object([]) do |page, result|
-        games = games_for_page(page)
+        games = fetch_games_for_page(page)
         result.concat(games)
-        done =
-          if search_criteria.include?("sort=rank")
-            games.none? { |g| g.rank.between?(1, 5000) }
-          else
-            games.none?
-          end
-        return result if done
+        return result if search_completed?(games)
       end
     end
 
-    def games_for_page(page)
+    def search_completed?(games)
+      if search_criteria.include?("sort=rank")
+        games.none? { |g| g.rank.between?(1, 5000) }
+      else
+        games.none?
+      end
+    end
+
+    def fetch_games_for_page(page)
       url = url_for_page(page)
       doc = Utils.fetch_html_data(url)
-      games_for_doc(doc, page)
+      parse_games_from_doc(doc)
+    rescue StandardError => e
+      puts "Error fetching games for page #{url}: #{e.message}"
+      []
     end
 
     def url_for_page(page)
       "https://boardgamegeek.com/search/boardgame/page/#{page}?advsearch=1&#{search_criteria}"
     end
 
-    def games_for_doc(doc, page)
+    def parse_games_from_doc(doc)
       rows(doc).map(&method(:build_game))
-    rescue StandardError
-      []
     end
 
     def rows(doc)

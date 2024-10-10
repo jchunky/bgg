@@ -1,8 +1,8 @@
 module Downloaders
   class TopPlayed < Struct.new(:prefix, :listid, keyword_init: true)
     def games
-      (1..10)
-        .flat_map(&method(:games_for_page))
+      @games ||= (1..10)
+        .flat_map(&method(:fetch_games_for_page))
         .compact
         .uniq(&:key)
         .sort_by(&:unique_users)
@@ -13,10 +13,13 @@ module Downloaders
 
     private
 
-    def games_for_page(page)
+    def fetch_games_for_page(page)
       url = url_for_page(page)
       doc = Utils.fetch_html_data(url)
-      games_for_doc(doc, page)
+      parse_games_from_doc(doc)
+    rescue StandardError => e
+      puts "Error fetching games for page #{url}: #{e.message}"
+      []
     end
 
     def url_for_page(page)
@@ -26,10 +29,8 @@ module Downloaders
       "https://boardgamegeek.com/plays/bygame/subtype/boardgame/start/#{start_date}/end/#{end_date}/page/#{page}"
     end
 
-    def games_for_doc(doc, page)
+    def parse_games_from_doc(doc)
       rows(doc).map(&method(:build_game))
-    rescue StandardError
-      []
     end
 
     def rows(doc)
