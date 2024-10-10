@@ -43,17 +43,13 @@ class Bgg
 
   def all_games
     @all_games ||= Downloaders::DOWNLOADERS
-      .flat_map { |downloader| downloader.games }
+      .flat_map(&:games)
       .group_by(&:key)
       .transform_values { |games| games.reduce(&method(:merge_games)) }
       .values
       .select { |game| game.rank.positive? }
       .sort_by(&:rank)
       .uniq(&:name)
-  end
-
-  def by_key(clazz)
-    clazz.games.to_h { |g| [g.key, g] }
   end
 
   def merge_games(game1, game2)
