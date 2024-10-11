@@ -4,20 +4,21 @@ module Utils
   extend self
 
   BGG_CRAWL_DELAY = 2
+  CACHE_EXPIRY = 24.hours
 
   def fetch_html_data(url)
     file = read_cached_file(url, extension: "html")
     Nokogiri::HTML(file)
-  rescue => ex
-    log_error(ex, url, "html")
+  rescue StandardError => e
+    log_error(e, url, "html")
     exit
   end
 
   def fetch_json_data(url)
     file = read_cached_file(url, extension: "json")
     JSON.parse(file)
-  rescue => ex
-    log_error(ex, url, "json")
+  rescue StandardError => e
+    log_error(e, url, "json")
     exit
   end
 
@@ -42,7 +43,7 @@ module Utils
 
   def cache_file(id, extension:)
     file = cache_filename(id, extension)
-    return File.read(file) if File.exist?(file)
+    return File.read(file) if File.exist?(file) && (Time.now - File.mtime(file)) < CACHE_EXPIRY
 
     result = yield
     File.write(file, result)
