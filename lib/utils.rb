@@ -22,13 +22,13 @@ module Utils
     exit
   end
 
+  private
+
   def read_cached_file(url, extension:)
     cache_file(url, extension: extension) do
       delayed_fetch(url)
     end
   end
-
-  private
 
   def delayed_fetch(url)
     sleep BGG_CRAWL_DELAY
