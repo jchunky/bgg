@@ -24,7 +24,7 @@ module Downloaders
       Array(listid).flat_map do |listid|
         url = url_for_page(page, listid)
         doc = Utils.fetch_json_data(url)
-        parse_games_for_doc(doc, page)
+        parse_games_for_doc(doc)
       rescue StandardError => e
         puts "Error fetching games for page #{url}: #{e.message}"
         []
@@ -44,7 +44,7 @@ module Downloaders
       "#{base_url}?#{URI.encode_www_form(query_params)}"
     end
 
-    def parse_games_for_doc(doc, page)
+    def parse_games_for_doc(doc)
       rows(doc).map(&method(:build_game))
     end
 
