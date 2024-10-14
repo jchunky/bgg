@@ -33,12 +33,7 @@ module Utils
   def delayed_fetch(url)
     sleep BGG_CRAWL_DELAY
     print "."
-    content = URI.open(url).read
-    strip_accents(content)
-  end
-
-  def strip_accents(string)
-    ActiveSupport::Inflector.transliterate(string.to_s.force_encoding("UTF-8")).to_s
+    URI.open(url).read
   end
 
   def cache_file(id, extension:)
