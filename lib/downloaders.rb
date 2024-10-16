@@ -1,6 +1,8 @@
 require_relative "downloaders/category_games"
 require_relative "downloaders/game_search"
 require_relative "downloaders/top_played"
+require_relative "downloaders/geek_list"
+
 
 module Downloaders
   NO_EXPANSIONS = "nosubtypes[]=boardgameexpansion"
@@ -21,6 +23,9 @@ module Downloaders
     TopPlayed.new(prefix: :play, listid: "plays"),
     GameSearch.new(prefix: :bgg, listid: "rank", search_criteria: SORTBY_RANK),
     GameSearch.new(prefix: :vote, listid: "numvoters", search_criteria: SORTBY_VOTES),
+    GeekList.new(prefix: "corridor", listid: 342128, reverse_rank: false),
+    GeekList.new(prefix: "couples", listid: 328691, reverse_rank: false),
+    GeekList.new(prefix: "solo", listid: 324731, reverse_rank: false),
     *PLAYER_COUNTS,
     *PLAYTIMES,
     *MECHANICS,
