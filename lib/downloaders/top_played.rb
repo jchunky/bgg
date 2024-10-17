@@ -13,11 +13,7 @@ module Downloaders
 
     def fetch_games_for_page(page)
       url = url_for_page(page)
-      doc = Utils.fetch_html_data(url)
-      parse_games_from_doc(doc)
-    rescue StandardError => e
-      puts "Error fetching games for page #{url}: #{e.message}"
-      []
+      Utils.fetch_html_data(url, &method(:parse_games_from_doc))
     end
 
     def url_for_page(page)

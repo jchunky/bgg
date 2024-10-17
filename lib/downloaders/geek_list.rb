@@ -14,8 +14,9 @@ module Downloaders
 
     def games_for_page(page)
       url = url_for_page(page)
-      doc = Utils.fetch_json_data(url)
-      games_for_doc(doc, page)
+      Utils.fetch_json_data(url) do |doc|
+        games_for_doc(doc, page)
+      end
     end
 
     def url_for_page(page)

@@ -27,10 +27,7 @@ module Downloaders
 
     def fetch_games_for_page(page)
       url = url_for_page(page)
-      doc = Utils.fetch_html_data(url)
-      parse_games_from_doc(doc)
-    rescue StandardError => e
-      []
+      Utils.fetch_html_data(url, &method(:parse_games_from_doc))
     end
 
     def url_for_page(page)
@@ -39,6 +36,8 @@ module Downloaders
 
     def parse_games_from_doc(doc)
       rows(doc).map(&method(:build_game))
+    rescue NoMethodError
+      []
     end
 
     def rows(doc)

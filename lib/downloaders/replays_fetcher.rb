@@ -2,9 +2,10 @@ module Downloaders
   class ReplaysFetcher < Struct.new(:game, keyword_init: true)
     def replays
       @replays ||= begin
-        doc = fetch_page_data(tenth_percentile_page)
-        rows = doc.css(".forum_table td.lf a")
-        rows.any? ? rows[row_index(rows)].content.to_i : 0
+        fetch_page_data(tenth_percentile_page) do |doc|
+          rows = doc.css(".forum_table td.lf a")
+          rows.any? ? rows[row_index(rows)].content.to_i : 0
+        end
       end
     end
 
@@ -24,22 +25,23 @@ module Downloaders
 
     def page_count
       @page_count ||= begin
-        doc = fetch_page_data(1)
-        last_page_anchor = doc.css('#maincontent p a[title="last page"]')
-        pagination_anchors = doc.css("#maincontent p a")
-        if last_page_anchor.count >= 1
-          last_page_anchor.first.content.scan(/\d+/).first.to_i
-        elsif pagination_anchors.count >= 2
-          pagination_anchors[-2].content.to_i
-        else
-          1
+        fetch_page_data(1) do |doc|
+          last_page_anchor = doc.css('#maincontent p a[title="last page"]')
+          pagination_anchors = doc.css("#maincontent p a")
+          if last_page_anchor.count >= 1
+            last_page_anchor.first.content.scan(/\d+/).first.to_i
+          elsif pagination_anchors.count >= 2
+            pagination_anchors[-2].content.to_i
+          else
+            1
+          end
         end
       end
     end
 
-    def fetch_page_data(page)
+    def fetch_page_data(page, &)
       url = url_for_page(page)
-      Utils.fetch_html_data(url)
+      Utils.fetch_html_data(url, &)
     end
 
     def url_for_page(page)

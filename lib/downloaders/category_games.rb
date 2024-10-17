@@ -23,11 +23,7 @@ module Downloaders
     def fetch_games_for_page(page)
       Array(listid).flat_map do |listid|
         url = url_for_page(page, listid)
-        doc = Utils.fetch_json_data(url)
-        parse_games_for_doc(doc)
-      rescue StandardError => e
-        puts "Error fetching games for page #{url}: #{e.message}"
-        []
+        Utils.fetch_json_data(url, &method(:parse_games_for_doc))
       end
     end
 
