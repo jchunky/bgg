@@ -46,7 +46,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @games.each.with_index do |game, i| %>
+      <% @games.each do |game| %>
         <%
           bad_conditions = {
             bad_player_count: !game.min_player_count.in?(1..2),
