@@ -1,7 +1,7 @@
-require_relative "downloaders/category_games"
-require_relative "downloaders/game_search"
-require_relative "downloaders/top_played"
-require_relative "downloaders/geek_list"
+require_relative "../downloaders/category_games"
+require_relative "../downloaders/game_search"
+require_relative "../downloaders/geek_list"
+require_relative "../downloaders/top_played"
 
 
 module Downloaders

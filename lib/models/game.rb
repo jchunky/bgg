@@ -1,4 +1,4 @@
-require_relative "downloaders/replays_fetcher"
+require_relative "../downloaders/replays_fetcher"
 
 class Game
   attr_reader :attributes
