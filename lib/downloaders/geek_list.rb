@@ -23,10 +23,10 @@ module Downloaders
       "https://api.geekdo.com/api/listitems?listid=#{listid}&page=#{page}"
     end
 
-    def games_for_doc(doc, page)
+    def games_for_doc(doc, _page)
       doc["data"].map do |record|
         Game.new(
-          href: href = record["item"]["href"],
+          href: record["item"]["href"],
           name: record["item"]["name"],
           rating: record["stats"]["average"].to_f,
           rank: record["stats"]["rank"].to_i
