@@ -2,8 +2,8 @@ module Downloaders
   class CategoryGames < Struct.new(:listid, :prefix, :items_per_page, :object_type, keyword_init: true)
     def games
       @games ||= content_for_pages
-        .uniq(&:key)
-        .select { |game| game.rank.between?(1, 5000) }
+                 .uniq(&:key)
+                 .select { |game| game.rank.between?(1, 5000) }
     end
 
     private
