@@ -23,7 +23,7 @@ module Downloaders
 
     def page_count
       @page_count ||= fetch_page_data(1) do |doc|
-        last_page_anchor   = doc.css('#maincontent p a[title="last page"]')
+        last_page_anchor = doc.css('#maincontent p a[title="last page"]')
         pagination_anchors = doc.css("#maincontent p a")
         if last_page_anchor.count >= 1
           last_page_anchor.first.content.scan(/\d+/).first.to_i

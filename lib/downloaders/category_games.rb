@@ -28,7 +28,7 @@ module Downloaders
     end
 
     def url_for_page(page, listid)
-      base_url     = "https://api.geekdo.com/api/geekitem/linkeditems"
+      base_url = "https://api.geekdo.com/api/geekitem/linkeditems"
       query_params = {
         linkdata_index: "boardgame",
         objectid: listid,
