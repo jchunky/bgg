@@ -37,7 +37,7 @@ class Bgg
 
   def write_output
     template = File.read("views/bgg.erb")
-    html = ERB.new(template).result(binding)
+    html     = ERB.new(template).result(binding)
     File.write("index.html", html)
   end
 

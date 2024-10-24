@@ -17,7 +17,7 @@ module Downloaders
     end
 
     def url_for_page(page)
-      end_date = Date.yesterday
+      end_date   = Date.yesterday
       start_date = end_date - 30.days
 
       "https://boardgamegeek.com/plays/bygame/subtype/boardgame/start/#{start_date}/end/#{end_date}/page/#{page}"
@@ -36,8 +36,8 @@ module Downloaders
 
     def build_game(row)
       c1, _, c3 = row.css("td")
-      a1 = c1.css("a")[0]
-      a3 = c3.css("a")[0]
+      a1        = c1.css("a")[0]
+      a3        = c3.css("a")[0]
 
       Game.new(
         href: a1["href"],

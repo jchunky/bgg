@@ -2,11 +2,11 @@ require "open-uri"
 
 class CachedFile < Struct.new(:url, :extension, keyword_init: true)
   BGG_CRAWL_DELAY = 2
-  CACHE_EXPIRY = 1.year
+  CACHE_EXPIRY    = 1.year
 
   def read
     content = cache_expired? ? fetch_from_url : File.read(file)
-    result = yield(content)
+    result  = yield(content)
     File.write(file, content) if cache_expired?
     result
   rescue StandardError => e

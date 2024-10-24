@@ -49,9 +49,9 @@ module Downloaders
 
     def build_game(row)
       c1, _, c3, _, c5, c6 = row.css("td")
-      a1 = c1.css("a")[0]
-      a3 = c3.css("a")[0]
-      span3 = c3.css("span")[0]
+      a1                   = c1.css("a")[0]
+      a3                   = c3.css("a")[0]
+      span3                = c3.css("span")[0]
 
       Game.new(
         href: a3["href"],
