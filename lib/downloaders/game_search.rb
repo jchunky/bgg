@@ -1,5 +1,5 @@
 module Downloaders
-  class GameSearch < Struct.new(:listid, :prefix, :search_criteria, keyword_init: true)
+  class GameSearch < Struct.new(:listid, :prefix, :search_criteria)
     def games
       @games ||= content_for_pages
                  .uniq(&:key)

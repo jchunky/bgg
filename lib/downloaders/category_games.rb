@@ -1,5 +1,5 @@
 module Downloaders
-  class CategoryGames < Struct.new(:listid, :prefix, :items_per_page, :object_type, keyword_init: true)
+  class CategoryGames < Struct.new(:listid, :prefix, :items_per_page, :object_type)
     def games
       @games ||= content_for_pages
                  .uniq(&:key)

@@ -1,5 +1,5 @@
 module Downloaders
-  class TopPlayed < Struct.new(:prefix, :listid, keyword_init: true)
+  class TopPlayed < Struct.new(:prefix, :listid)
     def games
       @games ||= (1..10)
                  .flat_map(&method(:fetch_games_for_page))

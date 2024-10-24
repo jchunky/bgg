@@ -1,6 +1,6 @@
 require "open-uri"
 
-class CachedFile < Struct.new(:url, :extension, keyword_init: true)
+class CachedFile < Struct.new(:url, :extension)
   BGG_CRAWL_DELAY = 2
   CACHE_EXPIRY = 1.year
 

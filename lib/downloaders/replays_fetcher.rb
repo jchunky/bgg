@@ -1,5 +1,5 @@
 module Downloaders
-  class ReplaysFetcher < Struct.new(:game, keyword_init: true)
+  class ReplaysFetcher < Struct.new(:game)
     def replays
       @replays ||= fetch_page_data(tenth_percentile_page) do |doc|
         rows = doc.css(".forum_table td.lf a")

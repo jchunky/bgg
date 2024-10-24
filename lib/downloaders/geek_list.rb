@@ -1,5 +1,5 @@
 module Downloaders
-  class GeekList < Struct.new(:listid, :prefix, :reverse_rank, keyword_init: true)
+  class GeekList < Struct.new(:listid, :prefix, :reverse_rank)
     def games
       @games ||= begin
         result = (1..8).flat_map(&method(:games_for_page)).compact.uniq(&:key)
