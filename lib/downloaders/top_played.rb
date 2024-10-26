@@ -2,18 +2,18 @@ module Downloaders
   class TopPlayed < Struct.new(:prefix, :listid)
     def games
       @games ||= (1..10)
-        .flat_map(&method(:fetch_games_for_page))
+        .flat_map { fetch_games_for_page(_1) }
         .compact
         .uniq(&:key)
         .sort_by(&:unique_users)
-        .reverse_each.with_index(1) { |game, index| game.send("#{prefix}_rank=", index) }
+        .reverse_each.with_index(1) { |game, index| game.send(:"#{prefix}_rank=", index) }
     end
 
     private
 
     def fetch_games_for_page(page)
       url = url_for_page(page)
-      Utils.fetch_html_data(url, &method(:parse_games_from_doc))
+      Utils.fetch_html_data(url) { parse_games_from_doc(_1) }
     end
 
     def url_for_page(page)
@@ -24,7 +24,7 @@ module Downloaders
     end
 
     def parse_games_from_doc(doc)
-      rows(doc).map(&method(:build_game))
+      rows(doc).map { build_game(_1) }
     end
 
     def rows(doc)

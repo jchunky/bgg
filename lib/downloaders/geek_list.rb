@@ -2,10 +2,10 @@ module Downloaders
   class GeekList < Struct.new(:listid, :prefix, :reverse_rank)
     def games
       @games ||= begin
-        result = (1..8).flat_map(&method(:games_for_page)).compact.uniq(&:key)
+        result = (1..8).flat_map { games_for_page(_1) }.compact.uniq(&:key)
         result = result.reverse if reverse_rank
         result.each.with_index(1) do |game, i|
-          game.send("#{prefix}_rank=", i)
+          game.send(:"#{prefix}_rank=", i)
         end
       end
     end

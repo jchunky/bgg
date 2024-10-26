@@ -3,7 +3,7 @@ module Downloaders
     def games
       @games ||= content_for_pages
         .uniq(&:key)
-        .each.with_index(1) { |game, index| game.send("#{prefix}_rank=", index) }
+        .each.with_index(1) { |game, index| game.send(:"#{prefix}_rank=", index) }
         .select { |game| game.rank.between?(1, 5000) }
     end
 
@@ -27,7 +27,7 @@ module Downloaders
 
     def fetch_games_for_page(page)
       url = url_for_page(page)
-      Utils.fetch_html_data(url, &method(:parse_games_from_doc))
+      Utils.fetch_html_data(url) { parse_games_from_doc(_1) }
     end
 
     def url_for_page(page)
@@ -35,7 +35,7 @@ module Downloaders
     end
 
     def parse_games_from_doc(doc)
-      rows(doc).map(&method(:build_game))
+      rows(doc).map { build_game(_1) }
     rescue NoMethodError
       []
     end

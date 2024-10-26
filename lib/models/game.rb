@@ -14,7 +14,7 @@ class Game
     end
 
     def max_playtime
-      @max_playtime ||= (15..360).step(15).find { |time| send("playtime_#{time}?") == true } || 0
+      @max_playtime ||= (15..360).step(15).find { |time| send(:"playtime_#{time}?") == true } || 0
     end
   end
 
@@ -26,11 +26,11 @@ class Game
     end
 
     def min_player_count
-      @min_player_count ||= (1..12).find { |count| send("player_#{count}?") == true } || 0
+      @min_player_count ||= (1..12).find { |count| send(:"player_#{count}?") == true } || 0
     end
 
     def max_player_count
-      @max_player_count ||= (1..12).to_a.reverse.find { |count| send("player_#{count}?") == true } || 0
+      @max_player_count ||= (1..12).to_a.reverse.find { |count| send(:"player_#{count}?") == true } || 0
     end
 
     private
@@ -45,7 +45,7 @@ class Game
   concerning :Categories do
     included do
       ::Downloaders::DOWNLOADERS.map(&:prefix).each do |category|
-        define_method("#{category}?") do
+        define_method(:"#{category}?") do
           ranked_in_category?(category)
         end
       end
@@ -56,7 +56,7 @@ class Game
     end
 
     def mechanics
-      @mechanics ||= Downloaders::MECHANICS.map(&:prefix).select(&method(:ranked_in_category?))
+      @mechanics ||= Downloaders::MECHANICS.map(&:prefix).select { ranked_in_category?(_1) }
     end
 
     private
@@ -66,7 +66,7 @@ class Game
     end
 
     def category_rank(category)
-      send("#{category}_rank")
+      send(:"#{category}_rank")
     end
   end
 
