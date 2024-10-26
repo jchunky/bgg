@@ -2,11 +2,11 @@ module Downloaders
   class TopPlayed < Struct.new(:prefix, :listid)
     def games
       @games ||= (1..10)
-                 .flat_map(&method(:fetch_games_for_page))
-                 .compact
-                 .uniq(&:key)
-                 .sort_by(&:unique_users)
-                 .reverse_each.with_index(1) { |game, index| game.send("#{prefix}_rank=", index) }
+        .flat_map(&method(:fetch_games_for_page))
+        .compact
+        .uniq(&:key)
+        .sort_by(&:unique_users)
+        .reverse_each.with_index(1) { |game, index| game.send("#{prefix}_rank=", index) }
     end
 
     private

@@ -2,9 +2,9 @@ module Downloaders
   class GameSearch < Struct.new(:listid, :prefix, :search_criteria)
     def games
       @games ||= content_for_pages
-                 .uniq(&:key)
-                 .each.with_index(1) { |game, index| game.send("#{prefix}_rank=", index) }
-                 .select { |game| game.rank.between?(1, 5000) }
+        .uniq(&:key)
+        .each.with_index(1) { |game, index| game.send("#{prefix}_rank=", index) }
+        .select { |game| game.rank.between?(1, 5000) }
     end
 
     private

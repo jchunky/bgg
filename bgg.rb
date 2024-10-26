@@ -27,8 +27,8 @@ class Bgg
     end
 
     @games = all_games
-             .select(&method(:display_game?))
-             .sort_by { |g| [-g.year, g.play_rank] }
+      .select(&method(:display_game?))
+      .sort_by { |g| [-g.year, g.play_rank] }
 
     write_output
   end
@@ -43,13 +43,13 @@ class Bgg
 
   def all_games
     @all_games ||= Downloaders::DOWNLOADERS
-                   .flat_map(&:games)
-                   .group_by(&:key)
-                   .transform_values { |games| games.reduce(&method(:merge_games)) }
-                   .values
-                   .select { |game| game.rank.positive? }
-                   .sort_by(&:rank)
-                   .uniq(&:name)
+      .flat_map(&:games)
+      .group_by(&:key)
+      .transform_values { |games| games.reduce(&method(:merge_games)) }
+      .values
+      .select { |game| game.rank.positive? }
+      .sort_by(&:rank)
+      .uniq(&:name)
   end
 
   def merge_games(game1, game2)
