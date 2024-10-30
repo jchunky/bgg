@@ -18,7 +18,7 @@ class CachedFile < Struct.new(:url, :extension)
   def fetch_from_url
     sleep BGG_CRAWL_DELAY
     print "."
-    URI.open(url).read
+    URI.parse(url).open.read
   end
 
   def cache_expired?
