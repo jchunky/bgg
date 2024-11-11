@@ -8,7 +8,7 @@ module Downloaders
   SORTBY_RANK = "#{NO_EXPANSIONS}&sort=rank"
   SORTBY_VOTES = "#{NO_EXPANSIONS}&sort=numvoters&sortdir=desc"
   MECHANICS = Categories::MECHANICS.map do |prefix, listid, items_per_page|
-    CategoryGames.new(prefix: prefix, listid: listid, items_per_page: items_per_page, object_type: "property")
+    CategoryGames.new(prefix:, listid:, items_per_page:, object_type: "property")
   end
   # PLAYER_COUNTS = (1..12).map do |count|
   PLAYER_COUNTS = (1..2).map do |count|
