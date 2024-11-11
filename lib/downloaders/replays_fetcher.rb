@@ -35,9 +35,9 @@ module Downloaders
       end
     end
 
-    def fetch_page_data(page, &block)
+    def fetch_page_data(page, &)
       url = url_for_page(page)
-      Utils.fetch_html_data(url, &block)
+      Utils.fetch_html_data(url, &)
     end
 
     def url_for_page(page)
