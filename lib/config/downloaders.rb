@@ -15,7 +15,7 @@ module Downloaders
     GameSearch.new(prefix: :"player_#{count}", listid: "playerrangetype", search_criteria: "#{SORTBY_RANK}&range[minplayers][max]=#{count}&range[maxplayers][min]=#{count}&playerrangetype=normal")
   end
   # PLAYTIMES = [15, 30, 45, 60, 90, 120, 150, 180, 210, 240, 300, 360].map do |playtime|
-  PLAYTIMES = [15, 30, 45, 60, 90].map do |playtime|
+  PLAYTIMES = [60].map do |playtime|
     GameSearch.new(prefix: :"playtime_#{playtime}", listid: "playtime", search_criteria: "#{SORTBY_RANK}&range[playtime][max]=#{playtime}")
   end
   DOWNLOADERS = [
