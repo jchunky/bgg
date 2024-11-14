@@ -14,7 +14,7 @@ class Game
     end
 
     def max_playtime
-      @max_playtime ||= (15..360).step(15).find { |time| send(:"playtime_#{time}?") == true } || 0
+      @max_playtime ||= (15..360).step(15).find { |time| send(:"playtime_#{time}?") } || 0
     end
   end
 
@@ -26,11 +26,11 @@ class Game
     end
 
     def min_player_count
-      @min_player_count ||= (1..12).find { |count| send(:"player_#{count}?") == true } || 0
+      @min_player_count ||= (1..12).find { |count| send(:"player_#{count}?") } || 0
     end
 
     def max_player_count
-      @max_player_count ||= (1..12).to_a.reverse.find { |count| send(:"player_#{count}?") == true } || 0
+      @max_player_count ||= (1..12).to_a.reverse.find { |count| send(:"player_#{count}?") } || 0
     end
 
     private
@@ -48,7 +48,7 @@ class Game
     end
 
     def mechanics
-      @mechanics ||= Downloaders::MECHANICS.map(&:prefix).select { send("#{_1}?") }
+      @mechanics ||= Downloaders::MECHANICS.map(&:prefix).select { send(:"#{_1}?") }
     end
   end
 
@@ -58,7 +58,7 @@ class Game
       if method_name.to_s.end_with?("=")
         attributes[attribute_name] = args.first
       elsif method_name.to_s.end_with?("?")
-        !null?(send("#{attribute_name}_rank"))
+        !null?(send(:"#{attribute_name}_rank"))
       else
         attributes[attribute_name]
       end
