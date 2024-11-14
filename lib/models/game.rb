@@ -43,40 +43,22 @@ class Game
   end
 
   concerning :Categories do
-    included do
-      ::Downloaders::DOWNLOADERS.map(&:prefix).each do |category|
-        define_method(:"#{category}?") do
-          ranked_in_category?(category)
-        end
-      end
-    end
-
     def category_label
       @category_label ||= mechanics.sort.join(", ")
     end
 
     def mechanics
-      @mechanics ||= Downloaders::MECHANICS.map(&:prefix).select { ranked_in_category?(_1) }
-    end
-
-    private
-
-    def ranked_in_category?(category)
-      category_rank(category) > 0
-    end
-
-    def category_rank(category)
-      send(:"#{category}_rank")
+      @mechanics ||= Downloaders::MECHANICS.map(&:prefix).select { send("#{_1}?") }
     end
   end
 
   concerning :Attributes do
     def method_missing(method_name, *args)
-      attribute_name = method_name.to_s.chomp("=").to_sym
+      attribute_name = method_name.to_s.chomp("=").chomp("?").to_sym
       if method_name.to_s.end_with?("=")
         attributes[attribute_name] = args.first
       elsif method_name.to_s.end_with?("?")
-        false
+        !null?(send("#{attribute_name}_rank"))
       else
         attributes[attribute_name]
       end
