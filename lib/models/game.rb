@@ -50,6 +50,10 @@ class Game
     def mechanics
       @mechanics ||= Downloaders::MECHANICS.map(&:prefix).select { send(:"#{_1}?") }
     end
+
+    def subdomains
+      @subdomains ||= Downloaders::SUBDOMAINS.map(&:prefix).select { send(:"#{_1}?") }.join(", ")
+    end
   end
 
   concerning :Attributes do

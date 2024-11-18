@@ -10,6 +10,9 @@ module Downloaders
   MECHANICS = Categories::MECHANICS.map do |prefix, listid, items_per_page|
     CategoryGames.new(prefix:, listid:, items_per_page:, object_type: "property")
   end
+  SUBDOMAINS = Categories::SUBDOMAINS.map do |prefix, listid, items_per_page|
+    CategoryGames.new(prefix:, listid:, items_per_page:, object_type: "family")
+  end
   # PLAYER_COUNTS = (1..12).map do |count|
   PLAYER_COUNTS = (1..2).map do |count|
     GameSearch.new(prefix: :"player_#{count}", listid: "playerrangetype", search_criteria: "#{SORTBY_RANK}&range[minplayers][max]=#{count}&range[maxplayers][min]=#{count}&playerrangetype=normal")
@@ -28,5 +31,6 @@ module Downloaders
     *PLAYER_COUNTS,
     *PLAYTIMES,
     *MECHANICS,
+    *SUBDOMAINS,
   ]
 end
