@@ -13,6 +13,11 @@ class Game
       @replays ||= Downloaders::ReplaysFetcher.new(game: self).replays
     end
 
+    def ghi
+      # return 0
+      @ghi ||= Downloaders::GhiFetcher.new(game: self).ghi
+    end
+
     def max_playtime
       @max_playtime ||= (15..360).step(15).find { |time| send(:"playtime_#{time}?") } || 0
     end
