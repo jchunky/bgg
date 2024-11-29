@@ -18,6 +18,7 @@ class Bgg
 
     return false unless game.max_playtime.in?(1..60)
     return false unless game.play_rank.in?(1..)
+    return false unless game.rank.in?(1..2000)
     # return false unless game.vote_rank.in?(1..)
 
     # return false unless game.replays.in?(10..)
