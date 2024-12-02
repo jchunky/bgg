@@ -57,11 +57,12 @@
             bad_rank: !game.rank.in?(1..2000),
             bad_rating: !game.rating.in?(7..),
             bad_replays: !game.replays.in?(10..),
+            bad_ghi: !game.ghi.in?(37..),
             bad_votes: !game.rating_count.in?(1000..),
             bad_weight: !game.weight.in?(..2.5),
             bad_year: !game.year.in?(2010..Time.now.year - 2)
           }
-          bad_game = bad_conditions[:bad_replays] || bad_conditions[:bad_weight]
+          bad_game = bad_conditions[:bad_replays] || bad_conditions[:bad_weight] || bad_conditions[:bad_ghi] || bad_conditions[:bad_rank]
         %>
         <tr>
           <td class="number <%= 'bad' if bad_conditions[:bad_year] %>"><%= int(game.year) %></td>
@@ -74,7 +75,7 @@
           <td class="number <%= 'bad' if bad_conditions[:bad_rating] %>"><%= float(game.rating) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_weight] %>"><%= float(game.weight) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_replays] %>"><%= int(game.replays) %></td>
-          <td class="number"><%= int(game.ghi) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_ghi] %>"><%= int(game.ghi) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_player_count] %>"><%= int(game.player_count) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_playtime] %>"><%= int(game.max_playtime) %></td>
           <td><%= game.subdomains %></td>
