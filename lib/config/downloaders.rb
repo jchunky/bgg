@@ -7,11 +7,8 @@ module Downloaders
   NO_EXPANSIONS = "nosubtypes[]=boardgameexpansion"
   SORTBY_RANK = "#{NO_EXPANSIONS}&sort=rank"
   SORTBY_VOTES = "#{NO_EXPANSIONS}&sort=numvoters&sortdir=desc"
-  FAMILIES = Categories::FAMILIES.map do |prefix, listid, items_per_page|
-    CategoryGames.new(prefix:, listid:, items_per_page:, object_type: "family")
-  end
-  MECHANICS = Categories::MECHANICS.map do |prefix, listid, items_per_page|
-    CategoryGames.new(prefix:, listid:, items_per_page:, object_type: "property")
+  CATEGORIES = Categories::CATEGORIES.map do |prefix, listid, items_per_page, object_type|
+    CategoryGames.new(prefix:, listid:, items_per_page:, object_type:)
   end
   SUBDOMAINS = Categories::SUBDOMAINS.map do |prefix, listid, items_per_page|
     CategoryGames.new(prefix:, listid:, items_per_page:, object_type: "family")
@@ -28,13 +25,12 @@ module Downloaders
     TopPlayed.new(prefix: :play, listid: "plays"),
     GameSearch.new(prefix: :bgg, listid: "rank", search_criteria: SORTBY_RANK),
     GameSearch.new(prefix: :vote, listid: "numvoters", search_criteria: SORTBY_VOTES),
-    GeekList.new(prefix: "corridor", listid: 343927, reverse_rank: false),
-    GeekList.new(prefix: "couples", listid: 328691, reverse_rank: false),
-    GeekList.new(prefix: "solo", listid: 345687, reverse_rank: true),
+    GeekList.new(prefix: "corridor", listid: 347808, reverse_rank: false), # November 2024
+    GeekList.new(prefix: "couples", listid: 328691, reverse_rank: false), # 2023
+    GeekList.new(prefix: "solo", listid: 345687, reverse_rank: true), # 2024
     *PLAYER_COUNTS,
     *PLAYTIMES,
-    *FAMILIES,
-    *MECHANICS,
+    *CATEGORIES,
     *SUBDOMAINS,
   ]
 end

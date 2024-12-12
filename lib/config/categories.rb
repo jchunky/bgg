@@ -1,11 +1,10 @@
 module Categories
-  FAMILIES = [
-    [:kickstarter, 8374, 50],
-  ]
-
-  MECHANICS = [
-    [:coop, 2023, 50],
-    [:solitaire, 2819, 50],
+  CATEGORIES = [
+    [:buttonshy, 26991, 50, "company"],
+    [:coop, 2023, 50, "property"],
+    [:kickstarter, 8374, 50, "family"],
+    [:oniverse, 9976, 50, "family"],
+    [:solitaire, 2819, 50, "property"],
   ]
 
   SUBDOMAINS = [
