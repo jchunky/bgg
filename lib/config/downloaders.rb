@@ -7,6 +7,9 @@ module Downloaders
   NO_EXPANSIONS = "nosubtypes[]=boardgameexpansion"
   SORTBY_RANK = "#{NO_EXPANSIONS}&sort=rank"
   SORTBY_VOTES = "#{NO_EXPANSIONS}&sort=numvoters&sortdir=desc"
+  FAMILIES = Categories::FAMILIES.map do |prefix, listid, items_per_page|
+    CategoryGames.new(prefix:, listid:, items_per_page:, object_type: "family")
+  end
   MECHANICS = Categories::MECHANICS.map do |prefix, listid, items_per_page|
     CategoryGames.new(prefix:, listid:, items_per_page:, object_type: "property")
   end
@@ -30,6 +33,7 @@ module Downloaders
     GeekList.new(prefix: "solo", listid: 345687, reverse_rank: true),
     *PLAYER_COUNTS,
     *PLAYTIMES,
+    *FAMILIES,
     *MECHANICS,
     *SUBDOMAINS,
   ]

@@ -49,7 +49,11 @@ class Game
 
   concerning :Categories do
     def category_label
-      @category_label ||= mechanics.sort.join(", ")
+      @category_label ||= (families + mechanics).sort.join(", ")
+    end
+
+    def families
+      @families ||= Downloaders::FAMILIES.map(&:prefix).select { send(:"#{_1}?") }
     end
 
     def mechanics

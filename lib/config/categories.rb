@@ -1,6 +1,9 @@
 module Categories
+  FAMILIES = [
+    [:kickstarter, 8374, 50],
+  ]
+
   MECHANICS = [
-    # [:chaining, 2956, 50],
     [:coop, 2023, 50],
     [:solitaire, 2819, 50],
   ]
