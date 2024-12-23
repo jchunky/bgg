@@ -11,27 +11,21 @@ Dir["lib/**/*.rb"].each { |f| require_relative f }
 class Bgg
   def display_game?(game)
     # return true
-
-    # names = [
-    #   "age of war",
-    # ]
-    # return names.any? { |n| game.name.downcase.include?(n) }
-
     # return false unless game.solo?
     # return false if game.war?
     # return false if game.thematic?
+    return false unless game.price
     return false unless game.coop? || game.max_player_count == 1
     return false unless game.min_player_count == 1
 
     # return false unless (1..).cover?(game.vote_rank)
     # return false unless (1..2.5).cover?(game.weight)
-    return false unless game.price
     # return false unless (1..60).cover?(game.max_playtime)
-    return false unless (1..).cover?(game.play_rank)
-    return false unless (1..2000).cover?(game.rank)
+    # return false unless (1..2000).cover?(game.rank)
+    # return false unless (1..).cover?(game.play_rank)
 
     # return false unless (10..).cover?(game.replays)
-    return false unless (30..).cover?(game.ghi)
+    # return false unless (30..).cover?(game.ghi)
     return false unless (1..).cover?(game.ghi_per_price)
 
     true

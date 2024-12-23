@@ -70,10 +70,7 @@
           }
           bad_game =
             bad_conditions[:bad_rank] ||
-            bad_conditions[:bad_rating] ||
-            bad_conditions[:bad_replays] ||
-            bad_conditions[:bad_ghi] ||
-            bad_conditions[:bad_weight]
+            bad_conditions[:bad_ghi]
         %>
         <tr>
           <td class="number <%= 'bad' if bad_conditions[:bad_year] %>"><%= int(game.year) %></td>
