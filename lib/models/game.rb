@@ -84,6 +84,12 @@ class Game
     end
   end
 
+  concerning :Price do
+    def price
+      Downloaders::BgoData.price_for(self)
+    end
+  end
+
   def key
     @key ||= href.scan(/\b\d+\b/).first.to_i rescue 0
   end

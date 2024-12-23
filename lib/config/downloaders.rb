@@ -1,3 +1,4 @@
+require_relative "../downloaders/bgo_data"
 require_relative "../downloaders/category_games"
 require_relative "../downloaders/game_search"
 require_relative "../downloaders/geek_list"

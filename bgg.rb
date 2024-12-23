@@ -67,6 +67,12 @@ class Bgg
   def float(value)
     value.to_f.zero? ? "" : format("%0.2f", value)
   end
+
+  def price(value)
+    return unless value
+
+    format("%.2f", value.to_f)
+  end
 end
 
 Bgg.new.run

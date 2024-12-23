@@ -38,6 +38,8 @@
         <th>Weight</th>
         <th>Replays</th>
         <th>GHI</th>
+        <th>Price</th>
+        <th>GHI / Price</th>
         <th>Player Count</th>
         <th>Max Playtime</th>
         <th>Subdomain</th>
@@ -83,6 +85,8 @@
           <td class="number <%= 'bad' if bad_conditions[:bad_weight] %>"><%= float(game.weight) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_replays] %>"><%= int(game.replays) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_ghi] %>"><%= int(game.ghi) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_price] %>"><%= price(game.price) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_ghi_per_price] %>">-</td>
           <td class="number <%= 'bad' if bad_conditions[:bad_player_count] %>"><%= int(game.player_count) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_playtime] %>"><%= int(game.max_playtime) %></td>
           <td><%= game.subdomains %></td>
