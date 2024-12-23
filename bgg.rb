@@ -11,8 +11,8 @@ Dir["lib/**/*.rb"].each { |f| require_relative f }
 class Bgg
   def display_game?(game)
     # return false unless game.solo?
-    return false if game.war?
-    return false if game.thematic?
+    # return false if game.war?
+    # return false if game.thematic?
     return false unless game.coop? || game.max_player_count == 1
     return false unless game.min_player_count == 1
 
