@@ -81,12 +81,12 @@
           <td class="number <%= 'bad' if bad_conditions[:bad_votes] %>"><%= int(game.rating_count) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_votes_rank] %>"><%= int(game.vote_rank) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_rank] %>"><%= int(game.rank) %></td>
-          <td class="number <%= 'bad' if bad_conditions[:bad_rating] %>"><%= float(game.rating) %></td>
-          <td class="number <%= 'bad' if bad_conditions[:bad_weight] %>"><%= float(game.weight) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_rating] %>"><%= float(game.rating, decimals: 1) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_weight] %>"><%= float(game.weight, decimals: 1) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_replays] %>"><%= int(game.replays) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_ghi] %>"><%= int(game.ghi) %></td>
-          <td class="number <%= 'bad' if bad_conditions[:bad_price] %>"><%= price(game.price) %></td>
-          <td class="number <%= 'bad' if bad_conditions[:bad_ghi_per_price] %>">-</td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_price] %>"><%= float(game.price, decimals: 0) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_ghi_per_price] %>"><%= float(game.ghi_per_price, decimals: 2) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_player_count] %>"><%= int(game.player_count) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_playtime] %>"><%= int(game.max_playtime) %></td>
           <td><%= game.subdomains %></td>

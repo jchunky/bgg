@@ -88,6 +88,12 @@ class Game
     def price
       Downloaders::BgoData.price_for(self)
     end
+
+    def ghi_per_price
+      return unless price.to_f.positive? && ghi.to_f.positive?
+
+      ghi.to_f / price.to_f
+    end
   end
 
   def key

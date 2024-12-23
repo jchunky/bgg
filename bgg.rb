@@ -19,6 +19,7 @@ class Bgg
 
     # return false unless game.vote_rank.in?(1..)
     # return false unless game.weight < 2.5
+    return false unless game.price
     return false unless game.max_playtime.in?(1..60)
     return false unless game.play_rank.in?(1..)
     return false unless game.rank.in?(1..2000)
@@ -64,14 +65,8 @@ class Bgg
     value.to_i.zero? ? "" : value
   end
 
-  def float(value)
-    value.to_f.zero? ? "" : format("%0.2f", value)
-  end
-
-  def price(value)
-    return unless value
-
-    format("%.2f", value.to_f)
+  def float(value, decimals:)
+    value.to_f.zero? ? "" : format("%0.#{decimals}f", value)
   end
 end
 
