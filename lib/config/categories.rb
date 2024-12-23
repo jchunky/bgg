@@ -4,6 +4,7 @@ module Categories
     [:coop, 2023, 50, "property"],
     [:kickstarter, 8374, 50, "family"],
     [:oniverse, 9976, 50, "family"],
+    [:realtime, 2831, 50, "property"],
     [:solitaire, 2819, 50, "property"],
   ]
 
