@@ -10,6 +10,7 @@ Dir["lib/**/*.rb"].each { |f| require_relative f }
 
 class Bgg
   def display_game?(game)
+    # return game.name.downcase.include?("fabled fruit")
     # return false unless game.solo?
     # return false if game.war?
     # return false if game.thematic?
