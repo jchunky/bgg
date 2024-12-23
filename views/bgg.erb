@@ -70,7 +70,8 @@
           }
           bad_game =
             bad_conditions[:bad_rank] ||
-            bad_conditions[:bad_ghi]
+            bad_conditions[:bad_ghi] ||
+            bad_conditions[:bad_ghi_per_price]
         %>
         <tr>
           <td class="number <%= 'bad' if bad_conditions[:bad_year] %>"><%= int(game.year) %></td>
