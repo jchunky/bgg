@@ -2,7 +2,60 @@ module Downloaders
   class BgoData
     class << self
       NAME_TRANSFORMS = {
+        "1066, Tears To Many Mothers" => "1066, Tears to Many Mothers: The Battle of Hastings",
+        "1824: Austrian-Hungarian Railway (Second Edition)" => "1824: Austrian-Hungarian Railway",
+        "Abalone Classic" => "Abalone",
+        "Advanced Squad Leader: Starter Kit Expansion Pack #1" => "Advanced Squad Leader: Starter Kit #1",
+        "Axis & Allies Europe 1940" => "Axis & Allies: Europe 1940",
+        "Axis & Allies Pacific 1940" => "Axis & Allies: Pacific 1940",
+        "Ca$h 'n Guns (Second Edition)" => "Ca$h 'n Guns: Second Edition",
+        "Caesar!: Seize Rome in 20 minutes" => "Caesar!: Seize Rome in 20 Minutes!",
+        "Castle Itter" => "Castle Itter: The Strangest Battle of WWII",
+        "Codenames: Disney Family Edition" => "Codenames: Disney – Family Edition",
+        "Combat!" => "Combat! Volume 1",
+        "DC Comics Deck-Building Game" => "DC Deck-Building Game",
+        "DC Comics Deck-Building Game: Forever Evil" => "DC Deck-Building Game: Forever Evil",
+        "DC Comics Deck-Building Game: Rivals – Batman vs The Joker" => "DC Deck-Building Game: Rivals – Batman vs The Joker",
+        "DC Comics Deck-Building Game: Teen Titans" => "DC Deck-Building Game: Teen Titans",
+        "Diamant" => "Incan Gold",
+        "Disney Villainous" => "Disney Villainous: The Worst Takes it All",
+        "Dungeons & Dragons: Waterdeep – Dungeon of the Mad Mage" => "Dungeons & Dragons: Waterdeep – Dungeon of the Mad Mage Board Game",
+        "Expedition: Northwest Passage" => "Expedition: Northwest Passage – HMS Terror Edition",
+        "Extraordinary Adventures: Pirates" => "Extraordinary Adventures: Pirates!",
+        "For the King and Me" => "For the King (and Me)",
+        "GROVE: A 9 card solitaire game" => "Grove: 9 card solitaire game",
+        "Hamsterrolle" => "Hamster Roll",
+        "Hapsburg Eclipse" => "Hapsburg Eclipse: The Great War in Eastern Europe 1914-1916",
+        "Haspelknecht" => "Haspelknecht: The Story of Early Coal Mining",
+        "Here I Stand (500th Anniversary Reprint Edition)" => "Here I Stand: 500th Anniversary Edition",
+        "Julius Caesar" => "Julius Caesar: Caesar, Pompey, and the Roman Civil War",
+        "Linko!" => "Linko",
+        "Love Letter: Infinity Gauntlet" => "Infinity Gauntlet: A Love Letter Game",
+        "Mission: Red Planet (Second Edition)" => "Mission: Red Planet (Second/Third Edition)",
+        "On the Underground: London/Berlin" => "On the Underground: London / Berlin",
+        "One Night Ultimate Werewolf Daybreak" => "One Night Ultimate Werewolf: Daybreak",
+        "Pandemic: Fall of Rome" => "Fall of Rome",
+        "Pandemic: Reign of Cthulhu" => "Reign of Cthulhu",
+        "Pharaoh's Gulo Gulo" => "Gulo Gulo",
+        "Q.E." => "QE",
+        "Runebound (Second Edition)" => "Runebound: Second Edition",
+        "Runebound" => "Runebound (Third Edition)",
+        "Sheriff of Nottingham (2nd Edition)" => "Sheriff of Nottingham: 2nd Edition",
+        "Shinkansen: Zero Kei" => "Shinkansen: Zero-Kei",
+        "Space Empires: 4X" => "Space Empires 4X",
+        "Stronghold (2nd edition)" => "Stronghold: 2nd edition",
+        "Talisman (Revised 4th Edition)" => "Talisman: Revised 4th Edition",
+        "Taluva Deluxe" => "Taluva",
+        "That's Pretty Clever" => "That's Pretty Clever!",
+        "The Lamps Are Going Out" => "The Lamps are Going Out: World War I",
+        "The Red Dragon Inn 5" => "The Red Dragon Inn 5: The Character Trove",
+        "Tumblin-Dice" => "Tumblin' Dice",
+        "Ubongo 3-D" => "Ubongo 3D",
+        "Unforgiven" => "Unforgiven: The Lincoln Assassination Trial",
+        "Unlock!: Kids" => "Unlock! Kids: Detective Stories",
+        "Vinhos Deluxe Edition" => "Vinhos: Deluxe Edition",
         "Zombicide (2nd Edition)" => "Zombicide: 2nd Edition",
+        "Zombies!!! 4: The End..." => "Zombies!!!",
       }
 
       def price_for(game)
@@ -12,8 +65,12 @@ module Downloaders
         bgo_game.the_price
       end
 
-      def method_name
-
+      def unmatched_names(bgg_games)
+        games.select do |bgo_game|
+          bgg_games.none? do |bgg_game|
+            normalize_name(bgo_game.name.to_s).downcase == bgg_game.name.downcase
+          end
+        end
       end
 
       def games
