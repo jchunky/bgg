@@ -13,8 +13,7 @@ class Bgg
     # return false unless game.solo?
     # return false if game.war?
     # return false if game.thematic?
-    return false unless game.coop? || game.max_player_count == 1
-    return false unless game.min_player_count == 1
+    return false unless (game.coop? || game.max_player_count == 1) && game.min_player_count == 1
     return false unless game.price
 
     # return false unless (1..2.5).cover?(game.weight)
@@ -37,11 +36,11 @@ class Bgg
       p [downloader.prefix, "listid: #{downloader.listid}", downloader.games.size]
     end
 
+    Downloaders::BgoData.bgg_games = all_games
+
     @games = all_games
       .select { display_game?(_1) }
       .sort_by { |g| [-g.year, g.play_rank] }
-
-    # pp Downloaders::BgoData.unmatched_names(@games).map(&:name)
 
     write_output
   end

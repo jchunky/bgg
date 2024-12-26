@@ -86,7 +86,9 @@ class Game
 
   concerning :Price do
     def price
-      Downloaders::BgoData.price_for(self)
+      return @price if defined?(@price)
+
+      @price = Downloaders::BgoData.price_for(self)
     end
 
     def ghi_per_price
