@@ -28,7 +28,7 @@ module Downloaders
     GameSearch.new(prefix: :vote, listid: "numvoters", search_criteria: SORTBY_VOTES),
     GeekList.new(prefix: "corridor", listid: 347808, reverse_rank: false), # November 2024
     GeekList.new(prefix: "couples", listid: 328691, reverse_rank: false), # 2023
-    GeekList.new(prefix: "solo", listid: 345687, reverse_rank: true), # 2024
+    GeekList.new(prefix: "solo", listid: 345687, reverse_rank: false), # 2024
     *PLAYER_COUNTS,
     *PLAYTIMES,
     *CATEGORIES,
