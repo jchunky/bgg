@@ -69,18 +69,16 @@ module Downloaders
       end
 
       def build_game(data)
-        p1, _, p3, p4, play_time, rating, weight = data.split("\n")
-        price = p3.split("$").last.to_f
+        name, p2, _, price, p5, play_time, rating, weight = data.split("\n")
+        price = price.delete_prefix("$").to_f
         rating = rating.to_f
         weight = weight.to_f
-        name, year, offer_count = p1.scan(/(.*)(\d{4}) • (\d+) offer/).first
-        year = year.to_i
-        offer_count = offer_count.to_i
-        if p4.include?(" - ")
-          min_player_count, max_player_count = p4.split(" - ").map(&:to_i)
+        year, offer_count = p2.split("•").map(&:to_i)
+        if p5.include?("-")
+          min_player_count, max_player_count = p5.split("-").map(&:to_i)
         else
-          min_player_count = p4.to_i
-          max_player_count = p4.to_i
+          min_player_count = p5.to_i
+          max_player_count = p5.to_i
         end
         Game.new(
           rating:,
