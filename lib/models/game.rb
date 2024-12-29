@@ -21,7 +21,7 @@ class Game
     def ghi_per_price
       return unless price.to_f.positive? && ghi.to_f.positive?
 
-      ghi.to_f / price.to_f
+      ghi.to_f / price
     end
   end
 

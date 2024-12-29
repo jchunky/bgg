@@ -9,7 +9,7 @@ module Downloaders
     def calculate_ghi
       n = 0
       page = 1
-      while true
+      loop do
         play_counts = fetch_page_data(page) { |doc| extract_play_counts(doc) }
         break if play_counts.empty?
 

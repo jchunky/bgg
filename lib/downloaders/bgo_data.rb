@@ -14,7 +14,7 @@ module Downloaders
 
         # p [level, bgg_game.rank, bgg_game.name, bgo_game.name] if level >= 2
 
-        return bgo_game
+        bgo_game
       end
 
       private
@@ -59,7 +59,7 @@ module Downloaders
       end
 
       def normalize(str)
-        str.to_s.downcase.gsub(/[^a-z0-9\s]/, '').gsub(/\s+/, ' ').strip
+        str.to_s.downcase.gsub(/[^a-z0-9\s]/, "").gsub(/\s+/, " ").strip
       end
 
       def build_game(data)
@@ -84,7 +84,7 @@ module Downloaders
           min_player_count:,
           max_player_count:,
           price:,
-          playtime:,
+          playtime:
         )
       end
     end
