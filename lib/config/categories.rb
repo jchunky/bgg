@@ -10,6 +10,7 @@ module Categories
     [:coop, 2023, 50, "property"],
     [:realtime, 2831, 50, "property"],
     [:solitaire, 2819, 50, "property"],
+    [:storytelling, 2027, 50, "property"],
 
     # family
     [:escaperoom, 36900, 50, "family"],
