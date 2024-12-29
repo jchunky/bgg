@@ -3,6 +3,7 @@ require "erb"
 require "json"
 require "net/http"
 require "nokogiri"
+require "ostruct"
 require "uri"
 require "yaml"
 
@@ -14,18 +15,8 @@ class Bgg
 
     return false unless game.price
 
-    # return false if game.war?
-    # return false if game.thematic?
     # return false unless game.couples? && !solo_game
     return false unless game.solo? && solo_game
-
-    # return false unless (1..2.5).cover?(game.weight)
-    # return false unless (1..60).cover?(game.max_playtime)
-    # return false unless (1..).cover?(game.play_rank)
-    # return false unless (1..2000).cover?(game.rank)
-    # return false unless (1..2000).cover?(game.vote_rank)
-    # return false unless (2010..).cover?(game.year)
-    # return false unless (7..).cover?(game.rating)
 
     # return false unless (10..).cover?(game.replays)
     # return false unless (30..).cover?(game.ghi)

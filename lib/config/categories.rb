@@ -1,11 +1,23 @@
 module Categories
   CATEGORIES = [
+    # publisher
     [:buttonshy, 26991, 50, "company"],
+
+    # category
+    [:miniatures, 1047, 50, "property"],
+
+    # mechanism
     [:coop, 2023, 50, "property"],
-    [:kickstarter, 8374, 50, "family"],
-    [:oniverse, 9976, 50, "family"],
     [:realtime, 2831, 50, "property"],
     [:solitaire, 2819, 50, "property"],
+
+    # family
+    [:escaperoom, 36900, 50, "family"],
+    [:exit, 36963, 50, "family"],
+    # [:kickstarter, 8374, 50, "family"],
+    [:limited_replayability, 72224, 50, "family"],
+    [:oniverse, 9976, 50, "family"],
+    [:unlock, 39442, 50, "family"],
   ]
 
   SUBDOMAINS = [

@@ -18,32 +18,10 @@ class Game
       @ghi ||= Downloaders::GhiFetcher.new(game: self).ghi
     end
 
-    def max_playtime
-      @max_playtime ||= (15..360).step(15).find { |time| send(:"playtime_#{time}?") } || 0
-    end
-  end
+    def ghi_per_price
+      return unless price.to_f.positive? && ghi.to_f.positive?
 
-  concerning :PlayerCount do
-    def player_count
-      return @player_count if defined?(@player_count)
-
-      @player_count = calculate_player_count
-    end
-
-    def min_player_count
-      @min_player_count ||= (1..12).find { |count| send(:"player_#{count}?") } || 0
-    end
-
-    def max_player_count
-      @max_player_count ||= (1..12).to_a.reverse.find { |count| send(:"player_#{count}?") } || 0
-    end
-
-    private
-
-    def calculate_player_count
-      return nil if min_player_count.zero?
-
-      [min_player_count, max_player_count].compact.uniq.join("-")
+      ghi.to_f / price.to_f
     end
   end
 
@@ -84,17 +62,35 @@ class Game
     end
   end
 
-  concerning :Price do
-    def price
-      return @price if defined?(@price)
-
-      @price = Downloaders::BgoData.price_for(self)
+  concerning :BgoData do
+    def player_count
+      [min_player_count, max_player_count].compact.uniq.join("-")
     end
 
-    def ghi_per_price
-      return unless price.to_f.positive? && ghi.to_f.positive?
+    def min_player_count
+      bgo_data.min_player_count
+    end
 
-      ghi.to_f / price.to_f
+    def max_player_count
+      bgo_data.max_player_count
+    end
+
+    def offer_count
+      bgo_data.offer_count
+    end
+
+    def playtime
+      bgo_data.playtime
+    end
+
+    def price
+      bgo_data.price
+    end
+
+    private
+
+    def bgo_data
+      Downloaders::BgoData.find_bgo_data(self)
     end
   end
 

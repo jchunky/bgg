@@ -41,7 +41,8 @@
         <th>Price</th>
         <th>GHI / Price</th>
         <th>Player Count</th>
-        <th>Max Playtime</th>
+        <th>Playtime</th>
+        <th>Offer Count</th>
         <th>Subdomain</th>
         <th>Corridor Rank</th>
         <th>Couples Rank</th>
@@ -53,10 +54,11 @@
       <% @games.each do |game| %>
         <%
           bad_conditions = {
+            bad_offer_count: !(10..).cover?(game.offer_count),
             bad_player_count: !(1..2).cover?(game.min_player_count),
             bad_plays: !(1..700).cover?(game.play_rank),
             bad_plays_rank: !(1..700).cover?(game.play_rank),
-            bad_playtime: !(1..60).cover?(game.max_playtime),
+            bad_playtime: !(1..60).cover?(game.playtime),
             bad_rank: !(1..2000).cover?(game.rank),
             bad_rating: !(7..).cover?(game.rating),
             bad_replays: !(10..).cover?(game.replays),
@@ -88,7 +90,8 @@
           <td class="number <%= 'bad' if bad_conditions[:bad_price] %>"><%= float(game.price, decimals: 0) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_ghi_per_price] %>"><%= float(game.ghi_per_price, decimals: 2) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_player_count] %>"><%= int(game.player_count) %></td>
-          <td class="number <%= 'bad' if bad_conditions[:bad_playtime] %>"><%= int(game.max_playtime) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_playtime] %>"><%= int(game.playtime) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_offer_count] %>"><%= int(game.offer_count) %></td>
           <td><%= game.subdomains %></td>
           <td class="number"><%= int(game.corridor_rank) %></td>
           <td class="number"><%= int(game.couples_rank) %></td>

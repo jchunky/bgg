@@ -6,17 +6,17 @@ module Downloaders
         process_matches
       end
 
-      def price_for(bgg_game)
-        level, bgo_game = find_bgo_match(bgg_game)
-        return unless bgo_game
+      def bgg_games
+        @bgg_games
+      end
+
+      def find_bgo_data(bgg_game)
+        level, bgo_game = @lookup[bgg_game.name]
+        return OpenStruct.new unless bgo_game
 
         # p [level, bgg_game.rank, bgg_game.name, bgo_game.name] if level >= 2
 
-        bgo_game.the_price
-      end
-
-      def bgg_games
-        @bgg_games
+        return bgo_game
       end
 
       private
@@ -52,10 +52,6 @@ module Downloaders
         # pp bgg_pool.map(&:name)
       end
 
-      def find_bgo_match(bgg_game)
-        @lookup[bgg_game.name]
-      end
-
       def bgo_games
         @bgo_games ||= File
           .read("./bgo_data.txt")
@@ -69,8 +65,9 @@ module Downloaders
       end
 
       def build_game(data)
-        name, p2, _, _, price, p6, play_time, rating, weight = data.split("\n")
+        name, p2, _, _, price, p6, playtime, rating, weight = data.split("\n")
         price = price.delete_prefix("$").to_f
+        playtime = playtime.to_i
         rating = rating.to_f
         weight = weight.to_f
         year, offer_count = p2.split("•").map(&:to_i)
@@ -80,7 +77,7 @@ module Downloaders
           min_player_count = p6.to_i
           max_player_count = p6.to_i
         end
-        Game.new(
+        OpenStruct.new(
           rating:,
           weight:,
           name:,
@@ -88,7 +85,8 @@ module Downloaders
           offer_count:,
           min_player_count:,
           max_player_count:,
-          the_price: price,
+          price:,
+          playtime:,
         )
       end
     end
