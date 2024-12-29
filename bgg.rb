@@ -15,9 +15,11 @@ class Bgg
 
     return false unless game.price
 
-    # return false unless game.couples? && !solo_game
-    # return false unless (2..).cover?(game.ghi_per_price)
-    return false unless game.solo? && solo_game
+    # return false unless game.couples?
+    # return false unless game.solo?
+    return false unless solo_game
+
+    # return false unless (1..).cover?(game.play_rank)
     return false unless (1..).cover?(game.ghi_per_price)
 
     true
