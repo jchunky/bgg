@@ -29,7 +29,7 @@ module Downloaders
         match_functions = [
           ->(bgo_game, bgg_game) { bgo_game.name == bgg_game.name },
           ->(bgo_game, bgg_game) { bgo_game.name.downcase == bgg_game.name.downcase },
-          ->(bgo_game, bgg_game) { normalize(bgo_game.name) == normalize(bgg_game.name.downcase) },
+          ->(bgo_game, bgg_game) { normalize(bgo_game.name) == normalize(bgg_game.name) },
         ]
 
         match_functions.each.with_index(1) do |match_function, level|
