@@ -1,13 +1,11 @@
 module Downloaders
   class BgoData
     class << self
+      attr_reader :bgg_games
+
       def bgg_games=(bgg_games)
         @bgg_games = bgg_games
         process_matches
-      end
-
-      def bgg_games
-        @bgg_games
       end
 
       def find_bgo_data(bgg_game)

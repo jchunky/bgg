@@ -63,28 +63,10 @@ class Game
   end
 
   concerning :BgoData do
+    delegate :min_player_count, :max_player_count, :offer_count, :playtime, :price, to: :bgo_data
+
     def player_count
       [min_player_count, max_player_count].compact.uniq.join("-")
-    end
-
-    def min_player_count
-      bgo_data.min_player_count
-    end
-
-    def max_player_count
-      bgo_data.max_player_count
-    end
-
-    def offer_count
-      bgo_data.offer_count
-    end
-
-    def playtime
-      bgo_data.playtime
-    end
-
-    def price
-      bgo_data.price
     end
 
     private
