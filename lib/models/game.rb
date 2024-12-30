@@ -72,7 +72,8 @@ class Game
     private
 
     def bgo_data
-      Downloaders::BgoData.find_bgo_data(self)
+      # Downloaders::BgoData.find_bgo_data(self)
+      Downloaders::BgbData.find_bgb_data(self)
     end
   end
 
