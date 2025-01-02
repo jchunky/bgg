@@ -13,6 +13,7 @@ module Categories
     [:storytelling, 2027, 50, "property"],
 
     # family
+    [:bga, 70360, 50, "family"],
     [:escaperoom, 36900, 50, "family"],
     [:exit, 36963, 50, "family"],
     # [:kickstarter, 8374, 50, "family"],
