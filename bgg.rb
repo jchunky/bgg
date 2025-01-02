@@ -13,7 +13,8 @@ class Bgg
   def display_game?(game)
     solo_game = (game.coop? || game.max_player_count == 1) && game.min_player_count == 1
 
-    # return false unless game.price
+    return false unless game.price
+
     # return false unless game.couples?
     # return false unless game.solo?
     # return false unless game.bga?
@@ -22,7 +23,7 @@ class Bgg
     # return false unless (1..2.5).cover?(game.weight)
     # return false unless (1..).cover?(game.play_rank)
 
-    # return false unless (1..).cover?(game.ghi_per_price)
+    # return false unless (0..5).cover?(game.cost_per_play)
 
     true
   end

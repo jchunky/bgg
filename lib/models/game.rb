@@ -18,10 +18,10 @@ class Game
       @ghi ||= Downloaders::GhiFetcher.new(game: self).ghi
     end
 
-    def ghi_per_price
-      return unless price.to_f.positive? && ghi.to_f.positive?
+    def cost_per_play
+      return unless price.to_f.positive? && replays.to_f.positive?
 
-      ghi.to_f / price
+      price / replays.to_f
     end
   end
 

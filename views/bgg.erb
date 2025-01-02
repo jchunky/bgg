@@ -39,7 +39,7 @@
         <th>Replays</th>
         <th>GHI</th>
         <th>Price</th>
-        <th>GHI / Price</th>
+        <th>Cost&nbsp;/&nbsp;Play</th>
         <th>Player Count</th>
         <th>Playtime</th>
         <th>Offer Count</th>
@@ -64,7 +64,7 @@
             bad_replays: !(10..).cover?(game.replays),
             bad_ghi: !(30..).cover?(game.ghi),
             bad_price: !(1..30).cover?(game.price),
-            bad_ghi_per_price: !(1..).cover?(game.ghi_per_price),
+            bad_cost_per_play: !(0..5).cover?(game.cost_per_play),
             bad_votes: !(1..2000).cover?(game.vote_rank),
             bad_votes_rank: !(1..2000).cover?(game.vote_rank),
             bad_weight: !(1..2.5).cover?(game.weight),
@@ -73,7 +73,7 @@
           bad_game =
             bad_conditions[:bad_rank] ||
             bad_conditions[:bad_ghi] ||
-            bad_conditions[:bad_ghi_per_price]
+            bad_conditions[:bad_cost_per_play]
         %>
         <tr>
           <td class="number <%= 'bad' if bad_conditions[:bad_year] %>"><%= int(game.year) %></td>
@@ -88,7 +88,7 @@
           <td class="number <%= 'bad' if bad_conditions[:bad_replays] %>"><%= int(game.replays) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_ghi] %>"><%= int(game.ghi) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_price] %>"><%= float(game.price, decimals: 0) %></td>
-          <td class="number <%= 'bad' if bad_conditions[:bad_ghi_per_price] %>"><%= float(game.ghi_per_price, decimals: 2) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_cost_per_play] %>"><%= float(game.cost_per_play, decimals: 2) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_player_count] %>"><%= int(game.player_count) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_playtime] %>"><%= int(game.playtime) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_offer_count] %>"><%= int(game.offer_count) %></td>
