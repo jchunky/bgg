@@ -23,6 +23,7 @@ class Bgg
     # return false unless (1..2.5).cover?(game.weight)
     # return false unless (1..).cover?(game.play_rank)
 
+    # return false unless (10..).cover?(game.replays)
     # return false unless (0..5).cover?(game.cost_per_play)
 
     true
