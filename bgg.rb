@@ -20,7 +20,7 @@ class Bgg
     return false unless solo_game
 
     # return false unless (1..).cover?(game.play_rank)
-    return false unless (1..).cover?(game.ghi_per_price)
+    # return false unless (1..).cover?(game.ghi_per_price)
 
     true
   end
