@@ -37,9 +37,6 @@ class Bgg
       p [downloader.prefix, "listid: #{downloader.listid}", downloader.games.size]
     end
 
-    Downloaders::BgbData.bgg_games = all_games
-    Downloaders::BgoData.bgg_games = all_games
-
     @games = all_games
       .select { display_game?(_1) }
       .sort_by { |g| [-g.year, g.play_rank] }
