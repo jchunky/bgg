@@ -13,8 +13,10 @@ module Categories
     [:storytelling, 2027, 50, "property"],
 
     # family
+    [:apple_app_store, 104952, 50, "family"],
     [:bga, 70360, 50, "family"],
     [:escaperoom, 36900, 50, "family"],
+    [:google_play, 78432, 50, "family"],
     [:exit, 36963, 50, "family"],
     # [:kickstarter, 8374, 50, "family"],
     [:limited_replayability, 72224, 50, "family"],
