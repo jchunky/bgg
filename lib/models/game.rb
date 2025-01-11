@@ -9,12 +9,12 @@ class Game
 
   concerning :Stats do
     def replays
-      return 0
+      # return 0
       @replays ||= Downloaders::ReplaysFetcher.new(game: self).replays
     end
 
     def ghi
-      return 0
+      # return 0
       @ghi ||= Downloaders::GhiFetcher.new(game: self).ghi
     end
 
@@ -75,17 +75,10 @@ class Game
       [min_player_count, max_player_count].compact.uniq.join("-")
     end
 
-    def bgb?
-      Downloaders::BgoStoreData.bgb.find_data(self).price
-    end
-
-    def games401?
-      Downloaders::BgoStoreData.games401.find_data(self).price
-    end
-
-    def gameshack?
-      Downloaders::BgoStoreData.gameshack.find_data(self).price
-    end
+    def bgb? = Downloaders::BgoStoreData.bgb.find_data(self).price
+    def games401? = Downloaders::BgoStoreData.games401.find_data(self).price
+    def gameshack? = Downloaders::BgoStoreData.gameshack.find_data(self).price
+    def mission? = Downloaders::BgoStoreData.mission.find_data(self).price
 
     private
 

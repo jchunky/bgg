@@ -29,10 +29,10 @@ class Bgg
 
     # return false unless game.bga?
     # return false unless game.bgb?
-    return false unless game.bgb? || game.games401? || game.gameshack?
+    return false unless game.bgb? || game.games401? || game.gameshack? || game.mission?
     # return false unless game.couples?
     # return false unless game.solo?
-    # return false unless solo_game
+    return false unless solo_game
 
     # return false unless (1..).cover?(game.play_rank)
     # return false unless (1..2.5).cover?(game.weight)

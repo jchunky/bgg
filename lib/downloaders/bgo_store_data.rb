@@ -3,6 +3,7 @@ module Downloaders
     def self.bgb =  @bgb ||= new(:bgb)
     def self.games401 =  @games401 ||= new(:games401)
     def self.gameshack =  @gameshack ||= new(:gameshack)
+    def self.mission =  @mission ||= new(:mission)
 
     def find_data(bgg_game)
       games[normalize(bgg_game.name)] || OpenStruct.new
