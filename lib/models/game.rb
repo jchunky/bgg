@@ -9,12 +9,12 @@ class Game
 
   concerning :Stats do
     def replays
-      # return 0
+      return 0
       @replays ||= Downloaders::ReplaysFetcher.new(game: self).replays
     end
 
     def ghi
-      # return 0
+      return 0
       @ghi ||= Downloaders::GhiFetcher.new(game: self).ghi
     end
 
@@ -34,6 +34,8 @@ class Game
       @categories ||= begin
         result = Downloaders::CATEGORIES.map(&:prefix).select { send(:"#{_1}?") }
         result << :bgb if bgb?
+        result << :games401 if games401?
+        result << :gameshack if gameshack?
         result
       end
     end
@@ -74,17 +76,21 @@ class Game
     end
 
     def bgb?
-      bgb_data.price
+      Downloaders::BgoStoreData.bgb.find_data(self).price
+    end
+
+    def games401?
+      Downloaders::BgoStoreData.games401.find_data(self).price
+    end
+
+    def gameshack?
+      Downloaders::BgoStoreData.gameshack.find_data(self).price
     end
 
     private
 
-    def bgb_data
-      Downloaders::BgbData.find_bgb_data(self)
-    end
-
     def bgo_data
-      Downloaders::BgoData.find_bgo_data(self)
+      @bgo_data ||= Downloaders::BgoData.all.find_data(self)
     end
   end
 

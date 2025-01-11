@@ -1,6 +1,8 @@
 module Downloaders
-  class BgoData
-    def self.all =  @all ||= new
+  class BgoStoreData < Struct.new(:store_name)
+    def self.bgb =  @bgb ||= new(:bgb)
+    def self.games401 =  @games401 ||= new(:games401)
+    def self.gameshack =  @gameshack ||= new(:gameshack)
 
     def find_data(bgg_game)
       games[normalize(bgg_game.name)] || OpenStruct.new
@@ -10,36 +12,38 @@ module Downloaders
 
     def games
       @games ||= File
-        .read("./data/bgo.txt")
-        .split("\n\n")
+        .read("./data/#{store_name}.txt")
+        .split("\n")
+        .each_slice(13)
         .map { |data| build_game(data) }
         .reject { |game| game.name.blank? }
         .to_h { |game| [normalize(game.name), game] }
     end
 
     def build_game(data)
-      name, p2, _, _, price, player_count, playtime, rating, weight = data.split("\n")
+      name, _, player_count, playtime, rating, weight, _, price, _, _, _, in_stock = data
       price = price.delete_prefix("$").to_f
       playtime = playtime.to_i
       rating = rating.to_f
       weight = weight.to_f
-      year, offer_count = p2.split("•").map(&:to_i)
+      in_stock = in_stock == "In stock"
       if player_count.include?("-")
         min_player_count, max_player_count = player_count.split("-").map(&:to_i)
       else
         min_player_count = player_count.to_i
         max_player_count = player_count.to_i
       end
+      return OpenStruct.new unless in_stock
+
       OpenStruct.new(
         rating:,
         weight:,
         name:,
-        year:,
-        offer_count:,
         min_player_count:,
         max_player_count:,
         price:,
-        playtime:
+        playtime:,
+        in_stock:
       )
     end
 
