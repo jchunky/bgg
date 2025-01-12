@@ -1,18 +1,9 @@
 module Downloaders
   class NameResolver
-    attr_reader :bgg_games, :bgo_games, :bgo_games_by_name
-
-    def self.assign_bgg_games(bgg_games)
-      @bgg_games = bgg_games
-    end
-
-    def self.bgg_games
-      @bgg_games
-    end
+    attr_reader :bgo_games, :bgo_games_by_name
 
     def initialize(bgo_games)
       @bgo_games = bgo_games
-      @bgg_games = self.class.bgg_games.dup
       @bgo_games_by_name = bgo_games.to_h { |game| [normalize(game.name), game] }
     end
 
@@ -23,7 +14,7 @@ module Downloaders
     private
 
     def normalize(str)
-      str.to_s.downcase.gsub(/[^a-z0-9\s]/, "").gsub(/\s+/, " ").strip
+      str.to_s.downcase.gsub(/[^\w\s]/, "").squish
     end
   end
 end
