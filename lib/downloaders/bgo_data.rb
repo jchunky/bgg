@@ -1,12 +1,16 @@
 module Downloaders
   class BgoData
+    attr_reader :name_resolver
+
     def self.all =  @all ||= new
 
-    def find_data(bgg_game)
-      games[normalize(bgg_game.name)] || OpenStruct.new
+    def initialize
+      @name_resolver = NameResolver.new(games)
     end
 
-    private
+    def find_data(bgg_game)
+      name_resolver.find_bgo_game(bgg_game)
+    end
 
     def games
       @games ||= File
@@ -14,8 +18,9 @@ module Downloaders
         .split("\n\n")
         .map { |data| build_game(data) }
         .reject { |game| game.name.blank? }
-        .to_h { |game| [normalize(game.name), game] }
     end
+
+    private
 
     def build_game(data)
       name, p2, _, _, price, player_count, playtime, rating, weight = data.split("\n")
@@ -41,10 +46,6 @@ module Downloaders
         price:,
         playtime:
       )
-    end
-
-    def normalize(str)
-      str.to_s.downcase.gsub(/[^a-z0-9\s]/, "").gsub(/\s+/, " ").strip
     end
   end
 end
