@@ -1,19 +1,18 @@
 module Downloaders
-  class BgoStoreData
-    attr_reader :store_name, :name_resolver
-
+  class BgoStoreData < Struct.new(:store_name)
     def self.bgb =  @bgb ||= new(:bgb)
     def self.games401 =  @games401 ||= new(:games401)
     def self.gameshack =  @gameshack ||= new(:gameshack)
     def self.mission =  @mission ||= new(:mission)
 
-    def initialize(store_name)
-      @store_name = store_name
-      @name_resolver = NameResolver.new(games)
-    end
-
     def find_data(bgg_game)
       name_resolver.find_bgo_game(bgg_game)
+    end
+
+    private
+
+    def name_resolver
+      @name_resolver ||= NameResolver.new(games)
     end
 
     def games
@@ -24,8 +23,6 @@ module Downloaders
         .map { |data| build_game(data) }
         .reject { |game| game.name.blank? }
     end
-
-    private
 
     def build_game(data)
       name, _, player_count, playtime, rating, weight, _, price, _, _, _, in_stock = data

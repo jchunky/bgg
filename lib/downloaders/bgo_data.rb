@@ -1,15 +1,15 @@
 module Downloaders
   class BgoData
-    attr_reader :name_resolver
-
     def self.all =  @all ||= new
-
-    def initialize
-      @name_resolver = NameResolver.new(games)
-    end
 
     def find_data(bgg_game)
       name_resolver.find_bgo_game(bgg_game)
+    end
+
+    private
+
+    def name_resolver
+      @name_resolve ||= NameResolver.new(games)
     end
 
     def games
@@ -19,8 +19,6 @@ module Downloaders
         .map { |data| build_game(data) }
         .reject { |game| game.name.blank? }
     end
-
-    private
 
     def build_game(data)
       name, p2, _, _, price, player_count, playtime, rating, weight = data.split("\n")
