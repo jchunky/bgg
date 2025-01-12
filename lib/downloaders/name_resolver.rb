@@ -1,14 +1,13 @@
 module Downloaders
   class NameResolver
-    attr_reader :bgo_games, :bgo_games_by_name
+    attr_reader :bgo_games
 
     def initialize(bgo_games)
-      @bgo_games = bgo_games
-      @bgo_games_by_name = bgo_games.to_h { |game| [normalize(game.name), game] }
+      @bgo_games = bgo_games.to_h { |game| [normalize(game.name), game] }
     end
 
     def find_bgo_game(bgg_game)
-      bgo_games_by_name[normalize(bgg_game.name)] || OpenStruct.new
+      bgo_games[normalize(bgg_game.name)] || OpenStruct.new
     end
 
     private
