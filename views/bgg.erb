@@ -44,7 +44,6 @@
         <th>Playtime</th>
         <th>Offer Count</th>
         <th>Subdomain</th>
-        <th>Corridor Rank</th>
         <th>Couples Rank</th>
         <th>Solo Rank</th>
         <th>Category</th>
@@ -93,7 +92,6 @@
           <td class="number <%= 'bad' if bad_conditions[:bad_playtime] %>"><%= int(game.playtime) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_offer_count] %>"><%= int(game.offer_count) %></td>
           <td><%= game.subdomains %></td>
-          <td class="number"><%= int(game.corridor_rank) %></td>
           <td class="number"><%= int(game.couples_rank) %></td>
           <td class="number"><%= int(game.solo_rank) %></td>
           <td><%= game.category_label %></td>

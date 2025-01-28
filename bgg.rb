@@ -15,18 +15,6 @@ class Bgg
 
     return false unless game.price
 
-    # return false unless !game.child?
-    # return false unless !game.digital_hybrid?
-    # return false unless !game.escaperoom?
-    # return false unless !game.exit?
-    # return false unless !game.limited_replayability?
-    # return false unless !game.miniatures?
-    # return false unless !game.realtime?
-    # return false unless !game.storytelling?
-    # return false unless !game.thematic?
-    # return false unless !game.unlock?
-    # return false unless !game.war?
-
     # return false unless game.bga?
     # return false unless game.bgb?
     # return false unless game.bgb? || game.games401? || game.gameshack? || game.mission?

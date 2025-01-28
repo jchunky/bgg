@@ -31,13 +31,7 @@ class Game
     end
 
     def categories
-      @categories ||= begin
-        result = Downloaders::CATEGORIES.map(&:prefix).select { send(:"#{_1}?") }
-        result << :bgb if bgb?
-        result << :games401 if games401?
-        result << :gameshack if gameshack?
-        result
-      end
+      @categories ||= Downloaders::CATEGORIES.map(&:prefix).select { send(:"#{_1}?") }
     end
 
     def subdomains
@@ -74,11 +68,6 @@ class Game
     def player_count
       [min_player_count, max_player_count].compact.uniq.join("-")
     end
-
-    def bgb? = Downloaders::BgoStoreData.bgb.find_data(self).price
-    def games401? = Downloaders::BgoStoreData.games401.find_data(self).price
-    def gameshack? = Downloaders::BgoStoreData.gameshack.find_data(self).price
-    def mission? = Downloaders::BgoStoreData.mission.find_data(self).price
 
     private
 
