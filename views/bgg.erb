@@ -69,10 +69,7 @@
             bad_weight: !(1..2.5).cover?(game.weight),
             bad_year: !(2010..Time.now.year - 2).cover?(game.year),
           }
-          bad_game =
-            bad_conditions[:bad_rank] ||
-            bad_conditions[:bad_replays] ||
-            bad_conditions[:bad_cost_per_play]
+          bad_game = bad_conditions[:bad_cost_per_play]
         %>
         <tr>
           <td class="number <%= 'bad' if bad_conditions[:bad_year] %>"><%= int(game.year) %></td>
