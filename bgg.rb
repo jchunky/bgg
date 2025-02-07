@@ -26,6 +26,7 @@ class Bgg
 
     return false unless (0..5).cover?(game.cost_per_play)
     # return false unless (10..).cover?(game.replays)
+    # return false unless (30..).cover?(game.ghi)
 
     true
   end
