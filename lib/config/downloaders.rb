@@ -15,10 +15,10 @@ module Downloaders
     CategoryGames.new(prefix:, listid:, items_per_page:, object_type: "family")
   end
   DOWNLOADERS = [
-    TopPlayed.new(prefix: :play, listid: "plays"),
+    # TopPlayed.new(prefix: :play, listid: "plays"),
     GameSearch.new(prefix: :bgg, listid: "rank", search_criteria: SORTBY_RANK),
     GameSearch.new(prefix: :vote, listid: "numvoters", search_criteria: SORTBY_VOTES),
-    GeekList.new(prefix: :couples, listid: 353032, reverse_rank: false), # 2023
+    GeekList.new(prefix: :couples, listid: 353032, reverse_rank: false), # 2024
     GeekList.new(prefix: :solo, listid: 345687, reverse_rank: false), # 2024
     *CATEGORIES,
     *SUBDOMAINS,
