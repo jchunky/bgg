@@ -15,6 +15,8 @@ class Bgg
 
     return false unless game.price
 
+    return false unless !game.escaperoom?
+
     # return false unless game.couples?
     # return false unless game.solo?
     return false unless solo_game
