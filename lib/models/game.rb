@@ -1,28 +1,8 @@
-require_relative "../downloaders/replays_fetcher"
-
 class Game
   attr_reader :attributes
 
   def initialize(args)
     @attributes = Hash.new(0).merge(args)
-  end
-
-  concerning :Stats do
-    def replays
-      # return 0
-      @replays ||= Downloaders::ReplaysFetcher.new(game: self).replays
-    end
-
-    def ghi
-      # return 0
-      @ghi ||= Downloaders::GhiFetcher.new(game: self).ghi
-    end
-
-    def cost_per_play
-      return unless price.to_f.positive? && replays.to_f.positive?
-
-      price / replays.to_f
-    end
   end
 
   concerning :Categories do

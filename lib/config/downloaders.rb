@@ -2,7 +2,6 @@ require_relative "../downloaders/bgo_data"
 require_relative "../downloaders/category_games"
 require_relative "../downloaders/game_search"
 require_relative "../downloaders/geek_list"
-require_relative "../downloaders/top_played"
 
 module Downloaders
   NO_EXPANSIONS = "nosubtypes[]=boardgameexpansion"
@@ -15,7 +14,6 @@ module Downloaders
     CategoryGames.new(prefix:, listid:, items_per_page:, object_type: "family")
   end
   DOWNLOADERS = [
-    # TopPlayed.new(prefix: :play, listid: "plays"),
     GameSearch.new(prefix: :bgg, listid: "rank", search_criteria: SORTBY_RANK),
     GameSearch.new(prefix: :vote, listid: "numvoters", search_criteria: SORTBY_VOTES),
     GeekList.new(prefix: :couples, listid: 353032, reverse_rank: false), # 2024
