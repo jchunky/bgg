@@ -1,10 +1,4 @@
 source "https://rubygems.org"
 
 gem "activesupport"
-gem "byebug"
 gem "nokogiri"
-gem "pry"
-gem "pry-byebug"
-gem "rubocop"
-gem "rubocop-performance"
-gem "rubocop-rails"
