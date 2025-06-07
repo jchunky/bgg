@@ -56,7 +56,7 @@
             bad_price: !(1..30).cover?(game.price),
             bad_votes: !(1..2000).cover?(game.vote_rank),
             bad_votes_rank: !(1..2000).cover?(game.vote_rank),
-            bad_weight: !(1..2.5).cover?(game.weight),
+            bad_weight: !(1..2.5).cover?(game.weight&.round(1)),
             bad_year: !(2010..Time.now.year - 2).cover?(game.year),
           }
           bad_game = bad_conditions[:bad_cost_per_play]
