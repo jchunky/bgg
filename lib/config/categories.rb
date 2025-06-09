@@ -1,7 +1,7 @@
 module Categories
   CATEGORIES = [
     # publisher
-    # [:buttonshy, 26991, 50, "company"],
+    [:buttonshy, 26991, 50, "company"],
 
     # category
     # [:dexterity, 1032, 50, "property"],
@@ -22,7 +22,7 @@ module Categories
     # [:exit, 36963, 50, "family"],
     # [:kickstarter, 8374, 50, "family"],
     # [:limited_replayability, 72224, 50, "family"],
-    # [:oniverse, 9976, 50, "family"],
+    [:oniverse, 9976, 50, "family"],
     # [:steam, 77349, 50, "family"],
     [:unlock, 39442, 50, "family"],
   ]

@@ -11,15 +11,19 @@ Dir["lib/**/*.rb"].each { |f| require_relative f }
 
 class Bgg
   def display_game?(game)
-    solo_game = (game.coop? || game.max_player_count == 1) && game.min_player_count == 1
+    one_player = game.max_player_count == 1
+    soloable = game.coop? && game.min_player_count == 1
 
     return false unless game.price
 
-    return false unless !game.escaperoom?
+    return false if one_player
+    return false if game.buttonshy?
+    return false if game.escaperoom?
+    return false if game.oniverse?
 
     # return false unless game.couples?
     # return false unless game.solo?
-    return false unless solo_game
+    return false unless soloable
 
     # return false unless (1..1000).cover?(game.rank)
     # return false unless (1..2.5).cover?(game.weight)
