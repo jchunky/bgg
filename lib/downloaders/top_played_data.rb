@@ -3,7 +3,8 @@ module Downloaders
     def self.all =  @all ||= new
 
     def find_data(bgg_game)
-      games.find { _1.name == bgg_game.name } || OpenStruct.new
+      normalized_name = bgg_game.name.delete(",").squish
+      games.find { _1.name == normalized_name } || OpenStruct.new
     end
 
     private
