@@ -56,6 +56,16 @@ class Game
     end
   end
 
+  concerning :TopPlayedGames do
+    delegate :play_rank, :unique_users, to: :top_played_data
+
+    private
+
+    def top_played_data
+      @top_played_data ||= Downloaders::TopPlayedData.all.find_data(self)
+    end
+  end
+
   def key
     @key ||= href.scan(/\b\d+\b/).first.to_i rescue 0
   end

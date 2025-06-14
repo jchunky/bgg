@@ -29,6 +29,8 @@
       <tr>
         <th>Year</th>
         <th>Game</th>
+        <th>Plays</th>
+        <th>Play Rank</th>
         <th>Votes</th>
         <th>Votes Rank</th>
         <th>Rank</th>
@@ -54,6 +56,8 @@
             bad_rank: !(1..1000).cover?(game.rank),
             bad_rating: !(7..).cover?(game.rating),
             bad_price: !(1..30).cover?(game.price),
+            bad_plays: !(1..700).cover?(game.play_rank),
+            bad_play_rank: !(1..700).cover?(game.play_rank),
             bad_votes: !(1..2000).cover?(game.vote_rank),
             bad_votes_rank: !(1..2000).cover?(game.vote_rank),
             bad_weight: !(1..2.5).cover?(game.weight&.round(1)),
@@ -64,6 +68,8 @@
         <tr>
           <td class="number <%= 'bad' if bad_conditions[:bad_year] %>"><%= int(game.year) %></td>
           <td class="<%= 'bad' if bad_game %>"><a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_plays] %>"><%= int(game.unique_users) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_play_rank] %>"><%= int(game.play_rank) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_votes] %>"><%= int(game.rating_count) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_votes_rank] %>"><%= int(game.vote_rank) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_rank] %>"><%= int(game.rank) %></td>
