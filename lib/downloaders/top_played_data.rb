@@ -3,30 +3,28 @@ module Downloaders
     def self.all =  @all ||= new
 
     def find_data(bgg_game)
-      normalized_name = bgg_game.name.delete(",").squish
-      games.find { _1.name == normalized_name } || OpenStruct.new
+      games.find { _1.name == bgg_game.name } || OpenStruct.new
     end
 
     private
 
     def games
       @games ||= File
-        .read("./data/top_played_games.csv")
+        .read("./data/top_played_games.txt")
         .split("\n")
         .map { build_game(_1) }
+        .compact
         .sort_by { -_1.unique_users }
         .each.with_index(1) { |game, i| game.play_rank = i }
     end
 
     def build_game(data)
-      name, play_count, unique_users = data.split(",")
-      play_count = play_count.to_i
-      unique_users = unique_users.to_i
+      return unless data =~ /(.*)\s+(\d+)\s+(\d+)$/
 
       OpenStruct.new(
-        name:,
-        play_count:,
-        unique_users:,
+        name: $1.strip,
+        play_count: $2.to_i,
+        unique_users: $3.to_i,
       )
     end
   end
