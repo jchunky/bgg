@@ -19,6 +19,31 @@ class Game
     end
   end
 
+  concerning :BestAtOnePlayer do
+    def best_at_1_player?
+      [
+        "20 Strong",
+        "A Gentle Rain",
+        "Bullet♥︎",
+        "Eila and Something Shiny",
+        "Final Girl",
+        "Friday",
+        "Frostpunk: The Board Game",
+        "Gloomhaven: Buttons & Bugs",
+        "Legacy of Yu",
+        "One Deck Dungeon",
+        "Onirim (Second Edition)",
+        "Onirim",
+        "Palm Island",
+        "Skytear Horde",
+        "Under Falling Skies",
+        "Unstoppable",
+        "Warp's Edge",
+        "Witchcraft!",
+      ].include?(name)
+    end
+  end
+
   concerning :Attributes do
     def method_missing(method_name, *args)
       attribute_name = method_name.to_s.chomp("=").chomp("?").to_sym
