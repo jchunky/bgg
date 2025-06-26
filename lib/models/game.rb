@@ -36,8 +36,10 @@ class Game
         "Onirim",
         "Palm Island",
         "Skytear Horde",
+        "This War of Mine: The Board Game",
         "Under Falling Skies",
         "Unstoppable",
+        "Unsurmountable",
         "Warp's Edge",
         "Witchcraft!",
       ].include?(name)
