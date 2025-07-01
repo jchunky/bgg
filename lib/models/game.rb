@@ -19,18 +19,6 @@ class Game
     end
   end
 
-  concerning :BestAtOnePlayer do
-    def best_at_1_player?
-      one_player_games.include?(name)
-    end
-
-    def one_player_games
-      @one_player_games ||= File
-        .read("./data/one_player_games.txt")
-        .split("\n")
-    end
-  end
-
   concerning :Attributes do
     def method_missing(method_name, *args)
       attribute_name = method_name.to_s.chomp("=").chomp("?").to_sym

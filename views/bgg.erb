@@ -73,9 +73,7 @@
         %>
         <tr>
           <td class="number <%= 'bad' if bad_conditions[:bad_year] %>"><%= int(game.year) %></td>
-          <td class="<%= 'bad' if bad_game %> <%= 'bold' if game.best_at_1_player? %>">
-            <a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a>
-          </td>
+          <td class="<%= 'bad' if bad_game %>"><a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_plays] %>"><%= int(game.unique_users) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_play_rank] %>"><%= int(game.play_rank) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_votes] %>"><%= int(game.rating_count) %></td>
