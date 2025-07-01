@@ -21,28 +21,13 @@ class Game
 
   concerning :BestAtOnePlayer do
     def best_at_1_player?
-      [
-        "20 Strong",
-        "A Gentle Rain",
-        "Bullet♥︎",
-        "Eila and Something Shiny",
-        "Final Girl",
-        "Friday",
-        "Frostpunk: The Board Game",
-        "Gloomhaven: Buttons & Bugs",
-        "Legacy of Yu",
-        "One Deck Dungeon",
-        "Onirim (Second Edition)",
-        "Onirim",
-        "Palm Island",
-        "Skytear Horde",
-        "This War of Mine: The Board Game",
-        "Under Falling Skies",
-        "Unstoppable",
-        "Unsurmountable",
-        "Warp's Edge",
-        "Witchcraft!",
-      ].include?(name)
+      one_player_games.include?(name)
+    end
+
+    def one_player_games
+      @one_player_games ||= File
+        .read("./data/one_player_games.txt")
+        .split("\n")
     end
   end
 

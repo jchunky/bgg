@@ -17,6 +17,7 @@ class Bgg
 
     # return false unless game.couples?
     # return false unless game.solo?
+    # return false unless game.best_at_1_player?
     return false unless soloable
     return false unless game.play_rank
 
