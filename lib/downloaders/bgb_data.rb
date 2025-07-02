@@ -21,8 +21,9 @@ module Downloaders
     end
 
     def build_game(data)
-      _, name, _, player_count, playtime, rating, weight, _, price = data.split("\n")
+      _, name, _, player_count, playtime, rating, weight, preorder, price = data.split("\n")
 
+      preorder = preorder.include?("*PRE-ORDER*")
       price = price.delete_prefix("$").to_f
       playtime = playtime.to_i
       rating = rating.to_f
@@ -37,6 +38,7 @@ module Downloaders
       OpenStruct.new(
         rating:,
         weight:,
+        preorder:,
         name:,
         min_player_count:,
         max_player_count:,

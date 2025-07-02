@@ -20,6 +20,7 @@ class Bgg
     return false unless soloable
     return false unless game.play_rank
     return false unless game.bgb?
+    return false if game.preorder?
 
     # return false unless (1..1000).cover?(game.rank)
     # return false unless (1..2.5).cover?(game.weight)

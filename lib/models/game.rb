@@ -61,6 +61,10 @@ class Game
       bgb_data.name
     end
 
+    def preorder?
+      bgb_data.preorder
+    end
+
     private
 
     def bgb_data
