@@ -26,7 +26,7 @@ class Bgg
     # return false unless (1..2.5).cover?(game.weight)
     # return false unless (1..30).cover?(game.price)
     # return false unless (6..).cover?(game.offer_count)
-    # return false unless (1..60).cover?(game.playtime)
+    return false unless (1..60).cover?(game.playtime)
 
     true
   end
