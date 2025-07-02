@@ -56,6 +56,18 @@ class Game
     end
   end
 
+  concerning :BgbData do
+    def bgb?
+      bgb_data.name
+    end
+
+    private
+
+    def bgb_data
+      @bgb_data ||= Downloaders::BgbData.all.find_data(self)
+    end
+  end
+
   concerning :TopPlayedGames do
     delegate :play_rank, :unique_users, to: :top_played_data
 
