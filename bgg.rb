@@ -14,11 +14,12 @@ class Bgg
     soloable = game.max_player_count == 1 || game.coop? && game.min_player_count == 1
 
     return false unless game.price
+    return false if escaperoom?(game)
 
     # return false unless game.couples?
     # return false unless game.solo?
     return false unless soloable
-    return false unless game.play_rank
+    # return false unless game.play_rank
     return false unless game.bgb?
     return false if game.preorder?
 
@@ -26,7 +27,7 @@ class Bgg
     # return false unless (1..2.5).cover?(game.weight)
     # return false unless (1..30).cover?(game.price)
     # return false unless (6..).cover?(game.offer_count)
-    return false unless (1..60).cover?(game.playtime)
+    # return false unless (1..60).cover?(game.playtime)
 
     true
   end
@@ -44,6 +45,10 @@ class Bgg
   end
 
   private
+
+  def escaperoom?(game)
+    %w[EXIT Deckscape Unlock!].any? { game.name.start_with?("#{_1}:") }
+  end
 
   def write_output
     template = File.read("views/bgg.erb")
