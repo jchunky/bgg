@@ -19,7 +19,7 @@ class Bgg
     # return false unless game.couples?
     # return false unless game.solo?
     return false unless soloable
-    return false unless game.play_rank
+    # return false unless game.play_rank
     return false unless game.bgb?
     return false if game.preorder?
 
