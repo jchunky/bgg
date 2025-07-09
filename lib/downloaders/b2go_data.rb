@@ -1,16 +1,7 @@
 module Downloaders
   class B2goData
-    def self.all =  @all ||= new
-
-    def find_data(bgg_game)
-      name_resolver.find_bgo_game(bgg_game)
-    end
-
-    private
-
-    def name_resolver
-      @name_resolve ||= NameResolver.new(games)
-    end
+    def prefix = :b2go_data
+    def listid = "b2go_data"
 
     def games
       @games ||= File
@@ -19,6 +10,8 @@ module Downloaders
         .map { |data| build_game(data) }
         .reject { |game| game.name.blank? }
     end
+
+    private
 
     def build_game(data)
       name, p2, _, _, price, player_count, playtime, rating, weight = data.split("\n")
@@ -33,7 +26,8 @@ module Downloaders
         min_player_count = player_count.to_i
         max_player_count = player_count.to_i
       end
-      OpenStruct.new(
+
+      Game.new(
         rating:,
         weight:,
         name:,

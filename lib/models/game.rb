@@ -43,46 +43,22 @@ class Game
   end
 
   concerning :BgoData do
-    delegate :min_player_count, :max_player_count, :offer_count, :playtime, :price, to: :bgo_data
-
     def player_count
       [min_player_count, max_player_count].compact.uniq.join("-")
-    end
-
-    private
-
-    def bgo_data
-      @bgo_data ||= Downloaders::BgoData.all.find_data(self)
     end
   end
 
   concerning :BgbData do
     def bgb?
-      bgb_data.name
+      bgb
     end
 
     def preorder?
-      bgb_data.preorder
-    end
-
-    private
-
-    def bgb_data
-      @bgb_data ||= Downloaders::BgbData.all.find_data(self)
-    end
-  end
-
-  concerning :TopPlayedGames do
-    delegate :play_rank, :unique_users, to: :top_played_data
-
-    private
-
-    def top_played_data
-      @top_played_data ||= Downloaders::TopPlayedData.all.find_data(self)
+      preorder
     end
   end
 
   def key
-    @key ||= href.scan(/\b\d+\b/).first.to_i rescue 0
+    @key ||= name.to_s.downcase.gsub(/[^\w\s]/, "").squish
   end
 end

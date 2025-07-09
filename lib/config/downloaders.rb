@@ -1,7 +1,10 @@
+require_relative "../downloaders/b2go_data"
+require_relative "../downloaders/bgb_data"
 require_relative "../downloaders/bgo_data"
 require_relative "../downloaders/category_games"
 require_relative "../downloaders/game_search"
 require_relative "../downloaders/geek_list"
+require_relative "../downloaders/top_played_data"
 
 module Downloaders
   NO_EXPANSIONS = "nosubtypes[]=boardgameexpansion"
@@ -18,6 +21,10 @@ module Downloaders
     GameSearch.new(prefix: :vote, listid: "numvoters", search_criteria: SORTBY_VOTES),
     GeekList.new(prefix: :couples, listid: 353032, reverse_rank: false), # 2024
     GeekList.new(prefix: :solo, listid: 345687, reverse_rank: false), # 2024
+    BgoData.new,
+    BgbData.new,
+    # B2goData.new,
+    TopPlayedData.new,
     *CATEGORIES,
     *SUBDOMAINS,
   ]

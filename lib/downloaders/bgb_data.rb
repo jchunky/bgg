@@ -1,16 +1,7 @@
 module Downloaders
   class BgbData
-    def self.all = @all ||= new
-
-    def find_data(bgg_game)
-      name_resolver.find_bgo_game(bgg_game)
-    end
-
-    private
-
-    def name_resolver
-      @name_resolve ||= NameResolver.new(games)
-    end
+    def prefix = :bgb_data
+    def listid = "bgb_data"
 
     def games
       @games ||= File
@@ -19,6 +10,8 @@ module Downloaders
         .map { |data| build_game(data) }
         .reject { |game| game.name.blank? }
     end
+
+    private
 
     def build_game(data)
       _, _, name, _, player_count, playtime, rating, weight, preorder, price = data.split("\n")
@@ -35,10 +28,11 @@ module Downloaders
         max_player_count = player_count.to_i
       end
 
-      OpenStruct.new(
+      Game.new(
         rating:,
         weight:,
         preorder:,
+        bgb: true,
         name:,
         min_player_count:,
         max_player_count:,
