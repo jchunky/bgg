@@ -49,11 +49,11 @@ class Game
   end
 
   concerning :GameData do
-    def player_count = [min_player_count, max_player_count].compact.uniq.join("-")
-    def bgb? = bgb == true
-    def preorder? = preorder == true
-    def b2go? = b2go == true
-    def play_rank? = play_rank > 0
+    def b2go? = (b2go == true)
+    def bgb? = (bgb == true)
+    def play_rank? = (play_rank > 0)
+    def preorder? = (preorder == true)
+    def player_count = ([min_player_count, max_player_count].compact.uniq.join("-"))
   end
 
   def key

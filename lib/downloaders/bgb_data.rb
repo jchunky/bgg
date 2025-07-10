@@ -36,7 +36,7 @@ module Downloaders
         name:,
         min_player_count:,
         max_player_count:,
-        bgb_price:,
+        bgb_price: price,
         playtime:
       )
     rescue StandardError
