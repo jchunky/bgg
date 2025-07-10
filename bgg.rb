@@ -17,9 +17,10 @@ class Bgg
     return false unless !game.escaperoom?
     return false unless game.price
     return false unless game.soloable?
-    return false unless game.play_rank?
+    # return false unless game.play_rank?
     return false unless game.bgb?
-    return false unless game.playtime.between?(1, 60)
+    # return false unless game.playtime.between?(1, 60)
+    return false unless game.price.between?(1, 37)
 
     true
   end
