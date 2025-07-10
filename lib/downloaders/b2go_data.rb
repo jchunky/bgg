@@ -21,7 +21,7 @@ module Downloaders
       Game.new(
         name:,
         b2go: true,
-        rental_price: price,
+        b2go_price: price,
       )
     end
   end
