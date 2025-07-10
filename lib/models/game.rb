@@ -5,6 +5,14 @@ class Game
     @attributes = Hash.new(0).merge(args)
   end
 
+  def soloable?
+    max_player_count == 1 || (coop? && min_player_count == 1)
+  end
+
+  def escaperoom?
+    %w[EXIT Deckscape Unlock!].any? { name.start_with?("#{_1}:") }
+  end
+
   concerning :Categories do
     def category_label
       @category_label ||= begin
@@ -50,7 +58,7 @@ class Game
 
   concerning :GameData do
     def b2go? = (b2go == true)
-    def bgb? = (bgb == true)
+    def bgb? = (bgb == true && !preorder?)
     def play_rank? = (play_rank > 0)
     def preorder? = (preorder == true)
     def player_count = ([min_player_count, max_player_count].compact.uniq.join("-"))
