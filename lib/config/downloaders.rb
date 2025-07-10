@@ -23,7 +23,7 @@ module Downloaders
     GeekList.new(prefix: :solo, listid: 345687, reverse_rank: false), # 2024
     BgoData.new,
     BgbData.new,
-    # B2goData.new,
+    B2goData.new,
     TopPlayedData.new,
     *CATEGORIES,
     *SUBDOMAINS,

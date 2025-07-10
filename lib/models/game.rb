@@ -9,6 +9,7 @@ class Game
     def category_label
       @category_label ||= begin
         result = categories
+        result << :b2go if b2go?
         result << :bgb if bgb?
         result << :preorder if preorder?
         result.sort.join(", ")
@@ -60,6 +61,12 @@ class Game
 
     def preorder?
       preorder == true
+    end
+  end
+
+  concerning :B2goData do
+    def b2go?
+      b2go == true
     end
   end
 
