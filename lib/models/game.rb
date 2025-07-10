@@ -7,7 +7,12 @@ class Game
 
   concerning :Categories do
     def category_label
-      @category_label ||= categories.sort.join(", ")
+      @category_label ||= begin
+        result = categories
+        result << :bgb if bgb?
+        result << :preorder if preorder?
+        result.sort.join(", ")
+      end
     end
 
     def categories
@@ -50,11 +55,11 @@ class Game
 
   concerning :BgbData do
     def bgb?
-      bgb
+      bgb == true
     end
 
     def preorder?
-      preorder
+      preorder == true
     end
   end
 
