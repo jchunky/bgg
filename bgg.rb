@@ -20,7 +20,8 @@ class Bgg
     # return false unless game.play_rank?
     return false unless game.bgb?
     # return false unless game.playtime.between?(1, 60)
-    return false unless game.price.between?(1, 37)
+    # return false unless game.price.between?(1, 44)
+    return false unless game.offer_count >= 10
 
     true
   end
