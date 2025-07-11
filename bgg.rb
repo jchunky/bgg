@@ -22,7 +22,7 @@ class Bgg
     # return false unless game.playtime.between?(1, 60)
     # return false unless game.price.between?(1, 44)
     # return false unless game.offer_count >= 10
-    return false unless game.weight < 2.5
+    # return false unless game.weight >= 2.5
     # return false unless game.vote_rank.between?(1, 2000)
 
     true
