@@ -10,7 +10,12 @@ class Game
   end
 
   def escaperoom?
-    %w[EXIT Deckscape Unlock!].any? { name.start_with?("#{_1}:") }
+    [
+      "EXIT",
+      "Deckscape",
+      "Rory's Story Cubes",
+      "Unlock!",
+    ].any? { name.start_with?("#{_1}:") }
   end
 
   concerning :Categories do
