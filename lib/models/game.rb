@@ -9,6 +9,10 @@ class Game
     max_player_count == 1 || (coop? && min_player_count == 1)
   end
 
+  def crowdfunded?
+    kickstarter? || gamefound? || backerkit?
+  end
+
   def escaperoom?
     [
       "EXIT",

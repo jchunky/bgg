@@ -20,11 +20,15 @@ module Categories
     # [:escaperoom, 36900, 50, "family"],
     # [:google_play, 78432, 50, "family"],
     # [:exit, 36963, 50, "family"],
-    # [:kickstarter, 8374, 50, "family"],
     # [:limited_replayability, 72224, 50, "family"],
     # [:oniverse, 9976, 50, "family"],
     # [:steam, 77349, 50, "family"],
     # [:unlock, 39442, 50, "family"],
+
+    # kickstarter
+    [:backerkit, 76292, 50, "family"],
+    [:gamefound, 66292, 50, "family"],
+    [:kickstarter, 8374, 50, "family"],
   ]
 
   SUBDOMAINS = [
