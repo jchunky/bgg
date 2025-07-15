@@ -26,9 +26,9 @@ class Bgg
     return false unless game.soloable?
 
     # return false unless game.offer_count >= 10
-    # return false unless game.price.round < 50
     # return false unless game.rating >= 7
     # return false unless game.vote_rank.between?(1, 2000)
+    # return false unless game.price.round < 50
     return false unless game.playtime < 100
     return false unless game.weight.round(1) < 3
 
