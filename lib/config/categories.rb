@@ -15,7 +15,7 @@ module Categories
 
     # family
     # [:apple_app_store, 104952, 50, "family"],
-    # [:bga, 70360, 50, "family"],
+    [:bga, 70360, 50, "family"],
     # [:digital_hybrid, 41489, 50, "family"],
     # [:escaperoom, 36900, 50, "family"],
     # [:google_play, 78432, 50, "family"],
