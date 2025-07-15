@@ -56,7 +56,7 @@
       <% @games.each do |game| %>
         <%
           bad_conditions = {
-            bad_offer_count: !(6..).cover?(game.offer_count),
+            bad_offer_count: !(10..).cover?(game.offer_count),
             bad_player_count: !(1..2).cover?(game.min_player_count),
             bad_playtime: !(1...100).cover?(game.playtime),
             bad_rank: !(1...1000).cover?(game.rank),
