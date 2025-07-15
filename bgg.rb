@@ -17,20 +17,20 @@ class Bgg
     return false unless !game.war?
 
     # return false unless game.couples?
-    # return false unless game.solo?
-    # return false unless game.b2go?
     # return false unless game.family? || game.abstract?
     # return false unless game.play_rank?
-    return false unless game.bgb?
+    # return false unless game.solo?
+    # return false unless game.bgb?
+    return false unless game.b2go?
     return false unless game.price >= 1
     return false unless game.soloable?
 
     # return false unless game.offer_count >= 10
+    # return false unless game.price.round < 50
+    # return false unless game.rating >= 7
     # return false unless game.vote_rank.between?(1, 2000)
     return false unless game.playtime < 100
-    return false unless game.price.round < 50
-    return false unless game.rating >= 7
-    return false unless game.weight < 3
+    return false unless game.weight.round(1) < 3
 
     true
   end
