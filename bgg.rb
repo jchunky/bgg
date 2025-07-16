@@ -23,7 +23,7 @@ class Bgg
     # return false unless game.couples?
     # return false unless game.play_rank?
     # return false unless game.solo?
-    return false unless game.min_player_count == 1
+    # return false unless game.min_player_count == 1
     return false unless game.price >= 1
     return false unless game.soloable?
 
