@@ -13,6 +13,10 @@ class Game
     kickstarter? || gamefound? || backerkit?
   end
 
+  def normalized_price
+    bgb_price > 0 ? bgb_price : price
+  end
+
   def escaperoom?
     [
       "EXIT",

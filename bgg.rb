@@ -17,8 +17,8 @@ class Bgg
     return false unless !game.war?
 
     # return false unless game.bga?
-    # return false unless game.bgb?
-    return false unless game.b2go?
+    return false unless game.bgb?
+    # return false unless game.b2go?
 
     # return false unless game.couples?
     # return false unless game.play_rank?
@@ -27,9 +27,9 @@ class Bgg
     return false unless game.price >= 1
     return false unless game.soloable?
 
-    # return false unless game.price.round < 50
-    return false unless game.playtime < 100
-    return false unless game.weight.round(1) < 3
+    return false unless game.normalized_price.round < 50
+    # return false unless game.playtime < 100
+    # return false unless game.weight.round(1) < 3
 
     true
   end
