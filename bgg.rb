@@ -24,7 +24,7 @@ class Bgg
     # return false unless game.play_rank?
     # return false unless game.solo?
     # return false unless game.min_player_count == 1
-    return false unless game.price >= 1
+    return false unless game.price.to_i >= 1
     return false unless game.soloable?
 
     return false unless game.normalized_price.round < 50
@@ -41,7 +41,7 @@ class Bgg
 
     @games = all_games
       .select { display_game?(_1) }
-      .sort_by { |g| [-g.year, g.rank] }
+      .sort_by { |g| [-g.year.to_i, g.rank] }
 
     write_output
   end

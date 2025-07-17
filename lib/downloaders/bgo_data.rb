@@ -14,12 +14,25 @@ module Downloaders
     private
 
     def build_game(data)
-      name, p2, _, _, price, player_count, playtime, rating, weight = data.split("\n")
-      price = price.delete_prefix("$").to_f
+      parts = data.split("\n")
+
+      case parts.size
+      when 5
+        name, player_count, playtime, rating, weight = parts
+      when 6
+        name, p2, player_count, playtime, rating, weight = parts
+      when 9
+        name, p2, _, _, price, player_count, playtime, rating, weight = parts
+      else
+        p parts.size
+        p data
+      end
+
+      price = price && price.delete_prefix("$").to_f
       playtime = playtime.to_i
       rating = rating.to_f
       weight = weight.to_f
-      year, offer_count = p2.split("•").map(&:to_i)
+      year, offer_count = p2 ? p2.split("•").map(&:to_i) : nil
       if player_count.include?("-")
         min_player_count, max_player_count = player_count.split("-").map(&:to_i)
       else
