@@ -21,12 +21,12 @@ class Bgg
     # return false unless game.min_player_count == 1
 
     # BGB
-    return false unless game.bgb?
-    return false unless game.soloable?
+    # return false unless game.bgb?
+    # return false unless game.soloable?
 
     # B2GO
-    # return false unless game.b2go?
-    # return false unless game.soloable?
+    return false unless game.b2go?
+    return false unless game.soloable?
 
     # return false unless game.couples?
     # return false unless game.solo?
