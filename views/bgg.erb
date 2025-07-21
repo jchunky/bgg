@@ -61,7 +61,7 @@
             bad_playtime: !(1...100).cover?(game.playtime),
             bad_rank: !(1...1000).cover?(game.rank),
             bad_rating: !(7..).cover?(game.rating&.round(1)),
-            bad_price: !(1...50).cover?(game.normalized_price&.round),
+            bad_price: !(1...50).cover?(game.normalized_price.to_f.round),
             bad_plays: !(1...1000).cover?(game.play_rank),
             bad_play_rank: !(1...1000).cover?(game.play_rank),
             bad_votes: !(1...1000).cover?(game.vote_rank),
@@ -81,7 +81,7 @@
           <td class="number <%= 'bad' if bad_conditions[:bad_rank] %>"><%= int(game.rank) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_rating] %>"><%= float(game.rating, decimals: 1) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_weight] %>"><%= float(game.weight, decimals: 1) %></td>
-          <td class="number <%= 'bad' if bad_conditions[:bad_price] %>"><%= float(game.normalized_price, decimals: 0) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_price] %>"><%= float(game.normalized_price.to_f.round, decimals: 0) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_player_count] %>"><%= int(game.player_count) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_playtime] %>"><%= int(game.playtime) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_offer_count] %>"><%= int(game.offer_count) %></td>

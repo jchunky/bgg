@@ -21,23 +21,23 @@ class Bgg
     # return false unless game.min_player_count == 1
 
     # BGB
-    # return false unless game.bgb?
-    # return false unless game.soloable?
+    return false unless game.bgb?
+    return false unless game.soloable?
 
     # B2GO
-    return false unless game.b2go?
-    return false unless game.soloable?
+    # return false unless game.b2go?
+    # return false unless game.soloable?
 
     # return false unless game.couples?
     # return false unless game.solo?
     # return false unless game.bga?
     # return false unless game.bgb?
     # return false unless game.b2go?
-    # return false unless game.play_rank?
+    return false unless game.play_rank?
     # return false unless game.soloable?
     # return false unless game.min_player_count == 1
     # return false unless game.price.to_i >= 1
-    # return false unless game.normalized_price.to_i.round < 50
+    return false unless game.normalized_price.to_f.round < 50
     # return false unless game.playtime < 100
     # return false unless game.weight.round(1) < 3
 
