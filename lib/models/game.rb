@@ -31,6 +31,7 @@ class Game
       @category_label ||= begin
         result = categories
         result << :b2go if b2go?
+        result << :snakes if snakes?
         result << :bgb if bgb?
         result << :preorder if preorder?
         result.sort.join(", ")
@@ -70,6 +71,7 @@ class Game
   end
 
   concerning :GameData do
+    def snakes? = (snakes == true)
     def b2go? = (b2go == true)
     def bgb? = (bgb == true && !preorder?)
     def play_rank? = (play_rank > 0)

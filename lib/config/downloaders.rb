@@ -1,6 +1,7 @@
 require_relative "../downloaders/b2go_data"
 require_relative "../downloaders/bgb_data"
 require_relative "../downloaders/bgo_data"
+require_relative "../downloaders/snakes_data"
 require_relative "../downloaders/category_games"
 require_relative "../downloaders/game_search"
 require_relative "../downloaders/geek_list"
@@ -24,6 +25,7 @@ module Downloaders
     BgoData.new,
     BgbData.new,
     B2goData.new,
+    SnakesData.new,
     TopPlayedData.new,
     *CATEGORIES,
     *SUBDOMAINS,
