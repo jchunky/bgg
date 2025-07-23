@@ -4,19 +4,19 @@ module Categories
     # [:buttonshy, 26991, 50, "company"],
 
     # category
-    # [:dexterity, 1032, 50, "property"],
+    [:dexterity, 1032, 50, "property"],
     # [:miniatures, 1047, 50, "property"],
 
     # mechanism
     [:coop, 2023, 50, "property"],
-    # [:realtime, 2831, 50, "property"],
+    [:realtime, 2831, 50, "property"],
     # [:solitaire, 2819, 50, "property"],
     # [:storytelling, 2027, 50, "property"],
 
     # family
     # [:apple_app_store, 104952, 50, "family"],
     [:bga, 70360, 50, "family"],
-    # [:digital_hybrid, 41489, 50, "family"],
+    [:digital_hybrid, 41489, 50, "family"],
     # [:escaperoom, 36900, 50, "family"],
     # [:google_play, 78432, 50, "family"],
     # [:exit, 36963, 50, "family"],
