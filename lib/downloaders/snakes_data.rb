@@ -15,32 +15,20 @@ module Downloaders
     private
 
     def chunk_games(data)
-      lines = data.lines.map(&:strip).reject(&:empty?)
-      chunks = []
-      i = 0
-
-      while i < lines.size - 1
-        if lines[i] == lines[i + 1]
-          title = lines[i]
-          chunk = [title]
-          i += 2
-
-          # Collect detail lines until we hit the next title pair or run out
-          details = []
-          while i < lines.size
-            # If we're at a new repeated title, break
-            break if i + 1 < lines.size && lines[i] == lines[i + 1]
-            details << lines[i]
-            i += 1
-          end
-
-          chunks << (chunk + details)
-        else
-          i += 1
+      data
+        .strip
+        .split("\n")
+        .slice_after do |line|
+          line != "Blokus 3D" &&
+          line.match?(/\b\d{1,2}[A-F]\b/) ||
+          line.include?("Archives") ||
+          line.include?("Staff Picks") ||
+          line.include?("Retired") ||
+          line.include?("New Arrivals") ||
+          line == "MIA" ||
+          line == "Post" ||
+          line == "Prep"
         end
-      end
-
-      chunks
     end
 
     def build_game(game_data)

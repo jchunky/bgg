@@ -50,6 +50,7 @@
         <th>Couples Rank</th>
         <th>Solo Rank</th>
         <th>Snakes Location</th>
+        <th>Snakes Category</th>
         <th>Category</th>
       </tr>
     </thead>
@@ -90,6 +91,7 @@
           <td class="number"><%= int(game.couples_rank) %></td>
           <td class="number"><%= int(game.solo_rank) %></td>
           <td><%= game.snakes_location %></td>
+          <td class="number"><%= int(game.snakes_location.to_i) %></td>
           <td><%= game.category_label %></td>
         </tr>
       <% end %>
