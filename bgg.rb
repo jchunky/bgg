@@ -13,29 +13,29 @@ class Bgg
   def display_game?(game)
     # return false unless !game.bga?
     # return false unless !game.crowdfunded?
-    return false unless !game.abstract?
-    return false unless !game.child?
-    return false unless !game.dexterity?
-    return false unless !game.digital_hybrid?
-    return false unless !game.escaperoom?
-    return false unless !game.party?
-    return false unless !game.realtime?
-    return false unless !game.war?
+    # return false unless !game.abstract?
+    # return false unless !game.child?
+    # return false unless !game.dexterity?
+    # return false unless !game.digital_hybrid?
+    # return false unless !game.escaperoom?
+    # return false unless !game.party?
+    # return false unless !game.realtime?
+    # return false unless !game.war?
 
     # BGA
     # return false unless game.bga?
     # return false unless game.min_player_count == 1
 
     # BGB
-    return false unless game.bgb?
-    return false unless game.soloable?
+    # return false unless game.bgb?
+    # return false unless game.soloable?
 
     # B2GO
     # return false unless game.b2go?
     # return false unless game.soloable?
 
     # Snakes
-    # return false unless game.snakes?
+    return false unless game.snakes?
     # return false unless game.soloable?
 
     # return false unless game.coop?

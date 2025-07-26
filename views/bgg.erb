@@ -49,6 +49,7 @@
         <th>Subdomain</th>
         <th>Couples Rank</th>
         <th>Solo Rank</th>
+        <th>Snakes Location</th>
         <th>Category</th>
       </tr>
     </thead>
@@ -88,6 +89,7 @@
           <td><%= game.subdomains %></td>
           <td class="number"><%= int(game.couples_rank) %></td>
           <td class="number"><%= int(game.solo_rank) %></td>
+          <td><%= game.snakes_location %></td>
           <td><%= game.category_label %></td>
         </tr>
       <% end %>
