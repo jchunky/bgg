@@ -8,6 +8,7 @@ module Downloaders
         .read("./data/snakes.txt")
         .then { |data| data =  data.gsub(/All Games\nAnnex\nCollege\nTempe\nChicago\nTucson\nCategory\nA\/Z\nSearch\n\n.*\n.*Location/, '') }
         .then { |data| chunk_games(data) }
+        .tap { |data| data.sort_by(&:first).each { |g| p g } }
         .map { |game_data| build_game(game_data) }
         .reject { |game| game.name.blank? }
     end
@@ -18,16 +19,21 @@ module Downloaders
       data
         .strip
         .split("\n")
+        .reject(&:blank?)
         .slice_after do |line|
-          line != "Blokus 3D" &&
-          line.match?(/\b\d{1,2}[A-F]\b/) ||
-          line.include?("Archives") ||
-          line.include?("Staff Picks") ||
-          line.include?("Retired") ||
-          line.include?("New Arrivals") ||
-          line == "MIA" ||
-          line == "Post" ||
-          line == "Prep"
+          line = line.downcase
+
+          line != "blokus 3d" &&
+            line.match?(/\b\d{1,2}[a-f]\b/) ||
+            line.include?("archives") ||
+            line.include?("staff picks") ||
+            line.include?("retired") ||
+            line.include?("new arrivals") ||
+            line == "rpg" ||
+            line == "culled" ||
+            line == "mia" ||
+            line == "post" ||
+            line == "prep"
         end
     end
 
