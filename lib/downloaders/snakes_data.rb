@@ -37,7 +37,6 @@ module Downloaders
         line.include?("new arrivals") ||
         line.include?("retired") ||
         line.include?("staff picks") ||
-        line == "1Ω" ||
         line == "culled" ||
         line == "mia" ||
         line == "post" ||
