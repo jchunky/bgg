@@ -8,7 +8,6 @@ module Downloaders
         .read("./data/snakes.txt")
         .then { |data| data =  data.gsub(/All Games\nAnnex\nCollege\nTempe\nChicago\nTucson\nCategory\nA\/Z\nSearch\n\n.*\n.*Location/, '') }
         .then { |data| chunk_games(data) }
-        .tap(&method(:find_failed_splits))
         .map { |game_data| build_game(game_data) }
         .reject { |game| game.name.blank? }
     end
@@ -16,26 +15,22 @@ module Downloaders
     private
 
     def chunk_games(data)
-      data
+      data = data
         .strip
         .split("\n")
         .reject(&:blank?)
-        .slice_after(&method(:match_location?))
+
+
+      data.each_with_index
+        .slice_after { match_location?(data, _1, _2) }
+        .map { |game_data| game_data.map(&:first) }
     end
 
-    def find_failed_splits(data)
-      return
-
-      data.each do |g|
-        pairs = g.each_cons(2).select { |a, b| a == b }
-        p g.to_a if pairs.count >= 2
-      end
-    end
-
-    def match_location?(line)
+    def match_location?(data, line, i)
       line = line.downcase
 
       return false if line == "blokus 3d"
+      return true if data[i + 1] && data[i + 1] == data[i + 2]
 
       line.match?(/\b\d{1,2}[a-f]\b/) ||
         line.include?("archives") ||
@@ -48,8 +43,7 @@ module Downloaders
         line == "post" ||
         line == "prep" ||
         line == "rpg" ||
-        line == "sickbay" ||
-        false
+        line == "sickbay"
     end
 
     def build_game(game_data)
