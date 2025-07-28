@@ -20,7 +20,6 @@ module Downloaders
         .split("\n")
         .reject(&:blank?)
 
-
       data.each_with_index
         .slice_after { match_location?(data, _1, _2) }
         .map { |game_data| game_data.map(&:first) }
