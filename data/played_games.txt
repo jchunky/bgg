@@ -53,7 +53,6 @@ Ascension: Skulls & Sails
 Ascension: Storm of Souls
 Astro Knights
 Astro Knights: Eternity
-Awkward Guests 2: The Berwick Cases
 Awkward Guests: The Walton Case
 Axis & Allies
 Axis & Allies Anniversary Edition
@@ -69,7 +68,6 @@ Axis & Allies: Pacific 1940
 Axis & Allies: War at Sea
 Axis & Allies: WWI 1914
 Azul
-Azul: Master Chocolatier
 Azul: Summer Pavilion
 Backgammon
 Bandida
@@ -113,7 +111,6 @@ Carcassonne: The City
 Carcassonne: The Discovery
 Carcassonne: Wheel of Fortune
 Carcassonne: Winter Edition
-Cardcassonne
 Cartographers
 Cascadia
 Castellion
@@ -620,7 +617,6 @@ Wits & Wagers: It's Vegas, Baby!
 Wizard
 World of Warcraft: Wrath of the Lich King
 Wyrmspan
-X nimmt!
 Zombicide
 Zombicide Season 2: Prison Outbreak
 Zombicide Season 3: Rue Morgue

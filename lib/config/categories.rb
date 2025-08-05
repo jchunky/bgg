@@ -24,6 +24,7 @@ module Categories
     # [:oniverse, 9976, 50, "family"],
     # [:steam, 77349, 50, "family"],
     # [:unlock, 39442, 50, "family"],
+    [:werewolf, 2989, 50, "family"],
 
     # kickstarter
     [:backerkit, 76292, 50, "family"],
