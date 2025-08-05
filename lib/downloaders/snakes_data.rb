@@ -46,19 +46,23 @@ module Downloaders
 
     def build_game(game_data)
       name, *, location = game_data
+      location = normalize_location(location)
 
       Game.new(
         name:,
-        snakes_location: normalize_location(location),
-        snakes: true,
+        snakes_location: location,
+        snakes: !!location,
       )
     end
 
     def normalize_location(location)
       match = location.scan(/\b\d+\w\b/).first
-      return location unless match
+      return match if match
 
-      match
+      return "New Arrivals" if location.downcase.include?("new arrivals")
+      return "Staff Picks" if location.downcase.include?("staff picks")
+
+      nil
     end
   end
 end
