@@ -15,15 +15,15 @@ class Bgg
     # return false unless !game.escaperoom?
 
     # return false unless !game.abstract?
-    return false unless !game.child?
-    return false unless !game.ccg?
-    return false unless !game.party?
-    return false unless !game.war?
+    # return false unless !game.child?
+    # return false unless !game.ccg?
+    # return false unless !game.party?
+    # return false unless !game.war?
 
-    return false unless !game.dexterity?
-    return false unless !game.digital_hybrid?
-    return false unless !game.realtime?
-    return false unless !game.werewolf?
+    # return false unless !game.dexterity?
+    # return false unless !game.digital_hybrid?
+    # return false unless !game.realtime?
+    # return false unless !game.werewolf?
 
     # BGA
     # return false unless game.bga?
@@ -42,8 +42,8 @@ class Bgg
     # return false unless game.soloable?
 
     # Snakes
-    return false unless game.play_rank?
-    return false unless game.snakes?
+    # return false unless game.play_rank?
+    # return false unless game.snakes?
 
     # return false unless game.coop?
     # return false unless game.couples?
