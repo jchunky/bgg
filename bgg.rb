@@ -15,10 +15,11 @@ class Bgg
     # return false unless !game.escaperoom?
 
     # return false unless !game.abstract?
-    # return false unless !game.child?
-    # return false unless !game.ccg?
-    # return false unless !game.party?
-    # return false unless !game.war?
+    return false unless !game.child?
+    return false unless !game.ccg?
+    return false unless !game.party?
+    return false unless !game.war?
+    return false unless game.played?
 
     # return false unless !game.dexterity?
     # return false unless !game.digital_hybrid?

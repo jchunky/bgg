@@ -71,6 +71,7 @@ class Game
   end
 
   concerning :GameData do
+    def played? = (played == true)
     def snakes? = (snakes == true)
     def b2go? = (b2go == true)
     def bgb? = (bgb == true && !preorder?)
