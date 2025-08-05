@@ -35,7 +35,7 @@ class Bgg
     # return false unless game.soloable?
 
     # Snakes
-    return false unless game.snakes?
+    # return false unless game.snakes?
     # return false unless game.soloable?
 
     # return false unless game.coop?
