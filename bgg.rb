@@ -11,24 +11,24 @@ Dir["lib/**/*.rb"].each { |f| require_relative f }
 
 class Bgg
   def display_game?(game)
-    # return false unless !game.crowdfunded?
-    # return false unless !game.escaperoom?
-
     # return false unless !game.abstract?
-    return false unless !game.child?
     return false unless !game.ccg?
+    return false unless !game.child?
     return false unless !game.party?
     return false unless !game.war?
+
+    # return false unless !game.crowdfunded?
+    # return false unless !game.escaperoom?
+    return false unless !game.dexterity?
+    return false unless !game.digital_hybrid?
+    return false unless !game.realtime?
+    return false unless !game.werewolf?
+
     return false unless !game.played?
 
-    # return false unless !game.dexterity?
-    # return false unless !game.digital_hybrid?
-    # return false unless !game.realtime?
-    # return false unless !game.werewolf?
-
     # BGA
-    return false unless game.bga?
-    return false unless game.min_player_count == 1
+    # return false unless game.bga?
+    # return false unless game.min_player_count == 1
 
     # BGB
     # return false unless game.bgb?
@@ -38,9 +38,9 @@ class Bgg
     # return false unless game.normalized_price.to_f.round < 50
 
     # B2GO
-    # return false unless game.play_rank?
-    # return false unless game.b2go?
-    # return false unless game.soloable?
+    return false unless game.b2go?
+    return false unless game.play_rank?
+    return false unless game.soloable?
 
     # Snakes
     # return false unless game.play_rank?

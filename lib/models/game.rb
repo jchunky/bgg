@@ -10,25 +10,35 @@ class Game
     @attributes = Hash.new(0).merge(args)
   end
 
-  def soloable?
-    max_player_count == 1 || (coop? && min_player_count == 1)
-  end
+  concerning :AdditionalAttributes do
+    def soloable?
+      max_player_count == 1 || (coop? && min_player_count == 1)
+    end
 
-  def crowdfunded?
-    kickstarter? || gamefound? || backerkit?
-  end
+    def crowdfunded?
+      kickstarter? || gamefound? || backerkit?
+    end
 
-  def normalized_price
-    bgb_price > 0 ? bgb_price : price
-  end
+    def normalized_price
+      bgb_price > 0 ? bgb_price : price
+    end
 
-  def escaperoom?
-    [
-      "EXIT",
-      "Deckscape",
-      "Rory's Story Cubes",
-      "Unlock!",
-    ].any? { name.start_with?("#{_1}:") }
+    def escaperoom?
+      [
+        "EXIT",
+        "Deckscape",
+        "Rory's Story Cubes",
+        "Unlock!",
+      ].any? { name.start_with?("#{_1}:") }
+    end
+
+    def bga?
+      super && NON_SOLO_BGA_GAMES.exclude?(name)
+    end
+
+    def snakes_location_label
+      null?(snakes_location) ? nil : snakes_location
+    end
   end
 
   concerning :Categories do
@@ -71,7 +81,7 @@ class Game
     private
 
     def null?(value)
-      !value || value.zero?
+      !value || (value.respond_to?(:zero?) && value.zero?)
     end
   end
 
@@ -83,10 +93,6 @@ class Game
     def play_rank? = (play_rank > 0)
     def preorder? = (preorder == true)
     def player_count = ([min_player_count, max_player_count].compact.uniq.join("-"))
-  end
-
-  def bga?
-    super && NON_SOLO_BGA_GAMES.exclude?(name)
   end
 
   def key
