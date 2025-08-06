@@ -24,11 +24,11 @@ class Bgg
     return false unless !game.realtime?
     return false unless !game.werewolf?
 
-    return false unless !game.played?
+    # return false unless !game.played?
 
     # BGA
-    # return false unless game.bga?
-    # return false unless game.min_player_count == 1
+    return false unless game.bga?
+    return false unless game.min_player_count == 1
 
     # BGB
     # return false unless game.bgb?
@@ -43,8 +43,8 @@ class Bgg
     # return false unless game.soloable?
 
     # Snakes
-    return false unless game.snakes?
-    return false unless game.snakes_category <= 22
+    # return false unless game.snakes?
+    # return false unless game.snakes_category <= 22
     # return false unless game.play_rank?
 
     # return false unless game.snakes? || game.bga? || game.b2go?
