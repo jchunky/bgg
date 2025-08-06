@@ -93,6 +93,7 @@ class Game
     def play_rank? = (play_rank > 0)
     def preorder? = (preorder == true)
     def player_count = ([min_player_count, max_player_count].compact.uniq.join("-"))
+    def snakes_category = snakes_location.to_i
   end
 
   def key
