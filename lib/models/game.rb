@@ -10,37 +10,6 @@ class Game
     @attributes = Hash.new(0).merge(args)
   end
 
-  concerning :AdditionalAttributes do
-    def soloable?
-      max_player_count == 1 || (coop? && min_player_count == 1)
-    end
-
-    def crowdfunded?
-      kickstarter? || gamefound? || backerkit?
-    end
-
-    def normalized_price
-      bgb_price > 0 ? bgb_price : price
-    end
-
-    def escaperoom?
-      [
-        "EXIT",
-        "Deckscape",
-        "Rory's Story Cubes",
-        "Unlock!",
-      ].any? { name.start_with?("#{_1}:") }
-    end
-
-    def bga?
-      super && NON_SOLO_BGA_GAMES.exclude?(name)
-    end
-
-    def snakes_location_label
-      null?(snakes_location) ? nil : snakes_location
-    end
-  end
-
   concerning :Categories do
     def category_label
       @category_label ||= begin
@@ -86,14 +55,29 @@ class Game
   end
 
   concerning :GameData do
-    def played? = (played == true)
-    def snakes? = (snakes == true)
     def b2go? = (b2go == true)
+    def bga? = super && NON_SOLO_BGA_GAMES.exclude?(name)
     def bgb? = (bgb == true && !preorder?)
+    def crowdfunded? = kickstarter? || gamefound? || backerkit?
     def play_rank? = (play_rank > 0)
+    def played? = (played == true)
     def preorder? = (preorder == true)
+    def snakes? = (snakes == true)
+    def soloable? = max_player_count == 1 || (coop? && min_player_count == 1)
+    def normalized_price = bgb_price > 0 ? bgb_price : price
     def player_count = ([min_player_count, max_player_count].compact.uniq.join("-"))
     def snakes_category = snakes_location.to_i
+    def snakes_location_label = null?(snakes_location) ? nil : snakes_location
+
+    def escaperoom?
+      [
+        "EXIT",
+        "Deckscape",
+        "Rory's Story Cubes",
+        "Unlock!",
+      ].any? { name.start_with?("#{_1}:") }
+    end
+
   end
 
   def key
