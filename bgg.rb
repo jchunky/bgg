@@ -19,7 +19,7 @@ class Bgg
     return false unless !game.ccg?
     return false unless !game.party?
     return false unless !game.war?
-    return false unless game.played?
+    return false unless !game.played?
 
     # return false unless !game.dexterity?
     # return false unless !game.digital_hybrid?
@@ -27,8 +27,8 @@ class Bgg
     # return false unless !game.werewolf?
 
     # BGA
-    # return false unless game.bga?
-    # return false unless game.min_player_count == 1
+    return false unless game.bga?
+    return false unless game.min_player_count == 1
 
     # BGB
     # return false unless game.bgb?

@@ -1,4 +1,9 @@
 class Game
+  NON_SOLO_BGA_GAMES = File
+    .read("./data/non_solo_bga_games.txt")
+    .split("\n")
+    .reject(&:blank?)
+
   attr_reader :attributes
 
   def initialize(args)
@@ -78,6 +83,10 @@ class Game
     def play_rank? = (play_rank > 0)
     def preorder? = (preorder == true)
     def player_count = ([min_player_count, max_player_count].compact.uniq.join("-"))
+  end
+
+  def bga?
+    super && NON_SOLO_BGA_GAMES.exclude?(name)
   end
 
   def key
