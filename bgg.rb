@@ -44,7 +44,10 @@ class Bgg
 
     # Snakes
     return false unless game.snakes?
-    return false unless game.play_rank?
+    # return false unless game.play_rank?
+
+    # return false unless game.snakes? || game.bga? || game.b2go?
+    # return false unless game.soloable?
 
     # return false unless game.coop?
     # return false unless game.couples?
