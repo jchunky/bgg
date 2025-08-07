@@ -18,18 +18,18 @@ class Bgg
     return false unless !game.war?
 
     # return false unless !game.crowdfunded?
-    # return false unless !game.escaperoom?
     return false unless !game.dexterity?
     return false unless !game.digital_hybrid?
+    return false unless !game.escaperoom_games?
     return false unless !game.realtime?
     return false unless !game.werewolf?
 
     return false unless !game.played?
 
     # BGA
-    return false unless game.bga?
-    return false unless game.play_rank?
-    return false unless game.weight < 2
+    # return false unless game.bga?
+    # return false unless game.play_rank?
+    # return false unless game.weight < 2
     # return false unless game.min_player_count == 1
 
     # BGB
@@ -54,12 +54,12 @@ class Bgg
     # return false unless game.solo?
     # return false unless game.bga?
     # return false unless game.bgb?
-    # return false unless game.b2go?
-    # return false unless game.soloable?
+    return false unless game.b2go?
+    return false unless game.soloable?
     # return false unless game.min_player_count == 1
     # return false unless game.max_player_count >= 4
-    # return false unless game.price.to_i >= 1
-    # return false unless game.normalized_price.to_f.round < 50
+    return false unless game.price.to_i >= 1
+    return false unless game.normalized_price.to_f.round < 50
     # return false unless game.play_rank?
     # return false unless game.playtime < 100
     # return false unless game.weight.round(1) < 3

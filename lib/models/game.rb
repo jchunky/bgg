@@ -69,7 +69,7 @@ class Game
     def snakes_category = snakes_location.to_i
     def snakes_location_label = null?(snakes_location) ? nil : snakes_location
 
-    def escaperoom?
+    def escaperoom_games?
       [
         "EXIT",
         "Deckscape",
