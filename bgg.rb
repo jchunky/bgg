@@ -26,30 +26,26 @@ class Bgg
 
     return false unless !game.played?
 
-    # B2GO
-    # return false unless game.b2go?
-    # return false unless game.soloable?
-    # return false unless game.price.to_i >= 1
-    # return false unless game.normalized_price.to_f.round < 50
-
     # BGA (multi-player)
     return false unless game.bga?
-    return false unless game.b2go?
+    return false unless game.snakes?
     return false unless game.play_rank?
-    return false unless game.weight < 2
+    return false unless game.weight.round(1) < 2
+
+    # Snakes (multi-player)
+    # return false unless game.snakes?
+    # return false unless game.snakes_category <= 22
 
     # BGA (solo)
     # return false unless game.bga?
     # return false unless game.min_player_count == 1
 
-    # Snakes
-    # return false unless game.snakes?
-    # return false unless game.snakes_category <= 22
-
-    # return false unless game.snakes? || game.bga? || game.b2go?
+    # B2GO (solo)
+    # return false unless game.b2go?
     # return false unless game.soloable?
+    # return false unless game.price.to_i >= 1
+    # return false unless game.normalized_price.to_f.round < 50
 
-    # return false unless game.coop?
     # return false unless game.couples?
     # return false unless game.solo?
     # return false unless game.bga?
