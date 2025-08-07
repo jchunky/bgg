@@ -70,6 +70,7 @@ Axis & Allies: Pacific 1940
 Axis & Allies: War at Sea
 Axis & Allies: WWI 1914
 Azul
+Azul: Master Chocolatier
 Azul: Summer Pavilion
 Backgammon
 Bandida
@@ -190,6 +191,7 @@ Deep Sea Adventure
 Deep Space D-6
 Diamant
 Dice Forge
+Diced Veggies
 Dixit
 Dixit: Disney Edition
 Dixit: Journey
@@ -386,6 +388,7 @@ Puerto Rico
 Pylos
 Quacks
 Quacks & Co.: Quedlinburg Dash
+Quarto
 Queendomino
 Quoridor
 Qwirkle
