@@ -26,7 +26,6 @@ class Bgg
 
     # BGA (multi-player)
     return false unless game.bga?
-    return false unless game.snakes?
     return false unless game.play_rank?
     return false unless game.weight.round(1) < 2
 
