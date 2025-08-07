@@ -27,7 +27,9 @@ class Bgg
     return false unless !game.played?
 
     # BGA
-    # return false unless game.bga?
+    return false unless game.bga?
+    return false unless game.play_rank?
+    return false unless game.weight < 2
     # return false unless game.min_player_count == 1
 
     # BGB
