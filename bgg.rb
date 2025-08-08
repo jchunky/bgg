@@ -33,6 +33,7 @@ class Bgg
     # Snakes (multi-player)
     # return false unless game.snakes?
     # return false unless game.snakes_category <= 22
+    # return false unless game.play_rank?
 
     # BGA (solo)
     # return false unless game.bga?
