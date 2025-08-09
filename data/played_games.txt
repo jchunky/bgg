@@ -152,6 +152,7 @@ Clank!: A Deck-Building Adventure
 Clank!: Catacombs
 Claustrophobia
 Claustrophobia 1643
+Cloud City
 Clue Master Detective
 Coconuts
 Codenames
@@ -224,12 +225,14 @@ For Sale
 Forage: A 9 card solitaire game
 Forest Shuffle
 Forever Home
+Framework
 Friday
 Fromage
 Gin Rummy
 Gloomhaven
 Gloomhaven: Buttons & Bugs
 Gloomhaven: Jaws of the Lion
+Glow
 Gobblet
 Grove: 9 card solitaire game
 Hadrian's Wall
@@ -239,8 +242,10 @@ Hardback
 Harmonies
 Harry Potter: Hogwarts Battle
 Harry Potter: Hogwarts Battle – Defence Against the Dark Arts
+Harvest
 Hearts
 Heat: Pedal to the Metal
+Hens
 Herbaceous
 Hero Realms
 High Society
@@ -254,6 +259,7 @@ It's a Wonderful World
 Jaipur
 Jamaica
 Jump Drive
+Junk Drawer
 Just One
 Kanagawa
 Karak
@@ -279,6 +285,7 @@ Legendary: Buffy The Vampire Slayer
 Let's Go! To Japan
 Level 10
 Livingstone
+Loco Momo
 Loopin' Chewie
 Loopin' Louie
 Lords of Waterdeep
@@ -339,6 +346,7 @@ Next Station: Paris
 Next Station: Tokyo
 NMBR 9
 No Thanks!
+Noah
 Noobs in Space
 Nusfjord
 Oh Hell!
@@ -385,6 +393,7 @@ Poker
 Polis: Fight for the Hegemony
 Port Royal
 Potion Explosion
+Power Vacuum
 Proving Grounds
 Puerto Rico
 Pylos
