@@ -8,7 +8,7 @@ Category
 A/Z
 Search
 
-New Arrivals
+#
 Game  Tutorial  Location
 10 Days In Africa
 10 Days In Africa
@@ -205,11 +205,6 @@ Arctic Survival
 Light Strategy
 E 2P Best for: 2 players
 Retired
-Ark Nova
-Ark Nova
-Strategy
-H 2P Solo Best for: 2 players
-34B
 Arkham Horror - 3rd Edition
 Arkham Horror - 3rd Edition
 Strategy · Cooperative
@@ -986,6 +981,7 @@ Cyclades
 Strategy
 H 2P Best for: 5 players
 33F
+
 All Games
 Annex
 College
@@ -1140,6 +1136,9 @@ Dominoes: Double 6
 Abstract
 E 2P Best for: 4 players
 35C, Archives
+Dominoes: Mexican Train
+Dominoes: Mexican Train
+New Arrivals
 Don't Wake Daddy
 Don't Wake Daddy
 Children's
@@ -1252,6 +1251,7 @@ Dwarf King
 Dwarf King
 Light Strategy
 22E
+
 All Games
 Annex
 College
@@ -1341,6 +1341,7 @@ Eye Know
 Party · Trivia
 M 2P Best for: 4 players
 1B
+
 All Games
 Annex
 College
@@ -1530,6 +1531,7 @@ Furnace
 Light Strategy
 M Best for: 4 players
 27B
+
 All Games
 Annex
 College
@@ -1722,6 +1724,7 @@ Guillotine
 Light Strategy
 E 2P Best for: 5 players
 20C
+
 All Games
 Annex
 College
@@ -1872,6 +1875,9 @@ Hot Seat
 Party
 E
 15A
+Hot Streak
+Hot Streak
+New Arrivals
 Hot Takes
 Hot Takes
 Party
@@ -1894,6 +1900,7 @@ E
 Hunt a Killer: The Girl in the Well
 Hunt a Killer: The Girl in the Well
 New Arrivals
+
 All Games
 Annex
 College
@@ -1988,6 +1995,7 @@ E Best for: 4 players
 25C
 It Happens
 Archives
+
 All Games
 Annex
 College
@@ -2055,6 +2063,7 @@ Just One
 Party · Cooperative
 E Best for: 7 players
 8D
+
 All Games
 Annex
 College
@@ -2193,6 +2202,7 @@ Kyoto no Neko
 Light Strategy
 M 2P Best for: 4 players
 New Arrivals
+
 All Games
 Annex
 College
@@ -2394,6 +2404,10 @@ Love Letter: Kanai Factory Limited Edition
 Party
 E Best for: 4 players
 29D
+Love Letter: Princess Princess Ever After
+Love Letter: Princess Princess Ever After
+New Arrivals
+
 All Games
 Annex
 College
@@ -2718,6 +2732,7 @@ Mystic Vale
 Light Strategy · Deck Builder
 M 2P Best for: 4 players
 32E
+
 All Games
 Annex
 College
@@ -2814,6 +2829,7 @@ Nut So Fast
 Party
 E 2P Best for: 6 players
 10B
+
 All Games
 Annex
 College
@@ -2893,6 +2909,7 @@ Outpost Siberia
 Outpost Siberia
 H
 Archives
+
 All Games
 Annex
 College
@@ -3148,9 +3165,9 @@ Purrrlock Holmes
 Purrrlock Holmes
 20A
 Puzzle Moment 300pc Puzzle - Spring
-10E
+Staff picks
 Puzzle Observation - 350pc Puzzle
-Retired
+Staff picks
 Pylos
 Pylos
 Abstract
@@ -3234,6 +3251,7 @@ Qwixx
 Abstract
 E 2P Best for: 4 players
 Archives
+
 All Games
 Annex
 College
@@ -4505,6 +4523,7 @@ Voluspa
 Voluspa
 Light Strategy
 26F
+
 All Games
 Annex
 College
@@ -4568,11 +4587,6 @@ E Best for: 8 players
 16E
 Whatzit? Junior
 4D
-Who Killed Mia?
-Who Killed Mia?
-Cooperative
-M 2P Solo
-New Arrivals
 Who'd You Rather?
 Who'd You Rather?
 Party
