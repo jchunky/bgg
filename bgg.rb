@@ -46,7 +46,7 @@ class Bgg
     # B2GO (solo)
     return false unless game.b2go?
     return false unless game.soloable?
-    return false unless game.price.to_f.round.between?(1, 49)
+    return false unless game.normalized_price.between?(1, 49)
 
     # return false unless game.couples?
     # return false unless game.solo?
@@ -56,7 +56,7 @@ class Bgg
     # return false unless game.soloable?
     # return false unless game.min_player_count == 1
     # return false unless game.max_player_count >= 4
-    # return false unless game.price.to_f.round.between?(1, 49)
+    # return false unless game.normalized_price.between?(1, 49)
     # return false unless game.play_rank?
     # return false unless game.playtime < 100
     # return false unless game.weight.round(1) < 3
