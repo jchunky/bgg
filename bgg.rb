@@ -31,8 +31,8 @@ class Bgg
     # return false unless game.playtime <= 30
 
     # Snakes (multi-player)
-    # return false unless game.snakes?
-    # return false unless game.snakes_category <= 22
+    return false unless game.snakes?
+    return false unless game.snakes_category <= 22
     # return false unless game.play_rank?
 
     # BGA (solo)
@@ -44,9 +44,9 @@ class Bgg
     # return false unless game.soloable?
 
     # B2GO (solo)
-    return false unless game.b2go?
-    return false unless game.soloable?
-    return false unless game.normalized_price.between?(1, 49)
+    # return false unless game.b2go?
+    # return false unless game.soloable?
+    # return false unless game.normalized_price.between?(1, 49)
 
     # return false unless game.couples?
     # return false unless game.solo?
