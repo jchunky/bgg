@@ -20,6 +20,7 @@ class Bgg
     return false unless !game.digital_hybrid?
     return false unless !game.escaperoom_games?
     return false unless !game.realtime?
+    return false unless !game.traitor?
     return false unless !game.werewolf?
 
     return false unless !game.played?

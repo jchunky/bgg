@@ -12,6 +12,7 @@ module Categories
     [:realtime, 2831, 50, "property"],
     # [:solitaire, 2819, 50, "property"],
     # [:storytelling, 2027, 50, "property"],
+    [:traitor, 2814, 50, "property"],
 
     # family
     # [:apple_app_store, 104952, 50, "family"],
