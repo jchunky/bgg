@@ -84,6 +84,7 @@ Blokus
 Boggle
 Bohnanza
 Bonsai
+boop.
 Brass: Birmingham
 Brass: Lancashire
 Break the Code
@@ -240,6 +241,7 @@ Grove: 9 card solitaire game
 Hadrian's Wall
 Hanabi
 Hanamikoji
+Happy City
 Hardback
 Harmonies
 Harry Potter: Hogwarts Battle
@@ -257,6 +259,7 @@ Honshū
 HUTAN: Life in the Rainforest
 ICECOOL
 ICECOOL2
+IOTA
 It's a Wonderful World
 Jaipur
 Jamaica
@@ -454,6 +457,7 @@ SCOUT
 Scrabble
 Scythe
 Sea Salt & Paper
+Second Chance
 Seikatsu
 Sequence
 SET
@@ -471,6 +475,7 @@ Sleeping Queens
 Small World
 Small World of Warcraft
 Small World Underground
+So Clover!
 Space Base
 SpellBook
 Splendor
@@ -545,6 +550,7 @@ Ticket to Ride: Nordic Countries
 Ticket to Ride: Rails & Sails
 Ticket to Ride: San Francisco
 Ticket to Ride: The Card Game
+Tides of Time
 TIME Stories Revolution: The Hadal Project
 Timeline
 Timeline Challenge
