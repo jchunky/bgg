@@ -618,6 +618,10 @@ Wyrmspan
 
 $16.99
 
+Scythe
+Free Bonus with Rentals
+$27.75 $22.99
+
 It's a Wonderful World
 
 $12.99
@@ -653,10 +657,6 @@ $11.99
 Finspan
 
 $14.99
-
-Scythe
-Free Bonus with Rentals
-$27.75 $22.99
 
 Unlock! Timeless Adventures
 
@@ -1082,10 +1082,6 @@ Kingdom Rush: Rift in Time
 
 $14.99
 
-Verdant
-
-$10.99
-
 Bureau Of Investigation: Investigations in Arkham & Elsewhere (A Sherlock Holmes Game)
 
 $15.99
@@ -1224,7 +1220,7 @@ $11.50
 
 Kiwi Chow Down
 
-$17.99
+$17.99 $14.99
 
 Next Station: Paris
 
@@ -1300,7 +1296,7 @@ $18.99
 
 The Princes of Florence
 
-$15.99
+$15.50 $12.99
 
 The Council of Shadows
 
@@ -1389,6 +1385,10 @@ $16.50
 Overboss: A Boss Monster Adventure
 
 $12.99 $10.99
+
+Verdant
+
+$10.99
 
 Carcassonne: Mists Over Carcassonne
 
@@ -2004,7 +2004,7 @@ $14.99 $12.99
 
 Marvel DAGGER
 
-$22.75 $18.99
+$25.99 $21.99
 
 Spots
 
@@ -2106,10 +2106,6 @@ Deckscape: Test Time
 
 $5.75
 
-Flamecraft
-
-$10.99
-
 Unlock! Short Adventures: #1 Secret Recipes of Yore
 Difficulty: 1
 $5.50
@@ -2121,6 +2117,10 @@ $8.99
 Mansions of Madness: 2nd Edition
 
 $28.99 $23.99
+
+Flamecraft
+
+$10.99
 
 Chronicles of Crime
 
