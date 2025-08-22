@@ -76,6 +76,7 @@ Azul: Summer Pavilion
 Backgammon
 Bandida
 Bandido
+BANG!
 Baseball Highlights: 2045
 Battle Line
 Battle Line: Medieval
@@ -195,6 +196,7 @@ Deep Sea Adventure
 Deep Space D-6
 Detective: City of Angels
 Diamant
+Diamant
 Dice Forge
 Diced Veggies
 Dixit
@@ -261,6 +263,7 @@ Honshū
 HUTAN: Life in the Rainforest
 ICECOOL
 ICECOOL2
+Incan Gold
 IOTA
 It's a Wonderful World
 Jaipur
