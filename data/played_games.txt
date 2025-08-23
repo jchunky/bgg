@@ -240,6 +240,7 @@ Gloomhaven
 Gloomhaven: Buttons & Bugs
 Gloomhaven: Jaws of the Lion
 Glow
+Gnome Hollow
 Gobblet
 Grove: 9 card solitaire game
 Hadrian's Wall
@@ -282,6 +283,7 @@ Kingdom Builder
 Kingdomino
 Kingsburg
 Kingsburg (Second Edition)
+Kulami
 Lanterns: The Harvest Festival
 Las Vegas
 Las Vegas Royale
@@ -523,6 +525,7 @@ The Initiative
 The Isle of Cats
 The King's Guild
 The LOOP
+The Lord of the Rings: Fate of the Fellowship
 The Lord of the Rings: The Card Game
 The Lord of the Rings: The Card Game – Revised Core Set
 The Lost Expedition
