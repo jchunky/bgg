@@ -11,61 +11,44 @@ Dir["lib/**/*.rb"].each { |f| require_relative f }
 
 class Bgg
   def display_game?(game)
-    return false unless !game.ccg?
-    return false unless !game.child?
-    return false unless !game.party?
-    return false unless !game.war?
-
-    return false unless !game.dexterity?
-    return false unless !game.digital_hybrid?
-    return false unless !game.escaperoom_games?
-    return false unless !game.realtime?
-    return false unless !game.traitor?
-    return false unless !game.werewolf?
-
+    return false unless !banned?(game)
     return false unless !game.played?
-
-    # BGA (multi-player)
-    # return false unless game.bga?
-    # return false unless game.play_rank?
-    # return false unless game.weight.round(1) < 2
-    # return false unless game.playtime <= 30
-
-    # Snakes (multi-player)
-    # return false unless game.snakes?
-    # return false unless game.snakes_category <= 22
-    # return false unless game.play_rank?
-
-    # BGA (solo)
-    # return false unless game.bga?
-    # return false unless game.min_player_count == 1
-
-    # Snakes (solo)
-    # return false unless game.snakes?
-    # return false unless game.soloable?
-
-    # B2GO (solo)
-    # return false unless game.b2go?
-    # return false unless game.soloable?
-    # return false unless game.normalized_price.between?(1, 49)
 
     # return false unless game.couples?
     # return false unless game.solo?
+
     # return false unless game.bga?
-    return false unless game.bgb?
+    # return false unless game.bgb?
     # return false unless game.b2go?
-    # return false unless game.snakes?
-    return false unless game.soloable?
+    return false unless game.snakes?
+
+    # return false unless game.soloable?
     # return false unless game.play_rank?
     # return false unless game.min_player_count == 1
     # return false unless game.max_player_count >= 4
     # return false unless game.normalized_price >= 1
-    return false unless game.normalized_price.between?(1, 49)
+    # return false unless game.normalized_price.between?(1, 49)
     # return false unless game.playtime < 100
     # return false unless game.weight.round(1) < 3
-    # return false unless game.votes_per_year >= 1000
+    return false unless game.votes_per_year >= 1000
 
     true
+  end
+
+  def banned?(game)
+    %i[
+      ccg
+      child
+      party
+      war
+
+      dexterity
+      digital_hybrid
+      escaperoom_games
+      realtime
+      traitor
+      werewolf
+    ].any? { game.send("#{it}?") }
   end
 
   def run
