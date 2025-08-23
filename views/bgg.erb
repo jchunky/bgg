@@ -37,6 +37,7 @@
         <th>Game</th>
         <th>Plays</th>
         <th>Play Rank</th>
+        <th>Votes Per Year</th>
         <th>Votes</th>
         <th>Votes Rank</th>
         <th>Rank</th>
@@ -79,6 +80,7 @@
           <td class="<%= 'bad' if bad_game %>"><a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_plays] %>"><%= int(game.unique_users) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_play_rank] %>"><%= int(game.play_rank) %></td>
+          <td class="number"><%= int(game.votes_per_year) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_votes] %>"><%= int(game.rating_count) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_votes_rank] %>"><%= int(game.vote_rank) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_rank] %>"><%= int(game.rank) %></td>
