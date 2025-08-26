@@ -29,6 +29,7 @@ class Bgg
     # return false unless game.normalized_price >= 1
     # return false unless game.normalized_price.between?(1, 49)
     # return false unless game.playtime < 100
+    # return false unless game.rank.between?(1, 1000)
     # return false unless game.weight.round(1) < 3
     # return false unless game.votes_per_year >= 1000
 
