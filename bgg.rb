@@ -17,7 +17,7 @@ class Bgg
     # return false unless game.couples?
     # return false unless game.solo?
 
-    # return false unless game.bga?
+    return false unless game.bga?
     # return false unless game.bgb?
     # return false unless game.b2go?
     return false unless game.snakes?
