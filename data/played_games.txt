@@ -216,6 +216,9 @@ Dungeon Roll
 Décorum
 Earth
 Elder Sign
+Escape Tales: Children of Wyrmwoods
+Escape Tales: Low Memory
+Escape Tales: The Awakening
 Escape: The Curse of the Temple
 Ethnos
 Ethnos: 2nd Edition
@@ -514,6 +517,7 @@ Takenoko
 Tapestry
 Targi
 Terraforming Mars: Ares Expedition
+The Adventures of Robin Hood
 The Bloody Inn
 The Castles of Burgundy
 The Crew: Mission Deep Sea
@@ -595,11 +599,13 @@ Under Falling Skies
 Unlock! Kids: Detective Stories
 Unlock! Kids: Stories from the Past
 Unlock!: Epic Adventures
+Unlock!: Escape Adventures
 Unlock!: Escape Adventures – Fifth Avenue
 Unlock!: Escape Adventures – Squeek & Sausage
 Unlock!: Escape Adventures – The Elite
 Unlock!: Escape Adventures – The Formula
 Unlock!: Escape Adventures – The Island of Doctor Goorse
+Unlock!: Exotic Adventures
 Unlock!: Exotic Adventures – Expedition: Challenger
 Unlock!: Exotic Adventures – Night of the Boogeymen
 Unlock!: Exotic Adventures – Scheherazade's Last Tale
@@ -607,9 +613,11 @@ Unlock!: Extraordinary Adventures
 Unlock!: Game Adventures
 Unlock!: Heroic Adventures
 Unlock!: Legendary Adventures
+Unlock!: Mystery Adventures
 Unlock!: Mystery Adventures – The House on the Hill
 Unlock!: Mystery Adventures – The Tonipal's Treasure
 Unlock!: Mythic Adventures
+Unlock!: Secret Adventures
 Unlock!: Secret Adventures – A Noside Story
 Unlock!: Secret Adventures – The Adventurers of Oz
 Unlock!: Secret Adventures – Tombstone Express
