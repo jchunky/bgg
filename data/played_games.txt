@@ -222,6 +222,7 @@ Ethnos: 2nd Edition
 Euchre
 Evergreen
 Fabled Fruit
+Fall of Rome
 Five Tribes: The Djinns of Naqala
 Fled
 Fleet
@@ -262,6 +263,7 @@ Hive
 Hokkaido
 Honshū
 HUTAN: Life in the Rainforest
+Iberia
 ICECOOL
 ICECOOL2
 Incan Gold
@@ -430,6 +432,7 @@ Rallyman: DIRT
 Rallyman: GT
 Reef
 Regicide
+Reign of Cthulhu
 Resist!
 Rhino Hero
 Rhino Hero: Super Battle
@@ -494,6 +497,8 @@ Sprawlopolis
 Star Realms
 Star Realms: Colony Wars
 Star Realms: Frontiers
+Star Wars: The Clone Wars
+Star Wars: Unlock!
 SteamRollers
 Stem & Branch
 Stone Age
