@@ -196,7 +196,6 @@ Deep Sea Adventure
 Deep Space D-6
 Detective: City of Angels
 Diamant
-Diamant
 Dice Forge
 Diced Veggies
 Dixit
@@ -595,6 +594,11 @@ Troyes Dice
 Tsuro
 Tsuro of the Seas
 Turing Machine
+Undaunted 2200: Callisto
+Undaunted: Battle of Britain
+Undaunted: Normandy
+Undaunted: North Africa
+Undaunted: Stalingrad
 Under Falling Skies
 Unlock! Kids: Detective Stories
 Unlock! Kids: Stories from the Past
