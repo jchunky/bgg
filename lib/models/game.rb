@@ -88,7 +88,7 @@ class Game
     def player_count = ([min_player_count, max_player_count].compact.uniq.join("-"))
     def snakes_category = snakes_location.to_i
     def snakes_location_label = null?(snakes_location) ? nil : snakes_location
-    def votes_per_year = rating_count / (2026 - year)
+    def votes_per_year = rating_count / (Time.now.year + 1 - year)
     def min_player_count = SOLOABLE_GAMES.include?(name) ? 1 : super
     def max_player_count = SOLOABLE_GAMES.include?(name) && super == 0 ? 1 : super
 
