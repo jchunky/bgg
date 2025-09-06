@@ -59,6 +59,11 @@ E
 Light Strategy
 E 2P Best for: 4 players
 34A
+7 Wonders Duel
+7 Wonders Duel
+Light Strategy
+M 2P Best for: 2 players
+22B
 All Games
 Annex
 College
@@ -96,6 +101,9 @@ Acquire
 Strategy
 H Best for: 4 players
 34B
+Adventures in Friskies World
+Adventures in Friskies World
+New Arrival
 Age of Conan
 Age of Conan
 Archives
@@ -194,11 +202,6 @@ Arcane Academy
 Light Strategy
 M 2P Best for: 4 players
 27A
-Archipelago
-Archipelago
-Strategy
-H Best for: 4 players
-Archives
 Arctic Survival
 Arctic Survival
 Light Strategy
@@ -232,11 +235,6 @@ Axis & Allies
 Axis & Allies
 Strategy
 H 2P Best for: 5 players
-Archives
-Axis & Allies: Pacific
-Axis & Allies: Pacific
-Strategy
-H 2P Best for: 3 players
 Archives
 Azul
 Azul
@@ -377,8 +375,6 @@ Betrayal at the House on the Hill
 Strategy · Cooperative
 M Best for: 6 players
 Archives, 31C
-Bibleopoly
-Archives
 Biblios
 Biblios
 Light Strategy
@@ -471,8 +467,6 @@ Archives
 Boop
 Boop
 36C
-Bootleggers
-Archives
 Bottle Topps
 12A
 Brain Fart
@@ -498,14 +492,6 @@ Break the Safe
 Nostalgia · Children's · Cooperative
 E 2P Best for: 4 players
 30F
-Breaking Bad : The Board Game
-Breaking Bad : The Board Game
-Archives
-Brew Crafters: The Travel Card Game
-Brew Crafters: The Travel Card Game
-Light Strategy
-M 2P
-Archives
 Britannia the game of the Birth of Britain
 Strategy
 H Best for: 4 players
@@ -659,7 +645,7 @@ Castle Panic
 Castle Panic
 Cooperative
 M 2P Best for: 4 players
-Archives, 30c
+30c
 Castles of Burgundy
 Castles of Burgundy
 Strategy
@@ -670,9 +656,6 @@ Cat & Mouse
 Children's
 E 2P Best for: 3 players
 4E
-Cat Box
-Cat Box
-Archives?
 Cat Lady
 Cat Lady
 Light Strategy
@@ -995,11 +978,6 @@ D&D Starter Set: Dragons of Stormwreck Isle
 Cooperative
 H
 RPG
-D&D: Castle Ravenloft
-D&D: Castle Ravenloft
-Strategy
-Solo
-Archives
 D&D: Dungeon!
 D&D: Dungeon!
 Strategy · Nostalgia
@@ -1042,9 +1020,6 @@ H Best for: 4 players
 Archives
 Deadly Dowagers
 New Arrivals
-Dealers Choice
-Dealers Choice
-Archives
 Dealt!
 Dealt!
 New Arrivals
@@ -1111,9 +1086,6 @@ Archives
 Doggy Bag
 Doggy Bag
 22F
-Dogopoly
-Nostalgia
-Archives
 Dominion
 Dominion
 Strategy · Greatest Hits
@@ -1126,7 +1098,7 @@ Archives
 Dominoes: Double 6
 Abstract
 E 2P Best for: 4 players
-35C, Archives
+35C, Archives, New Arrivals
 Dominoes: Mexican Train
 Dominoes: Mexican Train
 New Arrivals
@@ -1221,11 +1193,6 @@ Dungeon Mayhem
 Light Strategy
 E Best for: 4 players
 20D
-Dungeon Roll
-Dungeon Roll
-Light Strategy
-M 2P Solo Best for: 2 players
-Archives
 Dungeon Twister the Card Game
 20E
 Dungeons, Dice & Danger
@@ -1351,8 +1318,6 @@ Archives
 Faces
 Faces
 14C
-Fairy Tale
-Archives
 Fake News
 Fake News
 Archives
@@ -1472,8 +1437,6 @@ Formula D
 Formula D
 Light Strategy
 23D
-Fortune and Glory
-Archives
 Fox's Party
 Fox's Party
 E 2P
@@ -1587,9 +1550,6 @@ Geek Out: Family
 Geek Out: Family
 E 2P
 2D
-Gemblo
-Abstract
-Archives
 Gemstone Caverns
 Gemstone Caverns
 E
@@ -1707,6 +1667,9 @@ Guildhall
 Guildhall
 Light Strategy
 27F
+Guildlands
+Guildlands
+New Arrival
 Guillotine
 Guillotine
 Light Strategy
@@ -2240,8 +2203,6 @@ Last Word
 Greatest Hits · Party
 E 2P
 8E
-Legend of Landlock
-Archives
 Legendary: Marvel Deck-Building Game
 Legendary: Marvel Deck-Building Game
 Strategy · Deck Builder
@@ -2331,8 +2292,6 @@ Logo Party
 Party · Trivia
 E 2P
 2E
-Loonacy: Ugly Doll
-Archives
 Loopin Louie
 Loopin Louie
 Children's
@@ -2406,7 +2365,7 @@ Mad Gab
 Mad Gab
 Greatest Hits · Nostalgia · Party
 E 2P Best for: 6 players
-9D, Archives
+9D
 Mad Magazine Game
 Nostalgia
 E
@@ -2456,6 +2415,9 @@ Marrakech
 Light Strategy
 E
 24C
+Mars Expedition: SOL43
+Mars Expedition: SOL43
+New Arrival
 Martian Dice
 Martian Dice
 20B
@@ -2525,10 +2487,6 @@ M 2P Best for: 3 players
 12C
 Mensch
 5E
-Merchants and Marauders
-Merchants and Marauders
-Strategy
-Archives
 Michael Schacht's Han
 27D
 MicroMacro: Crime City – All In
@@ -2621,11 +2579,6 @@ E
 16C
 Montoy Googly Eyes 48-Piece Jigsaw
 10E
-Monza
-Monza
-Children's
-E
-Archives
 Moods
 Moods
 Party
@@ -2655,7 +2608,7 @@ Munchkin
 Munchkin
 Light Strategy · Greatest Hits
 H Best for: 4 players
-20E, Archives
+20E
 Munchkin Rick & Morty
 Munchkin Rick & Morty
 Light Strategy
@@ -2736,11 +2689,6 @@ Nefarious
 Strategy
 H Best for: 4 players
 22F
-Netrunner (Revised Core)
-Netrunner (Revised Core)
-Strategy
-H 2P Best for: 2 players
-Archives
 Neuroshima Hex 3.0
 Neuroshima Hex 3.0
 Strategy
@@ -2877,14 +2825,6 @@ Our Game Hockey Trivia
 Our Game Hockey Trivia
 M
 1D
-Outburst remix
-Outburst remix
-Greatest Hits · Party
-E
-Archives
-Outer Earth
-Outer Earth
-Archives
 Outpost Siberia
 Outpost Siberia
 H
@@ -3012,11 +2952,6 @@ Photosynthesis
 Light Strategy
 M 2P Best for: 4 players
 Archives, 23C
-Pick Two
-Pick Two
-Word
-E
-Archives
 Pick Your Poison
 Pick Your Poison
 Party
@@ -3193,7 +3128,7 @@ Quartex EN/FR
 Quartex EN/FR
 Abstract · Greatest Hits
 E Best for: 5 players
-Archives, 34F
+34F
 Quarto
 Quarto
 Abstract · Greatest Hits
@@ -3220,7 +3155,7 @@ Quoridor
 Quoridor
 Abstract
 2P
-Archives, 36D
+36D
 Qwirkle
 Qwirkle
 Abstract
@@ -3513,7 +3448,7 @@ Scattergories
 Scattergories
 Greatest Hits · Party
 E 2P Best for: 6 players
-Archives, 9A
+9A
 Schmovie
 Schmovie
 Party
@@ -3598,8 +3533,6 @@ E 2P Solo
 Setup
 Setup
 New Arrivals
-Seven Dragons
-Archives
 Sewer Pirats
 Sewer Pirats
 26E
@@ -3711,11 +3644,6 @@ Sky Team
 Cooperative
 M 2P Best for: 2 players
 30C
-Sky Traders
-Sky Traders
-Strategy
-H Best for: 4 players
-Archives
 Skyline 3000
 Skyline 3000
 Archives
@@ -3768,11 +3696,6 @@ Someone Has Died
 16C
 Sorry Revenge
 6C
-Sorry Sliders
-Sorry Sliders
-Nostalgia
-E 2P Best for: 4 players
-10D
 Sorry!
 Sorry!
 Nostalgia
@@ -3858,9 +3781,6 @@ Stay Cool
 Party · Trivia
 E Best for: 4 players
 8D
-Steam Torpedo: First Contact
-Steam Torpedo: First Contact
-Archives
 Stella
 Stella
 Party
@@ -3966,7 +3886,7 @@ Taiga
 Taiga
 Children's
 E 2P
-4C, Archives
+4C
 Tak: A Beautiful Game
 Tak: A Beautiful Game
 Abstract
