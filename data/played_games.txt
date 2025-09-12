@@ -248,6 +248,7 @@ Gnome Hollow
 Gobblet
 Grove: 9 card solitaire game
 Hadrian's Wall
+Hallertau
 Hanabi
 Hanamikoji
 Happy City
