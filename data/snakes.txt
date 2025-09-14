@@ -8,72 +8,6 @@ Category
 A/Z
 Search
 
-#
-Game  Tutorial  Location
-10 Days In Africa
-10 Days In Africa
-Light Strategy
-E 2P Best for: 2 players
-23F
-10 Days In The USA
-10 Days In The USA
-Light Strategy
-23F
-13 Clues
-13 Clues
-Light Strategy
-M
-25B
-1812 The Invasion of Canada
-1812 The Invasion of Canada
-Strategy
-H 2P Best for: 5 players
-Archives
-25 Words or Less
-25 Words or Less
-Greatest Hits · Party
-E Best for: 4 players
-Archives
-4inthe6
-4inthe6
-1C
-5 Minute Dungeon
-5 Minute Dungeon
-Light Strategy · Cooperative
-M 2P Best for: 4 players
-31B
-5-Second Rule
-5-Second Rule
-Greatest Hits · Party · Trivia
-E
-1B, Retired
-5-Second Rule Uncensored
-5-Second Rule Uncensored
-E
-16A
-6 Nimmt / Take Five
-6 Nimmt / Take Five
-20B
-7 Wonders Architects
-7 Wonders Architects
-Light Strategy
-E 2P Best for: 4 players
-34A
-7 Wonders Duel
-7 Wonders Duel
-Light Strategy
-M 2P Best for: 2 players
-22B
-All Games
-Annex
-College
-Tempe
-Chicago
-Tucson
-Category
-A/Z
-Search
-
 A
 Game  Tutorial  Location
 A War of Whispers
@@ -4033,11 +3967,6 @@ The Last Bottle of Rum
 Light Strategy
 E Best for: 4 players
 26C
-The Mind
-The Mind
-Cooperative
-E 2P Best for: 4 players
-Archives
 The Neverland Rescue
 The Neverland Rescue
 Strategy
@@ -4665,3 +4594,64 @@ M Best for: 4 players
 Zoowaboo
 Zoowaboo
 3A
+All Games
+Annex
+College
+Tempe
+Chicago
+Tucson
+Category
+A/Z
+Search
+
+#
+Game  Tutorial  Location
+10 Days In Africa
+10 Days In Africa
+Light Strategy
+E 2P Best for: 2 players
+23F
+10 Days In The USA
+10 Days In The USA
+Light Strategy
+23F
+13 Clues
+13 Clues
+Light Strategy
+M
+25B
+1812 The Invasion of Canada
+1812 The Invasion of Canada
+Strategy
+H 2P Best for: 5 players
+Archives
+4inthe6
+4inthe6
+1C
+5 Minute Dungeon
+5 Minute Dungeon
+Light Strategy · Cooperative
+M 2P Best for: 4 players
+31B
+5-Second Rule
+5-Second Rule
+Greatest Hits · Party · Trivia
+E
+1B, Retired
+5-Second Rule Uncensored
+5-Second Rule Uncensored
+E
+16A
+6 Nimmt / Take Five
+6 Nimmt / Take Five
+20B
+7 Wonders Architects
+7 Wonders Architects
+Light Strategy
+E 2P Best for: 4 players
+34A
+7 Wonders Duel
+7 Wonders Duel
+Light Strategy
+M 2P Best for: 2 players
+22B
