@@ -118,6 +118,7 @@ Carcassonne: The City
 Carcassonne: The Discovery
 Carcassonne: Wheel of Fortune
 Carcassonne: Winter Edition
+Cardline: Animals
 Cartographers
 Cascadia
 Castellion
@@ -196,6 +197,7 @@ Deep Sea Adventure
 Deep Space D-6
 Detective: City of Angels
 Diamant
+Diamonds
 Dice Forge
 Diced Veggies
 Dixit
@@ -211,6 +213,7 @@ Dorfromantik: The Board Game
 Draft & Write Records
 Draftosaurus
 Dragomino
+Duck & Cover
 Dungeon Roll
 Durak
 Décorum
@@ -291,6 +294,8 @@ Kingdomino
 Kingsburg
 Kingsburg (Second Edition)
 Kulami
+L.L.A.M.A.
+Labyrinth
 Lanterns: The Harvest Festival
 Las Vegas
 Las Vegas Royale
@@ -323,6 +328,7 @@ Machi Koro: Bright Lights, Big City
 Magic Maze
 Magic Maze on Mars
 Mandala
+Marrakech
 Martian Dice
 Marvel Champions: The Card Game
 Marvel Dice Masters: Age of Ultron
@@ -572,6 +578,7 @@ Ticket to Ride: Rails & Sails
 Ticket to Ride: San Francisco
 Ticket to Ride: The Card Game
 Tides of Time
+Tiki Topple
 TIME Stories Revolution: The Hadal Project
 Timeline
 Timeline Challenge
