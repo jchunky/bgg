@@ -92,6 +92,32 @@ class Game
     def min_player_count = SOLOABLE_GAMES.include?(name) ? 1 : super
     def max_player_count = SOLOABLE_GAMES.include?(name) && super == 0 ? 1 : super
 
+    def group
+      case
+      when party? then "party"
+      when coop? then "coop"
+      when max_player_count == 1 then "1-player"
+      when max_player_count == 2 then "2-player"
+      else "competitive"
+      end
+    end
+
+    def banned?
+      %i[
+        ccg
+        child
+        party
+        war
+
+        dexterity
+        digital_hybrid
+        escaperoom_games
+        realtime
+        traitor
+        werewolf
+      ].any? { send("#{it}?") }
+    end
+
     def escaperoom_games?
       [
         "EXIT",
@@ -100,7 +126,6 @@ class Game
         "Unlock!",
       ].any? { name.start_with?("#{_1}:") }
     end
-
   end
 
   def key

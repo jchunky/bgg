@@ -54,6 +54,8 @@
         <th>Snakes Category</th>
         <th>Category</th>
         <th>Played</th>
+        <th>Banned</th>
+        <th>Group</th>
       </tr>
     </thead>
     <tbody>
@@ -98,6 +100,8 @@
           <td class="number"><%= int(game.snakes_category) %></td>
           <td><%= game.category_label %></td>
           <td><%= game.played? ? "played" : nil %></td>
+          <td><%= game.banned? ? "banned" : nil %></td>
+          <td><%= game.group %></td>
         </tr>
       <% end %>
     </tbody>

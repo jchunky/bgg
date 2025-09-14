@@ -11,8 +11,8 @@ Dir["lib/**/*.rb"].each { |f| require_relative f }
 
 class Bgg
   def display_game?(game)
-    # return false unless !banned?(game)
-    return false unless !game.played?
+    # return false unless !game.banned?
+    # return false unless !game.played?
 
     # return false unless game.couples?
     # return false unless game.solo?
@@ -20,15 +20,15 @@ class Bgg
     # return false unless game.bga?
     # return false unless game.bgb?
     # return false unless game.b2go?
-    # return false unless game.snakes?
+    return false unless game.snakes?
 
     # return false unless game.soloable?
     # return false unless game.thematic?
     # return false unless game.play_rank?
-    return false unless game.play_rank.between?(1, 50)
+    # return false unless game.play_rank.between?(1, 50)
     # return false unless game.max_player_count >= 4
     # return false unless game.min_player_count == 1
-    return false unless game.normalized_price >= 1
+    # return false unless game.normalized_price >= 1
     # return false unless game.normalized_price.between?(1, 49)
     # return false unless game.playtime < 100
     # return false unless game.rank.between?(1, 1000)
@@ -40,22 +40,6 @@ class Bgg
     # return false unless game.year >= Time.now.year - 5
 
     true
-  end
-
-  def banned?(game)
-    %i[
-      ccg
-      child
-      party
-      war
-
-      dexterity
-      digital_hybrid
-      escaperoom_games
-      realtime
-      traitor
-      werewolf
-    ].any? { game.send("#{it}?") }
   end
 
   def run
