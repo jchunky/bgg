@@ -14,22 +14,25 @@ class Bgg
     return false unless !game.banned?
     return false unless !game.played?
 
-    # S&L with Natasha and boys
-    return false unless game.snakes?
-    return false unless game.competitive?
-    return false unless game.weight.round(1) <= 1.9
+    # return false unless game.one_player?
+    # return false unless game.two_player?
+    # return false unless game.coop?
+    # return false unless game.party?
+    # return false unless (game.coop? && game.min_player_count == 1) || game.one_player?
 
-    # BGA (team time)
-    # return false unless game.bga?
+    # S&L with Natasha and boys
+    # return false unless game.snakes?
     # return false unless game.competitive?
     # return false unless game.weight.round(1) <= 1.9
+
+    # BGA (team time)
+    return false unless game.bga?
+    return false unless game.competitive?
+    return false unless game.weight.round(1) <= 1.9
 
     # return false unless game.couples?
     # return false unless game.solo?
 
-    # return false unless game.own?
-    # return false unless game.solo_variant?
-    # return false unless game.solo_variant_played?
     # return false unless game.learned?
     # return false unless game.bga?
     # return false unless game.bgb?
