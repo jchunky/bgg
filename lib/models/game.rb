@@ -1,28 +1,10 @@
 class Game
-  AT_B2GO = File
-    .read("./data/at_b2go.txt")
-    .split("\n")
-    .reject(&:blank?)
-
-  AT_BGA = File
-    .read("./data/at_bga.txt")
-    .split("\n")
-    .reject(&:blank?)
-
-  AT_SNAKES = File
-    .read("./data/at_snakes.txt")
-    .split("\n")
-    .reject(&:blank?)
-
-  NON_SOLO_BGA_GAMES = File
-    .read("./data/non_solo_bga_games.txt")
-    .split("\n")
-    .reject(&:blank?)
-
-  SOLOABLE_GAMES = File
-    .read("./data/soloable.txt")
-    .split("\n")
-    .reject(&:blank?)
+  AT_B2GO = File.read("./data/at_b2go.txt").split("\n").reject(&:blank?)
+  AT_BGA = File.read("./data/at_bga.txt").split("\n").reject(&:blank?)
+  AT_SNAKES = File.read("./data/at_snakes.txt").split("\n").reject(&:blank?)
+  NON_SOLO_BGA_GAMES = File.read("./data/non_solo_bga_games.txt").split("\n").reject(&:blank?)
+  OWN = File.read("./data/own.txt").split("\n").reject(&:blank?)
+  SOLOABLE_GAMES = File.read("./data/soloable.txt").split("\n").reject(&:blank?)
 
   attr_reader :attributes
 
@@ -83,6 +65,7 @@ class Game
     def played? = (played == true)
     def preorder? = (preorder == true)
     def snakes? = (snakes == true) || AT_SNAKES.include?(name)
+    def own? = OWN.include?(name)
     def soloable? = max_player_count == 1 || (coop? && min_player_count == 1)
     def normalized_price = (bgb_price > 0 ? bgb_price : price).to_f.round
     def player_count = ([min_player_count, max_player_count].compact.uniq.join("-"))

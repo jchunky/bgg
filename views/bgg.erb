@@ -53,6 +53,7 @@
         <th>Snakes Location</th>
         <th>Snakes Category</th>
         <th>Category</th>
+        <th>Own</th>
         <th>Played</th>
         <th>Banned</th>
         <th>Group</th>
@@ -99,6 +100,7 @@
           <td><%= game.snakes_location_label %></td>
           <td class="number"><%= int(game.snakes_category) %></td>
           <td><%= game.category_label %></td>
+          <td><%= game.own? ? "own" : nil %></td>
           <td><%= game.played? ? "played" : nil %></td>
           <td><%= game.banned? ? "banned" : nil %></td>
           <td><%= game.group %></td>
