@@ -23,7 +23,7 @@
   <script>
     $(function() {
       $('#games').DataTable({
-        order: [[0, 'desc'], [4, 'asc']],
+        order: [[2, 'asc'], [3, 'desc']],
         paging: false
       });
     });
@@ -35,6 +35,8 @@
       <tr>
         <th>Year</th>
         <th>Game</th>
+        <th>Group</th>
+        <th>Weight</th>
         <th>Plays</th>
         <th>Play Rank</th>
         <th>Votes Per Year</th>
@@ -42,7 +44,6 @@
         <th>Votes Rank</th>
         <th>Rank</th>
         <th>Rating</th>
-        <th>Weight</th>
         <th>Price</th>
         <th>Player Count</th>
         <th>Playtime</th>
@@ -56,7 +57,6 @@
         <th>Own</th>
         <th>Played</th>
         <th>Banned</th>
-        <th>Group</th>
       </tr>
     </thead>
     <tbody>
@@ -82,6 +82,8 @@
         <tr>
           <td class="number <%= 'bad' if bad_conditions[:bad_year] %>"><%= int(game.year) %></td>
           <td class="<%= 'bad' if bad_game %>"><a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a></td>
+          <td><%= game.group %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_weight] %>"><%= float(game.weight, decimals: 1) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_plays] %>"><%= int(game.unique_users) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_play_rank] %>"><%= int(game.play_rank) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_votes_per_year] %>"><%= int(game.votes_per_year) %></td>
@@ -89,7 +91,6 @@
           <td class="number <%= 'bad' if bad_conditions[:bad_votes_rank] %>"><%= int(game.vote_rank) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_rank] %>"><%= int(game.rank) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_rating] %>"><%= float(game.rating, decimals: 1) %></td>
-          <td class="number <%= 'bad' if bad_conditions[:bad_weight] %>"><%= float(game.weight, decimals: 1) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_price] %>"><%= int(game.normalized_price) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_player_count] %>"><%= int(game.player_count) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_playtime] %>"><%= int(game.playtime) %></td>
@@ -103,7 +104,6 @@
           <td><%= game.own? ? "own" : nil %></td>
           <td><%= game.played? ? "played" : nil %></td>
           <td><%= game.banned? ? "banned" : nil %></td>
-          <td><%= game.group %></td>
         </tr>
       <% end %>
     </tbody>
