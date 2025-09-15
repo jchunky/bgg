@@ -5,6 +5,7 @@ class Game
   NON_SOLO_BGA_GAMES = File.read("./data/non_solo_bga_games.txt").split("\n").reject(&:blank?)
   LEARNED = File.read("./data/learned.txt").split("\n").reject(&:blank?)
   SOLOABLE_GAMES = File.read("./data/soloable.txt").split("\n").reject(&:blank?)
+  TWO_PLAYER = File.read("./data/two_player.txt").split("\n").reject(&:blank?)
 
   attr_reader :attributes
 
@@ -71,12 +72,34 @@ class Game
     def player_count = ([min_player_count, max_player_count].compact.uniq.join("-"))
     def snakes_category = snakes_location.to_i
     def snakes_location_label = null?(snakes_location) ? nil : snakes_location
-    def votes_per_year = rating_count / (Time.now.year + 1 - year)
-    def min_player_count = SOLOABLE_GAMES.include?(name) ? 1 : (NON_SOLO_BGA_GAMES.include?(name) ? 2 : super)
-    def max_player_count = SOLOABLE_GAMES.include?(name) && super == 0 ? 1 : (name == "Rainbow" ? 2 : super)
     def one_player? = max_player_count == 1
     def two_player? = max_player_count == 2
     def competitive? = group == "competitive"
+
+    def votes_per_year
+      days_published = ((Time.now.year - year) * 365) + Time.now.yday
+      years_published = days_published.to_f / 365
+
+      (rating_count / years_published).round
+    end
+
+    def min_player_count
+      case
+      when SOLOABLE_GAMES.include?(name) then 1
+      when NON_SOLO_BGA_GAMES.include?(name) then 2
+      when TWO_PLAYER.include?(name) then 2
+      else super
+      end
+    end
+
+    def max_player_count
+      case
+      when SOLOABLE_GAMES.include?(name) && super == 0 then 1
+      when TWO_PLAYER.include?(name) then 2
+      when name == "Rainbow" then 1
+      else super
+      end
+    end
 
     def group
       case
