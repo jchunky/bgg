@@ -58,7 +58,7 @@ class Game
 
   concerning :GameData do
     def b2go? = (b2go == true) || AT_B2GO.include?(name)
-    def bga? = (super && NON_SOLO_BGA_GAMES.exclude?(name)) || AT_BGA.include?(name)
+    def bga? = super || AT_BGA.include?(name)
     def bgb? = (bgb == true && !preorder?)
     def crowdfunded? = kickstarter? || gamefound? || backerkit?
     def play_rank? = (play_rank > 0)
@@ -72,7 +72,7 @@ class Game
     def snakes_category = snakes_location.to_i
     def snakes_location_label = null?(snakes_location) ? nil : snakes_location
     def votes_per_year = rating_count / (Time.now.year + 1 - year)
-    def min_player_count = SOLOABLE_GAMES.include?(name) ? 1 : super
+    def min_player_count = SOLOABLE_GAMES.include?(name) ? 1 : (NON_SOLO_BGA_GAMES.include?(name) ? 2 : super)
     def max_player_count = SOLOABLE_GAMES.include?(name) && super == 0 ? 1 : super
 
     def group
