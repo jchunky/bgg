@@ -14,6 +14,16 @@ class Bgg
     return false unless !game.banned?
     return false unless !game.played?
 
+    # S&L with Natasha and boys
+    return false unless game.snakes?
+    return false unless game.competitive?
+    return false unless game.weight.round(1) <= 1.9
+
+    # BGA (team time)
+    # return false unless game.bga?
+    # return false unless game.competitive?
+    # return false unless game.weight.round(1) <= 1.9
+
     # return false unless game.couples?
     # return false unless game.solo?
 
@@ -24,11 +34,6 @@ class Bgg
     # return false unless game.bga?
     # return false unless game.bgb?
     # return false unless game.b2go?
-
-    # S&L with Natasha and boys
-    return false unless game.snakes?
-    return false unless game.competitive?
-    return false unless game.weight.round(1) <= 1.9
 
     # return false unless game.soloable?
     # return false unless game.thematic?
@@ -56,6 +61,8 @@ class Bgg
     end
 
     @games = all_games
+      .sort_by { |g| -g.votes_per_year }
+      .each.with_index(1) { |g, i| g.votes_per_year_rank = i }
       .select { display_game?(_1) }
       .sort_by { |g| [-g.year.to_i, g.rank] }
 
