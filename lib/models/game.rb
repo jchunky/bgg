@@ -79,14 +79,17 @@ class Game
     def snakes_location_label = null?(snakes_location) ? nil : snakes_location
     def votes_per_year = rating_count / (Time.now.year + 1 - year)
     def min_player_count = SOLOABLE_GAMES.include?(name) ? 1 : (NON_SOLO_BGA_GAMES.include?(name) ? 2 : super)
-    def max_player_count = SOLOABLE_GAMES.include?(name) && super == 0 ? 1 : super
+    def max_player_count = SOLOABLE_GAMES.include?(name) && super == 0 ? 1 : (name == "Rainbow" ? 2 : super)
+    def one_player? = max_player_count == 1
+    def two_player? = max_player_count == 2
+    def competitive? = group == "competitive"
 
     def group
       case
       when party? then "party"
       when coop? then "coop"
-      when max_player_count == 1 then "1-player"
-      when max_player_count == 2 then "2-player"
+      when one_player? then "1-player"
+      when two_player? then "2-player"
       else "competitive"
       end
     end

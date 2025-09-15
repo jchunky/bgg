@@ -46,20 +46,20 @@
         <th>Rating</th>
         <th>Player Count</th>
         <th>Playtime</th>
-        <th>Price</th>
-        <th>Offer Count</th>
         <th>Subdomain</th>
-        <th>Couples Rank</th>
-        <th>Solo Rank</th>
-        <th>Snakes Location</th>
-        <th>Snakes Category</th>
-        <th>Category</th>
         <th>Own</th>
         <th>Solo Variant</th>
         <th>Solo Variant Played</th>
         <th>Learned</th>
         <th>Played</th>
         <th>Banned</th>
+        <th>Couples Rank</th>
+        <th>Solo Rank</th>
+        <th>Snakes Location</th>
+        <th>Snakes Category</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Offer Count</th>
       </tr>
     </thead>
     <tbody>
@@ -96,20 +96,20 @@
           <td class="number <%= 'bad' if bad_conditions[:bad_rating] %>"><%= float(game.rating, decimals: 1) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_player_count] %>"><%= int(game.player_count) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_playtime] %>"><%= int(game.playtime) %></td>
-          <td class="number <%= 'bad' if bad_conditions[:bad_price] %>"><%= int(game.normalized_price) %></td>
-          <td class="number <%= 'bad' if bad_conditions[:bad_offer_count] %>"><%= int(game.offer_count) %></td>
           <td><%= game.subdomains %></td>
-          <td class="number"><%= int(game.couples_rank) %></td>
-          <td class="number"><%= int(game.solo_rank) %></td>
-          <td><%= game.snakes_location_label %></td>
-          <td class="number"><%= int(game.snakes_category) %></td>
-          <td><%= game.category_label %></td>
           <td><%= game.own? ? "own" : nil %></td>
           <td><%= game.solo_variant? ? "solo_variant" : nil %></td>
           <td><%= game.solo_variant_played? ? "solo_variant_played" : nil %></td>
           <td><%= game.learned? ? "learned" : nil %></td>
           <td><%= game.played? ? "played" : nil %></td>
           <td><%= game.banned? ? "banned" : nil %></td>
+          <td class="number"><%= int(game.couples_rank) %></td>
+          <td class="number"><%= int(game.solo_rank) %></td>
+          <td><%= game.snakes_location_label %></td>
+          <td class="number"><%= int(game.snakes_category) %></td>
+          <td><%= game.category_label %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_price] %>"><%= int(game.normalized_price) %></td>
+          <td class="number <%= 'bad' if bad_conditions[:bad_offer_count] %>"><%= int(game.offer_count) %></td>
         </tr>
       <% end %>
     </tbody>
