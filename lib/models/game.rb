@@ -96,7 +96,7 @@ class Game
       case
       when SOLOABLE_GAMES.include?(name) && super == 0 then 1
       when TWO_PLAYER.include?(name) then 2
-      when name == "Rainbow" then 1
+      when name == "Rainbow" then 2
       else super
       end
     end
