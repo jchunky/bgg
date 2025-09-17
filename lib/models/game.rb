@@ -4,7 +4,7 @@ class Game
   AT_SNAKES = File.read("./data/at_snakes.txt").split("\n").reject(&:blank?)
   NON_SOLO_BGA_GAMES = File.read("./data/non_solo_bga_games.txt").split("\n").reject(&:blank?)
   LEARNED = File.read("./data/learned.txt").split("\n").reject(&:blank?)
-  SOLOABLE_GAMES = File.read("./data/soloable.txt").split("\n").reject(&:blank?)
+  ONE_PLAYER = File.read("./data/one_player.txt").split("\n").reject(&:blank?)
   TWO_PLAYER = File.read("./data/two_player.txt").split("\n").reject(&:blank?)
 
   attr_reader :attributes
@@ -85,7 +85,7 @@ class Game
 
     def min_player_count
       case
-      when SOLOABLE_GAMES.include?(name) then 1
+      when ONE_PLAYER.include?(name) then 1
       when NON_SOLO_BGA_GAMES.include?(name) then 2
       when TWO_PLAYER.include?(name) then 2
       else super
@@ -94,7 +94,7 @@ class Game
 
     def max_player_count
       case
-      when SOLOABLE_GAMES.include?(name) && super == 0 then 1
+      when ONE_PLAYER.include?(name) && super == 0 then 1
       when TWO_PLAYER.include?(name) then 2
       when name == "Rainbow" then 2
       else super
