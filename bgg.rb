@@ -25,7 +25,7 @@ class Bgg
     return false unless game.snakes?
     return false unless game.competitive?
     return false unless game.weight.round(1) <= 1.9
-    return false unless game.rank > 0
+    # return false unless game.rank > 0
 
     # BGA (team time)
     # return false unless game.bga?
