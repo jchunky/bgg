@@ -77,7 +77,7 @@ class Game
     def competitive? = group == "competitive"
 
     def votes_per_year
-      days_published = ((Time.now.year - year) * 365) + Time.now.yday
+      days_published = ((Time.now.year - year.to_i) * 365) + Time.now.yday
       years_published = days_published.to_f / 365
 
       (rating_count / years_published).round
