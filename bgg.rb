@@ -11,8 +11,8 @@ Dir["lib/**/*.rb"].each { |f| require_relative f }
 
 class Bgg
   def display_game?(game)
-    # return false unless !game.banned?
-    # return false unless !game.played? || game.learned?
+    return false unless !game.banned?
+    return false unless !game.played? || game.learned?
     # return false unless game.played?
 
     # return false unless game.one_player?
@@ -27,10 +27,9 @@ class Bgg
     # return false unless game.weight.round(1) <= 1.9
 
     # BGA (team time)
-    # return false unless game.bga?
-    return false unless game.rank.to_i == 0
-    # return false unless game.competitive?
-    # return false unless game.weight.round(1) <= 1.9
+    return false unless game.bga?
+    return false unless game.competitive?
+    return false unless game.weight.round(1) <= 1.9
 
     # return false unless game.couples?
     # return false unless game.solo?
@@ -38,7 +37,7 @@ class Bgg
     # return false unless game.learned?
     # return false unless game.bga?
     # return false unless game.bgb?
-    return false unless game.b2go?
+    # return false unless game.b2go?
 
     # return false unless game.soloable?
     # return false unless game.thematic?
@@ -88,7 +87,7 @@ class Bgg
       .group_by(&:key)
       .transform_values { |games| games.reduce { |game1, game2| game1.merge(game2) } }
       .values
-      # .select { |game| game.rank.positive? }
+      .select { |game| game.rank.positive? }
       .sort_by(&:rank)
       .uniq(&:name)
   end
