@@ -22,7 +22,7 @@ class Bgg
     # return false unless (game.coop? && game.min_player_count == 1) || game.one_player?
 
     # S&L with Natasha and boys
-    return false unless game.snakes?
+    # return false unless game.snakes?
     # return false unless game.competitive?
     # return false unless game.weight.round(1) <= 1.9
 
@@ -38,6 +38,7 @@ class Bgg
     # return false unless game.bga?
     # return false unless game.bgb?
     # return false unless game.b2go?
+    return false unless game.snakes?
 
     # return false unless game.soloable?
     # return false unless game.thematic?
