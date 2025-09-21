@@ -38,7 +38,7 @@ class Bgg
     # return false unless game.bga?
     # return false unless game.bgb?
     # return false unless game.b2go?
-    return false unless game.snakes?
+    # return false unless game.snakes?
 
     # return false unless game.soloable?
     # return false unless game.thematic?
@@ -49,7 +49,8 @@ class Bgg
     # return false unless game.normalized_price >= 1
     # return false unless game.normalized_price.between?(1, 49)
     # return false unless game.playtime < 100
-    return false unless game.rank.to_i == 0
+    # return false unless game.rank.to_i == 0
+    return false unless game.rank.to_i > 0
     # return false unless game.player_count.to_s != "0"
     # return false unless game.rank.between?(1, 1000)
     # return false unless game.rank.between?(1, 50)
