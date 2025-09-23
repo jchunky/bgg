@@ -24,8 +24,8 @@ class Bgg
     # S&L with Natasha and boys
     return false unless game.snakes?
     return false unless game.competitive?
-    return false unless game.weight.round(1) < 2
-    return false unless game.playtime.between?(1, 44)
+    # return false unless game.weight.round(1) < 2
+    return false unless game.playtime < 45
     return false unless !game.snakes_category.between?(1, 19)
 
     # BGA (team time)
