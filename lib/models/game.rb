@@ -113,7 +113,6 @@ class Game
 
     def banned?
       %i[
-        ccg
         child
         party
         war

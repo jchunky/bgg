@@ -104,7 +104,7 @@ $20.99 $17.50
 
 Brass: Lancashire
 
-$18.99
+$19.99
 
 Stay Cool
 
@@ -172,7 +172,7 @@ $17.99
 
 Kanban Drivers Edition
 
-$16.99
+$18.99 $15.99
 
 Gloomhaven: Jaws of the Lion
 NOW RENTABLE
@@ -264,7 +264,7 @@ $15.99
 
 Century: Golem Edition - An Endless World
 
-$10.99 $9.50
+$10.99
 
 CloudAge
 
@@ -346,9 +346,9 @@ Power Rangers: Deck-Building Game
 
 $11.99 $9.99
 
-Tainted Grail: The Fall of Avalon
+Tainted Grail: The Fall of Avalon (Kickstarter Edition)
 
-$41.25 $33.75
+$41.99 $33.99
 
 Oath: Chronicles of Empires and Exile
 
@@ -436,7 +436,7 @@ $7.75
 
 Beyond the Sun
 
-$16.99
+$17.50
 
 Imperial Steam
 
@@ -1072,7 +1072,7 @@ $35.99 $29.75
 
 Monopoly: Hello Kitty & Friends (Premium Edition)
 
-$17.99 $14.75
+$16.99
 
 Invincible: Escape from Mars
 
@@ -1193,6 +1193,14 @@ $16.99
 Marvel Multiverse RPG: Starter Set - Escape from Planet Hulk
 
 $12.99
+
+Classic Crokinole (27inch): 4 in 1
+
+$19.99
+
+Ticket to Ride (Refresh)
+
+$15.99
 
 Ticket to Ride: Europe
 
@@ -1448,7 +1456,7 @@ $9.50
 
 The Castles of Burgundy (2019 Edition)
 
-$12.99
+$13.50
 
 Concordia
 
@@ -1548,7 +1556,7 @@ $6.50
 
 Imperium: Classics
 
-$13.99
+$14.99
 
 So Clover!
 
@@ -1576,7 +1584,7 @@ $19.50
 
 Guess Who?
 Family Game (Age 6+)
-$7.50
+$6.99
 
 Skull (New Edition)
 
@@ -1584,7 +1592,7 @@ $6.75
 
 Welcome To... The Moon
 
-$11.99
+$13.99
 
 Splendor Duel
 
@@ -1642,6 +1650,10 @@ Cubitos
 
 $13.50
 
+Shobu
+
+$8.99
+
 Ride the Rails
 
 $9.99
@@ -1668,11 +1680,11 @@ $12.99
 
 Century: Eastern Wonders
 
-$10.99 $9.50
+$10.99
 
 One Night Ultimate Werewolf
 
-$6.50
+$6.99
 
 The Resistance
 
@@ -1722,10 +1734,6 @@ Unlock! Mythic Adventures
 
 $13.99
 
-Shobu
-
-$8.99
-
 Unmatched: Battle of Legends - Vol. 1
 
 $11.99
@@ -1758,10 +1766,6 @@ Wyrmspan
 
 $16.99
 
-5-Minute Dungeon
-
-$9.75
-
 Pandemic: 10th Anniversary
 
 $22.99 $18.50
@@ -1780,7 +1784,7 @@ $8.50
 
 Takenoko
 
-$12.99
+$14.99
 
 Scythe
 Free Bonus with Rentals
@@ -1908,7 +1912,7 @@ $7.25
 
 Sushi Go Party!
 
-$8.99
+$9.50
 
 Unlock! Timeless Adventures
 
@@ -1968,7 +1972,7 @@ $23.99 $19.75
 
 Lord of the Rings: Journeys in Middle-Earth
 
-$27.75 $22.99
+$27.99 $22.99
 
 Aeon's End: 2nd Edition
 
@@ -2042,9 +2046,9 @@ Unsolved Case Files: Harmony Ashcroft
 
 $13.99
 
-Finspan
+5-Minute Dungeon
 
-$14.99
+$9.75
 
 Pandemic (2013 Edition)
 
@@ -2248,7 +2252,7 @@ $12.99
 
 One Night Ultimate Werewolf: Daybreak
 
-$6.50
+$6.99
 
 Werewords
 
@@ -2300,7 +2304,7 @@ $10.99
 
 Escape Tales: The Awakening
 
-$9.99
+$11.99
 
 Neuroshima Hex! 3.0
 
@@ -2404,7 +2408,7 @@ $12.50
 
 DC Comics Deck-Building Game: Rebirth
 
-$13.50
+$14.99 $12.99
 
 Stone Age
 
@@ -2488,7 +2492,7 @@ $14.99
 
 Cuba Libre
 
-$17.99
+$19.99
 
 Keyforge: Age of Ascension (Starter Set)
 Free Bonus with Rentals
@@ -2556,7 +2560,7 @@ $8.99
 
 Century: Golem Edition - Eastern Mountains
 
-$10.99 $9.50
+$10.99
 
 Mystery Box: Strategy - Light Complexity
 Rental Only
@@ -2612,7 +2616,7 @@ $16.99 $10.99
 
 The Castles of Tuscany
 
-$12.75
+$11.99
 
 Gates of Mara
 
@@ -2776,7 +2780,7 @@ $14.99 $12.50
 
 Garum
 
-$10.50
+$10.99
 
 Wreck Raiders
 Family Game (Age 8+)
@@ -3000,7 +3004,7 @@ $8.50
 
 Escape Tales: Children of Wyrmwoods
 
-$9.99
+$12.99
 
 Merchants of Magick: A Set a Watch Tale
 
@@ -3060,7 +3064,7 @@ $14.99
 
 Welcome To...
 
-$7.50
+$8.50
 
 1941: Race to Moscow
 
@@ -3112,7 +3116,7 @@ $11.99
 
 Letters from Whitechapel
 
-$12.50
+$12.99
 
 Schotten Totten
 
@@ -3332,7 +3336,7 @@ $6.75
 
 Spicy
 
-$5.99
+$6.50
 
 Grand Austria Hotel: High Season
 
@@ -3808,7 +3812,7 @@ $29.99 $24.99
 
 Magical World of Disney Trivia
 
-$12.99
+$11.99
 
 World in Progress
 
@@ -3943,7 +3947,7 @@ Taco Loco
 $5.75
 
 Hitster Bingo: Music Party Game
-Pre-Order (Aug 29)
+
 $10.99
 
 Flashback: Lucy
@@ -3990,6 +3994,18 @@ Brick Like This!
 
 $6.99
 
+Spin Some for Dim Sum
+
+$9.99
+
+Sleeping Queens 2: The Rescue
+
+$7.50
+
+Tag Team
+
+$8.50
+
 Carcassonne
 
 $11.99
@@ -4000,7 +4016,7 @@ $7.99
 
 Century: Spice Road
 
-$10.99 $9.50
+$10.99
 
 At the Gates of Loyang
 
@@ -4097,6 +4113,10 @@ $5.50
 Unlock! Short Adventures: #8 Schrodinger's Cat
 Difficulty: 2
 $5.50
+
+Finspan
+
+$14.99
 
 Dominion: 2nd Edition
 
@@ -4202,13 +4222,9 @@ The Game of Wolf
 
 $8.75
 
-Floristry
-
-$7.75
-
 Century: Golem Edition
 
-$10.99 $9.50
+$10.99
 
 Hive Mind
 
@@ -4248,7 +4264,7 @@ $14.99
 
 Cosmic Encounter
 
-$17.99
+$19.50
 
 Quantum
 Rental Only (RGC)
@@ -4268,7 +4284,7 @@ $9.99
 
 Rajas of the Ganges
 
-$11.50
+$14.99
 
 Paleo
 
@@ -4298,6 +4314,10 @@ Super-Skill Pinball: Ramp It Up
 
 $7.50
 
+Imhotep: The Duel
+
+$6.50
+
 Curious Cargo
 
 $8.99
@@ -4305,6 +4325,10 @@ $8.99
 Sleeping Gods: Primeval Peril (Revised Edition)
 
 $11.99
+
+Floristry
+
+$7.75
 
 Magic Maze
 
@@ -4348,7 +4372,7 @@ $10.99 $8.99
 
 Brass: Birmingham
 
-$18.99
+$19.99
 
 Disney Villainous
 
@@ -4401,10 +4425,6 @@ $5.75
 Kitchen Rush (2nd Edition)
 
 $13.50
-
-Imhotep: The Duel
-
-$5.99
 
 Radlands
 
@@ -4520,7 +4540,7 @@ $8.99
 
 Tiny Towns
 
-$13.50
+$13.99
 
 Azul: Summer Pavilion
 
@@ -4652,7 +4672,7 @@ $12.99
 
 Lanterns: The Harvest Festival
 
-$8.50
+$8.99
 
 Roll Through the Ages: The Bronze Age
 Rental Only
@@ -4872,15 +4892,15 @@ $13.25
 
 One Night Ultimate Vampire
 
-$6.50
+$6.99
 
 One Night Ultimate Alien
 
-$6.50
+$6.99
 
 One Night Ultimate Super Villains
 
-$6.50
+$6.99
 
 Raxxon
 Rental Only
@@ -5776,7 +5796,7 @@ $6.99
 
 One Night Ultimate Super Heroes
 
-$6.50
+$6.99
 
 Heads Up! (3rd Edition)
 
@@ -5876,7 +5896,7 @@ $8.99
 
 Escape Room: The Game
 
-$14.99
+$15.75 $13.99
 
 Fastrack
 Family Game (Age 5+)
@@ -5900,7 +5920,7 @@ $6.75
 
 Sleeping Queens
 
-$5.99
+$5.50
 
 GIANT Wood Dominoes
 Family Game (5+)
@@ -5932,7 +5952,7 @@ $10.99 $9.50
 
 Pass the Pigs
 
-$5.99
+$5.50
 
 Mercado de Lisboa
 
@@ -5968,7 +5988,7 @@ $5.50
 
 Imhotep
 
-$9.25
+$9.99
 
 One Deck Dungeon
 
@@ -6056,7 +6076,7 @@ $13.99
 
 Dark Souls: The Board Game
 
-$27.99 $22.99
+$29.99 $24.99
 
 Pendulum
 
@@ -6986,6 +7006,14 @@ Spot It: Catan
 
 $5.99
 
+Big Boggle
+
+$7.99
+
+Cluckle
+
+$5.75
+
 Cards Against Humanity
 Adults Only (17+)
 $9.99
@@ -7066,10 +7094,6 @@ Captain Flip
 
 $8.50
 
-Slay the Spire: The Board Game
-
-$33.99
-
 Disturbed Friends
 Adults Only (18+)
 $8.99
@@ -7092,7 +7116,7 @@ $6.75
 
 Cosmic Encounter: Duel
 
-$12.75
+$12.99
 
 The Sherlock Files: Elementary Entries
 
@@ -7230,9 +7254,13 @@ Live Laugh Lose
 For Adults Only (18+)
 $6.50
 
+Slay the Spire: The Board Game
+
+$33.99
+
 Targi
 
-$6.75
+$6.99
 
 Mansions of Madness: 2nd Edition
 
@@ -7304,7 +7332,7 @@ $17.50 $14.50
 
 One Week Ultimate Werewolf
 
-$11.50
+$12.99 $10.99
 
 Ultimate Werewolf
 
@@ -7921,183 +7949,3 @@ $10.50
 Five Tribes: The Artisans of Naqala
 Expansion
 $8.75
-
-Five Tribes: Whims of the Sultan
-Expansion
-$7.99
-
-Small World: Power Pack #1
-Expansion
-$8.50
-
-Small World: Power Pack #2
-Expansion
-$8.50
-
-TIME Stories: A Prophecy of Dragons
-Expansion
-$8.99
-
-TIME Stories: Lumen Fidei
-Expansion
-$8.99
-
-TIME Stories: Brotherhood of the Coast
-Expansion
-$8.99
-
-Smash Up: World Tour - Culture Shock
-Expansion
-$6.75 $5.75
-
-Smash Up: 2 Random Expansions + Bonus Faction
-Value Package
-$11.99 $9.99
-
-Smash Up: 3 Random Expansions + Bonus Faction
-Value Package
-$16.99 $13.99
-
-Dominion: 2 Random Expansions + Base
-Value Package
-$25.50
-
-Dominion: 3 Random Expansions + Base
-Value Package
-$34.99
-
-Istanbul: Mocha & Baksheesh
-Expansion
-$7.50
-
-Istanbul: Letters and Seals
-Expansion
-$7.50
-
-The Resistance: Hidden Agenda
-Expansion
-$4.50
-
-The Resistance: Plot Thickens
-Expansion
-$4.50
-
-Tash-Kalar - Arena of Legends: Everfrost
-Expansion
-$4.50
-
-Tash-Kalar - Arena of Legends: Nethervoid
-Expansion
-$4.50
-
-Tash-Kalar - Arena of Legends: Etherweave
-Expansion
-$4.50
-
-Tzolk'in: Tribes & Prophecies
-Expansion
-$7.99
-
-Call to Adventure: The Name of the Wind
-Expansion
-$5.99
-
-7 Wonders: Leaders
-Expansion
-$9.25 $7.75
-
-7 Wonders: Cities
-Expansion
-$9.25 $7.75
-
-7 Wonders: Armada
-Expansion
-$11.50 $9.50
-
-Ghost Stories: White Moon
-Expansion
-$12.25 $9.99
-
-Cyclades: Hades
-Expansion
-$10.99
-
-Cyclades: Titans
-Expansion
-$14.99
-
-Kemet: Ta-Seti
-Expansion
-$12.99 $10.99
-
-Kemet: Seth
-Expansion
-$14.99 $12.50
-
-Sagrada: 5-6 Player Expansion
-Expansion
-$6.99
-
-Sagrada: The Great Facades - Passion
-Expansion
-$5.99
-
-Spirit Island: Branch and Claw
-Expansion
-$9.99 $8.50
-
-Spirit Island: Jagged Earth
-Expansion
-$17.50
-
-Power Grid: Benelux & Central Europe
-Expansion
-$4.25
-
-Power Grid: China & Korea
-Expansion
-$4.25
-
-Power Grid: Quebec & Baden-Wurtembur
-Expansion
-$4.25
-
-Concordia: Britannia/Germania
-Expansion
-$5.99
-
-Concordia: Gallia/Corsica
-Expansion
-$5.99
-
-Concordia: Aegyptus/Creta
-Expansion
-$5.99
-
-Concordia: Salsa
-Expansion
-$7.99
-
-Concordia: Venus
-Expansion
-$9.99
-
-Orleans: Invasion
-Expansion
-$13.99 $11.99
-
-Orleans: Trade & Intrigue
-Expansion
-$7.50 $6.50
-
-Orleans: 5th Player Expansion
-Expansion
-$6.99 $5.99
-
-Dresden Files: Dead Ends
-Expansion #4
-$3.75
-
-Dresden Files: Winter Schemes
-Expansion #5
-$3.75

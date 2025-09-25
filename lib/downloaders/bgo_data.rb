@@ -51,6 +51,10 @@ module Downloaders
         price:,
         playtime:
       )
+    rescue
+      p 'x' * 80
+      p data
+      OpenStruct.new
     end
   end
 end
