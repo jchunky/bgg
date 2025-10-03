@@ -38,18 +38,18 @@ class Bgg
     # return false unless game.solo?
 
     # return false unless game.learned?
-    # return false unless !game.bga?
+    # return false unless game.bga?
     # return false unless game.bgb?
     # return false unless game.b2go?
     # return false unless game.snakes?
 
-    # return false unless game.soloable?
+    return false unless !game.soloable?
     # return false unless game.thematic?
     # return false unless game.play_rank?
-    # return false unless game.couples_rank.between?(1, 100)
+    return false unless game.couples_rank.between?(1, 100)
     # return false unless game.solo_rank.between?(1, 100)
-    # return false unless game.rank.between?(1, 500)
-    return false unless game.play_rank.between?(1, 50)
+    return false unless game.rank.between?(1, 500)
+    # return false unless game.play_rank.between?(1, 50)
     # return false unless game.max_player_count >= 4
     # return false unless game.min_player_count == 1
     # return false unless game.normalized_price >= 1
