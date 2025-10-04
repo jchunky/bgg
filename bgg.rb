@@ -18,8 +18,8 @@ class Bgg
     # return false unless game.one_player?
     # return false unless game.two_player?
     # return false unless game.coop?
+    # return false unless game.competitive?
     # return false unless game.party?
-    # return false unless (game.coop? && game.min_player_count == 1) || game.one_player?
 
     # S&L with Natasha and boys
     # return false unless game.snakes?
@@ -33,9 +33,10 @@ class Bgg
     # return false unless game.competitive?
     # return false unless game.weight.round(1) <= 1.9
 
-    # return false unless game.couples? || game.solo?
     # return false unless game.couples?
+    # return false unless game.couples_rank.between?(1, 100)
     # return false unless game.solo?
+    # return false unless game.solo_rank.between?(1, 100)
 
     # return false unless game.learned?
     # return false unless game.bga?
@@ -43,26 +44,19 @@ class Bgg
     # return false unless game.b2go?
     # return false unless game.snakes?
 
-    return false unless !game.soloable?
-    # return false unless game.thematic?
-    # return false unless game.play_rank?
-    return false unless game.couples_rank.between?(1, 100)
-    # return false unless game.solo_rank.between?(1, 100)
-    return false unless game.rank.between?(1, 500)
-    # return false unless game.play_rank.between?(1, 50)
     # return false unless game.max_player_count >= 4
     # return false unless game.min_player_count == 1
     # return false unless game.normalized_price >= 1
     # return false unless game.normalized_price.between?(1, 49)
-    # return false unless game.playtime < 100
-    # return false unless game.rank.to_i == 0
+    return false unless game.play_rank.between?(1, 50)
+    # return false unless game.play_rank?
+    # return false unless game.playtime.between?(1, 44)
+    # return false unless game.rank.between?(1, 500)
     # return false unless game.rank.to_i > 0
-    # return false unless game.player_count.to_s != "0"
-    # return false unless game.rank.between?(1, 1000)
-    # return false unless game.rank.between?(1, 50)
+    # return false unless game.soloable?
+    # return false unless game.thematic?
     # return false unless game.vote_rank.between?(1, 1000)
     # return false unless game.votes_per_year >= 3000
-    # return false unless game.votes_per_year >= 4396
     # return false unless game.weight.round(1) <= 2.5
     # return false unless game.year >= Time.now.year - 5
 
