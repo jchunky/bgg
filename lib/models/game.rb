@@ -1,5 +1,6 @@
 class Game
   LEARNED = File.read("./data/learned.txt").split("\n").reject(&:blank?)
+  PLAYED = File.read("./data/played_games.txt").split("\n").reject(&:blank?)
 
   attr_reader :attributes
 
@@ -60,6 +61,7 @@ class Game
     def preorder? = (preorder == true)
     def snakes? = snakes == true
     def learned? = LEARNED.include?(name)
+    def played? = PLAYED.include?(name)
     def soloable? = max_player_count == 1 || (coop? && min_player_count == 1)
     def normalized_price = (bgb_price > 0 ? bgb_price : price).to_f.round
     def player_count = ([min_player_count, max_player_count].compact.uniq.join("-"))
