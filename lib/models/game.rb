@@ -1,11 +1,5 @@
 class Game
-  AT_B2GO = File.read("./data/at_b2go.txt").split("\n").reject(&:blank?)
-  AT_BGA = File.read("./data/at_bga.txt").split("\n").reject(&:blank?)
-  AT_SNAKES = File.read("./data/at_snakes.txt").split("\n").reject(&:blank?)
-  NON_SOLO_BGA_GAMES = File.read("./data/non_solo_bga_games.txt").split("\n").reject(&:blank?)
   LEARNED = File.read("./data/learned.txt").split("\n").reject(&:blank?)
-  ONE_PLAYER = File.read("./data/one_player.txt").split("\n").reject(&:blank?)
-  TWO_PLAYER = File.read("./data/two_player.txt").split("\n").reject(&:blank?)
 
   attr_reader :attributes
 
@@ -58,14 +52,13 @@ class Game
   end
 
   concerning :GameData do
-    def b2go? = (b2go == true) || AT_B2GO.include?(name)
-    def bga? = super || AT_BGA.include?(name)
+    def b2go? = b2go == true
     def bgb? = (bgb == true && !preorder?)
     def crowdfunded? = kickstarter? || gamefound? || backerkit?
     def play_rank? = (play_rank > 0)
     def played? = (played == true)
     def preorder? = (preorder == true)
-    def snakes? = (snakes == true) || AT_SNAKES.include?(name)
+    def snakes? = snakes == true
     def learned? = LEARNED.include?(name)
     def soloable? = max_player_count == 1 || (coop? && min_player_count == 1)
     def normalized_price = (bgb_price > 0 ? bgb_price : price).to_f.round
@@ -81,24 +74,6 @@ class Game
       years_published = days_published.to_f / 365
 
       (rating_count / years_published).round
-    end
-
-    def min_player_count
-      case
-      when ONE_PLAYER.include?(name) then 1
-      when NON_SOLO_BGA_GAMES.include?(name) then 2
-      when TWO_PLAYER.include?(name) then 2
-      else super
-      end
-    end
-
-    def max_player_count
-      case
-      when ONE_PLAYER.include?(name) && super == 0 then 1
-      when TWO_PLAYER.include?(name) then 2
-      when name == "Rainbow" then 2
-      else super
-      end
     end
 
     def group
