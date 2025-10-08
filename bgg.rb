@@ -55,7 +55,7 @@ class Bgg
     return false unless game.play_rank.between?(1, 100)
     # return false unless game.play_rank?
     # return false unless game.playtime.between?(1, 44)
-    # return false unless game.rank.between?(1, 500)
+    return false unless game.rank.between?(1, 500)
     # return false unless game.rank.to_i > 0
     # return false unless game.soloable?
     # return false unless game.thematic?
