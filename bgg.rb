@@ -42,7 +42,11 @@ class Bgg
     # return false unless game.couples?
     # return false unless game.couples_rank.between?(1, 100)
     # return false unless game.solo?
-    return false unless game.solo_rank.between?(1, 100)
+    # return false unless game.solo_rank.between?(1, 100)
+    return false unless (
+      game.solo_rank.between?(1, 100) && game.soloable? ||
+      game.couples_rank.between?(1, 100) && !game.soloable?
+    )
 
     # return false unless game.max_player_count >= 4
     # return false unless game.min_player_count == 1
@@ -53,7 +57,7 @@ class Bgg
     # return false unless game.playtime.between?(1, 44)
     return false unless game.rank.between?(1, 500)
     # return false unless game.rank.to_i > 0
-    return false unless game.soloable?
+    # return false unless game.soloable?
     # return false unless game.thematic?
     # return false unless game.vote_rank.between?(1, 1000)
     # return false unless game.votes_per_year >= 3000
