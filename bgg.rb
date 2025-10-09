@@ -33,6 +33,7 @@ class Bgg
     # return false unless game.coop?
     # return false unless game.competitive?
     # return false unless game.party?
+    # return false unless game.family?
 
     # return false unless game.bga?
     # return false unless game.bgb?
