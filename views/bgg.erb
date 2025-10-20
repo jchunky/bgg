@@ -66,8 +66,8 @@
           bad_conditions = {
             bad_offer_count: !(10..).cover?(game.offer_count),
             bad_player_count: !(1..2).cover?(game.min_player_count),
-            bad_playtime: !(1...100).cover?(game.playtime),
-            bad_rank: !(1...1000).cover?(game.rank),
+            bad_playtime: !(1...45).cover?(game.playtime),
+            bad_rank: !(1...500).cover?(game.rank),
             bad_rating: !(7..).cover?(game.rating&.round(1)),
             bad_price: !(1...50).cover?(game.normalized_price),
             bad_plays: !(1...1000).cover?(game.play_rank),
