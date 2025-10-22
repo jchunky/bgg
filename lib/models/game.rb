@@ -65,6 +65,7 @@ class Game
     def soloable? = max_player_count == 1 || (coop? && min_player_count == 1)
     def normalized_price = (bgb_price > 0 ? bgb_price : price).to_f.round
     def player_count = ([min_player_count, max_player_count].compact.uniq.join("-"))
+    def player_count_range = (min_player_count..max_player_count)
     def snakes_category = snakes_location.to_i
     def snakes_location_label = null?(snakes_location) ? nil : snakes_location
     def one_player? = max_player_count == 1
