@@ -12,7 +12,7 @@ Dir["lib/**/*.rb"].each { |f| require_relative f }
 class Bgg
   def display_game?(game)
     # return false unless !game.banned?
-    return false unless game.played?
+    return false unless !game.played?
     # return false unless !game.played? || game.learned?
 
     # S&L with Natasha and boys
