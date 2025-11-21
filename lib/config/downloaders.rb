@@ -21,7 +21,7 @@ module Downloaders
     GameSearch.new(prefix: :bgg, listid: "rank", search_criteria: SORTBY_RANK),
     GameSearch.new(prefix: :vote, listid: "numvoters", search_criteria: SORTBY_VOTES),
     GeekList.new(prefix: :couples, listid: 353032, reverse_rank: false), # 2024
-    GeekList.new(prefix: :solo, listid: 366471, reverse_rank: true), # 2025
+    GeekList.new(prefix: :solo, listid: 366471, reverse_rank: false), # 2025
     BgoData.new,
     BgbData.new,
     B2goData.new,
