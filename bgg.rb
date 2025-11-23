@@ -15,10 +15,15 @@ class Bgg
     # return false unless !game.played?
     # return false unless !game.played? || game.learned?
 
-    # Popular solo
+    # Popular 1-player
     return false unless game.solo_rank.between?(1, 100)
     return false unless game.rank.between?(1, 500)
     return false unless game.soloable?
+
+    # Popular 2-player
+    # return false unless game.couples_rank.between?(1, 100)
+    # return false unless game.rank.between?(1, 500)
+    # return false unless !game.soloable?
 
     # Small box games
     # return false unless game.couples_rank.between?(1, 100) || game.solo_rank.between?(1, 100)
