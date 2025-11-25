@@ -15,6 +15,9 @@ Game  Tutorial  Location
 Light Strategy
 E 2P Best for: 2 players
 23F
+10 Days In Europe
+10 Days In Europe
+23F
 10 Days In The USA
 10 Days In The USA
 Light Strategy
@@ -98,7 +101,7 @@ H Best for: 4 players
 34B
 Adventures in Friskies World
 Adventures in Friskies World
-New Arrival
+New Arrivals
 Agricola (2015)
 Agricola (2015)
 Strategy
@@ -197,9 +200,6 @@ Arkham Horror - 3rd Edition
 Strategy · Cooperative
 H 2P Solo Best for: 4 players
 30E
-Ascending Empires
-Strategy
-MIA
 Automata Noir
 Automata Noir
 29C
@@ -230,9 +230,6 @@ Baba Yaga
 Children's
 E 2P Best for: 5 players
 3B
-Babylon
-Babylon
-MIA
 Backgammon
 Backgammon
 Abstract
@@ -312,9 +309,6 @@ Bärenpark
 Light Strategy
 M 2P
 25E
-Bear Down
-Bear Down
-4E
 Beasty Bar
 Beasty Bar
 Light Strategy
@@ -374,6 +368,11 @@ Blank Marry Kill
 Party
 M Best for: 6 players
 16A
+Blank Slate
+Blank Slate
+Party · Word
+E Best for: 8 players
+8A
 Blank Slate Challenge
 Blank Slate Challenge
 Party · Cooperative
@@ -422,6 +421,7 @@ Bold
 11C
 Boop
 Boop
+2P Best for: 2 players
 36C
 Bottle Topps
 12A
@@ -609,15 +609,15 @@ Cat Lady
 Light Strategy
 E 2P
 26A
-Catan (5th Edition)
-Catan (5th Edition)
+Catan (6th Edition)
+Catan (6th Edition)
 Strategy
 M Best for: 4 players
-32C, N/A
+32C
 Catan Family Edition
 Catan Family Edition
 M Best for: 3 players
-32C
+Retired
 Catan, 5-6 Extension (4th Edition)
 Catan, 5-6 Extension (4th Edition)
 Strategy
@@ -644,6 +644,9 @@ Caylus
 Caylus
 Strategy
 33B
+Celebrity Eye-Q
+Celebrity Eye-Q
+New Arrivals
 Celebrity Name Game
 Celebrity Name Game
 Party
@@ -807,7 +810,7 @@ Connect 4
 Connect 4
 Nostalgia · Children's
 E 2P Best for: 2 players
-5C, MIA
+5C
 Convo & Chill
 16B, New Releases
 CooCoo the Rocking Clown
@@ -920,6 +923,8 @@ Date Night Game
 16B
 Décorum
 Décorum
+Cooperative
+M 2P Best for: 2 players
 Staff Picks
 DC Comics Deck Building Game
 DC Comics Deck Building Game
@@ -980,6 +985,11 @@ Dirty Minds Card Game
 Party
 E 2P Best for: 2 players
 16A
+Disagreeable
+Disagreeable
+Party
+E Best for: 6 players
+New Arrivals
 Discworld: Ankh-Morpork
 Discworld: Ankh-Morpork
 Strategy
@@ -993,7 +1003,7 @@ Dixit
 Dixit
 Party
 M Best for: 6 players
-15D, MIA
+15D
 Doggy Bag
 Doggy Bag
 22F
@@ -1092,11 +1102,11 @@ E Best for: 4 players
 20D
 Dungeon Twister the Card Game
 20E
-Dungeons, Dice & Danger
-Dungeons, Dice & Danger
-Light Strategy
-E 2P Solo Best for: 2 players
-MIA
+Duos
+Duos
+Party
+E Best for: 4 players
+New Arrivals
 Dutch Blitz
 Dutch Blitz
 Light Strategy
@@ -1233,6 +1243,9 @@ Staff Picks
 Fiasco
 Fiasco
 Staff Picks
+Figment
+Figment
+New Arrivals
 Finca
 Finca
 Light Strategy
@@ -1249,6 +1262,10 @@ Fist of the Dragonstones
 Light Strategy
 M Best for: 4 players
 27A
+Fives
+Fives
+E Best for: 4 players
+New Arrivals
 Flamecraft
 Flamecraft
 Light Strategy
@@ -1335,6 +1352,11 @@ Friends Ultimate Trivia
 Trivia
 E 2P
 1E
+Fruit Fight
+Fruit Fight
+Light Strategy
+E 2P Best for: 4 players
+New Arrivals
 Fun Facts
 Fun Facts
 Trivia
@@ -1410,11 +1432,6 @@ Ganz Schon Clever / That's Pretty Clever
 Abstract
 M 2P Solo Best for: 2 players
 23E
-GAP
-GAP
-Light Strategy
-E 2P Best for: 3 players
-Mia
 Geek Out
 Geek Out
 Party
@@ -1445,6 +1462,11 @@ Ghostbusters: The Board Game
 Ghostbusters: The Board Game
 Solo
 31F
+Giants Moving Tiny Furniture
+Giants Moving Tiny Furniture
+Dexterity
+E Best for: 4 players
+New Arrivals
 GibGab
 GibGab
 9B
@@ -1515,7 +1537,7 @@ Light Strategy
 27F
 Guildlands
 Guildlands
-New Arrival
+New Arrivals
 Guillotine
 Guillotine
 Light Strategy
@@ -1585,7 +1607,9 @@ M Best for: 8 players
 29D
 Herd Mentality
 Herd Mentality
-Staff Picks
+Party
+E Best for: 6 players
+7B
 Here Kitty Kitty
 Here Kitty Kitty
 21A
@@ -1598,7 +1622,7 @@ Hey! That's My Fish!
 Hey! That's My Fish!
 Light Strategy · Children's
 E 2P
-MIA, 20D
+20D
 Hibachi
 Hibachi
 Light Strategy · Dexterity
@@ -1730,6 +1754,11 @@ Indigo
 Light Strategy
 E Best for: 4 players
 24E
+Infiltraitors
+Infiltraitors
+Cooperative
+E 2P Best for: 3 players
+New Arrivals
 Intrigue
 Intrigue
 Light Strategy
@@ -1756,6 +1785,8 @@ Isle of Skye: From Chieftain to King
 Light Strategy
 E Best for: 4 players
 25C
+ito Classic
+New Arrivals
 All Games
 Annex
 College
@@ -1790,6 +1821,11 @@ E 2P
 11B, 12B
 Jeopardy! Deluxe Edition
 1E
+JinxO
+JinxO
+Party
+E Best for: 6 players
+New Arrivals
 Joking Hazard (White Box Edition)
 Joking Hazard (White Box Edition)
 Party
@@ -2194,7 +2230,7 @@ E
 24C
 Mars Expedition: SOL43
 Mars Expedition: SOL43
-New Arrival
+New Arrivals
 Martian Dice
 Martian Dice
 20B
@@ -2296,7 +2332,7 @@ Monopoly Deal
 Monopoly Deal
 Light Strategy · Nostalgia
 E 2P Best for: 4 players
-6C, Mia
+6C
 Monopoly Knockout
 Monopoly Knockout
 Dexterity
@@ -2319,6 +2355,11 @@ E
 New Arrivals
 Monopoly: RuPaul’s Drag Race
 5B
+MonsDRAWsity
+MonsDRAWsity
+Party
+E Best for: 6 players
+New Arrivals
 Monster Crunch!
 Monster Crunch!
 Party
@@ -2526,6 +2567,11 @@ One Key
 Party
 E 2P
 Retired
+One Night Ultimate Werewolf
+One Night Ultimate Werewolf
+Party
+E
+29E
 One, Two Hoparoo!
 3D
 Onitama
@@ -2572,6 +2618,7 @@ Search
 P
 Game  Tutorial  Location
 P For Pizza
+P For Pizza
 7D
 Pagoda
 27D
@@ -2586,11 +2633,6 @@ Pandemic
 Strategy · Greatest Hits · Cooperative
 M 2P Solo Best for: 4 players
 30B
-Pandemic Iberia
-Pandemic Iberia
-Cooperative
-M 2P Solo Best for: 4 players
-MIA
 Pandemic: Rapid Response
 Pandemic: Rapid Response
 Strategy · Cooperative
@@ -2654,12 +2696,6 @@ Pentago Multiplayer
 Pentago Multiplayer
 Abstract
 35A
-Perplexus Epic
-Perplexus Epic
-12A
-Perplexus Rookie
-Perplexus Rookie
-Sickbay
 Personally Incorrect
 Personally Incorrect
 Party
@@ -2725,11 +2761,11 @@ Play Nine
 Play Nine
 Light Strategy
 E 2P Best for: 2 players
-New Arrival
+New Arrivals
 Playing Cards
 Playing Cards
 Light Strategy
-14E
+Mia, 14E
 Pluckin' Pairs
 Pluckin' Pairs
 Greatest Hits · Party
@@ -2809,6 +2845,11 @@ Q-bitz
 Abstract
 E 2P Best for: 4 players
 34F
+QE
+QE
+Light Strategy · Party
+E Best for: 5 players
+New Arrivals
 Qin
 Qin
 Light Strategy
@@ -2892,11 +2933,6 @@ Rack-O
 Nostalgia
 E 2P
 35C
-Raiders of the North Sea
-Raiders of the North Sea
-Light Strategy
-M 2P Best for: 3 players
-34C
 Railroad Ink: Blazing Red Edition
 Railroad Ink: Blazing Red Edition
 E 2P Solo
@@ -2904,14 +2940,6 @@ E 2P Solo
 Rainbow
 Rainbow
 Prep, New Arrivals
-Rainbow Bunny Bop
-Rainbow Bunny Bop
-Dexterity
-E 2P Best for: 4 players
-Mia
-Random Encounter: Seas of the Sea Chicken
-Random Encounter: Seas of the Sea Chicken
-MIA
 Rate My Friends
 15A
 Rattus
@@ -2957,7 +2985,7 @@ Res Arcana
 Res Arcana
 Light Strategy
 E 2P Best for: 2 players
-Staff Picks
+27A
 Resistance - 3rd Edition
 Resistance - 3rd Edition
 Light Strategy
@@ -2993,11 +3021,6 @@ Risk
 Light Strategy · Nostalgia
 M Best for: 5 players
 6B
-Risk: Lord of the Rings (middle earth)
-Risk: Lord of the Rings (middle earth)
-Strategy
-H
-MIA
 Risk: Star Wars Risk
 War Game
 M 2P Best for: 2 players
@@ -3006,7 +3029,7 @@ Risk: Strike
 Risk: Strike
 Light Strategy
 E Best for: 4 players
-Staff Picks, New Arrivals
+New Arrivals
 Rivals for Catan
 Rivals for Catan
 Strategy
@@ -3032,9 +3055,6 @@ Roll for It!
 Light Strategy
 E Best for: 4 players
 35C
-Rubik's Cube
-Rubik's Cube
-MIA
 Rumble In The House
 Rumble In The House
 20B
@@ -3061,422 +3081,156 @@ Search
 
 S
 Game  Tutorial  Location
-Sabobatage
-Sabobatage
-Light Strategy
+Ra
+Ra
+Strategy
+M Best for: 4 players
+25C
+Race for the Galaxy
+Race for the Galaxy
+Strategy
+H 2P Best for: 2 players
+33D
+Rack-O
+Nostalgia
 E 2P
-20C
-Saboteur
-Saboteur
+35C
+Railroad Ink: Blazing Red Edition
+Railroad Ink: Blazing Red Edition
+E 2P Solo
+23E
+Rainbow
+Rainbow
+Prep, New Arrivals
+Rate My Friends
+15A
+Rattus
+Rattus
 Light Strategy
-M Best for: 8 players
-29C, 29 C
-Sagrada
-Sagrada
+26F
+Ravensburger Puzzle - 100pc
+Staff Picks
+Ravensburger Puzzle - 300pc
+Staff Picks
+Red Dragon Inn
+Red Dragon Inn
 Light Strategy
-E 2P Solo Best for: 2 players
-27B
-Sakura
-Sakura
-New Arrivals
-Samurai
-Samurai
-Light Strategy
-H 2P Best for: 3 players
-27D
-Santorini
-Santorini
-Abstract
-E 2P Best for: 2 players
-26C
-Say Anything
-Say Anything
+M
+20E
+Red Flag Green Flag
+Red Flag Green Flag
+16B
+Red Flags
+Red Flags
 Party
-E
-9A, Archives
-Scare It
-Scare It
+E Best for: 4 players
+16A
+Red Panda
+Red Panda
+Dexterity
+E Best for: 5 players
+22A, New Arrivals
+Reef
+Reef
+Light Strategy
+E 2P Best for: 4 players
+27B
+Relic Runners
+Relic Runners
+25F
+Renature
+Renature
+Strategy
+M 2P
+24D
+Res Arcana
+Res Arcana
+Light Strategy
+E 2P Best for: 2 players
+27A
+Resistance - 3rd Edition
+Resistance - 3rd Edition
+Light Strategy
+E Best for: 7 players
+29B
+Revolution!
+Revolution!
+Light Strategy
+M Best for: 4 players
+26B
+Rhino Hero
+Rhino Hero
+Dexterity
+E 2P
+12D
+Rhino Hero - Super Battle
+Rhino Hero - Super Battle
+Children's · Dexterity
+E 2P Best for: 3 players
+12D
+Rick and Morty: Total Rickall
+Rick and Morty: Total Rickall
+Light Strategy · Cooperative
+M Best for: 5 players
+29C
+Ricochet Robots
+Ricochet Robots
+Light Strategy
+E Best for: 6 players
+13D
+Risk
+Risk
+Light Strategy · Nostalgia
+M Best for: 5 players
+6B
+Risk: Star Wars Risk
+War Game
+M 2P Best for: 2 players
+6B
+Risk: Strike
+Risk: Strike
+Light Strategy
+E Best for: 4 players
+New Arrivals
+Rivals for Catan
+Rivals for Catan
+Strategy
+H 2P Best for: 2 players
+New Arrivals
+Robo Rally
+Robo Rally
+Strategy
+M
+29A
+Rock Paper Wizard
+Rock Paper Wizard
+Light Strategy
+M Best for: 6 players
+20B
+Rogues to Riches
+Rogues to Riches
+Light Strategy
+M Best for: 4 players
+16C
+Roll for It!
+Roll for It!
 Light Strategy
 E Best for: 4 players
 35C
-Scattergories
-Scattergories
-Greatest Hits · Party
-E 2P Best for: 6 players
-9A
-Schmovie
-Schmovie
-Party
-E Best for: 10 players
-15C
-Scooby-doo Betrayal at Mystery Mansion
-Scooby-doo Betrayal at Mystery Mansion
-Cooperative
-M Best for: 5 players
-Staff Picks
-Scopa
-Scopa
-6C
-Scotland Yard
-Scotland Yard
-Strategy · Greatest Hits · Nostalgia
-M 2P
-30D, Sickbay
-Scotland Yard - Sherlock Holmes Edition
-New Arrivals
-Scout
-Scout
-Staff Picks
-Scrabble
-Scrabble
-Nostalgia · Word
-E 2P
-7C, Retired
-Scruples
-14B
-Scuttle
-22D
-Scythe
-Scythe
-Strategy
-H Best for: 4 players
-33C
-Search Party: Chaos at the Park
-Search Party: Chaos at the Park
-Cooperative
+Rumble In The House
+Rumble In The House
+20B
+Rummikub
+Rummikub
+Abstract · Nostalgia
 E 2P Best for: 4 players
-3A
-Seasons
-Seasons
-Strategy
-M 2P Best for: 2 players
-24F
-Second Chance
-Second Chance
-Abstract
-E 2P Solo Best for: 2 players
-22C
-Secret Hitler (PnP version)
-29A
-Secrets
-Secrets
-Light Strategy · Party
-E Best for: 6 players
-29B
-See-it? Slam-it!
-14D
-Sequence
-Sequence
-Abstract · Greatest Hits
-E 2P Best for: 4 players
-35E
-SET
-SET
-Light Strategy · Abstract
-E 2P Solo
-11C
-Setup
-Setup
-New Arrivals
-Sewer Pirats
-Sewer Pirats
-26E
-Sex and the City Trivia
-Sex and the City Trivia
-Trivia
-E 2P
-Staff Picks
-Shadow Hunters
-Shadow Hunters
-Light Strategy
-M Best for: 8 players
-30D
-Shadow Ninjas
-Shadow Ninjas
-4B
-Shadows Over Camelot
-Shadows Over Camelot
-Light Strategy
-31C
-Shadows: Amsterdam
-Shadows: Amsterdam
-M Best for: 6 players
-9C
-Sherlock Holmes: Jack the Ripper & West End Adventure
-Sherlock Holmes: Jack the Ripper & West End Adventure
-New Arrivals
-Shifting Stones
-Shifting Stones
-Light Strategy
-E 2P Solo Best for: 2 players
 35B
-Shinobi Clans
-21A
-Shit Happens
-Shit Happens
-Party
-E 2P Best for: 2 players
-16A
-Shogun
-Shogun
+Rummy-O (Pavilion Box)
+Rummy-O (Pavilion Box)
+35B
+Russian Railroads
+Russian Railroads
 Archives
-Showdown! The Samurai Card Game
-21E
-Similo Animals
-Similo Animals
-Cooperative
-E 2P
-20D
-Similo Fables
-Similo Fables
-Cooperative
-E 2P
-20D
-Similo History
-Similo History
-Cooperative
-E 2P
-20D
-Similo Myths
-Similo Myths
-Cooperative
-E 2P
-20D
-Similo Spookies
-Similo Spookies
-Cooperative
-E 2P
-20D
-Similo Wild Animals
-Similo Wild Animals
-Cooperative
-E 2P
-20D
-Simon Swipe
-6C
-Simply Suspects
-Simply Suspects
-Nostalgia
-M Best for: 4 players
-29F
-Simpsons Trivia
-Trivia
-1A
-Six
-Six
-Abstract · Greatest Hits
-E 2P
-36C
-Skip-Bo
-Skip-Bo
-Nostalgia
-E
-6C
-Skull
-Skull
-Light Strategy
-M Best for: 6 players
-29C
-Skull King
-6C
-Skullduggery
-New Arrivals
-Sky Team
-Sky Team
-Cooperative
-M 2P Best for: 2 players
-30C
-Small World
-Small World
-Strategy
-M
-33F
-Smart Ass
-Smart Ass
-Greatest Hits · Party · Trivia
-E
-1F
-Smart Mouth
-Smart Mouth
-Word
-E 2P Best for: 3 players
-8E
-Snake Oil
-Snake Oil
-Greatest Hits · Party
-E
-16C
-Snake Oil: Elixir
-Snake Oil: Elixir
-16C
-Snakes and Ladders
-Snakes and Ladders
-Greatest Hits · Nostalgia · Children's
-E 2P Best for: 4 players
-5E, 5 E
-Snappy Dressers
-Snappy Dressers
-11C
-Snug as a Bug in a Rug
-Snug as a Bug in a Rug
-Children's · Cooperative
-E 2P Best for: 2 players
-3D
-So Clover!
-So Clover!
-Word
-E
-8D
-Someone Has Died
-16C
-Sorry Revenge
-6C
-Sorry!
-Sorry!
-Nostalgia
-E Best for: 4 players
-7E
-Sounds Fishy
-10A
-Spank the Yeti
-Spank the Yeti
-Party
-E 2P Best for: 7 players
-16A, N/a
-Spectaculum
-Spectaculum
-27F
-Speedy Words
-Speedy Words
-Word
-E
-7D
-Spies and Lies
-Spies and Lies
-Light Strategy
-E 2P Best for: 2 players
-29E
-Splendor
-Splendor
-Light Strategy
-M 2P Best for: 4 players
-27C
-Splendor: Duel
-Splendor: Duel
-22B
-Spot it! Classic
-Spot it! Classic
-Light Strategy · Party
-E 2P
-11C
-Spy Alley
-Spy Alley
-Light Strategy
-E 2P Best for: 6 players
-29F
-Spyfall
-Spyfall
-Party
-M Best for: 8 players
-Archives
-Spyrium
-Spyrium
-Strategy
-M
-27E
-Squint
-Squint
-Party
-E
-13D
-Star Realms
-Star Realms
-Light Strategy
-M 2P
-21B
-Star Trek Expeditions
-Star Trek Expeditions
-Strategy
-Archives
-Star Trek: Frontiers Board Game
-Star Trek: Frontiers Board Game
-Solo
-Archives
-StarCraft
-Archives
-Starfall
-Starfall
-24E
-Stay Cool
-Stay Cool
-Party · Trivia
-E Best for: 4 players
-8D
-Stella
-Stella
-Party
-M Best for: 5 players
-15D
-Step Right Up!
-Step Right Up!
-New Arrivals
-Stone Age
-Stone Age
-Strategy
-M
-33B
-Stratego
-Stratego
-Light Strategy · Nostalgia
-E 2P Best for: 2 players
-7A
-Stratego Transformers
-7A
-Strike
-Strike
-Dexterity
-E 2P
-35D
-Stumblewood
-Stumblewood
-Light Strategy
-E 2P Best for: 4 players
-11A
-Summoner Wars: Master Set
-Summoner Wars: Master Set
-Light Strategy
-28A
-Super American Battle Dome Deluxe
-Super American Battle Dome Deluxe
-1Ω
-Superfight
-Superfight
-Party
-E Best for: 6 players
-16E
-Survive: 30th Anniversary Edition
-Survive: 30th Anniversary Edition
-Light Strategy · Greatest Hits
-M
-25D
-Survive: Space Attack!
-Survive: Space Attack!
-Strategy
-M
-25D
-Sushi Go Party
-Sushi Go Party
-Light Strategy · Party
-E Best for: 5 players
-26A, Parts copy
-Sushi Go!
-Sushi Go!
-Light Strategy
-E Best for: 4 players
-26A
-Suspend
-Suspend
-Staff Picks
 All Games
 Annex
 College
@@ -3536,21 +3290,11 @@ E 2P Best for: 4 players
 Tanuki
 Tanuki
 New Arrivals
-Tapeworm
-Tapeworm
-Light Strategy
-E 2P Best for: 4 players
-MIA
 Tapple
 Tapple
 Party · Word
 E Best for: 6 players
-MIA, 8E
-Tapple 10
-Tapple 10
-Word · Dexterity
-E 2P Best for: 2 players
-MIA
+8E
 Teenage Mutant Ninja Turtles: Turtle Power
 29D
 Telestrations
@@ -3578,6 +3322,11 @@ E Best for: 5 players
 Staff Picks
 That's Not A Hat 2
 Staff Picks
+That's You!
+That's You!
+Party
+E Best for: 6 players
+New Arrivals
 The Abandons
 The Abandons
 Light Strategy
@@ -3610,6 +3359,11 @@ The Fox in the Forest
 Light Strategy
 E 2P Best for: 2 players
 22D
+The Game of Saying ‘Huh?!’
+The Game of Saying ‘Huh?!’
+Party
+E Best for: 6 players
+9A
 The Game: On Fire
 The Game: On Fire
 Cooperative
@@ -3701,7 +3455,7 @@ Ticket to Ride
 Ticket to Ride
 Light Strategy
 E 2P Best for: 5 players
-23B, MIA
+23B
 Ticket to Ride: Europe
 Ticket to Ride: Europe
 Light Strategy
@@ -3739,11 +3493,6 @@ Timeline Diversity
 Trivia
 E 2P Best for: 4 players
 1C
-Timeline Inventions: Blister
-Timeline Inventions: Blister
-Trivia
-E 2P Best for: 4 players
-Mia
 Timeline Music & Cinema
 Timeline Music & Cinema
 Trivia
@@ -3768,8 +3517,10 @@ Light Strategy
 E 2P Best for: 2 players
 24F
 Topple
+Topple
 Children's
-11E
+E 2P Best for: 2 players
+12A, 11E
 Toronto in a Box
 New Arrivals
 Tortuga
@@ -3897,10 +3648,6 @@ Unlock! The Adventures of Oz
 Cooperative
 E 2P Solo Best for: 4 players
 21E
-Unlock! The House on the Hill
-Unlock! The House on the Hill
-Cooperative
-MIA
 Unlock! The Island of Doctor Goorse
 Unlock! The Island of Doctor Goorse
 Cooperative
@@ -3921,11 +3668,6 @@ Unlock! Tombstone Express
 Cooperative
 E 2P Solo Best for: 2 players
 21E
-Unlock: A Noside Story
-Unlock: A Noside Story
-Cooperative
-E 2P Solo
-MIA
 Unlock: The Formula!
 Unlock: The Formula!
 Cooperative
@@ -4075,6 +3817,9 @@ Wildlife Safari (formerly Botswana)
 Light Strategy
 E Best for: 4 players
 25E
+Wilmot's Warehouse
+Wilmot's Warehouse
+New Arrivals
 Wingspan
 Wingspan
 Strategy
