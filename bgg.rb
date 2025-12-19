@@ -11,15 +11,15 @@ Dir["lib/**/*.rb"].each { |f| require_relative f }
 
 class Bgg
   def display_game?(game)
-    return false unless !game.banned?
+    # return false unless !game.banned?
     # return false unless !game.played?
     # return false unless !game.played? || game.learned?
 
     # Popular small games
     return false unless game.max_player_count.between?(1, 2)
     return false unless game.normalized_price >= 1
-    return false unless game.rank.between?(1, 500)
-    return false unless game.offer_count.to_i >= 10
+    # return false unless game.rank.between?(1, 1000)
+    # return false unless game.offer_count.to_i >= 10
 
     # return false unless game.one_player?
     # return false unless game.two_player?
@@ -44,8 +44,8 @@ class Bgg
     # return false unless game.min_player_count == 1
     # return false unless game.normalized_price >= 1
     # return false unless game.normalized_price.between?(1, 49)
-    # return false unless game.play_rank.between?(1, 50)
-    # return false unless game.play_rank?
+    # return false unless game.play_rank.between?(1, 1000)
+    return false unless game.play_rank?
     # return false unless game.player_count_range.cover?(2)
     # return false unless game.playtime.between?(1, 44)
     # return false unless game.rank.between?(1, 500)
