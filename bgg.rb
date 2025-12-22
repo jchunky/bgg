@@ -18,7 +18,7 @@ class Bgg
     # Popular small games
     return false unless game.max_player_count.between?(1, 2)
     return false unless game.normalized_price >= 1
-    # return false unless game.rank.between?(1, 1000)
+    # return false unless game.rank.between?(1, 500)
     # return false unless game.offer_count.to_i >= 10
 
     # return false unless game.one_player?

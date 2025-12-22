@@ -230,6 +230,8 @@ Evergreen
 Fabled Fruit
 Fall of Rome
 Five Tribes: The Djinns of Naqala
+Flashback: Lucy
+Flashback: Zombie Kidz
 Fled
 Fleet
 Flip 7
@@ -350,6 +352,7 @@ MicroMacro: Crime City
 MicroMacro: Crime City – All In
 MicroMacro: Crime City – Full House
 MicroMacro: Crime City – Showdown
+MicroMacro: Kids – Crazy City Park
 Mini Rogue
 Mini Rogue: A Roguelike Microgame
 Mists over Carcassonne
@@ -511,6 +514,7 @@ Sprawlopolis
 Star Realms
 Star Realms: Colony Wars
 Star Realms: Frontiers
+Star Wars: Battle of Hoth
 Star Wars: The Clone Wars
 Star Wars: Unlock!
 SteamRollers
@@ -549,6 +553,7 @@ The Lord of the Rings: Duel for Middle-earth
 The Lord of the Rings: Fate of the Fellowship
 The Lord of the Rings: The Card Game
 The Lord of the Rings: The Card Game – Revised Core Set
+The Lord of the Rings: The Fellowship of the Ring – Trick-Taking Game
 The Lost Expedition
 The Magic Labyrinth
 The Mind
