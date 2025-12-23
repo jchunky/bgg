@@ -34,9 +34,8 @@ class Bgg
     return false unless game.soloable?
     # return false unless game.thematic?
     # return false unless game.vote_rank.between?(1, 1000)
-    # return false unless game.votes_per_year >= 3000
     # return false unless game.votes_per_year_rank.between?(1, 1000)
-    # return false unless game.weight.round(1) <= 2.3
+    # return false unless game.weight.round(1) < 2
     # return false unless game.year >= Time.now.year - 5
 
     true
