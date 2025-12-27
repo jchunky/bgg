@@ -26,6 +26,7 @@ Agricola
 Agricola (Revised Edition)
 Agricola: Family Edition
 Agropolis
+Air, Land, & Sea
 Akropolis
 Akrotiri
 Alhambra
@@ -229,6 +230,8 @@ Euchre
 Evergreen
 Fabled Fruit
 Fall of Rome
+Fantasy Realms
+Faraway
 Five Tribes: The Djinns of Naqala
 Flashback: Lucy
 Flashback: Zombie Kidz
@@ -353,6 +356,7 @@ MicroMacro: Crime City – All In
 MicroMacro: Crime City – Full House
 MicroMacro: Crime City – Showdown
 MicroMacro: Kids – Crazy City Park
+Mindbug: First Contact
 Mini Rogue
 Mini Rogue: A Roguelike Microgame
 Mists over Carcassonne
@@ -438,6 +442,7 @@ Qwixx Deluxe
 Ra
 Race for the Galaxy
 Race to the Raft
+Radlands
 Raiders of the North Sea
 Railroad Ink Challenge: Lush Green Edition
 Railroad Ink Challenge: Shining Yellow Edition
@@ -527,6 +532,7 @@ Sushi Go Party!
 Sushi Go!
 Sylvion
 T.I.M.E Stories
+Tag Team
 Take 5
 Takenoko
 Tapestry
@@ -537,6 +543,8 @@ The Bloody Inn
 The Castles of Burgundy
 The Crew: Mission Deep Sea
 The Crew: The Quest for Planet Nine
+The Fox in the Forest
+The Fox in the Forest Duet
 The Game
 The Game: Extreme
 The Game: Face to Face
@@ -609,6 +617,7 @@ Trek 12: Amazonia
 Trek 12: Himalaya
 Trekking the World
 Trekking the World: Second Edition
+Trio
 Troyes Dice
 Tsuro
 Tsuro of the Seas
