@@ -23,9 +23,9 @@ class Bgg
 
     # Solo games to acquire
     return false unless game.max_player_count.between?(1, 2)
-    return false unless game.normalized_price >= 1
+    # return false unless game.normalized_price >= 1
     return false unless game.play_rank?
-    return false unless (game.min_player_count == 1 || game.coop?)
+    # return false unless (game.min_player_count == 1 || game.coop?)
 
     # return false unless game.b2go?
     # return false unless game.bga?
