@@ -17,6 +17,7 @@ module Downloaders
     def build_game(data)
       name, _, price, _ = data
       price = price.split(" ").last.delete_prefix("$").to_f
+      name = name.split("(").first.strip
 
       Game.new(
         name:,
