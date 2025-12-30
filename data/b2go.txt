@@ -34,6 +34,10 @@ $11.99
 Adult Only (18+)
 $9.99
 
+2001 - A Space Odyssey - The Board Game
+
+$8.99
+
 25 Words or Less
 
 $6.50
@@ -174,6 +178,10 @@ Abyss
 
 $14.99
 
+Acting Out
+
+$8.99
+
 Add to Playlist
 
 $8.50
@@ -214,6 +222,10 @@ Aerion
 
 $7.99
 
+Aeterna
+
+$13.99
+
 After Us
 
 $13.99
@@ -229,6 +241,10 @@ $5.99
 Age of Champagne
 
 $15.99
+
+Agent Avenue
+
+$6.99
 
 Aggretsuko Work/Rage Balance
 
@@ -304,7 +320,7 @@ $6.99
 
 Alma Mater
 
-$19.99 $16.75
+$18.99
 
 Almanac: The Crystal Peaks
 
@@ -328,7 +344,7 @@ $7.50
 
 Among Cultists
 
-$18.99
+$18.50
 
 An Evening of Murder: Last Call
 
@@ -420,7 +436,7 @@ $12.50 $10.50
 
 Argent: The Consortium
 
-$17.99 $15.50
+$19.50 $16.50
 
 Ark Nova
 
@@ -445,6 +461,10 @@ $24.99 $20.99
 Army of the Dead: A Zombicide Game
 
 $25.50 $20.99
+
+As One!
+
+$6.99
 
 Assassin's Creed: Brotherhood of Venice
 
@@ -485,6 +505,10 @@ $17.50
 Attack on Titan: The Last Stand
 
 $11.99
+
+Australis
+
+$10.75
 
 Autobahn
 
@@ -574,6 +598,10 @@ Backgammon: Wooden Set
 Family Game (Age 8+)
 $5.75
 
+Bad Apples
+
+$7.99
+
 Bad Choices
 Adults Only (17+)
 $8.50
@@ -597,6 +625,10 @@ $8.50
 Bag of Chips
 
 $4.99 $4.50
+
+Balconia
+
+$7.75
 
 Bananagrams
 
@@ -670,6 +702,10 @@ Battle of Gods
 
 $13.99
 
+BattleTech: Encounters
+
+$7.99
+
 Battlecon: Devastation of Indines (Remastered)
 
 $29.50 $25.75
@@ -698,13 +734,25 @@ Beast
 
 $19.25 $16.25
 
+Beasts
+
+$5.75
+
 Beasts of Balance
 Family Game (Age 7+)
 $14.99
 
+Beer & Bread
+
+$8.99
+
 Beez
 Family Game (Age 8+)
 $11.50
+
+Behind
+
+$5.99
 
 Best Chess Set Ever (Green/Black Reversible)
 
@@ -982,6 +1030,10 @@ Burncycle
 
 $46.99 $37.99
 
+Burst
+
+$4.99
+
 Buzzed
 Adult Only (18+)
 $6.75
@@ -1158,6 +1210,10 @@ Castles of Mad King Ludwig
 
 $15.99
 
+Cat in the Box (Deluxe Edition)
+
+$9.99
+
 Catacombs (3rd Edition)
 
 $20.99 $17.75
@@ -1204,11 +1260,11 @@ $16.99
 
 Catan Tournament Ticket: 2024 National Qualifier
 
-$20.00 $18.00
+$20.00
 
 Catan: Family Edition
 Family Game (Age 10+)
-$36.00 $32.40
+$36.00
 
 Catan: Junior
 Family Game (Age 6+)
@@ -1362,6 +1418,10 @@ Chronicles of Light: Darkness Falls (Disney Edition)
 
 $10.99
 
+Chu Han
+
+$6.99
+
 Citadels (2016 Edition)
 Rental Only
 $7.99
@@ -1401,6 +1461,10 @@ $10.50 $8.99
 Classic Crokinole (27inch): 4 in 1
 
 $19.99
+
+Classified
+
+$6.99
 
 Clever 4ever
 
@@ -1666,9 +1730,17 @@ Crack List
 
 $7.99
 
+Crafting the Cosmos
+
+$19.99
+
 Cranium
 
 $9.99
+
+Crazy Farm
+Family Friendly (5+)
+$5.75
 
 Crazy Tower
 Family Game (Age 8+)
@@ -1808,7 +1880,7 @@ $33.75 $27.99
 
 Darkest Dungeon
 
-$42.99 $34.99
+$43.99 $26.99
 
 Dawn of Mankind
 
@@ -1861,6 +1933,10 @@ $6.99
 Deckscape: Dracula's Castle
 
 $6.99
+
+Deckscape: Dungeon
+
+$5.25
 
 Deckscape: Escape from Alcatraz
 
@@ -2024,7 +2100,7 @@ $9.50
 
 Dominant Species: Board Game
 
-$20.99 $16.99
+$21.99 $17.99
 
 Dominant Species: Marine
 
@@ -2065,6 +2141,10 @@ $6.50
 Doodle Heist
 
 $8.50
+
+Doodle Mayhem
+
+$7.99
 
 Doom On You
 
@@ -2198,6 +2278,10 @@ Dune: War for Arrakis
 
 $34.99 $28.75
 
+Dungeon Exit
+
+$7.99
+
 Dungeon Legends
 
 $13.99
@@ -2254,6 +2338,10 @@ Embarcadero
 
 $15.99
 
+Emberheart
+
+$10.75
+
 Enchanters
 
 $9.99
@@ -2264,7 +2352,7 @@ $17.99
 
 Endless Winter: Paleoamericans
 
-$16.75 $13.99
+$16.99
 
 Equinox
 
@@ -2316,7 +2404,7 @@ $16.99
 
 Event Ticket: Catan Evening at Juju Cafe with Guru
 October 18 at 6pm
-$10.00 $9.00
+$10.00
 
 Everdell (3rd Edition)
 
@@ -2332,15 +2420,15 @@ $6.99 $5.75
 
 Evolution
 
-$11.99
+$14.99
 
 Evolution: Climate
 
-$16.99
+$19.99
 
 Evolution: Oceans
 
-$15.99
+$17.99
 
 Expedition to Newdale
 
@@ -2742,9 +2830,17 @@ Gaia Project: A Terra Mystica Game
 
 $25.99 $21.75
 
+Galactic Renaissance
+
+$22.75 $18.99
+
 Galaxy Trucker (2021 Edition)
 
 $10.75
+
+Galileo Galilei
+
+$13.99
 
 Game Backwards The
 
@@ -2864,7 +2960,7 @@ $10.50
 
 GoCaine
 #supportlocalgames
-$14.99
+$14.99 $9.99
 
 Gobblet
 
@@ -3042,6 +3138,10 @@ Herd Mentality: Moosic & Movies
 
 $8.99
 
+Herding Cats
+Family Friendly (6+)
+$6.50
+
 Here to Slay
 
 $7.99
@@ -3082,9 +3182,17 @@ Hip Hop Bid to Win Trivia Game
 
 $8.99
 
+Hire Me
+
+$6.50
+
 History Channel Trivia Game
 
 $9.99
+
+History of the World
+
+$19.99
 
 Hit Extreme
 
@@ -3158,9 +3266,17 @@ Hot Seat
 
 $8.50
 
+Hot Streak
+Family Friendly (6+)
+$12.99
+
 House of Boing
 
 $6.99 $5.99
+
+How Dare You?
+
+$5.99
 
 Hues and Cues
 Family Game (Age 8+)
@@ -3185,6 +3301,10 @@ $6.99
 I Wish I Didn't Know!
 Adults Only (17+)
 $6.50
+
+I'm Getting Too Old For This Sh*t
+
+$5.75
 
 Iberian Gauge
 
@@ -3246,6 +3366,10 @@ Imperium: Classics
 
 $14.99
 
+Imposter!
+
+$6.99
+
 In a Grove
 
 $7.99
@@ -3274,9 +3398,17 @@ Inis
 
 $18.99
 
+Ink
+
+$11.99
+
 Inkognito
 
 $12.50
+
+Innovation Ultimate
+
+$16.50
 
 Inori
 
@@ -3289,6 +3421,10 @@ $7.99
 Insider: Black
 
 $7.75
+
+Instant Karma
+
+$6.99
 
 Invincible: Escape from Mars
 
@@ -3594,6 +3730,10 @@ Kreus
 
 $6.99
 
+Kyoto No Neko
+
+$13.99
+
 L'Attaque (aka Stratego)
 
 $7.50
@@ -3688,7 +3828,7 @@ $11.75
 
 Living Planet
 
-$16.99 $11.50
+$18.99 $15.75
 
 Llamaland
 
@@ -3956,11 +4096,15 @@ $9.99
 
 Masters of the Universe: The Board Game - Clash For Eternia
 
-$25.99 $21.50
+$27.25 $22.75
 
 Match 5
 
 $8.50 $7.50
+
+Match Madness
+Family Friendly (7+)
+$7.50
 
 Maui
 
@@ -4086,9 +4230,17 @@ Mindbug - First Contact
 
 $8.25
 
+Mindbug - King of Tokyo
+
+$7.75
+
 Mindjob
 Adults Only (18+)
 $6.99
+
+Mini Rogue
+
+$7.99
 
 Minute Realms
 
@@ -4132,7 +4284,7 @@ $6.50
 
 Monopoly Scrabble
 
-$11.99
+$12.50
 
 Monopoly: Black Panther - Wakanda Forever
 
@@ -4242,6 +4394,10 @@ Mosquito Show
 Family Game (Age 8+)
 $6.75
 
+Movie Madness
+
+$5.75
+
 Mr. Face
 
 $7.99
@@ -4341,6 +4497,10 @@ $8.50
 My First Stone Age
 
 $11.99 $9.99
+
+My Funny Family
+
+$7.99
 
 My Little Scythe
 Family Game (Age 8+)
@@ -4680,7 +4840,7 @@ $14.99
 
 Wyrmspan (Premium Combo)
 
-$110.00 $99.00
+$110.00
 
 Wyrmspan
 
@@ -4705,6 +4865,10 @@ $16.99
 World in Progress
 
 $7.50
+
+Wordsmithery
+Family Friendly (7+)
+$9.75
 
 Wordsmith
 
@@ -4772,7 +4936,7 @@ $8.75
 
 Witchstone
 
-$14.99 $12.50
+$15.99 $13.50
 
 Winter Queen
 
@@ -4785,6 +4949,10 @@ $17.99
 Wilmot's Warehouse
 
 $11.99
+
+Who's Most Likely To… 2.0
+
+$8.50
 
 Who Wants To Be a Millionaire?
 
@@ -4870,6 +5038,10 @@ We're Doomed
 Rental Only
 $8.99 $7.50
 
+We Love to Laugh
+
+$8.50
+
 We Didn't Playtest This at All
 Rental Only
 $4.99
@@ -4901,6 +5073,10 @@ $21.99 $18.50
 Waste Knights (2nd Edition)
 
 $22.50 $18.99
+
+Washed Ashore
+
+$4.99
 
 Warsaw: City of Ruins
 
@@ -5038,7 +5214,7 @@ Unstable Unicorns: NSFW
 Adult Only (18+)
 $7.99
 
-Unstable Unicorns - Diamond Edition
+Unstable Unicorns (Diamond Edition)
 
 $7.99
 
@@ -5472,7 +5648,7 @@ $12.50
 
 Trek 12
 
-$9.99 $7.50
+$9.99 $8.75
 
 Tree Society
 
@@ -5560,7 +5736,7 @@ $9.50
 
 Tipperary
 
-$12.50 $10.75
+$11.99 $9.99
 
 Tiny Towns
 
@@ -5625,6 +5801,10 @@ $9.99
 Tiny Epic Crimes
 
 $10.50
+
+Tinderblox
+Family Friendly (6+)
+$5.99
 
 Timeline: Science & Discoveries
 Rental Only
@@ -5798,6 +5978,10 @@ This Humble Planet
 #supportlocalgames
 $10.99
 
+Things in Rings
+Family Friendly (6+)
+$7.50
+
 Things
 
 $6.75
@@ -5825,6 +6009,10 @@ $8.50
 The Voting Game
 Adults Only (17+)
 $8.50
+
+The Ultimate Bachelorette Party Game
+Adults Only (17+)
+$7.50
 
 The Thing: The Boardgame
 
@@ -5937,6 +6125,10 @@ $9.99
 The Night Cage
 
 $10.50
+
+The Mole
+Adults Only (17+)
+$7.99
 
 The Mind: Extreme
 
@@ -6222,9 +6414,17 @@ Talisman (5th Edition): The Magical Quest Game
 
 $17.99
 
+Tales of Arthurian Knights
+
+$16.25
+
 Takenokolor
 
 $8.99
+
+Takenoko - Oyako
+
+$12.75
 
 Takenoko
 
@@ -6360,7 +6560,7 @@ $7.99
 
 Superstore 3000
 
-$11.75
+$11.50
 
 Superfight
 
@@ -6420,7 +6620,7 @@ $12.50
 
 Struggle for Catan
 
-$17.00 $15.30
+$17.00
 
 Street Masters III: Tide of the Dragon
 
@@ -6650,6 +6850,10 @@ Specter Ops: Broken Covenant
 
 $10.99
 
+Spectacular
+
+$9.25
+
 Speak Out: Kids vs Parents
 Family Game (Age 8+)
 $7.99
@@ -6709,6 +6913,10 @@ $11.99 $10.25
 So Clover!
 
 $8.50
+
+Snoop
+
+$7.99
 
 Snake Oil
 
@@ -6789,6 +6997,10 @@ $26.50 $21.99
 Slay the Spire: The Board Game
 
 $33.99
+
+Slanguage!
+
+$7.50
 
 Sky Team
 
@@ -6910,6 +7122,10 @@ Sheriff of Nottingham (2nd Edition)
 
 $9.99
 
+Shenanigrams
+
+$7.50
+
 Shadows: Amsterdam
 Family Game (Age 10+)
 $9.25
@@ -7030,6 +7246,10 @@ Santorini
 
 $10.99
 
+Sanctuary: Ark Nova
+
+$17.99
+
 San Francisco
 
 $9.99
@@ -7037,6 +7257,14 @@ $9.99
 Samurai Sword
 
 $6.25
+
+Same Brain
+
+$7.99
+
+Saltfjord
+
+$13.99
 
 Saloon Tycoon (2nd Edition)
 
@@ -7206,9 +7434,13 @@ Robinson Crusoe: Adventures on the Cursed Island
 
 $17.99
 
+Roarrr
+
+$5.75
+
 Rivet Wars: Reloaded - Battle of Rivet
 
-$31.99 $26.75
+$31.99 $20.99
 
 Riverside
 
@@ -7470,6 +7702,10 @@ Quick and Dirty: An Offensive Fun Party Game
 Adults Only (18+)
 $5.99 $4.99
 
+Quick Hangman
+Family Friendly (6+)
+$7.99
+
 Quest
 
 $7.25
@@ -7598,6 +7834,10 @@ Port Royal (Big Box)
 
 $11.99 $10.50
 
+Porno Charades
+Adults Only (17+)
+$7.50
+
 Polynesia
 
 $13.99
@@ -7616,7 +7856,7 @@ $6.99
 
 Poetry for Neanderthals: Pop Culture
 
-$7.50
+$7.99
 
 Poetry for Neanderthals: NSFW
 Adult Only (18+)
@@ -7735,6 +7975,10 @@ Adults Only (18+)
 $7.25
 
 Periodic
+
+$11.99
+
+Pergola
 
 $11.99
 
@@ -8018,6 +8262,10 @@ One Deck Galaxy
 
 $8.50
 
+One Deck Dungeon - Forest of Shadows
+Standalone Expansion
+$6.75
+
 One Deck Dungeon
 
 $7.99
@@ -8290,6 +8538,10 @@ My Little Scythe
 Family Game (Age 8+)
 $12.99
 
+My Funny Family
+
+$7.99
+
 My First Stone Age
 
 $11.99 $9.99
@@ -8337,99 +8589,3 @@ $8.99
 Munchkin: Critical Role
 
 $7.75
-
-Munchkin Zombies: Deluxe
-
-$9.99
-
-Munchkin Zombies
-
-$7.75
-
-Munchkin Starfinder
-
-$6.75
-
-Munchkin Pathfinder (Deluxe)
-
-$9.99
-
-Munchkin Legends (Deluxe)
-
-$8.99
-
-Munchkin Dungeon
-
-$15.75
-
-Munchkin Deluxe: Teenage Mutant Ninja Turtles
-
-$8.99
-
-Munchkin Bites!
-
-$6.75
-
-Munchkin (Deluxe)
-
-$9.99
-
-Mr. Jack: Pocket
-
-$5.99
-
-Mr. Jack: New York (Square)
-Purchase Only
-$32.00 $28.80
-
-Mr. Jack: London (Square)
-Purchase Only
-$32.00 $28.80
-
-Mr. Jack in New York
-
-$10.99 $8.99
-
-Mr. Jack
-
-$10.99 $8.99
-
-Mr. Face
-
-$7.99
-
-Mosquito Show
-Family Game (Age 8+)
-$6.75
-
-Morels
-
-$7.50
-
-Moon River
-
-$7.99
-
-Moon Adventure
-
-$9.99
-
-Monumental
-
-$24.99 $20.99
-
-Monty Python Fluxx
-
-$5.50
-
-Monster Soup
-Family Game (Age 8+)
-$9.50 $6.25
-
-Monster Rejects
-Free Bonus with Rentals
-$6.50
-
-Monster Misfits
-Free Bonus with Rentals
-$6.50
