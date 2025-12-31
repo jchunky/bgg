@@ -11,7 +11,7 @@ Dir["lib/**/*.rb"].each { |f| require_relative f }
 
 class Bgg
   def display_game?(game)
-    # return false unless !game.banned?
+    return false unless !game.banned?
     return false unless !game.played?
     return false unless !game.party?
     return false unless !game.banned_name?
@@ -40,7 +40,7 @@ class Bgg
     return false unless game.soloable?
     # return false unless game.thematic?
     # return false unless game.vote_rank.between?(1, 1000)
-    return false unless game.votes_per_year_rank.between?(1, 500)
+    # return false unless game.votes_per_year_rank.between?(1, 500)
     # return false unless game.weight.round(1) < 3
     # return false unless game.year >= Time.now.year - 5
 
@@ -55,6 +55,8 @@ class Bgg
     @games = all_games
       .sort_by { |g| -g.votes_per_year }
       .each.with_index(1) { |g, i| g.votes_per_year_rank = i }
+      .sort_by { |g| -g.rating_count }
+      .each.with_index(1) { |g, i| g.rating_count_rank = i }
       .select { display_game?(_1) }
       .sort_by { |g| [-g.year.to_i, g.rank] }
 

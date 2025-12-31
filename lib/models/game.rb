@@ -110,6 +110,7 @@ class Game
         "Deckscape",
         "EXIT",
         "Rory's Story Cubes",
+        "Sherlock Holmes Consulting Detective",
         "Unlock!",
       ].any? { name.start_with?(it) }
     end
