@@ -51,7 +51,6 @@
         <th>Playtime</th>
         <th>Price</th>
         <th>B2GO Price</th>
-        <th>B2GO Price / Price</th>
         <th>Offer Count</th>
         <th>Subdomain</th>
         <th>Played</th>
@@ -105,7 +104,6 @@
           <td class="number <%= 'bad' if bad_conditions[:bad_playtime] %>"><%= int(game.playtime) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_price] %>"><%= int(game.normalized_price) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_b2go_price] %>"><%= int(game.b2go_price) %></td>
-          <td class="number"><%= float(game.b2go_price.to_f / game.normalized_price, decimals: 2) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_offer_count] %>"><%= int(game.offer_count) %></td>
           <td><%= game.subdomains %></td>
           <td><%= game.played? ? "played" : nil %></td>

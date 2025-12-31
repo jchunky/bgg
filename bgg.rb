@@ -21,6 +21,14 @@ class Bgg
     # return false unless game.bgb?
     # return false unless game.snakes?
 
+    # Co-op Solable
+    # return false unless game.soloable?
+
+    # Multi-player Solable
+    return false unless game.min_player_count == 1
+    return false unless game.play_rank?
+    return false unless !game.soloable?
+
     # return false unless game.b2go_price < 20
     # return false unless game.coop?
     # return false unless game.min_player_count == 1
@@ -37,7 +45,7 @@ class Bgg
     # return false unless game.playtime.between?(1, 99)
     # return false unless game.rank.between?(1, 500)
     # return false unless game.rank.to_i > 0
-    return false unless game.soloable?
+    # return false unless game.soloable?
     # return false unless game.thematic?
     # return false unless game.vote_rank.between?(1, 1000)
     # return false unless game.votes_per_year_rank.between?(1, 500)
