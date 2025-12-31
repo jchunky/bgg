@@ -22,7 +22,7 @@ module Downloaders
       Game.new(
         name:,
         b2go: true,
-        b2go_price: price,
+        b2go_price: price.round,
       )
     end
   end

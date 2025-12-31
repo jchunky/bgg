@@ -14,27 +14,30 @@ class Bgg
     # return false unless !game.banned?
     return false unless !game.played?
     return false unless !game.party?
+    return false unless !game.banned_name?
 
     return false unless game.b2go?
     # return false unless game.bga?
     # return false unless game.bgb?
     # return false unless game.snakes?
 
+    # return false unless game.b2go_price.to_i < 10
+    # return false unless game.coop?
     # return false unless game.min_player_count == 1
     # return false unless game.max_player_count.between?(1, 2)
-    # return false unless game.max_player_count >= 5
-    return false unless game.normalized_price >= 1
-    return false unless game.normalized_price < 30
+    # return false unless game.max_player_count == 1
+    return false unless game.normalized_price > 0
+    # return false unless game.normalized_price < 30
     # return false unless game.normalized_price >= 30
     # return false unless game.offer_count.to_i >= 10
     # return false unless game.one_player? || game.coop?
-    return false unless game.play_rank?
+    # return false unless game.play_rank?
     # return false unless game.play_rank.between?(1, 100)
     # return false unless game.player_count_range.cover?(2)
     # return false unless game.playtime.between?(1, 44)
     # return false unless game.rank.between?(1, 500)
     # return false unless game.rank.to_i > 0
-    # return false unless game.soloable?
+    return false unless game.soloable?
     # return false unless game.thematic?
     # return false unless game.vote_rank.between?(1, 1000)
     # return false unless game.votes_per_year_rank.between?(1, 1000)
@@ -81,7 +84,7 @@ class Bgg
     value.to_i.zero? ? "" : value
   end
 
-  def float(value, decimals:)
+  def float(value, decimals: 1)
     value.to_f.zero? ? "" : format("%0.#{decimals}f", value)
   end
 end

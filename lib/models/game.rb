@@ -95,22 +95,23 @@ class Game
         party
         war
 
+        banned_name
         dexterity
         digital_hybrid
-        escaperoom_games
         realtime
         traitor
         werewolf
       ].any? { send("#{it}?") }
     end
 
-    def escaperoom_games?
+    def banned_name?
       [
-        "EXIT",
+        "Chronicles of Crime",
         "Deckscape",
+        "EXIT",
         "Rory's Story Cubes",
         "Unlock!",
-      ].any? { name.start_with?("#{_1}:") }
+      ].any? { name.start_with?(it) }
     end
   end
 
