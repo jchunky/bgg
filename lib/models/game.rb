@@ -112,6 +112,7 @@ class Game
         "EXIT",
         "Rory's Story Cubes",
         "Sherlock Holmes Consulting Detective",
+        "Tiny Epic",
         "Unlock!",
       ].any? { name.start_with?(it) }
     end
