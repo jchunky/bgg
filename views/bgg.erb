@@ -75,7 +75,7 @@
             bad_rank: !(1...500).cover?(game.rank),
             bad_rating: !(7..).cover?(game.rating&.round(1)),
             bad_price: !(1...30).cover?(game.normalized_price),
-            bad_b2go_price: !(1..17).cover?(game.b2go_price),
+            bad_b2go_price: !(1..13).cover?(game.b2go_price),
             bad_plays: !(1...100).cover?(game.play_rank),
             bad_play_rank: !(1...100).cover?(game.play_rank),
             bad_rating_count: !(1...500).cover?(game.rating_count_rank),
