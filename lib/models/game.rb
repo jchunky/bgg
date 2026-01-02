@@ -96,26 +96,12 @@ class Game
         party
         war
 
-        banned_name
         dexterity
         digital_hybrid
         realtime
         traitor
         werewolf
       ].any? { send("#{it}?") }
-    end
-
-    def banned_name?
-      [
-        "Chronicles of Crime",
-        "Deckscape:",
-        "EXIT: The Game",
-        "MicroMacro: Crime City",
-        "Railroad Ink",
-        "Rory's Story Cubes",
-        "Sherlock Holmes Consulting Detective",
-        "Unlock!",
-      ].any? { name.start_with?(it) }
     end
   end
 
