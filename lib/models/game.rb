@@ -108,11 +108,12 @@ class Game
     def banned_name?
       [
         "Chronicles of Crime",
-        "Deckscape",
-        "EXIT",
+        "Deckscape:",
+        "EXIT: The Game",
+        "MicroMacro: Crime City",
+        "Railroad Ink",
         "Rory's Story Cubes",
         "Sherlock Holmes Consulting Detective",
-        "Tiny Epic",
         "Unlock!",
       ].any? { name.start_with?(it) }
     end
