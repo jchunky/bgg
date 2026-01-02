@@ -121,6 +121,7 @@ Carcassonne: Wheel of Fortune
 Carcassonne: Winter Edition
 Cardline: Animals
 Cartographers
+Cartographers Heroes
 Cascadia
 Castellion
 Castle Panic
