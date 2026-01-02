@@ -21,21 +21,21 @@ class Bgg
     # return false unless game.snakes?
 
     # Solable
-    # return false unless game.min_player_count == 1
-    # return false unless game.play_rank? | game.soloable?
+    return false unless game.min_player_count == 1
+    return false unless game.play_rank?
 
     # return false unless game.storytelling? || game.cyoa? || game.campaign?
     # return false unless game.b2go_price < 20
     # return false unless game.coop?
     # return false unless game.max_player_count == 1
     # return false unless game.max_player_count.between?(1, 2)
-    return false unless game.min_player_count == 1
+    # return false unless game.min_player_count == 1
     # return false unless game.normalized_price < 30
     # return false unless game.normalized_price > 0
     # return false unless game.normalized_price >= 30
     # return false unless game.offer_count.to_i >= 10
     # return false unless game.play_rank.between?(1, 100)
-    return false unless game.play_rank?
+    # return false unless game.play_rank?
     # return false unless game.player_count_range.cover?(2)
     # return false unless game.playtime.between?(1, 99)
     # return false unless game.rank.between?(1, 500)
