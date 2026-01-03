@@ -23,7 +23,7 @@ class Bgg
     return false unless game.min_player_count == 1
     return false unless game.play_rank?
 
-    # return false unless game.storytelling? || game.cyoa? || game.campaign?
+    # return false unless (game.storytelling? || game.cyoa? || game.campaign?)
     # return false unless game.b2go_price < 20
     # return false unless game.coop?
     # return false unless game.max_player_count == 1
