@@ -96,6 +96,8 @@ class Game
         party
         war
 
+        two_player
+
         dexterity
         digital_hybrid
         realtime
