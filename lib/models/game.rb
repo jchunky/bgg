@@ -1,5 +1,5 @@
 class Game
-  LEARNED = File.read("./data/learned.txt").split("\n").reject(&:blank?)
+  REPLAYED = File.read("./data/replayed.txt").split("\n").reject(&:blank?)
   PLAYED = File.read("./data/played_games.txt").split("\n").reject(&:blank?)
 
   attr_reader :attributes
@@ -60,7 +60,7 @@ class Game
     def played? = (played == true)
     def preorder? = (preorder == true)
     def snakes? = snakes == true
-    def learned? = LEARNED.include?(name)
+    def replayed? = REPLAYED.include?(name)
     def played? = PLAYED.include?(name)
     def soloable? = max_player_count == 1 || (coop? && min_player_count == 1)
     def normalized_price = (bgb_price > 0 ? bgb_price : price).to_f.round
@@ -87,6 +87,81 @@ class Game
       when two_player? then "2-player"
       else "competitive"
       end
+    end
+
+    def highlight?
+      [
+        "7 Wonders",
+        "7 Wonders: Architects",
+        "Agent Avenue ",
+        "Agricola",
+        "Ark Nova",
+        "Azul",
+        "Carcassonne",
+        "Cartographers",
+        "Cascadia",
+        "CATAN",
+        "Clever Cubed ",
+        "Cloudspire ",
+        "Codenames: Duet",
+        "Cribbage ",
+        "Dominion",
+        "Draftosaurus",
+        "Faraway",
+        "For Sale",
+        "Forest Shuffle",
+        "Gizmos ",
+        "Gloomhaven: Jaws of the Lion",
+        "Hanabi",
+        "Harmonies",
+        "Hero Realms",
+        "HeroQuest",
+        "Innovation Ultimate",
+        "It's a Wonderful World",
+        "King of Tokyo",
+        "Kingdom Builder",
+        "Kingdomino",
+        "Lost Ruins of Arnak",
+        "MANTIS ",
+        "Marvel United",
+        "MicroMacro: Crime City",
+        "My City",
+        "No Thanks!",
+        "Nova Luna",
+        "Pandemic",
+        "Point Salad",
+        "Port Royal",
+        "Race for the Galaxy",
+        "Railroad Ink: Deep Blue Edition",
+        "Res Arcana ",
+        "Roll for the Galaxy",
+        "Rummikub",
+        "Sagrada",
+        "Santorini",
+        "SCOUT",
+        "Sea Salt & Paper",
+        "Sequence",
+        "Silver & Gold",
+        "Skull King",
+        "Slay the Spire: The Board Game ",
+        "Space Base",
+        "Spirit Island",
+        "Splendor",
+        "Star Wars: Imperial Assault",
+        "Stone Age",
+        "Tainted Grail: The Fall of Avalon",
+        "Terraforming Mars",
+        "That's Pretty Clever!",
+        "The Crew: Mission Deep Sea",
+        "The Crew: The Quest for Planet Nine",
+        "The Game",
+        "Through the Ages: A New Story of Civilization",
+        "Ticket to Ride",
+        "Too Many Bones ",
+        "Twice as Clever! ",
+        "War Chest",
+        "Welcome To...",
+      ].include?(name)
     end
 
     def banned?
