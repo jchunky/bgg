@@ -20,6 +20,7 @@ Carcassonne
 Cartographers
 Cascadia
 CATAN
+Catapult Feud
 Clever Cubed
 Cloudspire
 Codenames
