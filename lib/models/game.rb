@@ -89,89 +89,12 @@ class Game
       end
     end
 
-    def highlight?
-      [
-        "7 Wonders",
-        "7 Wonders: Architects",
-        "Agent Avenue ",
-        "Agricola",
-        "Ark Nova",
-        "Azul",
-        "Carcassonne",
-        "Cartographers",
-        "Cascadia",
-        "CATAN",
-        "Clever Cubed ",
-        "Cloudspire ",
-        "Codenames: Duet",
-        "Cribbage ",
-        "Dominion",
-        "Draftosaurus",
-        "Faraway",
-        "For Sale",
-        "Forest Shuffle",
-        "Gizmos ",
-        "Gloomhaven: Jaws of the Lion",
-        "Hanabi",
-        "Harmonies",
-        "Hero Realms",
-        "HeroQuest",
-        "Innovation Ultimate",
-        "It's a Wonderful World",
-        "King of Tokyo",
-        "Kingdom Builder",
-        "Kingdomino",
-        "Lost Ruins of Arnak",
-        "MANTIS ",
-        "Marvel United",
-        "MicroMacro: Crime City",
-        "My City",
-        "No Thanks!",
-        "Nova Luna",
-        "Pandemic",
-        "Point Salad",
-        "Port Royal",
-        "Race for the Galaxy",
-        "Railroad Ink: Deep Blue Edition",
-        "Res Arcana ",
-        "Roll for the Galaxy",
-        "Rummikub",
-        "Sagrada",
-        "Santorini",
-        "SCOUT",
-        "Sea Salt & Paper",
-        "Sequence",
-        "Silver & Gold",
-        "Skull King",
-        "Slay the Spire: The Board Game ",
-        "Space Base",
-        "Spirit Island",
-        "Splendor",
-        "Star Wars: Imperial Assault",
-        "Stone Age",
-        "Tainted Grail: The Fall of Avalon",
-        "Terraforming Mars",
-        "That's Pretty Clever!",
-        "The Crew: Mission Deep Sea",
-        "The Crew: The Quest for Planet Nine",
-        "The Game",
-        "Through the Ages: A New Story of Civilization",
-        "Ticket to Ride",
-        "Too Many Bones ",
-        "Twice as Clever! ",
-        "War Chest",
-        "Welcome To...",
-      ].include?(name)
-    end
-
     def banned?
       %i[
         ccg
         child
         party
         war
-
-        two_player
 
         dexterity
         digital_hybrid
