@@ -20,7 +20,7 @@ class Bgg
     # return false unless game.snakes?
 
     # Try from b2go
-    # return false unless game.min_player_count == 1
+    return false unless game.min_player_count == 1
     return false unless game.b2go?
     return false unless game.normalized_price > 0
     return false unless game.play_rank?
