@@ -34,7 +34,6 @@ class Bgg
     # return false unless game.min_player_count == 1
     # return false unless game.normalized_price < 30
     # return false unless game.normalized_price > 0
-    # return false unless game.normalized_price >= 30
     # return false unless game.offer_count >= 10
     # return false unless game.play_rank.between?(1, 100)
     # return false unless game.play_rank?
