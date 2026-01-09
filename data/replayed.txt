@@ -1,11 +1,22 @@
+20 Strong
 7 Wonders
 7 Wonders Duel
 7 Wonders: Architects
+A Gentle Rain
+Aeon Trespass: Odyssey
+Aeon's End
+Aeon's End: The New Age
 Aerion
+After the Virus
+Agemonia
 Agent Avenue
 Agricola
+Agropolis
 Animal Upon Animal
 Ark Nova
+Arkham Horror: The Card Game
+Arydia: The Paths We Dare Tread
+Ascension: Deckbuilding Game
 Azul
 Backgammon
 Bananagrams
@@ -14,7 +25,10 @@ BANG! The Dice Game
 Battle Line: Medieval
 Blokus Duo
 Blood on the Clocktower
+Boggle
 Bomb Busters
+Bullet♥︎
+Cahoots
 Captain Flip
 Carcassonne
 Cartographers
@@ -29,19 +43,35 @@ Codenames: Pictures
 Coup
 Cribbage
 CuBirds
+Dead Cells: The Rogue-Lite Board Game
 Deception: Murder in Hong Kong
 Descent: Legends of the Dark
+Dice Miner
 Dominion
 Dorfromantik: The Board Game
 Draftosaurus
 Dragomino
 DVONN
+Earthborne Rangers
+Eila and Something Shiny
+Encore!
 Faraway
+Fateforge: Chronicles of Kaan
+Final Girl
+Finished!
+First Orchard
+Five Crowns
 Flip 7
+FlipToons
+Food Chain Island
 For Sale
 Forest Shuffle
+Friday
+Frosthaven
 FUSE
 Gizmos
+Gloomhaven
+Gloomhaven: Buttons & Bugs
 Gloomhaven: Jaws of the Lion
 Gobblet
 Hadrian's Wall
@@ -50,16 +80,23 @@ Happy Salmon
 Harmonies
 Hero Realms
 HeroQuest
+Ingenious
 Innovation Ultimate
 Insider
+ISS Vanguard
 It's a Wonderful World
 Jaipur
 Jungle Speed
 Just One
+Keep the Heroes Out!
+Kinfire Chronicles: Night's Fall
 King of Tokyo
 Kingdom Builder
+Kingdom Death: Monster
 Kingdomino
 KLASK
+Kluster
+Legendary: A Marvel Deck Building Game
 Lost Ruins of Arnak
 Love Letter
 Magic Maze
@@ -67,36 +104,48 @@ MANTIS
 Marvel Champions: The Card Game
 Marvel United
 MicroMacro: Crime City
+MicroMacro: Crime City – Full House
 Mindbug: First Contact
 Mini Rogue
+Mists over Carcassonne
 My City
 My First Carcassonne
 Next Station: London
+NMBR 9
 No Thanks!
 Nova Luna
+Oathsworn: Into the Deepwood
 One Deck Dungeon
 One Night Ultimate Werewolf
 One Night Ultimate Werewolf: Daybreak
+Onirim (Second Edition)
 Onitama
 Othello
+Palm Island
 Pandemic
 Patchwork
+Pax Renaissance: 2nd Edition
 Point Salad
 Port Royal
+Primal: The Awakening
 Race for the Galaxy
 Railroad Ink Challenge: Lush Green Edition
 Railroad Ink: Deep Blue Edition
+Regicide
 Res Arcana
 Rhino Hero
 Roll for the Galaxy
 Rummikub
+Sagani
 Sagrada
 Santorini
 Schotten Totten
 SCOUT
 Sea Salt & Paper
+Seaside
 Secret Hitler
 Sequence
+Shifting Stones
 Silver & Gold
 Skull
 Skull King
@@ -109,21 +158,31 @@ Space Base
 Spicy
 Spirit Island
 Splendor
+Sprawlopolis
 Spyfall
 Star Realms
+Star Realms: Frontiers
+Star Trek: Captain's Chair
 Star Wars: Imperial Assault
 Stone Age
+Strat-O-Matic Baseball
 Summoner Wars
+Super Mega Lucky Box
 Tag Team
 Tainted Grail: The Fall of Avalon
 Terraforming Mars
 That's Pretty Clever!
 The Crew: Mission Deep Sea
 The Crew: The Quest for Planet Nine
+The Elder Scrolls: Betrayal of the Second Era
 The Game
 The Game: Face to Face
 The Gang
+The Isofarian Guard
+The Lord of the Rings: Journeys in Middle-Earth
 The Lord of the Rings: The Card Game
+The Lord of the Rings: The Card Game – Revised Core Set
+The Lord of the Rings: The Fellowship of the Ring – Trick-Taking Game
 The Mind
 The Resistance
 The Resistance: Avalon
@@ -132,6 +191,8 @@ Through the Ages: A New Story of Civilization
 Ticket to Ride
 Ticket to Ride: First Journey (Europe)
 Too Many Bones
+Trails of Tucana
+Tranquility
 Trio
 Turing Machine
 Twice as Clever!
@@ -140,4 +201,6 @@ War Chest
 Welcome to the Moon
 Welcome To...
 Werewords
+Wingspan
 YINSH
+Zombicide: 2nd Edition
