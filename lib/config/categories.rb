@@ -4,36 +4,36 @@ module Categories
     # [:buttonshy, 26991, 50, "company"],
 
     # category
-    [:dexterity, 1032, 50, "property"],
+    # [:dexterity, 1032, 50, "property"],
     # [:miniatures, 1047, 50, "property"],
 
     # mechanism
     [:campaign, 2822, 50, "property"],
     [:coop, 2023, 50, "property"],
     [:cyoa, 2851, 50, "property"],
-    [:realtime, 2831, 50, "property"],
-    [:solitaire, 2819, 50, "property"],
+    # [:realtime, 2831, 50, "property"],
+    # [:solitaire, 2819, 50, "property"],
     [:storytelling, 2027, 50, "property"],
-    [:traitor, 2814, 50, "property"],
+    # [:traitor, 2814, 50, "property"],
 
     # family
     # [:apple_app_store, 104952, 50, "family"],
-    [:bga, 70360, 50, "family"],
-    [:digital_hybrid, 41489, 50, "family"],
+    # [:bga, 70360, 50, "family"],
+    # [:digital_hybrid, 41489, 50, "family"],
     # [:escaperoom, 36900, 50, "family"],
     # [:google_play, 78432, 50, "family"],
     # [:exit, 36963, 50, "family"],
-    [:limited_replayability, 72224, 50, "family"],
+    # [:limited_replayability, 72224, 50, "family"],
     # [:oniverse, 9976, 50, "family"],
-    [:roll_and_write, 41222, 50, "family"],
+    # [:roll_and_write, 41222, 50, "family"],
     # [:steam, 77349, 50, "family"],
     # [:unlock, 39442, 50, "family"],
-    [:werewolf, 2989, 50, "family"],
+    # [:werewolf, 2989, 50, "family"],
 
     # kickstarter
-    [:backerkit, 76292, 50, "family"],
-    [:gamefound, 66292, 50, "family"],
-    [:kickstarter, 8374, 50, "family"],
+    # [:backerkit, 76292, 50, "family"],
+    # [:gamefound, 66292, 50, "family"],
+    # [:kickstarter, 8374, 50, "family"],
   ]
 
   SUBDOMAINS = [
