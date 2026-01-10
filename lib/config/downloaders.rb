@@ -27,7 +27,7 @@ module Downloaders
     B2goData.new,
     SnakesData.new,
     TopPlayedData.new,
-    # *CATEGORIES,
+    *CATEGORIES,
     # *SUBDOMAINS,
   ]
 end
