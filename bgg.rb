@@ -15,19 +15,15 @@ class Bgg
     return false unless !game.played?
     # return false unless game.replayed?
 
-    return false unless game.b2go?
+    # return false unless game.b2go?
     # return false unless game.bga?
     # return false unless game.bgb?
     # return false unless game.snakes?
 
     # Try from b2go
-    # return false unless game.min_player_count == 1
-    # return false unless game.b2go?
-    # return false unless game.coop?
-    # return false unless game.normalized_price > 0
-    # return false unless game.play_rank?
+    return false unless game.soloable?
+    return false unless game.b2go?
 
-    # return false unless (game.storytelling? || game.cyoa? || game.campaign?)
     # return false unless game.b2go_price < 20
     # return false unless game.coop?
     # return false unless game.couples?
@@ -49,7 +45,7 @@ class Bgg
     # return false unless game.solitaire?
     # return false unless game.solo?
     # return false unless game.solo_rank.between?(1, 100)
-    return false unless game.soloable?
+    # return false unless game.soloable?
     # return false unless game.thematic?
     # return false unless game.vote_rank.between?(1, 500)
     # return false unless game.votes_per_year_rank.between?(1, 500)
