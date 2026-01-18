@@ -9,13 +9,16 @@ module Downloaders
         .split("\n")
         .each_slice(4)
         .map { |data| build_game(data) }
+        .compact
         .reject { |game| game.name.blank? }
     end
 
     private
 
     def build_game(data)
-      name, _, price, _ = data
+      name, details, price, _ = data
+      return if details == "Purchase Only"
+
       price = price.split(" ").last.delete_prefix("$").to_f
       name = name.split("(").first.strip
 
