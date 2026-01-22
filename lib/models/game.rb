@@ -101,9 +101,28 @@ class Game
         dexterity
         digital_hybrid
         realtime
+        skirmish
         traitor
         werewolf
       ].any? { send("#{it}?") }
+    end
+  end
+
+  concerning :Customize do
+    def ccc?
+      super || [
+        "Shadows of Brimstone: Swamps of Death",
+        "Sword & Sorcery: Ancient Chronicles",
+      ].include?(name)
+    end
+
+    def skirmish?
+      [
+        "Masters of the Universe: The Board Game – Clash for Eternia",
+        "Unmatched Adventures: Tales to Amaze",
+        "Tiny Epic Tactics",
+        "Wroth",
+      ].include?(name)
     end
   end
 
