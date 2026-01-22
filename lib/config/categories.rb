@@ -8,6 +8,7 @@ module Categories
     # [:miniatures, 1047, 50, "property"],
 
     # mechanism
+    [:area_majority, 2080, 50, "property"],
     [:campaign, 2822, 50, "property"],
     [:coop, 2023, 50, "property"],
     [:cyoa, 2851, 50, "property"],

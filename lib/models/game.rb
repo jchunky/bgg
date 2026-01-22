@@ -13,9 +13,10 @@ class Game
       @category_label ||= begin
         result = categories
         result << :b2go if b2go?
-        result << :snakes if snakes?
         result << :bgb if bgb?
+        result << :ccc if ccc?
         result << :preorder if preorder?
+        result << :snakes if snakes?
         result.sort.join(", ")
       end
     end
@@ -96,6 +97,7 @@ class Game
         party
         war
 
+        ccc
         dexterity
         digital_hybrid
         realtime
