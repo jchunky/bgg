@@ -54,7 +54,6 @@ class Game
   end
 
   concerning :GameData do
-    def b2go? = b2go == true
     def bgb? = (bgb == true && !preorder?)
     def crowdfunded? = kickstarter? || gamefound? || backerkit?
     def play_rank? = (play_rank > 0)
@@ -104,13 +103,42 @@ class Game
         skirmish
         traitor
         werewolf
-      ].any? { send("#{it}?") }
+      ].any? { send("#{it}?") } || banned_name?
     end
   end
 
   concerning :Customize do
+    def b2go?
+      b2go == true || [
+        "Arkham Horror (Third Edition)",
+        "Atlantis Rising (Second Edition)",
+        "Final Girl",
+        "Frostpunk: The Board Game",
+        "Horrified: American Monsters",
+        "Kick-Ass: The Board Game",
+        "Night of the Living Dead: A Zombicide Game",
+        "Sherlock Holmes Consulting Detective: Carlton House & Queen's Park",
+        "Sherlock Holmes Consulting Detective: Jack the Ripper & West End Adventures",
+        "Sherlock Holmes Consulting Detective: The Baker Street Irregulars",
+        "Sherlock Holmes Consulting Detective: The Thames Murders & Other Cases",
+        "The Dresden Files Cooperative Card Game",
+        "The Elder Scrolls: Betrayal of the Second Era",
+        "Waste Knights: Second Edition",
+      ].include?(name)
+    end
+
+    def banned_name?
+      [
+        "EXIT: The Game",
+        "Rory's Story Cubes",
+        "Sherlock Holmes Consulting Detective",
+        "Unlock!",
+      ].any? { name.start_with?(it) }
+    end
+
     def ccc?
       super || [
+        "Night of the Living Dead: A Zombicide Game",
         "Shadows of Brimstone: Swamps of Death",
         "Sword & Sorcery: Ancient Chronicles",
       ].include?(name)
