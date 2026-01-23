@@ -1,4 +1,7 @@
 20 Strong
+50 Clues: The Fate of Leopold
+50 Clues: The Pendulum of the Dead
+50 Clues: White Sleep
 6 nimmt! 25 Jahre
 7 Wonders
 7 Wonders (Second Edition)
@@ -10,7 +13,9 @@ A Gentle Rain
 Abalone
 Adventure Games: Monochrome Inc.
 Adventure Games: The Dungeon
+Adventure Games: The Gloom City File
 Adventure Games: The Grand Hotel Abaddon
+Adventure Games: The Volcanic Island
 Aeon's End
 Aeon's End: Legacy
 Aeon's End: Legacy of Gravehold
@@ -501,6 +506,7 @@ Second Chance
 Seikatsu
 Sequence
 SET
+Sfynx
 Sherlock: Death on the 4th of July
 Sherlock: Last Call
 Sherlock: The Tomb of the Archaeologist
@@ -604,6 +610,7 @@ Ticket to Ride: San Francisco
 Ticket to Ride: The Card Game
 Tides of Time
 Tiki Topple
+TIME Stories Revolution: A Midsummer Night
 TIME Stories Revolution: The Hadal Project
 Timeline
 Timeline Challenge
