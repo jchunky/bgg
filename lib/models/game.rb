@@ -96,6 +96,7 @@ class Game
         party
         war
 
+        campaign
         ccc
         dexterity
         digital_hybrid
@@ -108,6 +109,20 @@ class Game
   end
 
   concerning :Customize do
+    def banned_name?
+      [
+        "Bureau of Investigation",
+        "Cantaloop",
+        "Chronicles of Crime",
+        "Deckscape",
+        "EXIT: The Game",
+        "Rory's Story Cubes",
+        "Sherlock Holmes Consulting Detective",
+        "Tiny Epic",
+        "Unlock!",
+      ].any? { name.start_with?(it) }
+    end
+
     def b2go?
       b2go == true || [
         "Arkham Horror (Third Edition)",
@@ -127,18 +142,10 @@ class Game
       ].include?(name)
     end
 
-    def banned_name?
-      [
-        "EXIT: The Game",
-        "Rory's Story Cubes",
-        "Sherlock Holmes Consulting Detective",
-        "Unlock!",
-      ].any? { name.start_with?(it) }
-    end
-
     def ccc?
       super || [
         "Night of the Living Dead: A Zombicide Game",
+        "Resident Evil 3: The Board Game",
         "Shadows of Brimstone: Swamps of Death",
         "Sword & Sorcery: Ancient Chronicles",
       ].include?(name)
@@ -147,8 +154,9 @@ class Game
     def skirmish?
       [
         "Masters of the Universe: The Board Game – Clash for Eternia",
-        "Unmatched Adventures: Tales to Amaze",
+        "Super Punch Fighter",
         "Tiny Epic Tactics",
+        "Unmatched Adventures: Tales to Amaze",
         "Wroth",
       ].include?(name)
     end

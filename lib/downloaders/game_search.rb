@@ -4,7 +4,7 @@ module Downloaders
       @games ||= content_for_pages
         .uniq(&:key)
         .each.with_index(1) { |game, index| game.send(:"#{prefix}_rank=", index) }
-        .select { |game| game.rank.between?(1, 5000) }
+        .select { |game| game.rank.positive? }
     end
 
     private
@@ -19,7 +19,7 @@ module Downloaders
 
     def search_completed?(games)
       if search_criteria.include?("sort=rank")
-        games.none? { |g| g.rank.between?(1, 5000) }
+        games.none? { |g| g.rank.positive? }
       else
         games.none?
       end

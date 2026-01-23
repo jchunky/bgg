@@ -3,7 +3,7 @@ module Downloaders
     def games
       @games ||= content_for_pages
         .uniq(&:key)
-        .select { |game| game.rank.between?(1, 5000) }
+        .select { |game| game.rank.positive? }
     end
 
     private
@@ -17,7 +17,7 @@ module Downloaders
     end
 
     def search_completed?(games)
-      games.none? { |g| g.rank.between?(1, 5000) }
+      games.none? { |g| g.rank.positive? }
     end
 
     def fetch_games_for_page(page)
