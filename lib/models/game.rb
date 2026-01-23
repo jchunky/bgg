@@ -125,6 +125,7 @@ class Game
         "Bureau of Investigation",
         "Cantaloop",
         "Chronicles of Crime",
+        "Clue Escape",
         "Deckscape",
         "EXIT: The Game",
         "Rory's Story Cubes",
