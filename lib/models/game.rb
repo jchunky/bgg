@@ -171,8 +171,15 @@ class Game
       ].include?(name)
     end
 
+    def child?
+      super || [
+        "Flower Fairy",
+      ].include?(name)
+    end
+
     def skirmish?
       [
+        "Hoplomachus: Remastered",
         "Masters of the Universe: The Board Game – Clash for Eternia",
         "Super Punch Fighter",
         "Tiny Epic Tactics",
