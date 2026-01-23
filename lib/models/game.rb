@@ -136,19 +136,28 @@ class Game
 
     def b2go?
       b2go == true || [
+        "5-Minute Mystery",
         "Arkham Horror (Third Edition)",
         "Atlantis Rising (Second Edition)",
+        "Bardsung",
+        "Darkest Dungeon: The Board Game",
         "Final Girl",
+        "First Orchard",
+        "Flatline",
         "Frostpunk: The Board Game",
         "Horrified: American Monsters",
         "Kick-Ass: The Board Game",
+        "Mansions of Madness: Second Edition",
         "Night of the Living Dead: A Zombicide Game",
         "Sherlock Holmes Consulting Detective: Carlton House & Queen's Park",
         "Sherlock Holmes Consulting Detective: Jack the Ripper & West End Adventures",
         "Sherlock Holmes Consulting Detective: The Baker Street Irregulars",
         "Sherlock Holmes Consulting Detective: The Thames Murders & Other Cases",
+        "Street Masters: Tide of the Dragon ",
         "The Dresden Files Cooperative Card Game",
         "The Elder Scrolls: Betrayal of the Second Era",
+        "The Lord of the Rings: Journeys in Middle-Earth",
+        "Vienna Connection",
         "Waste Knights: Second Edition",
       ].include?(name)
     end
