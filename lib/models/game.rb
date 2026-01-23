@@ -90,21 +90,32 @@ class Game
     end
 
     def banned?
-      %i[
-        ccg
-        child
-        party
-        war
+      return false if whitelisted?
+      return true if banned_name?
 
-        campaign
-        ccc
-        dexterity
-        digital_hybrid
-        realtime
-        skirmish
-        traitor
-        werewolf
-      ].any? { send("#{it}?") } || banned_name?
+      [
+        :ccg,
+        :child,
+        :party,
+        :war,
+
+        :campaign,
+        :ccc,
+        :dexterity,
+        :digital_hybrid,
+        :realtime,
+        :skirmish,
+        :traitor,
+        :werewolf,
+      ].any? { send("#{it}?") }
+    end
+
+    def whitelisted?
+      [
+        "D-Day Dice",
+        "Detective: A Modern Crime Board Game – Season One",
+        "Detective: A Modern Crime Board Game",
+      ].include?(name)
     end
   end
 
