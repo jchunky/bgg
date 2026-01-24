@@ -25,7 +25,7 @@ class Bgg
     return false unless !game.played?
     return false unless game.b2go?
     return false unless game.soloable?
-    return false unless game.weight.round(1) < 3
+    # return false unless game.weight.round(1) < 3
     # return false unless game.area_majority?
     # return false unless game.min_player_count == 1
 
