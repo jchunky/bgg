@@ -94,10 +94,10 @@ class Game
       return true if banned_name?
 
       [
-        :ccg,
+        # :ccg,
         :child,
         :party,
-        :war,
+        # :war,
 
         :campaign,
         :ccc,
