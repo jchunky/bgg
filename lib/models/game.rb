@@ -99,7 +99,7 @@ class Game
         :party,
         # :war,
 
-        :campaign,
+        # :campaign,
         :ccc,
         :dexterity,
         :digital_hybrid,

@@ -20,14 +20,19 @@ class Bgg
     # return false unless game.bgb?
     # return false unless game.snakes?
 
-    # Try from b2go
-    return false unless !game.banned?
-    return false unless !game.played?
-    return false unless game.b2go?
-    return false unless game.soloable?
-    # return false unless game.weight.round(1) < 3
-    # return false unless game.area_majority?
+    # b2go
+    # return false unless !game.banned?
+    # return false unless !game.campaign?
+    # return false unless !game.played?
+    # return false unless game.b2go?
     # return false unless game.min_player_count == 1
+    # return false unless game.soloable?
+
+    # snakes
+    # return false unless !game.banned?
+    return false unless !game.played?
+    return false unless game.min_player_count == 1
+    return false unless game.snakes?
 
     # return false unless game.b2go_price < 20
     # return false unless game.coop?
