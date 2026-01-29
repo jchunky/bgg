@@ -29,7 +29,7 @@ class Bgg
     # return false unless game.soloable?
 
     # snakes
-    # return false unless !game.banned?
+    return false unless !game.banned?
     return false unless !game.played?
     return false unless game.min_player_count == 1
     return false unless game.snakes?
