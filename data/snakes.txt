@@ -49,7 +49,7 @@ M 2P Best for: 4 players
 5-Second Rule
 Greatest Hits · Party · Trivia
 E
-1B, Retired
+1B
 5-Second Rule Uncensored
 5-Second Rule Uncensored
 E
@@ -195,6 +195,11 @@ Arcane Academy
 Light Strategy
 M 2P Best for: 4 players
 27A
+Arcs
+Arcs
+Strategy
+H Best for: 4 players
+New Arrivals
 Arkham Horror - 3rd Edition
 Arkham Horror - 3rd Edition
 Strategy · Cooperative
@@ -235,6 +240,11 @@ Backgammon
 Abstract
 M 2P Best for: 2 players
 35F
+Bad Choices
+Bad Choices
+Party
+E
+14A
 Bad Kitty
 14A
 Bad People
@@ -360,6 +370,9 @@ Black Fleet
 Light Strategy
 M Best for: 4 players
 26D
+Black Sheep
+Light Strategy
+New Arrivals
 Blank
 Blank
 Light Strategy
@@ -599,6 +612,11 @@ Cartographers
 Light Strategy
 M 2P Best for: 4 players
 23E
+Cascadia
+Cascadia
+Light Strategy
+E 2P Solo
+24E
 Cash'N Guns
 Cash'N Guns
 Party
@@ -948,7 +966,7 @@ Décorum
 Décorum
 Cooperative
 M 2P Best for: 2 players
-Staff Picks
+Staff Picks, Archives
 DC Comics Deck Building Game
 DC Comics Deck Building Game
 Strategy · Deck Builder
@@ -1231,11 +1249,6 @@ Exploding Kittens NSFW Deck
 Greatest Hits
 E Best for: 5 players
 20B
-Exploding Minions
-Exploding Minions
-Light Strategy
-2P Best for: 5 players
-Staff Picks
 Eye Know
 Eye Know
 Party · Trivia
@@ -1291,6 +1304,11 @@ Finca
 Finca
 Light Strategy
 27E
+Finspan
+Finspan
+Light Strategy
+M 2P Solo Best for: 3 players
+New Arrivals
 Firefly: A Fistful of Credits
 31F
 First to Worst
@@ -1457,7 +1475,7 @@ Game of Life
 Game of Life
 Greatest Hits · Nostalgia
 E
-5A, Sick Bay
+Sick Bay
 Game of Things
 Game of Things
 Party
@@ -1628,7 +1646,7 @@ H Best for: 5 players
 Happy City
 Happy City
 E 2P Best for: 4 players
-New Arrivals
+21C
 Happy Dim Sum
 Happy Dim Sum
 Light Strategy
@@ -1706,11 +1724,6 @@ Horrified
 Light Strategy · Cooperative
 E 2P Solo Best for: 3 players
 30C, Archives
-Horrified: American Monsters
-Horrified: American Monsters
-Cooperative
-E 2P Solo Best for: 3 players
-New Arrivals
 Horrified: Greek Monsters
 Horrified: Greek Monsters
 30C
@@ -1873,6 +1886,11 @@ Jenga
 Abstract · Greatest Hits · Nostalgia · Dexterity
 E 2P
 11B, 12B
+Jeopardy!
+Jeopardy!
+Party
+E
+1E
 JinxO
 JinxO
 Party
@@ -1936,6 +1954,8 @@ Kamisado
 Kamisado
 Abstract
 36C
+Kanoodle
+New
 Kaosball
 Kaosball
 33F
@@ -1945,7 +1965,7 @@ Karmaka
 Karmaka
 Light Strategy
 M 2P Best for: 2 players
-22E, Archives
+22E
 Karuba
 Karuba
 Light Strategy
@@ -1996,9 +2016,6 @@ Kittens in a Blender
 Light Strategy
 E Best for: 4 players
 20B
-Kluster
-Kluster
-11A
 Kluster Duo
 Kluster Duo
 11A
@@ -2281,6 +2298,11 @@ Manhattan
 Light Strategy
 M Best for: 4 players
 26C
+Mantis
+Mantis
+Light Strategy
+E Best for: 5 players
+Staff picks
 Map It!
 20D
 Marrakech
@@ -2412,7 +2434,7 @@ Monopoly: Cheater's Edition
 Monopoly: Cheater's Edition
 Nostalgia
 E
-New Arrivals
+5B
 Monopoly: RuPaul’s Drag Race
 5B
 MonsDRAWsity
@@ -2684,230 +2706,6 @@ Category
 A/Z
 Search
 
-P
-Game  Tutorial  Location
-P For Pizza
-P For Pizza
-7D
-Pagoda
-27D
-Panda Spin
-Prep
-Pandabo
-3E
-Pandemic
-Pandemic
-Strategy · Greatest Hits · Cooperative
-M 2P Solo Best for: 4 players
-30B
-Pandemic: Rapid Response
-Pandemic: Rapid Response
-Strategy · Cooperative
-M
-30B
-Pandemic: Rising Tide
-Pandemic: Rising Tide
-Strategy · Cooperative
-M 2P Solo Best for: 4 players
-30B
-Pandemic: the Cure
-Pandemic: the Cure
-Strategy · Cooperative
-M 2P Solo Best for: 5 players
-30B
-Parade
-Parade
-Light Strategy
-22D
-Parcheesi
-Parcheesi
-Nostalgia
-E Best for: 4 players
-5E
-Paris Connection
-Paris Connection
-Light Strategy
-23F
-Parks
-Parks
-Light Strategy
-M 2P Solo Best for: 3 players
-25C
-Partners in Crime
-Partners in Crime
-14C
-Passe Trappe
-11E
-Patchwork
-Patchwork
-Abstract
-M 2P
-22C
-Patchwork: Christmas Edition
-Patchwork: Christmas Edition
-22C
-Pay Day
-Pay Day
-Nostalgia
-E
-6E
-Pelican Bay
-Pelican Bay
-Light Strategy
-E 2P Best for: 3 players
-24C
-Penny Arcade DBG: Rumble in R'Lyeh
-Penny Arcade DBG: Rumble in R'Lyeh
-32F
-Pentago Multiplayer
-Pentago Multiplayer
-Abstract
-35A
-Personally Incorrect
-Personally Incorrect
-Party
-E
-15A
-Phantoms VS Phantoms
-Phantoms VS Phantoms
-Children's
-E 2P
-4C
-Photosynthesis
-Photosynthesis
-Light Strategy
-M 2P Best for: 4 players
-23C
-Pick Your Poison
-Pick Your Poison
-Party
-E Best for: 8 players
-14B
-Pick Your Poison (NSFW)
-Pick Your Poison (NSFW)
-Party
-E Best for: 6 players
-14B
-Pickles to Penguins
-Pickles to Penguins
-Party
-E 2P
-15E
-Pictionary
-Pictionary
-Greatest Hits · Party
-E Best for: 6 players
-13C, Retired
-Pictomania
-Pictomania
-M
-13C
-Pictureka
-Pictureka
-Greatest Hits · Party
-E 2P Best for: 6 players
-13D
-Pillars of the Earth, The
-Pillars of the Earth, The
-Archives
-Piranha Panic
-Piranha Panic
-Children's
-E 2P Best for: 4 players
-4A
-Pit
-Pit
-Light Strategy · Greatest Hits
-11C
-Plague Inc.
-Plague Inc.
-Light Strategy
-M 2P
-28D
-Play Nine
-Play Nine
-Light Strategy
-E 2P Best for: 2 players
-New Arrivals
-Playing Cards
-Playing Cards
-Light Strategy
-14E
-Pluckin' Pairs
-Pluckin' Pairs
-Greatest Hits · Party
-E
-15E
-Poetry for Neanderthals
-Poetry for Neanderthals
-E
-9C
-Poetry for Neanderthals: NSFW
-Poetry for Neanderthals: NSFW
-Archives
-Point Salad
-Point Salad
-Light Strategy
-E
-21A
-Poison
-Light Strategy
-21C
-Pokemon Labyrinth
-3C
-Poleconomy
-32A
-Portrayal
-Portrayal
-Party
-M
-13C
-Power Barons
-Power Barons
-32A
-Princess Bride: I hate to kill you
-Princess Bride: I hate to kill you
-22E
-Psycho Babble
-Psycho Babble
-Party
-E Best for: 6 players
-15D
-Pueblo
-Pueblo
-Abstract
-34D
-Puerto Rico
-Puerto Rico
-Strategy · Greatest Hits
-M
-33C
-Punct
-Punct
-Abstract
-36E
-Purrrlock Holmes
-Purrrlock Holmes
-20A
-Puzzle Moment 300pc Puzzle - Spring
-Staff picks
-Puzzle Observation - 350pc Puzzle
-Staff picks
-Pylos
-Pylos
-Abstract
-E 2P Best for: 2 players
-36D
-All Games
-Annex
-College
-Tempe
-Chicago
-Tucson
-Category
-A/Z
-Search
-
 Q
 Game  Tutorial  Location
 Q-bitz
@@ -3128,6 +2926,8 @@ Roll for It!
 Light Strategy
 E Best for: 4 players
 35C
+Rule the Roost
+New Arrivals
 Rumble In The House
 Rumble In The House
 20B
@@ -3318,6 +3118,9 @@ Shogun
 Archives
 Showdown! The Samurai Card Game
 21E
+Shut the Box
+Children's
+35D
 Side Effects
 New Arrivals
 Similo Animals
@@ -4096,87 +3899,37 @@ Search
 
 V
 Game  Tutorial  Location
-Ubongo
-Ubongo
-Abstract
-Solo
-34E
-Ultimate Stratego
-Archives?
-Ultimate Werewolf: Deluxe Edition
-Ultimate Werewolf: Deluxe Edition
-Party
-M Best for: 15 players
-29E
-Unlock! Expedition Challenger
-Unlock! Expedition Challenger
-Cooperative
-E 2P Solo
-21E
-Unlock! Night of the Boogeymen
-Unlock! Night of the Boogeymen
-E 2P Solo
-21E
-Unlock! Short Adventures: In Pursuit of Cabrakan
-21E
-Unlock! The Adventures of Oz
-Unlock! The Adventures of Oz
-Cooperative
-E 2P Solo Best for: 4 players
-21E
-Unlock! The Island of Doctor Goorse
-Unlock! The Island of Doctor Goorse
-Cooperative
-E 2P Best for: 4 players
-21E
-Unlock! The Nautilus Traps
-Unlock! The Nautilus Traps
-Cooperative
-E 2P Solo Best for: 3 players
-21E
-Unlock! The Tonipal's Treasure
-Unlock! The Tonipal's Treasure
-Cooperative
-E 2P Solo
-21E
-Unlock! Tombstone Express
-Unlock! Tombstone Express
-Cooperative
-E 2P Solo Best for: 2 players
-21E
-Unlock!: Timeless Adventures
-Unlock!: Timeless Adventures
-Strategy
-E 2P Solo
-21E
-Unlock: The Formula!
-Unlock: The Formula!
-Cooperative
-E 2P Solo Best for: 3 players
-21E
-Unmatched: Volume One
-Unmatched: Volume One
-28C
-Uno
-Uno
-Light Strategy · Nostalgia
-E Best for: 4 players
-6C
-Uno - National Federation of the Blind
-New Arrivals
-Uno: Show 'Em No Mercy
-Uno: Show 'Em No Mercy
-6C
-Unstable Unicorns
-Unstable Unicorns
+Vault Wars
+Vault Wars
+20B
+Vegas (formerly Las Vegas)
 Light Strategy
 E
-20F
-Upwords
-Upwords
-Word
-E 2P Best for: 2 players
-7C
+35D
+Vegas Showdown
+Vegas Showdown
+Light Strategy
+M Best for: 5 players
+26C
+Villa Paletti
+Villa Paletti
+Abstract · Dexterity
+M 2P Best for: 4 players
+12C
+Village Pillage
+Village Pillage
+Light Strategy
+E
+22A
+Viva Java: The Coffee Game
+Viva Java: The Coffee Game
+Strategy
+H Best for: 7 players
+Archives
+Voluspa
+Voluspa
+Light Strategy
+26F
 All Games
 Annex
 College
@@ -4199,7 +3952,7 @@ Waterworks
 Wavelength
 Wavelength
 E
-9B
+9B, Parts
 Wazabi
 Wazabi
 Light Strategy · Abstract
@@ -4416,3 +4169,226 @@ M Best for: 4 players
 Zoowaboo
 Zoowaboo
 3A
+All Games
+Annex
+College
+Tempe
+Chicago
+Tucson
+Category
+A/Z
+Search
+
+P
+Game  Tutorial  Location
+P For Pizza
+P For Pizza
+7D
+Pagoda
+27D
+Panda Spin
+Prep
+Pandabo
+3E
+Pandemic
+Pandemic
+Strategy · Greatest Hits · Cooperative
+M 2P Solo Best for: 4 players
+30B
+Pandemic: Rapid Response
+Pandemic: Rapid Response
+Strategy · Cooperative
+M
+30B
+Pandemic: Rising Tide
+Pandemic: Rising Tide
+Strategy · Cooperative
+M 2P Solo Best for: 4 players
+30B
+Pandemic: the Cure
+Pandemic: the Cure
+Strategy · Cooperative
+M 2P Solo Best for: 5 players
+30B
+Parade
+Parade
+Light Strategy
+22D
+Parcheesi
+Parcheesi
+Nostalgia
+E Best for: 4 players
+5E
+Paris Connection
+Paris Connection
+Light Strategy
+23F
+Parks
+Parks
+Light Strategy
+M 2P Solo Best for: 3 players
+25C
+Partners in Crime
+Partners in Crime
+14C
+Passe Trappe
+11E
+Patchwork
+Patchwork
+Abstract
+M 2P
+22C
+Patchwork: Christmas Edition
+Patchwork: Christmas Edition
+22C
+Pay Day
+Pay Day
+Nostalgia
+E
+6E
+Pelican Bay
+Pelican Bay
+Light Strategy
+E 2P Best for: 3 players
+24C
+Penny Arcade DBG: Rumble in R'Lyeh
+Penny Arcade DBG: Rumble in R'Lyeh
+32F
+Pentago Multiplayer
+Pentago Multiplayer
+Abstract
+35A
+Personally Incorrect
+Personally Incorrect
+Party
+E
+15A
+Phantoms VS Phantoms
+Phantoms VS Phantoms
+Children's
+E 2P
+4C
+Photosynthesis
+Photosynthesis
+Light Strategy
+M 2P Best for: 4 players
+23C
+Pick Your Poison
+Pick Your Poison
+Party
+E Best for: 8 players
+14B
+Pick Your Poison (NSFW)
+Pick Your Poison (NSFW)
+Party
+E Best for: 6 players
+14B
+Pickles to Penguins
+Pickles to Penguins
+Party
+E 2P
+15E
+Pictionary
+Pictionary
+Greatest Hits · Party
+E Best for: 6 players
+13C, Retired
+Pictomania
+Pictomania
+M
+13C
+Pictureka
+Pictureka
+Greatest Hits · Party
+E 2P Best for: 6 players
+13D
+Pillars of the Earth, The
+Pillars of the Earth, The
+Archives
+Piranha Panic
+Piranha Panic
+Children's
+E 2P Best for: 4 players
+4A
+Pit
+Pit
+Light Strategy · Greatest Hits
+11C
+Plague Inc.
+Plague Inc.
+Light Strategy
+M 2P
+28D
+Play Nine
+Play Nine
+Light Strategy
+E 2P Best for: 2 players
+New Arrivals
+Playing Cards
+Playing Cards
+Light Strategy
+14E
+Pluckin' Pairs
+Pluckin' Pairs
+Greatest Hits · Party
+E
+15E
+Poetry for Neanderthals
+Poetry for Neanderthals
+E
+9C
+Poetry for Neanderthals: NSFW
+Poetry for Neanderthals: NSFW
+Archives
+Point Salad
+Point Salad
+Light Strategy
+E
+21A
+Poison
+Light Strategy
+21C
+Pokemon Labyrinth
+Pokemon Labyrinth
+3C
+Poleconomy
+32A
+Portrayal
+Portrayal
+Party
+M
+13C
+Power Barons
+Power Barons
+32A
+Princess Bride: I hate to kill you
+Princess Bride: I hate to kill you
+22E
+Psycho Babble
+Psycho Babble
+Party
+E Best for: 6 players
+15D
+Pueblo
+Pueblo
+Abstract
+34D
+Puerto Rico
+Puerto Rico
+Strategy · Greatest Hits
+M
+33C
+Punct
+Punct
+Abstract
+36E
+Purrrlock Holmes
+Purrrlock Holmes
+20A
+Puzzle Observation - 350pc Puzzle
+Staff picks
+Pylos
+Pylos
+Abstract
+E 2P Best for: 2 players
+36D
