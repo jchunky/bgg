@@ -1,4 +1,5 @@
 class Game
+  LEARNED = File.read("./data/learned.txt").split("\n").reject(&:blank?)
   REPLAYED = File.read("./data/replayed.txt").split("\n").reject(&:blank?)
   PLAYED = File.read("./data/played_games.txt").split("\n").reject(&:blank?)
 
@@ -60,6 +61,7 @@ class Game
     def played? = (played == true)
     def preorder? = (preorder == true)
     def snakes? = snakes == true
+    def learned? = LEARNED.include?(name)
     def replayed? = REPLAYED.include?(name)
     def played? = PLAYED.include?(name)
     def soloable? = max_player_count == 1 || (coop? && min_player_count == 1)

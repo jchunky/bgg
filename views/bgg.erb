@@ -8,6 +8,7 @@
     .dataTable th { background-color: #4CAF50; color: white; }
     .dataTable td { white-space: nowrap; }
     .bga { background-color: #dce9d5; }
+    .learned { background-color: #f8e6d0; }
     .replayed { background-color: #f8e6d0; }
     .highlight { background-color: yellow; }
     .number { text-align: right; }
@@ -90,7 +91,7 @@
         %>
         <tr>
           <td class="number <%= 'bad' if bad_conditions[:bad_year] %>"><%= int(game.year) %></td>
-          <td class="<%= 'bad' if bad_game %> <%= 'replayed' if game.replayed? %>"><a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a></td>
+          <td class="<%= 'bad' if bad_game %> <%= 'learned' if game.learned? %>"><a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a></td>
           <td><%= game.group %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_weight] %>"><%= float(game.weight) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_plays] %>"><%= int(game.unique_users) %></td>
