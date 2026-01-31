@@ -1,7 +1,11 @@
 #Dungeon Mayhem
 #Forbidden Island
 #Get on Board: New York & London
+#Quiddler
+#Scuttle!
+#Tales of the Arabian Nights
 #Village Pillage
+BITS
 Blokus 3D
 Cacao
 Cardline: Animals
