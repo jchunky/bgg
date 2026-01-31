@@ -8,8 +8,13 @@
     .dataTable th { background-color: #4CAF50; color: white; }
     .dataTable td { white-space: nowrap; }
     .bga { background-color: #dce9d5; }
-    .learned { background-color: #f8e6d0; }
-    .replayed { background-color: #f8e6d0; }
+    .learned { background-color: lightgreen; }
+    .replayed { background-color: pink; }
+    .pill {
+      padding: 4px 8px;
+      margin-left: 8px;
+      border-radius: 16px;
+    }
     .highlight { background-color: yellow; }
     .number { text-align: right; }
     .bad { background-color: silver; }
@@ -91,7 +96,11 @@
         %>
         <tr>
           <td class="number <%= 'bad' if bad_conditions[:bad_year] %>"><%= int(game.year) %></td>
-          <td class="<%= 'bad' if bad_game %> <%= 'learned' if game.learned? %>"><a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a></td>
+          <td class="<%= 'bad' if bad_game %>">
+            <a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a>
+            <% if game.learned? %><span class="pill learned">L</span><% end %>
+            <% if game.replayed? %><span class="pill replayed">R</span><% end %>
+          </td>
           <td><%= game.group %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_weight] %>"><%= float(game.weight) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_plays] %>"><%= int(game.unique_users) %></td>
