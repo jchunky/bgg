@@ -71,7 +71,7 @@ class Bgg
       .sort_by { |g| -g.rating_count }
       .each.with_index(1) { |g, i| g.rating_count_rank = i }
       .select { display_game?(_1) }
-      .sort_by { |g| [-g.year.to_i, g.rank] }
+      .sort_by { |g| [-g.weight] }
 
     write_output
   end
