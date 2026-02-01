@@ -34,12 +34,10 @@ Baseball Highlights: 2045
 Battle Line
 Battle Line: Medieval
 BattleCON: Devastation of Indines
-Battlecon: Devastation of Indines
 Beasts of Balance
 Blokus Duo
 Blood Bowl: Second Season Edition
 Blood on the Clocktower
-Bloodborne: The Board Game
 Bloodborne: The Board Game
 Boggle
 Bomb Busters
@@ -93,7 +91,6 @@ Etherfields
 Euchre
 Expedition to Newdale
 Factory Funner
-Familiar Tales
 Familiar Tales
 Fantasy Realms
 Faraway
@@ -162,7 +159,6 @@ Legendary: A Marvel Deck Building Game
 Lost Cities
 Lost Ruins of Arnak
 Love Letter
-Love Letter
 Magic Maze
 Magic Mountain
 Magic: The Gathering
@@ -227,7 +223,6 @@ Res Arcana
 Rhino Hero
 River Valley Glassworks
 Roll for the Galaxy
-Roll Player Adventures
 Roll Player Adventures
 Roll Through the Ages: The Bronze Age
 Rory's Story Cubes
