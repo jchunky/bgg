@@ -88,7 +88,7 @@ class Bgg
     @all_games ||= Downloaders::DOWNLOADERS
       .flat_map(&:games)
       .group_by(&:key)
-      .transform_values { |games| games.reduce { |game1, game2| game1.merge(game2) } }
+      .transform_values { |games| games.reduce { |game1, game2| game2.merge(game1) } }
       .values
       .select { |game| game.rank.positive? }
       .sort_by(&:rank)
