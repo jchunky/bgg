@@ -1,4 +1,5 @@
 20 Strong
+5-Minute Mystery
 7 Wonders
 7 Wonders (Second Edition)
 7 Wonders Duel
@@ -10,6 +11,7 @@ Aeon's End: The New Age
 Aeon's End: War Eternal
 Aerion
 After the Virus
+Aftermath
 Agemonia
 Agent Avenue
 Agricola
@@ -102,6 +104,7 @@ First Orchard
 Five Crowns
 Flip 7
 FlipToons
+FLOWERS
 Food Chain Island
 For Northwood! A Solo Trick-Taking Game
 For Sale
@@ -161,6 +164,7 @@ Lost Ruins of Arnak
 Love Letter
 Love Letter
 Magic Maze
+Magic Mountain
 Magic: The Gathering
 Mandala
 MANTIS
@@ -183,6 +187,7 @@ My First Carcassonne
 My First Castle Panic
 Nautilion
 Next Station: London
+Next Station: Paris
 NMBR 9
 No Thanks!
 Nova Luna
@@ -214,6 +219,7 @@ Quoridor
 Qwixx
 Race for the Galaxy
 Railroad Ink Challenge: Lush Green Edition
+Railroad Ink Challenge: Shining Yellow Edition
 Railroad Ink: Deep Blue Edition
 Rallyman: GT
 Regicide
@@ -297,6 +303,7 @@ The Resistance
 The Resistance: Avalon
 The Werewolves of Miller's Hollow
 Through the Ages: A New Story of Civilization
+Thunderstone
 Ticket to Ride
 Ticket to Ride: First Journey (Europe)
 Too Many Bones
