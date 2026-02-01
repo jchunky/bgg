@@ -120,6 +120,7 @@ class Game
         "Medici: The Dice Game",
         "Pandoria Merchants",
         "Small Islands",
+        "Street Masters",
         "Super-Skill Pinball: 4-Cade",
       ].include?(name)
     end
@@ -160,7 +161,8 @@ class Game
         "Sherlock Holmes Consulting Detective: Jack the Ripper & West End Adventures",
         "Sherlock Holmes Consulting Detective: The Baker Street Irregulars",
         "Sherlock Holmes Consulting Detective: The Thames Murders & Other Cases",
-        "Street Masters: Tide of the Dragon ",
+        "Street Masters",
+        "Street Masters: Tide of the Dragon",
         "The Dresden Files Cooperative Card Game",
         "The Elder Scrolls: Betrayal of the Second Era",
         "The Lord of the Rings: Journeys in Middle-Earth",
