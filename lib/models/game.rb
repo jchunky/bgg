@@ -92,7 +92,6 @@ class Game
     end
 
     def banned?
-      return false if whitelisted?
       return true if banned_name?
 
       [
@@ -112,7 +111,7 @@ class Game
       ].any? { send("#{it}?") }
     end
 
-    def whitelisted?
+    def keep?
       [
         "D-Day Dice",
         "Detective: A Modern Crime Board Game – Season One",
