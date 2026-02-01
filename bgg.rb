@@ -22,6 +22,7 @@ class Bgg
     # return false unless game.snakes?
 
     # Learn
+    return true if game.whitelisted?
     return false unless !game.banned?
     return false unless !game.played?
     return false unless (

@@ -117,6 +117,11 @@ class Game
         "D-Day Dice",
         "Detective: A Modern Crime Board Game – Season One",
         "Detective: A Modern Crime Board Game",
+        "Fallout",
+        "Medici: The Dice Game",
+        "Pandoria Merchants",
+        "Small Islands",
+        "Super-Skill Pinball: 4-Cade",
       ].include?(name)
     end
   end
