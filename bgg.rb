@@ -26,7 +26,8 @@ class Bgg
     return false unless !game.played?
     return false unless (
       (game.b2go? && game.soloable? && !game.campaign?) ||
-      (game.snakes? && game.min_player_count == 1)
+      (game.snakes? && game.min_player_count == 1) ||
+      game.learned?
     )
 
     # return false unless game.b2go_price < 20
