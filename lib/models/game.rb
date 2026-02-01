@@ -117,11 +117,13 @@ class Game
         "Detective: A Modern Crime Board Game – Season One",
         "Detective: A Modern Crime Board Game",
         "Fallout",
+        "Imperium: Classics",
         "Medici: The Dice Game",
         "Pandoria Merchants",
         "Small Islands",
         "Street Masters",
         "Super-Skill Pinball: 4-Cade",
+        "Tumble Town",
       ].include?(name)
     end
   end
