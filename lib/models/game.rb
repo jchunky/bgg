@@ -113,9 +113,10 @@ class Game
 
     def keep?
       [
-        "D-Day Dice",
-        "Detective: A Modern Crime Board Game – Season One",
+        "Come Sail Away!",
         "Detective: A Modern Crime Board Game",
+        "Expeditions",
+        "Explorers of the North Sea",
         "Fallout",
         "Imperium: Classics",
         "Medici: The Dice Game",
@@ -123,6 +124,7 @@ class Game
         "Small Islands",
         "Street Masters",
         "Super-Skill Pinball: 4-Cade",
+        "Terraforming Mars",
         "Tumble Town",
       ].include?(name)
     end
@@ -151,6 +153,7 @@ class Game
         "Atlantis Rising (Second Edition)",
         "Bardsung",
         "Darkest Dungeon: The Board Game",
+        "Expeditions",
         "Final Girl",
         "First Orchard",
         "Flatline",

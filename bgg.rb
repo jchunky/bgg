@@ -24,6 +24,7 @@ class Bgg
     # Learn
     return false unless !game.played?
     return false unless game.b2go? || game.snakes? || game.learned?
+    return true if game.learned?
     return true if game.keep?
     return false unless !game.campaign?
     return false unless !game.banned?
