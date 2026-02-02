@@ -8,6 +8,7 @@
 BITS
 Blokus 3D
 Cacao
+Cahoots
 Cardline: Animals
 Duck & Cover
 Happy City
