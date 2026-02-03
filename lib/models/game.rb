@@ -143,6 +143,10 @@ class Game
         "Sherlock Holmes Consulting Detective",
         "Tiny Epic",
         "Unlock!",
+
+        "Dragon Ball Z: Perfect Cell",
+        "Quiddler",
+        "Scuttle!",
       ].any? { name.start_with?(it) }
     end
 
