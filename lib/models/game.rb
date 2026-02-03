@@ -147,6 +147,7 @@ class Game
         "Dragon Ball Z: Perfect Cell",
         "Quiddler",
         "Scuttle!",
+        "Tales of the Arabian Nights",
       ].any? { name.start_with?(it) }
     end
 
