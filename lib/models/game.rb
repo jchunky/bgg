@@ -108,7 +108,7 @@ class Game
         :skirmish,
         :traitor,
         :werewolf,
-      ].any? { send("#{it}?") }
+      ].any? { send("#{_1}?") }
     end
 
     def keep?
@@ -143,12 +143,11 @@ class Game
         "Sherlock Holmes Consulting Detective",
         "Tiny Epic",
         "Unlock!",
-
         "Dragon Ball Z: Perfect Cell",
         "Quiddler",
         "Scuttle!",
         "Tales of the Arabian Nights",
-      ].any? { name.start_with?(it) }
+      ].any? { name.start_with?(_1) }
     end
 
     def b2go?
