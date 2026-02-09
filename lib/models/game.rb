@@ -113,19 +113,36 @@ class Game
 
     def keep?
       [
+        "1941: Race to Moscow",
+        "Bastion",
+        "Bremerhaven",
+        "Castles by the Sea",
+        "Catacombs Cubes",
         "Come Sail Away!",
         "Detective: A Modern Crime Board Game",
+        "Dungeon Exit",
         "Expeditions",
         "Explorers of the North Sea",
         "Fallout",
+        "Fuji Koro",
         "Imperium: Classics",
+        "Kingswood",
+        "Masters of the Night",
         "Medici: The Dice Game",
         "Pandoria Merchants",
+        "Relics of Rajavihara R",
+        "Rossio",
+        "Ruins of Mars",
+        "Secrets of the Lost Station",
         "Small Islands",
+        "Sparks",
         "Street Masters",
         "Super-Skill Pinball: 4-Cade",
         "Terraforming Mars",
+        "The Everrain",
+        "The Refuge: Terror from the Deep",
         "Tumble Town",
+        "X-Men: Mutant Insurrection",
       ].include?(name)
     end
   end
