@@ -92,7 +92,8 @@ class Game
     end
 
     def banned?
-      return true if banned_name?
+      return true if banned_game?
+      return true if banned_series?
 
       [
         # :ccg,
@@ -136,7 +137,6 @@ class Game
         "Secrets of the Lost Station",
         "Small Islands",
         "Sparks",
-        "Street Masters",
         "Super-Skill Pinball: 4-Cade",
         "Terraforming Mars",
         "The Abandons",
@@ -149,9 +149,8 @@ class Game
   end
 
   concerning :Customize do
-    def banned_name?
+    def banned_game?
       [
-        # banned games
         "Aquatica",
         "Atlantis Exodus",
         "Barrage",
@@ -182,6 +181,7 @@ class Game
         "Roll In One",
         "Scuttle!",
         "Smartphone Inc.",
+        "Starfall",
         "Super Boss Monster",
         "Tales of the Arabian Nights",
         "Tokaido",
@@ -189,8 +189,11 @@ class Game
         "Vast: The Mysterious Manor",
         "War For Chicken Island",
         "Wordsmith",
+      ].any? { name == _1 }
+    end
 
-        # banned game series
+    def banned_series?
+      [
         "Cantaloop",
         "Chronicles of Crime",
         "Clue Escape",
@@ -200,7 +203,7 @@ class Game
         "Sherlock Holmes Consulting Detective",
         "Tiny Epic",
         "Unlock!",
-      ].any? { name == _1 }
+      ].any? { name.start_with?(_1) }
     end
 
     def b2go?
@@ -223,7 +226,6 @@ class Game
         "Sherlock Holmes Consulting Detective: Jack the Ripper & West End Adventures",
         "Sherlock Holmes Consulting Detective: The Baker Street Irregulars",
         "Sherlock Holmes Consulting Detective: The Thames Murders & Other Cases",
-        "Street Masters",
         "Street Masters: Tide of the Dragon",
         "The Dresden Files Cooperative Card Game",
         "The Elder Scrolls: Betrayal of the Second Era",
