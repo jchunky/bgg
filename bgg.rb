@@ -22,6 +22,7 @@ class Bgg
     # return false unless game.snakes?
 
     # Learn
+    return false unless game.weight.round(1) <= 2.2
     return false unless !game.played?
     return false unless game.b2go? || game.snakes? || game.learned?
     return true if game.learned?
@@ -29,7 +30,6 @@ class Bgg
     return false unless !game.campaign?
     return false unless !game.banned?
     return false unless game.min_player_count == 1
-    return false unless (game.b2go? && game.soloable?) || !game.b2go?
 
     # return false unless game.b2go_price < 20
     # return false unless game.coop?
