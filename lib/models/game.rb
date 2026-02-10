@@ -112,6 +112,15 @@ class Game
       ].any? { send("#{_1}?") }
     end
 
+    def min_player_count
+      return 1 if one_player_game_1?
+      return 1 if one_player_game_2?
+
+      super
+    end
+  end
+
+  concerning :Customize do
     def keep?
       [
         "1941: Race to Moscow",
@@ -147,9 +156,7 @@ class Game
         "X-Men: Mutant Insurrection",
       ].include?(name)
     end
-  end
 
-  concerning :Customize do
     def banned_game?
       [
         "Annapurna",
@@ -273,13 +280,6 @@ class Game
       return 2.50 if name == "Silicon Valley"
       return 2.85 if name == "Stamp Swap"
       return 3.88 if name == "Bone Wars"
-
-      super
-    end
-
-    def min_player_count
-      return 1 if one_player_game_1?
-      return 1 if one_player_game_2?
 
       super
     end
