@@ -267,21 +267,21 @@ class Game
     end
 
     def weight
-      return 1.00 if name == "Drinkopoly"
-      return 1.07 if name == "Golfie"
-      return 1.60 if name == "Annapurna"
-      return 1.73 if name == "Globetrotting"
-      return 1.75 if name == "Nutty Squirrels of the Oakwood Forest"
-      return 1.83 if name == "Golden Cup"
-      return 1.90 if name == "Square One"
-      return 2.21 if name == "Everdell Farshore"
-      return 2.40 if name == "Free Ride USA"
-      return 2.50 if name == "Boblin's Rebellion"
-      return 2.50 if name == "Silicon Valley"
-      return 2.85 if name == "Stamp Swap"
-      return 3.88 if name == "Bone Wars"
-
-      super
+      {
+        "Annapurna" => 1.60,
+        "Boblin's Rebellion" => 2.50,
+        "Bone Wars" => 3.88,
+        "Drinkopoly" => 1.00,
+        "Everdell Farshore" => 2.21,
+        "Free Ride USA" => 2.40,
+        "Globetrotting" => 1.73,
+        "Golden Cup" => 1.83,
+        "Golfie" => 1.07,
+        "Nutty Squirrels of the Oakwood Forest" => 1.75,
+        "Silicon Valley" => 2.50,
+        "Square One" => 1.90,
+        "Stamp Swap" => 2.85,
+      }.fetch(name, super)
     end
 
     def child?
