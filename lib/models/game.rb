@@ -139,6 +139,7 @@ class Game
         "Street Masters",
         "Super-Skill Pinball: 4-Cade",
         "Terraforming Mars",
+        "The Abandons",
         "The Everrain",
         "The Refuge: Terror from the Deep",
         "Tumble Town",
@@ -150,7 +151,46 @@ class Game
   concerning :Customize do
     def banned_name?
       [
+        # banned games
+        "Aquatica",
+        "Atlantis Exodus",
+        "Barrage",
+        "BattleCON: Devastation of Indines",
+        "Between Two Cities",
+        "Big Easy Busking",
         "Bureau of Investigation",
+        "Chai",
+        "Crusader Kings",
+        "Dexikon",
+        "Dragon Ball Z: Perfect Cell",
+        "Dune: War for Arrakis",
+        "Dungeon Run",
+        "Embarcadero",
+        "Gentes",
+        "Gnomopolis",
+        "Kiwi Chow Down",
+        "Living Forest",
+        "Living Planet",
+        "Lords of Ragnarok",
+        "Mercado de Lisboa",
+        "Merv: The Heart of the Silk Road",
+        "Monster Soup",
+        "My First Bananagrams",
+        "Oros",
+        "Pax Viking",
+        "Quiddler",
+        "Roll In One",
+        "Scuttle!",
+        "Smartphone Inc.",
+        "Super Boss Monster",
+        "Tales of the Arabian Nights",
+        "Tokaido",
+        "Vast: The Crystal Caverns",
+        "Vast: The Mysterious Manor",
+        "War For Chicken Island",
+        "Wordsmith",
+
+        # banned game series
         "Cantaloop",
         "Chronicles of Crime",
         "Clue Escape",
@@ -160,11 +200,7 @@ class Game
         "Sherlock Holmes Consulting Detective",
         "Tiny Epic",
         "Unlock!",
-        "Dragon Ball Z: Perfect Cell",
-        "Quiddler",
-        "Scuttle!",
-        "Tales of the Arabian Nights",
-      ].any? { name.start_with?(_1) }
+      ].any? { name == _1 }
     end
 
     def b2go?
@@ -204,6 +240,31 @@ class Game
         "Shadows of Brimstone: Swamps of Death",
         "Sword & Sorcery: Ancient Chronicles",
       ].include?(name)
+    end
+
+    def weight
+      return 1.00 if name == "Drinkopoly"
+      return 1.07 if name == "Golfie"
+      return 1.60 if name == "Annapurna"
+      return 1.73 if name == "Globetrotting"
+      return 1.75 if name == "Nutty Squirrels of the Oakwood Forest"
+      return 1.83 if name == "Golden Cup"
+      return 1.90 if name == "Square One"
+      return 2.21 if name == "Everdell Farshore"
+      return 2.40 if name == "Free Ride USA"
+      return 2.50 if name == "Boblin's Rebellion"
+      return 2.50 if name == "Silicon Valley"
+      return 2.85 if name == "Stamp Swap"
+      return 3.88 if name == "Bone Wars"
+
+      super
+    end
+
+    def min_player_count
+      return 1 if one_player_game_1?
+      return 1 if one_player_game_2?
+
+      super
     end
 
     def child?

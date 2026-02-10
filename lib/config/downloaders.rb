@@ -22,8 +22,8 @@ module Downloaders
   end
   DOWNLOADERS = [
     GameSearch.new(prefix: :bgg, listid: "rank", search_criteria: SORTBY_RANK),
-    GameSearch.new(prefix: :one_player_games_1, listid: "minplayers", search_criteria: ONE_PLAYER_GAMES_1),
-    GameSearch.new(prefix: :one_player_games_2, listid: "minplayers", search_criteria: ONE_PLAYER_GAMES_2),
+    GameSearch.new(prefix: :one_player_game_1, listid: "minplayers", search_criteria: ONE_PLAYER_GAMES_1),
+    GameSearch.new(prefix: :one_player_game_2, listid: "minplayers", search_criteria: ONE_PLAYER_GAMES_2),
     # GameSearch.new(prefix: :vote, listid: "numvoters", search_criteria: SORTBY_VOTES),
     GeekList.new(prefix: :ccc, listid: 370740, reverse_rank: false), # December 2025
     GeekList.new(prefix: :couples, listid: 353032, reverse_rank: false), # 2024
