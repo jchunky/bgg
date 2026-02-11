@@ -16,24 +16,14 @@ class Bgg
       p [downloader.prefix, "listid: #{downloader.listid}", downloader.games.size]
     end
 
-    @games = all_games
-      .sort_by { |g| -g.votes_per_year }
-      .each.with_index(1) { |g, i| g.votes_per_year_rank = i }
-      .sort_by { |g| -g.rating_count }
-      .each.with_index(1) { |g, i| g.rating_count_rank = i }
+    @games = rank_games(all_games)
       .select(&:displayable?)
-      .sort_by { |g| [-g.weight] }
+      .sort_by { |g| -g.weight }
 
     write_output
   end
 
   private
-
-  def write_output
-    template = File.read("views/bgg.erb")
-    html = ERB.new(template).result(binding)
-    File.write("index.html", html)
-  end
 
   def all_games
     @all_games ||= Config::Downloaders::DOWNLOADERS
@@ -44,6 +34,24 @@ class Bgg
       .select { |game| game.rank.positive? }
       .sort_by(&:rank)
       .uniq(&:name)
+  end
+
+  def rank_games(games)
+    assign_ranks(games, :votes_per_year, :votes_per_year_rank)
+    assign_ranks(games, :rating_count, :rating_count_rank)
+    games
+  end
+
+  def assign_ranks(games, sort_attr, rank_attr)
+    games
+      .sort_by { |g| -g.send(sort_attr) }
+      .each.with_index(1) { |g, i| g.send(:"#{rank_attr}=", i) }
+  end
+
+  def write_output
+    template = File.read("views/bgg.erb")
+    html = ERB.new(template).result(binding)
+    File.write("index.html", html)
   end
 
   def int(value)
