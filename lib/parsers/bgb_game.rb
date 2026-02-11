@@ -1,5 +1,7 @@
 module Parsers
   class BgbGame
+    include Concerns::PlayerCountParser
+
     attr_reader :name,
                 :min_player_count,
                 :max_player_count,
@@ -40,14 +42,5 @@ module Parsers
       )
     end
 
-    private
-
-    def parse_player_count(player_count)
-      if player_count.include?("-")
-        player_count.split("-").map(&:to_i)
-      else
-        [player_count.to_i, player_count.to_i]
-      end
-    end
   end
 end

@@ -1,5 +1,7 @@
 module Parsers
   class BgoGame
+    include Concerns::PlayerCountParser
+
     attr_reader :name,
                 :rating,
                 :weight,
@@ -52,14 +54,5 @@ module Parsers
       )
     end
 
-    private
-
-    def parse_player_count(player_count)
-      if player_count.include?("-")
-        player_count.split("-").map(&:to_i)
-      else
-        [player_count.to_i, player_count.to_i]
-      end
-    end
   end
 end
