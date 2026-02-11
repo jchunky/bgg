@@ -1,5 +1,5 @@
 module Downloaders
-  class TopPlayedData
+  class TopPlayedData < Base
     def prefix = :top_played_data
     def listid = "top_played_data"
 

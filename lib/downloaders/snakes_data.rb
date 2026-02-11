@@ -1,5 +1,5 @@
 module Downloaders
-  class SnakesData
+  class SnakesData < Base
     def prefix = :snakes_data
     def listid = "snakes_data"
 

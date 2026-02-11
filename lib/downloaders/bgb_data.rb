@@ -1,5 +1,5 @@
 module Downloaders
-  class BgbData
+  class BgbData < Base
     def prefix = :bgb_data
     def listid = "bgb_data"
 

@@ -1,5 +1,5 @@
 module Downloaders
-  class B2goData
+  class B2goData < Base
     def prefix = :b2go_data
     def listid = "b2go_data"
 
