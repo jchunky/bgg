@@ -11,20 +11,9 @@ module Models
     end
 
     concerning :Categories do
-      def category_label
-        @category_label ||= [
-          *categories,
-          *source_labels,
-        ].compact.sort.join(", ")
-      end
-
-      def categories
-        @categories ||= Config::Downloaders::CATEGORIES.map(&:prefix).select { send(:"#{it}?") }
-      end
-
-      def subdomains
-        @subdomains ||= Config::Downloaders::SUBDOMAINS.map(&:prefix).select { send(:"#{it}?") }.join(", ")
-      end
+      def category_label = @category_label ||= [*categories, *source_labels].compact.sort.join(", ")
+      def categories = @categories ||= Config::Downloaders::CATEGORIES.map(&:prefix).select { send(:"#{it}?") }
+      def subdomains = @subdomains ||= Config::Downloaders::SUBDOMAINS.map(&:prefix).select { send(:"#{it}?") }.join(", ")
 
       private
 
@@ -35,7 +24,7 @@ module Models
           (:ccc if ccc?),
           (:preorder if preorder?),
           (:snakes if snakes?),
-        ].compact
+        ]
       end
     end
 
