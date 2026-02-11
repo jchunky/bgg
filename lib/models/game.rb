@@ -96,21 +96,7 @@ module Models
         return true if banned_game?
         return true if banned_series?
 
-        [
-          # :ccg,
-          :child,
-          :party,
-          # :war,
-
-          # :campaign,
-          :ccc,
-          :dexterity,
-          :digital_hybrid,
-          :realtime,
-          :skirmish,
-          :traitor,
-          :werewolf,
-        ].any? { send("#{_1}?") }
+        Config::GameLists.banned_categories.any? { send("#{_1}?") }
       end
 
       def min_player_count
@@ -123,183 +109,35 @@ module Models
 
     concerning :Customize do
       def keep?
-        [
-          "1941: Race to Moscow",
-          "Bastion",
-          "Boblin's Rebellion",
-          "Bremerhaven",
-          "Castles by the Sea",
-          "Catacombs Cubes",
-          "Come Sail Away!",
-          "Detective: A Modern Crime Board Game",
-          "Dungeon Exit",
-          "Expeditions",
-          "Explorers of the North Sea",
-          "Fallout",
-          "Fuji Koro",
-          "Imperium: Classics",
-          "Kingswood",
-          "Masters of the Night",
-          "Medici: The Dice Game",
-          "Pandoria Merchants",
-          "Relics of Rajavihara R",
-          "Rossio",
-          "Ruins of Mars",
-          "Secrets of the Lost Station",
-          "Small Islands",
-          "Sparks",
-          "Super-Skill Pinball: 4-Cade",
-          "Terraforming Mars",
-          "The Abandons",
-          "The Everrain",
-          "The Refuge: Terror from the Deep",
-          "Tumble Town",
-          "X-Men: Mutant Insurrection",
-        ].include?(name)
+        Config::GameLists.keep.include?(name)
       end
 
       def banned_game?
-        [
-          "Annapurna",
-          "Aquatica",
-          "Atlantis Exodus",
-          "Barrage",
-          "BattleCON: Devastation of Indines",
-          "Between Two Cities Essential Edition",
-          "Between Two Cities",
-          "Big Easy Busking",
-          "Chai",
-          "Chakra",
-          "Crusader Kings",
-          "Dexikon",
-          "Dragon Ball Z: Perfect Cell",
-          "Dragon Castle",
-          "Drinkopoly",
-          "Dune: War for Arrakis",
-          "Dungeon Run",
-          "Embarcadero",
-          "Figment",
-          "Free Ride USA",
-          "Gentes",
-          "Gnomopolis",
-          "Golden Cup",
-          "Kiwi Chow Down",
-          "Living Forest",
-          "Living Planet",
-          "Lords of Ragnarok",
-          "Mercado de Lisboa",
-          "Merv: The Heart of the Silk Road",
-          "Monster Soup",
-          "My First Bananagrams",
-          "Neta-Tanka",
-          "Nutty Squirrels of the Oakwood Forest",
-          "Oros",
-          "Otys",
-          "Pax Viking",
-          "Quiddler",
-          "QuizWiz",
-          "Roll In One",
-          "Scuttle!",
-          "Smartphone Inc.",
-          "Snappy Dressers",
-          "Starfall",
-          "Super Boss Monster",
-          "Tales of the Arabian Nights",
-          "The Princes of Florence",
-          "Tokaido",
-          "Vast: The Crystal Caverns",
-          "Vast: The Mysterious Manor",
-          "War For Chicken Island",
-          "Wordsmith",
-        ].any? { name == _1 }
+        Config::GameLists.banned_games.include?(name)
       end
 
       def banned_series?
-        [
-          "Bureau of Investigation",
-          "Cantaloop",
-          "Chronicles of Crime",
-          "Clue Escape",
-          "Deckscape",
-          "EXIT: The Game",
-          "Rory's Story Cubes",
-          "Sherlock Holmes Consulting Detective",
-          "Tiny Epic",
-          "Unlock!",
-        ].any? { name.start_with?(_1) }
+        Config::GameLists.banned_series.any? { name.start_with?(_1) }
       end
 
       def b2go?
-        b2go == true || [
-          "5-Minute Mystery",
-          "Arkham Horror (Third Edition)",
-          "Atlantis Rising (Second Edition)",
-          "Bardsung",
-          "Darkest Dungeon: The Board Game",
-          "Expeditions",
-          "Final Girl",
-          "First Orchard",
-          "Flatline",
-          "Frostpunk: The Board Game",
-          "Horrified: American Monsters",
-          "Kick-Ass: The Board Game",
-          "Mansions of Madness: Second Edition",
-          "Night of the Living Dead: A Zombicide Game",
-          "Sherlock Holmes Consulting Detective: Carlton House & Queen's Park",
-          "Sherlock Holmes Consulting Detective: Jack the Ripper & West End Adventures",
-          "Sherlock Holmes Consulting Detective: The Baker Street Irregulars",
-          "Sherlock Holmes Consulting Detective: The Thames Murders & Other Cases",
-          "Street Masters: Tide of the Dragon",
-          "The Dresden Files Cooperative Card Game",
-          "The Elder Scrolls: Betrayal of the Second Era",
-          "The Lord of the Rings: Journeys in Middle-Earth",
-          "Vienna Connection",
-          "Waste Knights: Second Edition",
-        ].include?(name)
+        b2go == true || Config::GameLists.b2go_overrides.include?(name)
       end
 
       def ccc?
-        super || [
-          "Night of the Living Dead: A Zombicide Game",
-          "Resident Evil 3: The Board Game",
-          "Shadows of Brimstone: Swamps of Death",
-          "Sword & Sorcery: Ancient Chronicles",
-        ].include?(name)
+        super || Config::GameLists.ccc_overrides.include?(name)
       end
 
       def weight
-        {
-          "Annapurna" => 1.60,
-          "Boblin's Rebellion" => 2.50,
-          "Bone Wars" => 3.88,
-          "Drinkopoly" => 1.00,
-          "Everdell Farshore" => 2.21,
-          "Free Ride USA" => 2.40,
-          "Globetrotting" => 1.73,
-          "Golden Cup" => 1.83,
-          "Golfie" => 1.07,
-          "Nutty Squirrels of the Oakwood Forest" => 1.75,
-          "Silicon Valley" => 2.50,
-          "Square One" => 1.90,
-          "Stamp Swap" => 2.85,
-        }.fetch(name, super)
+        Config::GameLists.weight_overrides.fetch(name, super)
       end
 
       def child?
-        super || [
-          "Flower Fairy",
-        ].include?(name)
+        super || Config::GameLists.child_overrides.include?(name)
       end
 
       def skirmish?
-        [
-          "Hoplomachus: Remastered",
-          "Masters of the Universe: The Board Game – Clash for Eternia",
-          "Super Punch Fighter",
-          "Tiny Epic Tactics",
-          "Unmatched Adventures: Tales to Amaze",
-          "Wroth",
-        ].include?(name)
+        Config::GameLists.skirmish_games.include?(name)
       end
     end
 
