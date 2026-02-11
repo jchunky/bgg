@@ -24,12 +24,12 @@ module Downloaders
     end
 
     def games_for_doc(doc, _page)
-      doc["data"].map do |record|
+      doc.fetch("data", []).map do |record|
         Models::Game.new(
-          href: record["item"]["href"],
-          name: record["item"]["name"],
-          rating: record["stats"]["average"].to_f,
-          rank: record["stats"]["rank"].to_i
+          href: record.dig("item", "href"),
+          name: record.dig("item", "name"),
+          rating: record.dig("stats", "average").to_f,
+          rank: record.dig("stats", "rank").to_i
         )
       end
     end

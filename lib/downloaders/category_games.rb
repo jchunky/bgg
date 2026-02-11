@@ -44,14 +44,14 @@ module Downloaders
 
     def build_game(row)
       Models::Game.new(
-        href: row["href"],
-        name: row["name"],
-        rank: row["rank"].to_i,
-        rating: row["average"].to_f,
-        rating_count: row["usersrated"].to_i,
-        weight: row["avgweight"].to_f,
-        year: row["yearpublished"].to_i,
-        "#{prefix}_rank": row["rank"].to_i
+        href: row.dig("href"),
+        name: row.dig("name"),
+        rank: row.dig("rank").to_i,
+        rating: row.dig("average").to_f,
+        rating_count: row.dig("usersrated").to_i,
+        weight: row.dig("avgweight").to_f,
+        year: row.dig("yearpublished").to_i,
+        "#{prefix}_rank": row.dig("rank").to_i
       )
     end
   end
