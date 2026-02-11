@@ -147,16 +147,30 @@ module Models
 
     concerning :Display do
       def displayable?
-        return false unless weight.round(1) <= 2.2
-        return false unless !played?
-        return false unless b2go? || snakes? || learned?
+        return false if too_heavy?
+        return false if played?
+        return false unless available_somewhere?
         return true if learned?
         return true if keep?
-        return false unless !campaign?
-        return false unless !banned?
-        return false unless min_player_count == 1
+        return false if campaign?
+        return false if banned?
+        return false unless solo_playable?
 
         true
+      end
+
+      private
+
+      def too_heavy?(max_weight: 2.2)
+        weight.round(1) > max_weight
+      end
+
+      def available_somewhere?
+        b2go? || snakes? || learned?
+      end
+
+      def solo_playable?
+        min_player_count == 1
       end
     end
   end
