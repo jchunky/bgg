@@ -6,9 +6,9 @@ module Downloaders
     def games
       @games ||= File
         .read("./data/snakes.txt")
-        .then { |data| data =  data.gsub(/All Games\nAnnex\nCollege\nTempe\nChicago\nTucson\nCategory\nA\/Z\nSearch\n\n.*\n.*Location/, '') }
+        .then { |data| data.gsub(/All Games\nAnnex\nCollege\nTempe\nChicago\nTucson\nCategory\nA\/Z\nSearch\n\n.*\n.*Location/, '') }
         .then { |data| chunk_games(data) }
-        .map { |game_data| build_game(game_data) }
+        .map { |game_data| Parsers::SnakesGame.new(game_data).to_game }
         .reject { |game| game.name.blank? }
     end
 
@@ -42,27 +42,6 @@ module Downloaders
         line == "prep" ||
         line == "rpg" ||
         line == "sickbay"
-    end
-
-    def build_game(game_data)
-      name, *, location = game_data
-      location = normalize_location(location)
-
-      Models::Game.new(
-        name:,
-        snakes_location: location,
-        snakes: !!location,
-      )
-    end
-
-    def normalize_location(location)
-      match = location.scan(/\b\d+\w\b/).first
-      return match if match
-
-      return "New Arrivals" if location.downcase.include?("new arrivals")
-      return "Staff Picks" if location.downcase.include?("staff picks")
-
-      nil
     end
   end
 end
