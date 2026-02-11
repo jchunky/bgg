@@ -1,12 +1,8 @@
 module Parsers
   class SnakesGame
-    attr_reader :name, :location
+    include Concerns::Parseable
 
-    def self.parse(game_data)
-      new(game_data).to_game
-    rescue StandardError
-      nil
-    end
+    attr_reader :name, :location
 
     def initialize(game_data)
       @name, *, location = game_data

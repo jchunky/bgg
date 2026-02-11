@@ -1,5 +1,6 @@
 module Parsers
   class BgoGame
+    include Concerns::Parseable
     include Concerns::PlayerCountParser
 
     attr_reader :name,
@@ -11,12 +12,6 @@ module Parsers
                 :max_player_count,
                 :price,
                 :playtime
-
-    def self.parse(data)
-      new(data).to_game
-    rescue StandardError
-      nil
-    end
 
     def initialize(data)
       parts = data.split("\n")
