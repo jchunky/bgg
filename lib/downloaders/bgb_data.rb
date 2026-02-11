@@ -8,6 +8,7 @@ module Downloaders
         .read("./data/bgb.txt")
         .split("\n\n")
         .map { |data| build_game(data) }
+        .compact
         .reject { |game| game.name.blank? }
     end
 
@@ -40,7 +41,7 @@ module Downloaders
         playtime:
       )
     rescue StandardError
-      OpenStruct.new
+      nil
     end
   end
 end

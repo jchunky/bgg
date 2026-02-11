@@ -8,6 +8,7 @@ module Downloaders
         .read("./data/bgo.txt")
         .split("\n\n")
         .map { |data| build_game(data) }
+        .compact
         .reject { |game| game.name.blank? }
     end
 
@@ -51,10 +52,8 @@ module Downloaders
         price:,
         playtime:
       )
-    rescue
-      p 'x' * 80
-      p data
-      OpenStruct.new
+    rescue StandardError
+      nil
     end
   end
 end
