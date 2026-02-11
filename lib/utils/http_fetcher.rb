@@ -1,15 +1,25 @@
 module Utils
-  class HttpFetcher
-    def self.fetch_html_data(url)
-      Utils::CachedFile.new(url:, extension: "html").read do |content|
-        yield Nokogiri::HTML(content)
-      end
+  class HttpFetcher < Struct.new(:url, keyword_init: true)
+    def self.html(url, &block)
+      new(url:).fetch_html(&block)
     end
 
-    def self.fetch_json_data(url)
-      Utils::CachedFile.new(url:, extension: "json").read do |content|
-        yield JSON.parse(content)
-      end
+    def self.json(url, &block)
+      new(url:).fetch_json(&block)
+    end
+
+    def fetch_html
+      cached_content("html") { |content| yield Nokogiri::HTML(content) }
+    end
+
+    def fetch_json
+      cached_content("json") { |content| yield JSON.parse(content) }
+    end
+
+    private
+
+    def cached_content(extension, &block)
+      Utils::CachedFile.new(url:, extension:).read(&block)
     end
   end
 end

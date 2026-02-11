@@ -17,7 +17,7 @@ module Downloaders
     def fetch_games_for_page(page)
       Array(listid).flat_map do |listid|
         url = url_for_page(page, listid)
-        Utils::HttpFetcher.fetch_json_data(url) { parse_games_for_doc(it) }
+        Utils::HttpFetcher.json(url) { parse_games_for_doc(it) }
       end
     end
 
