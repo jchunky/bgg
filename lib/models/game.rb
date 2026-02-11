@@ -144,5 +144,20 @@ module Models
     def key
       @key ||= name.to_s.downcase.gsub(/[^\w\s]/, "").squish
     end
+
+    concerning :Display do
+      def displayable?
+        return false unless weight.round(1) <= 2.2
+        return false unless !played?
+        return false unless b2go? || snakes? || learned?
+        return true if learned?
+        return true if keep?
+        return false unless !campaign?
+        return false unless !banned?
+        return false unless min_player_count == 1
+
+        true
+      end
+    end
   end
 end

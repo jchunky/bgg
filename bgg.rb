@@ -11,58 +11,6 @@ require_relative "lib/loader"
 Loader.setup
 
 class Bgg
-  def display_game?(game)
-    # return false unless !game.banned?
-    # return false unless !game.played?
-    # return false unless game.learned?
-    # return false unless game.replayed?
-
-    # return false unless game.b2go?
-    # return false unless game.bga?
-    # return false unless game.bgb?
-    # return false unless game.snakes?
-
-    # Learn
-    return false unless game.weight.round(1) <= 2.2
-    return false unless !game.played?
-    return false unless game.b2go? || game.snakes? || game.learned?
-    return true if game.learned?
-    return true if game.keep?
-    return false unless !game.campaign?
-    return false unless !game.banned?
-    return false unless game.min_player_count == 1
-
-    # return false unless game.b2go_price < 20
-    # return false unless game.coop?
-    # return false unless game.couples?
-    # return false unless game.couples_rank.between?(1, 100)
-    # return false unless game.family?
-    # return false unless game.max_player_count == 1
-    # return false unless game.max_player_count.between?(1, 2)
-    # return false unless game.min_player_count == 1
-    # return false unless game.normalized_price < 30
-    # return false unless game.normalized_price > 0
-    # return false unless game.offer_count >= 10
-    # return false unless game.play_rank.between?(1, 100)
-    # return false unless game.play_rank?
-    # return false unless game.player_count_range.cover?(2)
-    # return false unless game.playtime.between?(1, 99)
-    # return false unless game.rank > 0
-    # return false unless game.rank.between?(1, 500)
-    # return false unless game.replayed?
-    # return false unless game.solitaire?
-    # return false unless game.solo?
-    # return false unless game.solo_rank.between?(1, 100)
-    # return false unless game.soloable?
-    # return false unless game.thematic?
-    # return false unless game.vote_rank.between?(1, 500)
-    # return false unless game.votes_per_year_rank.between?(1, 500)
-    # return false unless game.weight.round(1) < 2
-    # return false unless game.year >= Time.now.year - 5
-
-    true
-  end
-
   def run
     Config::Downloaders::DOWNLOADERS.each do |downloader|
       p [downloader.prefix, "listid: #{downloader.listid}", downloader.games.size]
@@ -73,7 +21,7 @@ class Bgg
       .each.with_index(1) { |g, i| g.votes_per_year_rank = i }
       .sort_by { |g| -g.rating_count }
       .each.with_index(1) { |g, i| g.rating_count_rank = i }
-      .select { display_game?(_1) }
+      .select(&:displayable?)
       .sort_by { |g| [-g.weight] }
 
     write_output
