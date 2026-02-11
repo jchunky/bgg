@@ -9,7 +9,6 @@ module Downloaders
         .then { |data| data.gsub(%r{All Games\nAnnex\nCollege\nTempe\nChicago\nTucson\nCategory\nA/Z\nSearch\n\n.*\n.*Location}, "") }
         .then { |data| chunk_games(data) }
         .filter_map { |game_data| Parsers::SnakesGame.parse(game_data) }
-        .reject { |game| game.name.blank? }
     end
 
     private

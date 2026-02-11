@@ -9,7 +9,6 @@ module Downloaders
         .split("\n")
         .each_slice(4)
         .filter_map { |data| Parsers::B2goGame.parse(data) }
-        .reject { |game| game.name.blank? }
     end
   end
 end
