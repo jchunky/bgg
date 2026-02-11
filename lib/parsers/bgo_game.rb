@@ -1,7 +1,14 @@
 module Parsers
   class BgoGame
-    attr_reader :name, :min_player_count, :max_player_count,
-                :playtime, :rating, :weight, :year, :offer_count, :price
+    attr_reader :name,
+                :min_player_count,
+                :max_player_count,
+                :playtime,
+                :rating,
+                :weight,
+                :year,
+                :offer_count,
+                :price
 
     def self.parse(data)
       new(data).to_game

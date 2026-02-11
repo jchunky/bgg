@@ -8,7 +8,7 @@ module Downloaders
         .read("./data/top_played_games.txt")
         .split("\n")
         .filter_map { |data| Parsers::TopPlayedGame.parse(data) }
-        .sort_by { -_1.unique_users }
+        .sort_by { -it.unique_users }
         .each.with_index(1) { |game, i| game.play_rank = i }
     end
   end

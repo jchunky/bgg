@@ -19,11 +19,11 @@ module Models
       end
 
       def categories
-        @categories ||= Config::Downloaders::CATEGORIES.map(&:prefix).select { send(:"#{_1}?") }
+        @categories ||= Config::Downloaders::CATEGORIES.map(&:prefix).select { send(:"#{it}?") }
       end
 
       def subdomains
-        @subdomains ||= Config::Downloaders::SUBDOMAINS.map(&:prefix).select { send(:"#{_1}?") }.join(", ")
+        @subdomains ||= Config::Downloaders::SUBDOMAINS.map(&:prefix).select { send(:"#{it}?") }.join(", ")
       end
 
       private
@@ -67,7 +67,7 @@ module Models
     end
 
     concerning :GameData do
-      def bgb? = (bgb == true && !preorder?)
+      def bgb? = bgb == true && !preorder?
       def competitive? = group == "competitive"
       def crowdfunded? = kickstarter? || gamefound? || backerkit?
       def learned? = LEARNED.include?(name)
@@ -75,7 +75,7 @@ module Models
       def one_player? = max_player_count == 1
       def play_rank? = (play_rank > 0)
       def played? = PLAYED.include?(name)
-      def player_count = ([min_player_count, max_player_count].compact.uniq.join("-"))
+      def player_count = [min_player_count, max_player_count].compact.uniq.join("-")
       def player_count_range = (min_player_count..max_player_count)
       def preorder? = (preorder == true)
       def replayed? = REPLAYED.include?(name)
@@ -102,7 +102,6 @@ module Models
         end
       end
 
-
       def min_player_count
         return 1 if one_player_game_1?
         return 1 if one_player_game_2?
@@ -113,9 +112,9 @@ module Models
 
     concerning :Customize do
       def b2go? = b2go == true || Config::GameLists.b2go_overrides.include?(name)
-      def banned? = banned_game? || banned_series? || Config::GameLists.banned_categories.any? { send("#{_1}?") }
+      def banned? = banned_game? || banned_series? || Config::GameLists.banned_categories.any? { send("#{it}?") }
       def banned_game? = Config::GameLists.banned_games.include?(name)
-      def banned_series? = Config::GameLists.banned_series.any? { name.start_with?(_1) }
+      def banned_series? = Config::GameLists.banned_series.any? { name.start_with?(it) }
       def ccc? = super || Config::GameLists.ccc_overrides.include?(name)
       def child? = super || Config::GameLists.child_overrides.include?(name)
       def keep? = Config::GameLists.keep.include?(name)

@@ -17,7 +17,7 @@ module Parsers
       Models::Game.new(
         name:,
         snakes_location: location,
-        snakes: !!location
+        snakes: !location.nil?
       )
     end
 

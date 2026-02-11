@@ -9,10 +9,10 @@ module Parsers
     end
 
     def initialize(data)
-      name, @details, price_line, _ = data
+      name, @details, price_line, = data
 
       @name = name.split("(").first.strip
-      @price = price_line.split(" ").last.delete_prefix("$").to_f.round
+      @price = price_line.split.last.delete_prefix("$").to_f.round
     end
 
     def to_game

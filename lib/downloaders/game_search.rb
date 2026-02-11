@@ -21,7 +21,7 @@ module Downloaders
 
     def fetch_games_for_page(page)
       url = url_for_page(page)
-      Utils::HttpFetcher.fetch_html_data(url) { parse_games_from_doc(_1) }
+      Utils::HttpFetcher.fetch_html_data(url) { parse_games_from_doc(it) }
     end
 
     def url_for_page(page)
@@ -29,7 +29,7 @@ module Downloaders
     end
 
     def parse_games_from_doc(doc)
-      rows(doc).map { build_game(_1) }
+      rows(doc).map { build_game(it) }
     rescue NoMethodError
       []
     end
