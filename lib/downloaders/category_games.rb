@@ -1,5 +1,7 @@
 module Downloaders
   class CategoryGames < Struct.new(:listid, :prefix, :items_per_page, :object_type)
+    include Paginator
+
     def games
       @games ||= content_for_pages
         .uniq(&:key)
@@ -7,14 +9,6 @@ module Downloaders
     end
 
     private
-
-    def content_for_pages
-      (1..).each.with_object([]) do |page, result|
-        games = fetch_games_for_page(page)
-        result.concat(games)
-        return result if search_completed?(games)
-      end
-    end
 
     def search_completed?(games)
       games.none? { |g| g.rank.positive? }
