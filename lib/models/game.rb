@@ -22,6 +22,10 @@ module Models
         @categories ||= Config::Downloaders::CATEGORIES.map(&:prefix).select { send(:"#{_1}?") }
       end
 
+      def subdomains
+        @subdomains ||= Config::Downloaders::SUBDOMAINS.map(&:prefix).select { send(:"#{_1}?") }.join(", ")
+      end
+
       private
 
       def source_labels
@@ -32,10 +36,6 @@ module Models
           (:preorder if preorder?),
           (:snakes if snakes?),
         ].compact
-      end
-
-      def subdomains
-        @subdomains ||= Config::Downloaders::SUBDOMAINS.map(&:prefix).select { send(:"#{_1}?") }.join(", ")
       end
     end
 
