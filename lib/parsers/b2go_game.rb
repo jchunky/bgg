@@ -12,7 +12,7 @@ module Parsers
     end
 
     def to_game
-      return if name.nil? || name.empty?
+      return if name.blank?
       return if purchase_only?
 
       Models::Game.new(

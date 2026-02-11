@@ -36,7 +36,7 @@ module Parsers
     end
 
     def to_game
-      return if name.nil? || name.empty?
+      return if name.blank?
 
       Models::Game.new(
         name:,
@@ -50,6 +50,5 @@ module Parsers
         playtime:
       )
     end
-
   end
 end

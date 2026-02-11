@@ -1,11 +1,11 @@
 module Utils
   class HttpFetcher < Struct.new(:url, keyword_init: true)
-    def self.html(url, &block)
-      new(url:).fetch_html(&block)
+    def self.html(url, &)
+      new(url:).fetch_html(&)
     end
 
-    def self.json(url, &block)
-      new(url:).fetch_json(&block)
+    def self.json(url, &)
+      new(url:).fetch_json(&)
     end
 
     def fetch_html
@@ -18,8 +18,8 @@ module Utils
 
     private
 
-    def cached_content(extension, &block)
-      Utils::CachedFile.new(url:, extension:).read(&block)
+    def cached_content(extension, &)
+      Utils::CachedFile.new(url:, extension:).read(&)
     end
   end
 end

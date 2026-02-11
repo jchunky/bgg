@@ -4,7 +4,7 @@ module Parsers
       private
 
       def parse_player_count(player_count)
-        return [nil, nil] if player_count.nil? || player_count.empty?
+        return [nil, nil] if player_count.blank?
 
         if player_count.include?("-")
           player_count.split("-").map(&:to_i)
