@@ -12,19 +12,26 @@ module Models
 
     concerning :Categories do
       def category_label
-        @category_label ||= begin
-          result = categories
-          result << :b2go if b2go?
-          result << :bgb if bgb?
-          result << :ccc if ccc?
-          result << :preorder if preorder?
-          result << :snakes if snakes?
-          result.sort.join(", ")
-        end
+        @category_label ||= [
+          *categories,
+          *source_labels,
+        ].compact.sort.join(", ")
       end
 
       def categories
         @categories ||= Config::Downloaders::CATEGORIES.map(&:prefix).select { send(:"#{_1}?") }
+      end
+
+      private
+
+      def source_labels
+        [
+          (:b2go if b2go?),
+          (:bgb if bgb?),
+          (:ccc if ccc?),
+          (:preorder if preorder?),
+          (:snakes if snakes?),
+        ].compact
       end
 
       def subdomains
