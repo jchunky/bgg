@@ -16,7 +16,8 @@ module Parsers
     end
 
     def to_game
-      return nil unless valid?
+      return if name.nil? || name.empty?
+      return if purchase_only?
 
       Models::Game.new(
         name:,
@@ -27,8 +28,8 @@ module Parsers
 
     private
 
-    def valid?
-      @details != "Purchase Only"
+    def purchase_only?
+      @details == "Purchase Only"
     end
   end
 end

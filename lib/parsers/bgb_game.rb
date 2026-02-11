@@ -29,6 +29,8 @@ module Parsers
     end
 
     def to_game
+      return if name.nil? || name.empty?
+
       Models::Game.new(
         name:,
         rating:,
