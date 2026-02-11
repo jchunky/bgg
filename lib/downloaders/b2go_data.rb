@@ -22,7 +22,7 @@ module Downloaders
       price = price.split(" ").last.delete_prefix("$").to_f
       name = name.split("(").first.strip
 
-      Game.new(
+      Models::Game.new(
         name:,
         b2go: true,
         b2go_price: price.round,

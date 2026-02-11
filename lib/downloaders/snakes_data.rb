@@ -48,7 +48,7 @@ module Downloaders
       name, *, location = game_data
       location = normalize_location(location)
 
-      Game.new(
+      Models::Game.new(
         name:,
         snakes_location: location,
         snakes: !!location,

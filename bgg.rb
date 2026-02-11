@@ -7,7 +7,8 @@ require "ostruct"
 require "uri"
 require "yaml"
 
-Dir["lib/**/*.rb"].each { |f| require_relative f }
+require_relative "lib/loader"
+Loader.setup
 
 class Bgg
   def display_game?(game)
@@ -63,7 +64,7 @@ class Bgg
   end
 
   def run
-    Downloaders::DOWNLOADERS.each do |downloader|
+    Config::Downloaders::DOWNLOADERS.each do |downloader|
       p [downloader.prefix, "listid: #{downloader.listid}", downloader.games.size]
     end
 
@@ -87,7 +88,7 @@ class Bgg
   end
 
   def all_games
-    @all_games ||= Downloaders::DOWNLOADERS
+    @all_games ||= Config::Downloaders::DOWNLOADERS
       .flat_map(&:games)
       .group_by(&:key)
       .transform_values { |games| games.reduce { |game1, game2| game2.merge(game1) } }

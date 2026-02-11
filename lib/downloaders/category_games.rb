@@ -23,7 +23,7 @@ module Downloaders
     def fetch_games_for_page(page)
       Array(listid).flat_map do |listid|
         url = url_for_page(page, listid)
-        Utils.fetch_json_data(url) { parse_games_for_doc(_1) }
+        Utils::HttpFetcher.fetch_json_data(url) { parse_games_for_doc(_1) }
       end
     end
 
@@ -49,7 +49,7 @@ module Downloaders
     end
 
     def build_game(row)
-      Game.new(
+      Models::Game.new(
         href: row["href"],
         name: row["name"],
         rank: row["rank"].to_i,

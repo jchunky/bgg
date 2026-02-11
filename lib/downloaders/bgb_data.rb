@@ -28,7 +28,7 @@ module Downloaders
         max_player_count = player_count.to_i
       end
 
-      Game.new(
+      Models::Game.new(
         rating:,
         weight:,
         preorder:,

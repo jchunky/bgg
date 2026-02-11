@@ -27,7 +27,7 @@ module Downloaders
 
     def fetch_games_for_page(page)
       url = url_for_page(page)
-      Utils.fetch_html_data(url) { parse_games_from_doc(_1) }
+      Utils::HttpFetcher.fetch_html_data(url) { parse_games_from_doc(_1) }
     end
 
     def url_for_page(page)
@@ -53,7 +53,7 @@ module Downloaders
       a3 = c3.css("a")[0]
       span3 = c3.css("span")[0]
 
-      Game.new(
+      Models::Game.new(
         href: a3["href"],
         name: a3.content,
         rating: c5.content.to_f,

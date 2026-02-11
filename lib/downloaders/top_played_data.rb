@@ -18,7 +18,7 @@ module Downloaders
     def build_game(data)
       return unless data =~ /(.*)\s+(\d+)\s+(\d+)$/
 
-      Game.new(
+      Models::Game.new(
         name: $1.strip,
         play_count: $2.to_i,
         unique_users: $3.to_i,

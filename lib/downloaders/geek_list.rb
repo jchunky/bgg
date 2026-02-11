@@ -14,7 +14,7 @@ module Downloaders
 
     def games_for_page(page)
       url = url_for_page(page)
-      Utils.fetch_json_data(url) do |doc|
+      Utils::HttpFetcher.fetch_json_data(url) do |doc|
         games_for_doc(doc, page)
       end
     end
@@ -25,7 +25,7 @@ module Downloaders
 
     def games_for_doc(doc, _page)
       doc["data"].map do |record|
-        Game.new(
+        Models::Game.new(
           href: record["item"]["href"],
           name: record["item"]["name"],
           rating: record["stats"]["average"].to_f,
