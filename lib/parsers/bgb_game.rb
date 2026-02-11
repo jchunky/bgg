@@ -3,6 +3,12 @@ module Parsers
     attr_reader :name, :min_player_count, :max_player_count,
                 :playtime, :rating, :weight, :preorder, :price
 
+    def self.parse(data)
+      new(data).to_game
+    rescue StandardError
+      nil
+    end
+
     def initialize(data)
       _, _, @name, _, player_count, playtime, rating, weight, preorder, price = data.split("\n")
 

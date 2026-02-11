@@ -8,16 +8,8 @@ module Downloaders
         .read("./data/b2go.txt")
         .split("\n")
         .each_slice(4)
-        .filter_map { |data| parse_game(data) }
+        .filter_map { |data| Parsers::B2goGame.parse(data) }
         .reject { |game| game.name.blank? }
-    end
-
-    private
-
-    def parse_game(data)
-      Parsers::B2goGame.new(data).to_game
-    rescue StandardError
-      nil
     end
   end
 end

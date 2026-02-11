@@ -6,7 +6,7 @@ module Parsers
 
     def self.parse(data)
       new(data).to_game
-    rescue ArgumentError
+    rescue StandardError
       nil
     end
 

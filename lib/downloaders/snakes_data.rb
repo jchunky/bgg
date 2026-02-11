@@ -8,7 +8,7 @@ module Downloaders
         .read("./data/snakes.txt")
         .then { |data| data.gsub(/All Games\nAnnex\nCollege\nTempe\nChicago\nTucson\nCategory\nA\/Z\nSearch\n\n.*\n.*Location/, '') }
         .then { |data| chunk_games(data) }
-        .map { |game_data| Parsers::SnakesGame.new(game_data).to_game }
+        .filter_map { |game_data| Parsers::SnakesGame.parse(game_data) }
         .reject { |game| game.name.blank? }
     end
 
