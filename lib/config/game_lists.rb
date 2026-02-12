@@ -13,7 +13,7 @@ module Config
 
       private
 
-      def data = @data ||= YAML.load_file("config/game_lists.yml")
+      def data = @data ||= YAML.load_file("data/game_lists.yml")
     end
   end
 end
