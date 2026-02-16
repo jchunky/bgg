@@ -27,14 +27,32 @@ RSpec.describe Models::Game do
   end
 
   describe "#merge" do
-    it "combines attributes from two games with other's values taking precedence" do
+    it "keeps self's non-null values and fills in nulls from other" do
       game1 = described_class.new(name: "Test", rating: 8.0, weight: 0)
       game2 = described_class.new(name: "Test", rating: 7.0, weight: 2.5)
 
       merged = game1.merge(game2)
 
       expect(merged.name).to eq("Test")
-      expect(merged.rating).to eq(7.0)
+      expect(merged.rating).to eq(8.0)  # self's non-null value preserved
+      expect(merged.weight).to eq(2.5)  # other's value used since self's is zero (null)
+    end
+
+    it "keeps self's non-null value when both games have a value" do
+      game1 = described_class.new(name: "Test", rating: 8.0)
+      game2 = described_class.new(name: "Test", rating: 7.0)
+
+      merged = game1.merge(game2)
+
+      expect(merged.rating).to eq(8.0)
+    end
+
+    it "falls back to other's value when self's value is null (zero)" do
+      game1 = described_class.new(name: "Test", weight: 0)
+      game2 = described_class.new(name: "Test", weight: 2.5)
+
+      merged = game1.merge(game2)
+
       expect(merged.weight).to eq(2.5)
     end
 
