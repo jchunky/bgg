@@ -1,8 +1,14 @@
 module Models
   class Game
-    LEARNED = File.read("./data/learned.txt").split("\n").reject(&:blank?)
-    REPLAYED = File.read("./data/replayed.txt").split("\n").reject(&:blank?)
-    PLAYED = File.read("./data/played_games.txt").split("\n").reject(&:blank?)
+    class << self
+      def learned = @learned ||= read_list("learned.txt")
+      def replayed = @replayed ||= read_list("replayed.txt")
+      def played = @played ||= read_list("played_games.txt")
+
+      private
+
+      def read_list(filename) = File.read("./data/#{filename}").split("\n").reject(&:blank?)
+    end
 
     attr_reader :attributes
 
@@ -64,15 +70,15 @@ module Models
       def bgb? = bgb == true && !preorder?
       def competitive? = group == "competitive"
       def crowdfunded? = kickstarter? || gamefound? || backerkit?
-      def learned? = LEARNED.include?(name)
+      def learned? = self.class.learned.include?(name)
       def normalized_price = (bgb_price > 0 ? bgb_price : price).to_f.round
       def one_player? = max_player_count == 1
       def play_rank? = (play_rank > 0)
-      def played? = PLAYED.include?(name)
+      def played? = self.class.played.include?(name)
       def player_count = [min_player_count, max_player_count].compact.uniq.join("-")
       def player_count_range = (min_player_count..max_player_count)
       def preorder? = (preorder == true)
-      def replayed? = REPLAYED.include?(name)
+      def replayed? = self.class.replayed.include?(name)
       def snakes? = snakes == true
       def snakes_category = snakes_location.to_i
       def snakes_location_label = null?(snakes_location) ? nil : snakes_location
