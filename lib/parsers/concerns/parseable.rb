@@ -8,7 +8,7 @@ module Parsers
       module ClassMethods
         def parse(data)
           new(data).to_game
-        rescue StandardError
+        rescue ArgumentError, NoMethodError, TypeError
           nil
         end
       end
