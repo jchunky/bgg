@@ -1,6 +1,6 @@
 module Downloaders
   class GameSearch
-    include Paginator
+    include Concerns::Paginator
 
     attr_reader :listid, :prefix, :search_criteria
 

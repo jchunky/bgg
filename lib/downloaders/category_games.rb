@@ -1,6 +1,6 @@
 module Downloaders
   class CategoryGames
-    include Paginator
+    include Concerns::Paginator
 
     attr_reader :listid, :prefix, :items_per_page, :object_type
 
