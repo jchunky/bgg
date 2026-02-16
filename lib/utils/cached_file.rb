@@ -1,7 +1,7 @@
 require "open-uri"
 
 module Utils
-  class CachedFile < Struct.new(:url, :extension)
+  CachedFile = Data.define(:url, :extension) do
     BGG_CRAWL_DELAY = 2
     CACHE_EXPIRY = 1.year
 
@@ -26,13 +26,9 @@ module Utils
       !File.exist?(file) || File.mtime(file) < (Time.now - CACHE_EXPIRY)
     end
 
-    def file
-      @file ||= ".data/#{sanitized_filename}.#{extension}"
-    end
+    def file = ".data/#{sanitized_filename}.#{extension}"
 
-    def sanitized_filename
-      url.gsub(/\W/, "-")
-    end
+    def sanitized_filename = url.gsub(/\W/, "-")
 
     def handle_error(error)
       puts <<~ERROR

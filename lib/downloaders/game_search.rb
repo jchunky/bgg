@@ -1,6 +1,14 @@
 module Downloaders
-  class GameSearch < Struct.new(:listid, :prefix, :search_criteria)
+  class GameSearch < Base
     include Paginator
+
+    attr_reader :listid, :prefix, :search_criteria
+
+    def initialize(listid:, prefix:, search_criteria:)
+      @listid = listid
+      @prefix = prefix
+      @search_criteria = search_criteria
+    end
 
     def games
       @games ||= content_for_pages

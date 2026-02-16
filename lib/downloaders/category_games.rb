@@ -1,6 +1,15 @@
 module Downloaders
-  class CategoryGames < Struct.new(:listid, :prefix, :items_per_page, :object_type)
+  class CategoryGames < Base
     include Paginator
+
+    attr_reader :listid, :prefix, :items_per_page, :object_type
+
+    def initialize(listid:, prefix:, items_per_page:, object_type:)
+      @listid = listid
+      @prefix = prefix
+      @items_per_page = items_per_page
+      @object_type = object_type
+    end
 
     def games
       @games ||= content_for_pages

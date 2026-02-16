@@ -1,5 +1,13 @@
 module Downloaders
-  class GeekList < Struct.new(:listid, :prefix, :reverse_rank)
+  class GeekList < Base
+    attr_reader :listid, :prefix, :reverse_rank
+
+    def initialize(listid:, prefix:, reverse_rank:)
+      @listid = listid
+      @prefix = prefix
+      @reverse_rank = reverse_rank
+    end
+
     def games
       @games ||= begin
         result = (1..8).flat_map { games_for_page(it) }.compact.uniq(&:key)
