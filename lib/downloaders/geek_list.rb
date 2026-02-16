@@ -1,5 +1,5 @@
 module Downloaders
-  class GeekList < Base
+  class GeekList
     attr_reader :listid, :prefix, :reverse_rank
 
     def initialize(listid:, prefix:, reverse_rank:)

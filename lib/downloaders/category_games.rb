@@ -1,5 +1,5 @@
 module Downloaders
-  class CategoryGames < Base
+  class CategoryGames
     include Paginator
 
     attr_reader :listid, :prefix, :items_per_page, :object_type

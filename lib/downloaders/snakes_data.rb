@@ -1,5 +1,5 @@
 module Downloaders
-  class SnakesData < Base
+  class SnakesData
     SHELF_PATTERN = /\b\d{1,2}[a-f]\b/
     LOCATION_KEYWORDS = %w[archives new\ arrivals retired staff\ picks].freeze
     TERMINAL_LOCATIONS = %w[culled mia post prep rpg sickbay].freeze
