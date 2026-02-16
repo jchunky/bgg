@@ -1,13 +1,12 @@
 module Downloaders
-  class BgoData < Base
+  class BgoData < FileBased
     def prefix = :bgo_data
     def listid = "bgo_data"
 
-    def games
-      @games ||= File
-        .read("./data/bgo.txt")
-        .split("\n\n")
-        .filter_map { |data| Parsers::BgoGame.parse(data) }
-    end
+    private
+
+    def file_path = "./data/bgo.txt"
+    def delimiter = "\n\n"
+    def parser = Parsers::BgoGame
   end
 end
