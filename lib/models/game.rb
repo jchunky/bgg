@@ -40,6 +40,10 @@ module Models
         end
       end
 
+      def respond_to_missing?(method_name, include_private = false)
+        true
+      end
+
       def merge(other)
         merged = attributes.merge(other.attributes) { |_, a, b| null?(a) ? b : a }
         Models::Game.new(merged)

@@ -87,6 +87,12 @@ RSpec.describe Models::Game do
       game = described_class.new(name: "Test", coop_rank: 0)
       expect(game.coop?).to be false
     end
+
+    it "responds to dynamic attribute methods" do
+      expect(game.respond_to?(:name)).to be true
+      expect(game.respond_to?(:rating=)).to be true
+      expect(game.respond_to?(:coop?)).to be true
+    end
   end
 
   describe "#player_count" do
