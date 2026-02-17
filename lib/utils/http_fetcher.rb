@@ -1,5 +1,5 @@
 module Utils
-  HttpFetcher = Data.define(:url) do
+  class HttpFetcher < Data.define(:url)
     def self.html(url, &) = new(url:).fetch_html(&)
     def self.json(url, &) = new(url:).fetch_json(&)
 

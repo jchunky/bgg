@@ -1,7 +1,7 @@
 require "open-uri"
 
 module Utils
-  CachedFile = Data.define(:url, :extension) do
+  class CachedFile < Data.define(:url, :extension)
     BGG_CRAWL_DELAY = 2
     CACHE_EXPIRY = 1.year
 
