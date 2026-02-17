@@ -11,11 +11,7 @@ module Parsers
                 :preorder,
                 :price
 
-    def self.parse(data)
-      new(data).to_game
-    rescue ArgumentError, NoMethodError, TypeError
-      nil
-    end
+    def self.parse(data) = new(data).to_game rescue nil
 
     def initialize(data)
       _, _, @name, _, player_count, playtime, rating, weight, preorder, price = data.split("\n")

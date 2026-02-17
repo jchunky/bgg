@@ -2,11 +2,7 @@ module Parsers
   class B2goGame
     attr_reader :name, :price
 
-    def self.parse(data)
-      new(data).to_game
-    rescue ArgumentError, NoMethodError, TypeError
-      nil
-    end
+    def self.parse(data) = new(data).to_game rescue nil
 
     def initialize(data)
       name, @details, price_line, = data

@@ -12,11 +12,7 @@ module Parsers
                 :price,
                 :playtime
 
-    def self.parse(data)
-      new(data).to_game
-    rescue ArgumentError, NoMethodError, TypeError
-      nil
-    end
+    def self.parse(data) = new(data).to_game rescue nil
 
     def initialize(data)
       parts = data.split("\n")

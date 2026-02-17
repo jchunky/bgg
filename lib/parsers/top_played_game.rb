@@ -1,14 +1,10 @@
 module Parsers
   class TopPlayedGame
+    PATTERN = /(.*)\s+(\d+)\s+(\d+)$/
+
     attr_reader :name, :play_count, :unique_users
 
-    def self.parse(data)
-      new(data).to_game
-    rescue ArgumentError, NoMethodError, TypeError
-      nil
-    end
-
-    PATTERN = /(.*)\s+(\d+)\s+(\d+)$/
+    def self.parse(data) = new(data).to_game rescue nil
 
     def initialize(data)
       match = data.match(PATTERN)

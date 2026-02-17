@@ -2,11 +2,7 @@ module Parsers
   class SnakesGame
     attr_reader :name, :location
 
-    def self.parse(data)
-      new(data).to_game
-    rescue ArgumentError, NoMethodError, TypeError
-      nil
-    end
+    def self.parse(data) = new(data).to_game rescue nil
 
     def initialize(game_data)
       @name, *, location = game_data
