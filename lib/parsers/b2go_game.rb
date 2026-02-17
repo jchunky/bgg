@@ -1,31 +1,21 @@
 module Parsers
   class B2goGame
-    attr_reader :name, :price
+    def self.parse(data)
+      name_raw, details, price_line, = data
 
-    def self.parse(data) = new(data).to_game rescue nil
-
-    def initialize(data)
-      name, @details, price_line, = data
-
-      @name = name.split("(").first.strip
-      @price = price_line.split.last.delete_prefix("$").to_f.round
-    end
-
-    def to_game
+      name = name_raw.split("(").first.strip
       return if name.blank?
-      return if purchase_only?
+      return if details == "Purchase Only"
+
+      price = price_line.split.last.delete_prefix("$").to_f.round
 
       Models::Game.new(
         name:,
         b2go: true,
         b2go_price: price
       )
-    end
-
-    private
-
-    def purchase_only?
-      @details == "Purchase Only"
+    rescue
+      nil
     end
   end
 end

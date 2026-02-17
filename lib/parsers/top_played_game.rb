@@ -2,27 +2,20 @@ module Parsers
   class TopPlayedGame
     PATTERN = /(.*)\s+(\d+)\s+(\d+)$/
 
-    attr_reader :name, :play_count, :unique_users
-
-    def self.parse(data) = new(data).to_game rescue nil
-
-    def initialize(data)
+    def self.parse(data)
       match = data.match(PATTERN)
-      raise ArgumentError, "Invalid format: #{data}" unless match
+      return unless match
 
-      @name = match[1].strip
-      @play_count = match[2].to_i
-      @unique_users = match[3].to_i
-    end
-
-    def to_game
+      name = match[1].strip
       return if name.blank?
 
       Models::Game.new(
         name:,
-        play_count:,
-        unique_users:
+        play_count: match[2].to_i,
+        unique_users: match[3].to_i
       )
+    rescue
+      nil
     end
   end
 end

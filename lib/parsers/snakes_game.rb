@@ -1,33 +1,19 @@
 module Parsers
   class SnakesGame
-    attr_reader :name, :location
-
-    def self.parse(data) = new(data).to_game rescue nil
-
-    def initialize(game_data)
-      @name, *, location = game_data
-      @location = normalize_location(location)
-    end
-
-    def to_game
+    def self.parse(game_data)
+      name, *, loc = game_data
       return if name.blank?
+
+      location = loc.scan(/\b\d+\w\b/).first
+      location ||= "New Arrivals" if loc.downcase.include?("new arrivals")
+      location ||= "Staff Picks" if loc.downcase.include?("staff picks")
 
       Models::Game.new(
         name:,
         snakes_location: location,
         snakes: !location.nil?
       )
-    end
-
-    private
-
-    def normalize_location(location)
-      match = location.scan(/\b\d+\w\b/).first
-      return match if match
-
-      return "New Arrivals" if location.downcase.include?("new arrivals")
-      return "Staff Picks" if location.downcase.include?("staff picks")
-
+    rescue
       nil
     end
   end
