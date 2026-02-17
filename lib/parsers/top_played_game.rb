@@ -14,7 +14,7 @@ module Parsers
         play_count: match[2].to_i,
         unique_users: match[3].to_i
       )
-    rescue
+    rescue StandardError
       nil
     end
   end

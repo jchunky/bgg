@@ -34,8 +34,8 @@ RSpec.describe Models::Game do
       merged = game1.merge(game2)
 
       expect(merged.name).to eq("Test")
-      expect(merged.rating).to eq(8.0)  # self's non-null value preserved
-      expect(merged.weight).to eq(2.5)  # other's value used since self's is zero (null)
+      expect(merged.rating).to eq(8.0) # self's non-null value preserved
+      expect(merged.weight).to eq(2.5) # other's value used since self's is zero (null)
     end
 
     it "keeps self's non-null value when both games have a value" do

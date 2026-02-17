@@ -13,7 +13,7 @@ module Parsers
         snakes_location: location,
         snakes: !location.nil?
       )
-    rescue
+    rescue StandardError
       nil
     end
   end

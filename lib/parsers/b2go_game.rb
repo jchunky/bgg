@@ -14,7 +14,7 @@ module Parsers
         b2go: true,
         b2go_price: price
       )
-    rescue
+    rescue StandardError
       nil
     end
   end

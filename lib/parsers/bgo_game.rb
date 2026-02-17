@@ -16,7 +16,7 @@ module Parsers
 
       return if name.blank?
 
-      price = price && price.delete_prefix("$").to_f
+      price &&= price.delete_prefix("$").to_f
       year, offer_count = p2 ? p2.split("•").map(&:to_i) : [nil, nil]
       min_player_count, max_player_count = parse_player_count(player_count)
 
@@ -31,7 +31,7 @@ module Parsers
         price:,
         playtime: playtime.to_i
       )
-    rescue
+    rescue StandardError
       nil
     end
 

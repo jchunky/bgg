@@ -1,7 +1,7 @@
 module Downloaders
   class SnakesData
     SHELF_PATTERN = /\b\d{1,2}[a-f]\b/
-    LOCATION_KEYWORDS = %w[archives new\ arrivals retired staff\ picks].freeze
+    LOCATION_KEYWORDS = ["archives", "new arrivals", "retired", "staff picks"].freeze
     TERMINAL_LOCATIONS = %w[culled mia post prep rpg sickbay].freeze
     NAV_HEADER = %r{All Games\nAnnex\nCollege\nTempe\nChicago\nTucson\nCategory\nA/Z\nSearch\n\n.*\n.*Location}
 

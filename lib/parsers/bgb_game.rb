@@ -17,7 +17,7 @@ module Parsers
         bgb_price: price.delete_prefix("$").to_f,
         playtime: playtime.to_i
       )
-    rescue
+    rescue StandardError
       nil
     end
 
