@@ -1,6 +1,8 @@
 module Parsers
   class BgoGame
     class << self
+      include Concerns::PlayerCountParser
+
       def parse(data)
         parts = data.split("\n")
 
@@ -36,18 +38,6 @@ module Parsers
         nil
       end
 
-      private
-
-      def parse_player_count(player_count)
-        return [nil, nil] if player_count.blank?
-
-        if player_count.include?("-")
-          player_count.split("-").map(&:to_i)
-        else
-          count = player_count.to_i
-          [count, count]
-        end
-      end
     end
   end
 end
