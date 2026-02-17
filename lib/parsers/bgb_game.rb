@@ -1,6 +1,5 @@
 module Parsers
   class BgbGame
-    include Concerns::Parseable
     include Concerns::PlayerCountParser
 
     attr_reader :name,
@@ -11,6 +10,12 @@ module Parsers
                 :weight,
                 :preorder,
                 :price
+
+    def self.parse(data)
+      new(data).to_game
+    rescue ArgumentError, NoMethodError, TypeError
+      nil
+    end
 
     def initialize(data)
       _, _, @name, _, player_count, playtime, rating, weight, preorder, price = data.split("\n")

@@ -1,8 +1,12 @@
 module Parsers
   class TopPlayedGame
-    include Concerns::Parseable
-
     attr_reader :name, :play_count, :unique_users
+
+    def self.parse(data)
+      new(data).to_game
+    rescue ArgumentError, NoMethodError, TypeError
+      nil
+    end
 
     PATTERN = /(.*)\s+(\d+)\s+(\d+)$/
 
