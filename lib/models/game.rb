@@ -56,7 +56,21 @@ module Models
       end
 
       def key
-        @key ||= name.to_s.downcase.gsub(/[^\w\s]/, "").squish
+        @key ||= name.to_s
+          .unicode_normalize(:nfkd).gsub(/[\u0300-\u036f]/, "")
+          .downcase
+          .gsub("&", " and ")
+          .gsub(/['\u2019]s\b/, "")
+          .gsub(/[^\w\s]/, "")
+          .gsub(/\b(1st|first)\b/, "1")
+          .gsub(/\b(2nd|second)\b/, "2")
+          .gsub(/\b(3rd|third)\b/, "3")
+          .gsub(/\b(4th|fourth)\b/, "4")
+          .gsub(/\b(5th|fifth)\b/, "5")
+          .gsub(/\b(6th|sixth)\b/, "6")
+          .gsub(/\bedition\b/, "")
+          .gsub(/\b(the|a)\b/, "")
+          .squish
       end
 
       private

@@ -16,40 +16,94 @@ RSpec.describe Models::Game do
 
   describe "#key" do
     it "normalizes name to lowercase without special characters" do
-      game = described_class.new(name: "Test: The Game!")
-      expect(game.key).to eq("test the game")
+      game = described_class.new(name: "Test: Game!")
+      expect(game.key).to eq("test game")
     end
 
     it "squishes whitespace" do
       game = described_class.new(name: "Test   Game")
       expect(game.key).to eq("test game")
     end
+
+    it "strips articles 'the' and 'a'" do
+      game = described_class.new(name: "The Lord of the Rings")
+      expect(game.key).to eq("lord of rings")
+    end
+
+    it "normalizes & to 'and'" do
+      game1 = described_class.new(name: "Air, Land & Sea")
+      game2 = described_class.new(name: "Air, Land and Sea")
+      expect(game1.key).to eq(game2.key)
+      expect(game1.key).to eq("air land and sea")
+    end
+
+    it "normalizes accented characters" do
+      game1 = described_class.new(name: "Khôra: Rise of an Empire")
+      game2 = described_class.new(name: "Khora: Rise of an Empire")
+      expect(game1.key).to eq(game2.key)
+    end
+
+    it "strips possessive 's" do
+      game1 = described_class.new(name: "Agatha Christie's Death on the Cards")
+      game2 = described_class.new(name: "Agatha Christie: Death on the Cards")
+      expect(game1.key).to eq(game2.key)
+    end
+
+    it "normalizes ordinals to numbers" do
+      game1 = described_class.new(name: "7 Wonders: 2nd Edition")
+      game2 = described_class.new(name: "7 Wonders (Second Edition)")
+      expect(game1.key).to eq(game2.key)
+      expect(game1.key).to eq("7 wonders 2")
+    end
+
+    it "strips the word 'edition'" do
+      game = described_class.new(name: "Mansions of Madness: Second Edition")
+      expect(game.key).to eq("mansions of madness 2")
+    end
+
+    it "matches 'A Game of Cat & Mouth' across sites" do
+      game1 = described_class.new(name: "A Game of Cat & Mouth")
+      game2 = described_class.new(name: "A Game of Cat and Mouth")
+      expect(game1.key).to eq(game2.key)
+    end
+
+    it "matches 'The Council of Shadows' with and without leading The" do
+      game1 = described_class.new(name: "The Council of Shadows")
+      game2 = described_class.new(name: "Council of Shadows")
+      expect(game1.key).to eq(game2.key)
+    end
+
+    it "matches 'Orchard: A 9 card solitaire game' with and without article" do
+      game1 = described_class.new(name: "Orchard: A 9 card solitaire game")
+      game2 = described_class.new(name: "Orchard: 9 card solitaire game")
+      expect(game1.key).to eq(game2.key)
+    end
   end
 
   describe "#merge" do
-    it "keeps self's non-null values and fills in nulls from other" do
+    it "prefers other's non-null values over self's" do
       game1 = described_class.new(name: "Test", rating: 8.0, weight: 0)
       game2 = described_class.new(name: "Test", rating: 7.0, weight: 2.5)
 
       merged = game1.merge(game2)
 
       expect(merged.name).to eq("Test")
-      expect(merged.rating).to eq(8.0) # self's non-null value preserved
+      expect(merged.rating).to eq(7.0) # other's non-null value takes precedence
       expect(merged.weight).to eq(2.5) # other's value used since self's is zero (null)
     end
 
-    it "keeps self's non-null value when both games have a value" do
+    it "keeps other's non-null value when both games have a value" do
       game1 = described_class.new(name: "Test", rating: 8.0)
       game2 = described_class.new(name: "Test", rating: 7.0)
 
       merged = game1.merge(game2)
 
-      expect(merged.rating).to eq(8.0)
+      expect(merged.rating).to eq(7.0)
     end
 
-    it "falls back to other's value when self's value is null (zero)" do
-      game1 = described_class.new(name: "Test", weight: 0)
-      game2 = described_class.new(name: "Test", weight: 2.5)
+    it "falls back to self's value when other's value is null (zero)" do
+      game1 = described_class.new(name: "Test", weight: 2.5)
+      game2 = described_class.new(name: "Test", weight: 0)
 
       merged = game1.merge(game2)
 
