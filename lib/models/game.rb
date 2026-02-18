@@ -51,7 +51,7 @@ module Models
       end
 
       def merge(other)
-        merged = attributes.merge(other.attributes) { |_, a, b| null?(a) ? b : a }
+        merged = attributes.merge(other.attributes) { |_, a, b| null?(b) ? a : b }
         Models::Game.new(merged)
       end
 

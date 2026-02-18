@@ -4,7 +4,7 @@ module Services
       Config::Downloaders::DOWNLOADERS
         .flat_map(&:games)
         .group_by(&:key)
-        .transform_values { |games| games.reduce { |game1, game2| game2.merge(game1) } }
+        .transform_values { |games| games.reduce { |acc, game| game.merge(acc) } }
         .values
         .select { |game| game.rank.positive? }
         .sort_by(&:rank)
