@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Downloaders
   class GeekList < Struct.new(:listid, :prefix, :reverse_rank)
     def games
@@ -29,7 +31,7 @@ module Downloaders
           href: record.dig("item", "href"),
           name: record.dig("item", "name"),
           rating: record.dig("stats", "average").to_f,
-          rank: record.dig("stats", "rank").to_i
+          rank: record.dig("stats", "rank").to_i,
         )
       end
     end

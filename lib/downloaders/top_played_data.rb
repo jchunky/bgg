@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Downloaders
   class TopPlayedData
     def prefix = :top_played_data

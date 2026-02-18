@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Downloaders
   class SnakesData
     SHELF_PATTERN = /\b\d{1,2}[a-f]\b/

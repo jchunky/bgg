@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "../spec_helper"
 
 RSpec.describe Parsers::BgbGame do
@@ -17,7 +19,7 @@ RSpec.describe Parsers::BgbGame do
           weight: 2.5,
           bgb: true,
           preorder: false,
-          bgb_price: 49.99
+          bgb_price: 49.99,
         )
       end
     end

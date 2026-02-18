@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Parsers
   class B2goGame
     def self.parse(data)
@@ -12,7 +14,7 @@ module Parsers
       Models::Game.new(
         name:,
         b2go: true,
-        b2go_price: price
+        b2go_price: price,
       )
     rescue StandardError
       nil

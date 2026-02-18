@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "../spec_helper"
 
 RSpec.describe Parsers::B2goGame do
@@ -9,7 +11,7 @@ RSpec.describe Parsers::B2goGame do
         expect(game).to be_a(Models::Game).and have_attributes(
           name: "Test Game",
           b2go: true,
-          b2go_price: 30
+          b2go_price: 30,
         )
       end
     end

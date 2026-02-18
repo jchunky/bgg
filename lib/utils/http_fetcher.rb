@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Utils
   class HttpFetcher < Data.define(:url)
     def self.html(url, &) = new(url:).fetch_html(&)

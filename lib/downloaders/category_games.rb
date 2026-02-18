@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Downloaders
   class CategoryGames < Struct.new(:listid, :prefix, :items_per_page, :object_type)
     include Concerns::Paginator
@@ -51,7 +53,7 @@ module Downloaders
         rating_count: row["usersrated"].to_i,
         weight: row["avgweight"].to_f,
         year: row["yearpublished"].to_i,
-        "#{prefix}_rank": row["rank"].to_i
+        "#{prefix}_rank": row["rank"].to_i,
       )
     end
   end

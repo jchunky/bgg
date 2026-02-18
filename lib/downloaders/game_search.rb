@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Downloaders
   class GameSearch < Struct.new(:listid, :prefix, :search_criteria)
     include Concerns::Paginator
@@ -53,7 +55,7 @@ module Downloaders
         rating: c5.content.to_f,
         rating_count: c6.content.to_i,
         year: (span3.content[1..-2].to_i rescue 0),
-        rank: (a1["name"].to_i rescue 0)
+        rank: (a1["name"].to_i rescue 0),
       )
     end
   end

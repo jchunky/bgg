@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "../spec_helper"
 
 RSpec.describe Parsers::TopPlayedGame do
@@ -9,7 +11,7 @@ RSpec.describe Parsers::TopPlayedGame do
         expect(game).to be_a(Models::Game).and have_attributes(
           name: "Catan",
           play_count: 1500,
-          unique_users: 300
+          unique_users: 300,
         )
       end
     end
@@ -21,7 +23,7 @@ RSpec.describe Parsers::TopPlayedGame do
         expect(game).to have_attributes(
           name: "Terraforming Mars",
           play_count: 2000,
-          unique_users: 500
+          unique_users: 500,
         )
       end
     end

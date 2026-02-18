@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Parsers
   class SnakesGame
     def self.parse(game_data)
@@ -11,7 +13,7 @@ module Parsers
       Models::Game.new(
         name:,
         snakes_location: location,
-        snakes: !location.nil?
+        snakes: !location.nil?,
       )
     rescue StandardError
       nil

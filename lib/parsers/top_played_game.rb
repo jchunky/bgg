@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Parsers
   class TopPlayedGame
     PATTERN = /(.*)\s+(\d+)\s+(\d+)$/
@@ -12,7 +14,7 @@ module Parsers
       Models::Game.new(
         name:,
         play_count: match[2].to_i,
-        unique_users: match[3].to_i
+        unique_users: match[3].to_i,
       )
     rescue StandardError
       nil

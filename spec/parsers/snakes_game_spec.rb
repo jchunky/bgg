@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "../spec_helper"
 
 RSpec.describe Parsers::SnakesGame do
@@ -9,7 +11,7 @@ RSpec.describe Parsers::SnakesGame do
         expect(game).to be_a(Models::Game).and have_attributes(
           name: "Test Game",
           snakes_location: "5A",
-          snakes: true
+          snakes: true,
         )
       end
     end
@@ -32,7 +34,7 @@ RSpec.describe Parsers::SnakesGame do
 
         expect(game).to have_attributes(
           snakes_location: nil,
-          snakes: false
+          snakes: false,
         )
       end
     end

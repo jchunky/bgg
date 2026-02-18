@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Config
   module Categories
     CATEGORIES = [
@@ -36,7 +38,7 @@ module Config
       # [:backerkit, 76292, 50, "family"],
       # [:gamefound, 66292, 50, "family"],
       # [:kickstarter, 8374, 50, "family"],
-    ]
+    ].freeze
 
     SUBDOMAINS = [
       [:abstract, 4666, 50],
@@ -47,6 +49,6 @@ module Config
       [:strategy, 5497, 50],
       [:thematic, 5496, 50],
       [:war, 4664, 50],
-    ]
+    ].freeze
   end
 end

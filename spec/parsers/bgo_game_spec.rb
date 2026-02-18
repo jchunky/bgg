@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "../spec_helper"
 
 RSpec.describe Parsers::BgoGame do
@@ -14,7 +16,7 @@ RSpec.describe Parsers::BgoGame do
           rating: 8.0,
           weight: 2.5,
           year: nil,
-          offer_count: nil
+          offer_count: nil,
         )
       end
     end
@@ -28,7 +30,7 @@ RSpec.describe Parsers::BgoGame do
           year: 2020,
           offer_count: 5,
           min_player_count: 2,
-          max_player_count: 4
+          max_player_count: 4,
         )
       end
     end
@@ -42,7 +44,7 @@ RSpec.describe Parsers::BgoGame do
           price: 29.99,
           min_player_count: 1,
           max_player_count: 6,
-          playtime: 120
+          playtime: 120,
         )
       end
     end

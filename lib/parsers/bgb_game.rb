@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Parsers
   class BgbGame
     class << self
@@ -18,7 +20,7 @@ module Parsers
           min_player_count:,
           max_player_count:,
           bgb_price: price.delete_prefix("$").to_f,
-          playtime: playtime.to_i
+          playtime: playtime.to_i,
         )
       rescue StandardError
         nil

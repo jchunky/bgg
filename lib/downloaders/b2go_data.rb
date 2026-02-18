@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Downloaders
   class B2goData
     def prefix = :b2go_data

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Parsers
   class BgoGame
     class << self
@@ -32,7 +34,7 @@ module Parsers
           min_player_count:,
           max_player_count:,
           price:,
-          playtime: playtime.to_i
+          playtime: playtime.to_i,
         )
       rescue StandardError
         nil
