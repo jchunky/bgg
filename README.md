@@ -8,8 +8,6 @@ of games worth exploring.
 
 - **BoardGameGeek (BGG)** -- advanced search results ranked by BGG
   rank, including player-count and playtime breakdowns
-- **BGG GeekLists** -- curated community lists (CCC, couples,
-  solo)
 - **Board Game Oracle (B2GO)** -- availability data
 - **Board Game Prices (BGP)** -- Canadian pricing data
 
@@ -42,8 +40,7 @@ bundle exec rspec
 ```
 lib/
   config/        # Categories, game lists, downloader wiring
-  downloaders/   # Source-specific scrapers (BGG search, GeekLists,
-                   B2GO, BGP)
+  downloaders/   # Source-specific scrapers (BGG search, B2GO, BGP)
   models/        # Game model with display/filtering logic
   parsers/       # HTML parsers for external sources
   services/      # Aggregation, ranking, view helpers

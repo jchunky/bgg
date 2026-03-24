@@ -4,7 +4,6 @@ module Config
   module Downloaders
     NO_EXPANSIONS = "nosubtypes[]=boardgameexpansion"
     SORTBY_RANK = "#{NO_EXPANSIONS}&sort=rank".freeze
-    SORTBY_VOTES = "#{NO_EXPANSIONS}&sort=numvoters&sortdir=desc".freeze
     ONE_PLAYER_GAMES_1 = "#{SORTBY_RANK}&range[minplayers][max]=1&floatrange[avgweight][max]=2.5".freeze
     ONE_PLAYER_GAMES_2 = "#{SORTBY_RANK}&range[minplayers][max]=1&floatrange[avgweight][min]=2.5".freeze
 
