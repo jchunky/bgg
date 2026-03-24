@@ -3,7 +3,6 @@
 source "https://rubygems.org"
 
 gem "activesupport"
-gem "ferrum"
 gem "nokogiri"
 gem "ostruct"
 gem "robotstxt"

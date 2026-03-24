@@ -2,7 +2,6 @@
 
 require "active_support/all"
 require "erb"
-require "ferrum"
 require "json"
 require "net/http"
 require "nokogiri"

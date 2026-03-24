@@ -41,10 +41,11 @@ The goal is to scrape each site directly, respecting `robots.txt`.
   <https://www.boardgameoracle.com/en-CA/store/GJYrR6CW/board-game-bliss/offers?f.type=boardgame>
 - **Current:** `data/bgb.txt` is copy-pasted, parsed by
   `Parsers::BgbGame` splitting on double newlines.
-- [ ] Check `robots.txt` for boardgameoracle.com.
-- [ ] Scrape the page (handle pagination if present).
-- [ ] Build `Downloaders::BgbData#fetch` to replace `File.read`.
-- [ ] Preserve the existing parser interface.
+- **BLOCKED -- keep manual copy-paste.** `robots.txt` disallows
+  `/api/`. The SSR page only embeds 25 items; pagination requires
+  tRPC calls to `/api/trpc/offer.list`. Scrolling in a headless
+  browser to trigger those calls violates the spirit of the
+  robots.txt restriction.
 
 ## Task 3: Scrape Board Game Oracle search (bgo)
 
@@ -52,10 +53,8 @@ The goal is to scrape each site directly, respecting `robots.txt`.
   <https://www.boardgameoracle.com/en-CA/boardgame/search?f.type=boardgame>
 - **Current:** `data/bgo.txt` is copy-pasted, parsed by
   `Parsers::BgoGame` splitting on double newlines.
-- [ ] Check `robots.txt` (same domain as Task 2).
-- [ ] Scrape the page (handle pagination if present).
-- [ ] Build `Downloaders::BgoData#fetch` to replace `File.read`.
-- [ ] Preserve the existing parser interface.
+- **BLOCKED -- keep manual copy-paste.** Same domain and same
+  robots.txt restriction as Task 2.
 
 ## Task 4: Scrape Snakes & Lattes library (snakes)
 
@@ -63,12 +62,8 @@ The goal is to scrape each site directly, respecting `robots.txt`.
   <https://live.snakesandlattes.com/library/?location=college>
 - **Current:** `data/snakes.txt` is copy-pasted, parsed by
   `Parsers::SnakesGame` with nav-header stripping and chunking.
-- [ ] Check `robots.txt` for live.snakesandlattes.com.
-- [ ] Determine if the page is JS-rendered (likely, given "live."
-  subdomain) -- may need a headless browser.
-- [ ] Build `Downloaders::SnakesData#fetch` to scrape and replace
-  `File.read`.
-- [ ] Preserve the existing parser interface.
+- **BLOCKED -- keep manual copy-paste.** `robots.txt` has
+  `Disallow: /` -- all automated access is blocked.
 
 ## Task 5: Scrape BGG Top Played Games (top_played_games)
 
@@ -91,6 +86,8 @@ The goal is to scrape each site directly, respecting `robots.txt`.
   disallows `/play` (prefix-matches `/playstats`). No API
   equivalent found. Cloudflare Turnstile blocks headless browsers.
 
-## Improvement Opportunities
+## Summary
 
-_(To be filled in as work progresses.)_
+Only 1 of 6 data sources (b2go) could be automated while
+respecting robots.txt. The remaining 5 sources must continue using
+manual copy-paste into `data/*.txt` files.
