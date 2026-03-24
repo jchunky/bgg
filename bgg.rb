@@ -2,10 +2,12 @@
 
 require "active_support/all"
 require "erb"
+require "ferrum"
 require "json"
 require "net/http"
 require "nokogiri"
 require "ostruct"
+require "robotstxt"
 require "uri"
 require "yaml"
 
