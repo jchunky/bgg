@@ -23,20 +23,17 @@ The goal is to scrape each site directly, respecting `robots.txt`.
   for shared headless Chrome lifecycle (boot once, reuse across
   scrapers that need it).
 
-## Task 1: Scrape Board Game 2 Go (b2go)
+## Task 1: Scrape Board Game 2 Go (b2go) -- DONE
 
-- **Source:**
-  <https://www.boardgame2go.com/>
-- **Current:** `data/b2go.txt` is copy-pasted page content, parsed
-  in 4-line slices by `Parsers::B2goGame`.
-- **Challenge:** Requires login to access the site.
-- [ ] Check `robots.txt` for allowed paths.
-- [ ] Implement authenticated scraping (store credentials securely,
-  e.g. env vars or a `.env` file).
-- [ ] Build `Downloaders::B2goData#fetch` to scrape and parse the
-  HTML directly, replacing the `File.read` approach.
-- [ ] Preserve the existing parser interface so downstream code is
-  unaffected.
+- **Source:** JSON API at `backend.boardgame2go.com/api/v1/products/`
+- **Finding:** No robots.txt, no auth needed (guest access). The
+  site uses a clean REST API with offset/limit pagination.
+- [x] Check `robots.txt` -- none exists (404).
+- [x] No login needed -- API is publicly accessible.
+- [x] Replaced `File.read` with API-based fetching in
+  `Downloaders::B2goData`. Uses `HttpFetcher.json` with pagination.
+- [x] Downstream interface preserved -- still returns
+  `Models::Game` with `name`, `b2go`, `b2go_price`.
 
 ## Task 2: Scrape Board Game Bliss via Board Game Oracle (bgb)
 
@@ -79,14 +76,10 @@ The goal is to scrape each site directly, respecting `robots.txt`.
   <https://boardgamegeek.com/plays/bygame/subtype/All/start/2026-02-21/end/2026-03-23/page/1>
 - **Current:** `data/top_played_games.txt` is copy-pasted, parsed
   line-by-line by `Parsers::TopPlayedGame`.
-- **BLOCKER:** BGG `robots.txt` explicitly disallows `/plays`.
-  Need an alternative approach (BGG API, or accept manual
-  copy-paste for this source).
-- [ ] Investigate BGG XML API2 as alternative data source.
-- [ ] Handle pagination (URL has `/page/1`).
-- [ ] Build `Downloaders::TopPlayedData#fetch` to scrape and replace
-  `File.read`.
-- [ ] Preserve the existing parser interface.
+- **BLOCKED -- keep manual copy-paste.** BGG `robots.txt`
+  disallows `/plays`. No API equivalent exists on `api.geekdo.com`
+  (404) or XML API2 (per-user only, not aggregated). Cloudflare
+  Turnstile also blocks headless browsers.
 
 ## Task 6: Scrape BGG Replay Stats (replayed)
 
@@ -94,16 +87,9 @@ The goal is to scrape each site directly, respecting `robots.txt`.
   <https://boardgamegeek.com/playstats/thing/420087>
 - **Current:** `data/replayed.txt` is a manually curated list of
   game names (one per line) gathered from individual stats pages.
-- **BLOCKER:** BGG `robots.txt` disallows `/play` which
-  prefix-matches `/playstats`. Also disallows `/xmlapi`.
-  Need an alternative approach or accept manual copy-paste.
-- [ ] Investigate BGG XML API2 as alternative data source.
-- [ ] Determine which games to check (need a list of BGG thing IDs).
-- [ ] Scrape each game's playstats page, extract the relevant
-  replay metric.
-- [ ] Build a new `Downloaders::ReplayedData` class (or extend
-  existing) to automate this.
-- [ ] Respect BGG's crawl delay between requests.
+- **BLOCKED -- keep manual copy-paste.** BGG `robots.txt`
+  disallows `/play` (prefix-matches `/playstats`). No API
+  equivalent found. Cloudflare Turnstile blocks headless browsers.
 
 ## Improvement Opportunities
 

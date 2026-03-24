@@ -2,15 +2,67 @@
 
 module Downloaders
   class B2goData
+    BASE_URL = "https://backend.boardgame2go.com/api/v1/products/"
+    LIMIT = 200
+
     def prefix = :b2go_data
     def listid = "b2go_data"
 
     def games
-      @games ||= File.read("./data/b2go.txt")
-        .split("\n")
-        .each_slice(4)
-        .to_a
-        .filter_map { |data| Parsers::B2goGame.parse(data) }
+      @games ||= fetch_all_products
+        .reject { it["purchaseOnly"] }
+        .filter_map { build_game(it) }
+    end
+
+    private
+
+    def fetch_all_products
+      products = []
+      offset = 0
+
+      loop do
+        data = fetch_page(offset)
+        products.concat(data["docs"])
+        offset += LIMIT
+        break if offset >= data["total"]
+      end
+
+      products
+    end
+
+    def fetch_page(offset)
+      url = "#{BASE_URL}?reservationDate=#{Date.tomorrow}&duration=7&offset=#{offset}&limit=#{LIMIT}"
+      Utils::HttpFetcher.json(url) { it }
+    end
+
+    def build_game(product)
+      name = product["name"]
+      return if name.blank?
+
+      Models::Game.new(
+        name:,
+        b2go: true,
+        b2go_price: best_rental_price(product),
+      )
+    end
+
+    def best_rental_price(product)
+      rental = product.dig("prices", "rental")
+
+      weekly = weekly_price(rental, "discountA") ||
+        weekly_price(rental, "regular")
+
+      (weekly.to_f / 100).round
+    end
+
+    def weekly_price(rental, tier)
+      entry = rental[tier]
+      return if entry.is_a?(Hash) && entry["active"] == false
+
+      nights = entry.is_a?(Array) ? entry : entry["amountOfNights"]
+      return unless nights.is_a?(Array)
+
+      nights.find { it["nights"] == 7 }&.dig("price")
     end
   end
 end
