@@ -41,9 +41,9 @@ module Downloaders
     end
 
     def parse_games(doc, store_name)
-      doc.css("a[href*='/item/show/']").filter_map do |link|
-        name = link.text.strip
-        price_text = link.parent.text[/[\d,.]+\s*€|€\s*[\d,.]+/]
+      doc.css("div.searchinfocontainer").filter_map do |container|
+        name = container.at_css("span.name")&.text&.strip
+        price_text = container.at_css("span.price")&.text
         next if name.blank? || price_text.nil?
 
         eur_price = price_text.delete("€").strip.tr(",", ".").to_f
