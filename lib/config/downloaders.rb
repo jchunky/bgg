@@ -32,7 +32,6 @@ module Config
 
       ::Downloaders::B2goData.new,
       ::Downloaders::BgpData.new,
-      ::Downloaders::SnakesData.new,
       *PLAYER_COUNTS,
       *PLAYTIMES,
       *CATEGORIES,

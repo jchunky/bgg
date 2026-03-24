@@ -61,10 +61,6 @@
         <th>Banned</th>
         <th>Couples Rank</th>
         <th>Solo Rank</th>
-<!--
-        <th>Snakes Location</th>
-        <th>Snakes Category</th>
--->
         <th>Category</th>
       </tr>
     </thead>
@@ -110,10 +106,6 @@
           <td><%= game.banned? ? "banned" : nil %></td>
           <td class="number"><%= int(game.couples_rank) %></td>
           <td class="number"><%= int(game.solo_rank) %></td>
-<!--
-          <td><%= game.snakes_location_label %></td>
-          <td class="number"><%= int(game.snakes_category) %></td>
--->
           <td class="<%= 'bga' if game.bga? %>"><%= game.category_label %></td>
         </tr>
       <% end %>

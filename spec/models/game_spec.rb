@@ -240,7 +240,7 @@ RSpec.describe Models::Game do
 
   describe "#normalized_price" do
     it "rounds price to nearest integer" do
-      game = described_class.new(price: 39.50)
+      game = described_class.new(bgp_price: 39.50)
       expect(game.normalized_price).to eq(40)
     end
   end
@@ -273,31 +273,6 @@ RSpec.describe Models::Game do
       expect(game.crowdfunded?).to be false
     end
   end
-
-  describe "#snakes?" do
-    it "returns true when snakes is true" do
-      game = described_class.new(snakes: true)
-      expect(game.snakes?).to be true
-    end
-
-    it "returns false when snakes is not set" do
-      game = described_class.new(name: "Test")
-      expect(game.snakes?).to be false
-    end
-  end
-
-  describe "#snakes_category" do
-    it "returns integer of snakes_location" do
-      game = described_class.new(snakes_location: "5A")
-      expect(game.snakes_category).to eq(5)
-    end
-
-    it "returns 0 for non-numeric location" do
-      game = described_class.new(snakes_location: "New Arrivals")
-      expect(game.snakes_category).to eq(0)
-    end
-  end
-
 
   describe "#competitive?" do
     it "returns true when group is competitive" do

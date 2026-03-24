@@ -29,7 +29,6 @@ module Models
           (:b2go if b2go?),
           (:bgp if bgp?),
           (:ccc if ccc?),
-          (:snakes if snakes?),
         ]
       end
     end
@@ -113,9 +112,6 @@ module Models
       def play_rank? = (play_rank > 0)
       def played? = self.class.played.include?(name)
       def player_count_range = (min_player_count..max_player_count)
-      def snakes? = snakes == true
-      def snakes_category = snakes_location.to_i
-      def snakes_location_label = null?(snakes_location) ? nil : snakes_location
       def soloable? = max_player_count == 1 || (coop? && min_player_count == 1)
       def two_player? = max_player_count == 2
 
