@@ -32,7 +32,7 @@ module Downloaders
 
     def fetch_games_for_page(page)
       url = url_for_page(page)
-      Utils::HttpFetcher.html(url) { parse_games_from_doc(it) }
+      Utils::HttpFetcher.html(url, crawl_delay: 5) { parse_games_from_doc(it) }
     end
 
     def url_for_page(page)

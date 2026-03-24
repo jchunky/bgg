@@ -32,7 +32,7 @@ module Downloaders
 
     def fetch_page(offset)
       url = "#{BASE_URL}?reservationDate=#{Date.tomorrow}&duration=7&offset=#{offset}&limit=#{LIMIT}"
-      Utils::HttpFetcher.json(url) { it }
+      Utils::HttpFetcher.json(url, crawl_delay: 1) { it }
     end
 
     def build_game(product)

@@ -5,11 +5,6 @@ require "open-uri"
 module Utils
   class CachedFile < Data.define(:url, :extension, :crawl_delay)
     CACHE_EXPIRY = 1.year
-    DEFAULT_CRAWL_DELAY = 5
-
-    def initialize(url:, extension:, crawl_delay: DEFAULT_CRAWL_DELAY)
-      super(url:, extension:, crawl_delay:)
-    end
 
     def read
       content = cache_expired? ? fetch_from_url : File.read(file)
