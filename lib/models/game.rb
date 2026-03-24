@@ -28,7 +28,6 @@ module Models
         [
           (:b2go if b2go?),
           (:bgp if bgp?),
-          (:ccc if ccc?),
         ]
       end
     end
@@ -143,7 +142,6 @@ module Models
       def banned? = banned_game? || banned_series? || Config::GameLists.banned_categories.any? { send("#{it}?") }
       def banned_game? = Config::GameLists.banned_games.include?(name)
       def banned_series? = Config::GameLists.banned_series.any? { name.start_with?(it) }
-      def ccc? = super || Config::GameLists.ccc_overrides.include?(name)
       def child? = super || Config::GameLists.child_overrides.include?(name)
       def keep? = Config::GameLists.keep.include?(name)
       def skirmish? = Config::GameLists.skirmish_games.include?(name)

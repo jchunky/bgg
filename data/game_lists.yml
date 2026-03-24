@@ -27,7 +27,6 @@ b2go_overrides:
 banned_categories:
   - "child"
   - "party"
-  - "ccc"
   - "dexterity"
   - "digital_hybrid"
   - "realtime"
@@ -101,12 +100,6 @@ banned_series:
   - "Sherlock Holmes Consulting Detective"
   - "Tiny Epic"
   - "Unlock!"
-
-ccc_overrides:
-  - "Night of the Living Dead: A Zombicide Game"
-  - "Resident Evil 3: The Board Game"
-  - "Shadows of Brimstone: Swamps of Death"
-  - "Sword & Sorcery: Ancient Chronicles"
 
 child_overrides:
   - "Flower Fairy"

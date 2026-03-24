@@ -59,8 +59,6 @@
         <th>Subdomain</th>
         <th>Played</th>
         <th>Banned</th>
-        <th>Couples Rank</th>
-        <th>Solo Rank</th>
         <th>Category</th>
       </tr>
     </thead>
@@ -104,8 +102,6 @@
           <td><%= game.subdomains %></td>
           <td><%= game.played? ? "played" : nil %></td>
           <td><%= game.banned? ? "banned" : nil %></td>
-          <td class="number"><%= int(game.couples_rank) %></td>
-          <td class="number"><%= int(game.solo_rank) %></td>
           <td class="<%= 'bga' if game.bga? %>"><%= game.category_label %></td>
         </tr>
       <% end %>
