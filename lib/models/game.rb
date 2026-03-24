@@ -107,7 +107,7 @@ module Models
       def competitive? = group == "competitive"
       def crowdfunded? = kickstarter? || gamefound? || backerkit?
       def learned? = self.class.learned.include?(name)
-      def normalized_price = (bgb_price > 0 ? bgb_price : price).to_f.round
+      def normalized_price = price.to_f.round
       def one_player? = max_player_count == 1
       def play_rank? = (play_rank > 0)
       def played? = self.class.played.include?(name)

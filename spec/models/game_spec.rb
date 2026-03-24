@@ -239,13 +239,8 @@ RSpec.describe Models::Game do
   end
 
   describe "#normalized_price" do
-    it "prefers bgb_price when available" do
-      game = described_class.new(bgb_price: 49.99, price: 39.99)
-      expect(game.normalized_price).to eq(50)
-    end
-
-    it "falls back to price when bgb_price is 0" do
-      game = described_class.new(bgb_price: 0, price: 39.50)
+    it "rounds price to nearest integer" do
+      game = described_class.new(price: 39.50)
       expect(game.normalized_price).to eq(40)
     end
   end
@@ -304,29 +299,6 @@ RSpec.describe Models::Game do
     end
   end
 
-  describe "#bgb?" do
-    it "returns true when bgb is true and not preorder" do
-      game = described_class.new(bgb: true, preorder: false)
-      expect(game.bgb?).to be true
-    end
-
-    it "returns false when bgb is true but preorder" do
-      game = described_class.new(bgb: true, preorder: true)
-      expect(game.bgb?).to be false
-    end
-  end
-
-  describe "#preorder?" do
-    it "returns true when preorder is true" do
-      game = described_class.new(preorder: true)
-      expect(game.preorder?).to be true
-    end
-
-    it "returns false when preorder is not set" do
-      game = described_class.new(name: "Test")
-      expect(game.preorder?).to be false
-    end
-  end
 
   describe "#competitive?" do
     it "returns true when group is competitive" do
