@@ -3,9 +3,13 @@
 require "open-uri"
 
 module Utils
-  class CachedFile < Data.define(:url, :extension)
-    BGG_CRAWL_DELAY = 5
+  class CachedFile < Data.define(:url, :extension, :crawl_delay)
     CACHE_EXPIRY = 1.year
+    DEFAULT_CRAWL_DELAY = 5
+
+    def initialize(url:, extension:, crawl_delay: DEFAULT_CRAWL_DELAY)
+      super(url:, extension:, crawl_delay:)
+    end
 
     def read
       content = cache_expired? ? fetch_from_url : File.read(file)
@@ -19,7 +23,7 @@ module Utils
     private
 
     def fetch_from_url
-      sleep BGG_CRAWL_DELAY
+      sleep crawl_delay
       print "."
       URI.parse(url).open.read
     end
