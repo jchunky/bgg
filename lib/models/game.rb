@@ -106,7 +106,7 @@ module Models
       def competitive? = group == "competitive"
       def crowdfunded? = kickstarter? || gamefound? || backerkit?
       def learned? = self.class.learned.include?(name)
-      def normalized_price = bgp_price.to_f.round
+      def price = bgp_price.to_f.round
       def one_player? = max_player_count == 1
       def play_rank? = (play_rank > 0)
       def played? = self.class.played.include?(name)
@@ -150,13 +150,13 @@ module Models
     concerning :Display do
       def displayable?
         return false if weight.round(1) > 2.2
-        return false if played?
-        return false unless b2go?
+        return false if !played?
+        return false if !b2go?
         return true if learned?
         return true if keep?
         return false if campaign?
         return false if banned?
-        return false unless min_player_count == 1
+        return false if min_player_count != 1
 
         true
       end

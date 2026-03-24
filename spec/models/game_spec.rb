@@ -238,10 +238,10 @@ RSpec.describe Models::Game do
     end
   end
 
-  describe "#normalized_price" do
+  describe "#price" do
     it "rounds price to nearest integer" do
       game = described_class.new(bgp_price: 39.50)
-      expect(game.normalized_price).to eq(40)
+      expect(game.price).to eq(40)
     end
   end
 
