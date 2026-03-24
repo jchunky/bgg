@@ -5,13 +5,22 @@ module Downloaders
     include Concerns::Paginator
 
     def games
-      @games ||= content_for_pages
+      @games ||= fetch_all_ranked_games
         .uniq(&:key)
         .each.with_index(1) { |game, index| game.send(:"#{prefix}_rank=", index) }
         .select { |game| game.rank.positive? }
     end
 
     private
+
+    def fetch_all_ranked_games
+      (0..).each.with_object([]) do |_, result|
+        @min_rank_filter = result.filter_map { |g| g.rank if g.rank.positive? }.max.to_i + 1 unless result.empty?
+        band_games = content_for_pages
+        result.concat(band_games)
+        return result if band_games.none? { |g| g.rank.positive? }
+      end
+    end
 
     def search_completed?(games)
       if search_criteria.include?("sort=rank")
@@ -27,7 +36,9 @@ module Downloaders
     end
 
     def url_for_page(page)
-      "https://boardgamegeek.com/search/boardgame/page/#{page}?advsearch=1&#{search_criteria}"
+      url = "https://boardgamegeek.com/search/boardgame/page/#{page}?advsearch=1&#{search_criteria}"
+      url += "&range[rank][min]=#{@min_rank_filter}" if @min_rank_filter
+      url
     end
 
     def parse_games_from_doc(doc)
