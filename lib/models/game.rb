@@ -156,7 +156,7 @@ module Models
       def displayable?
         return false if weight.round(1) > 2.2
         return false if played?
-        return false unless b2go? || snakes? || learned?
+        return false unless b2go?
         return true if learned?
         return true if keep?
         return false if campaign?
