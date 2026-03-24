@@ -26,16 +26,12 @@ module Config
       ::Downloaders::GameSearch.new(prefix: :bgg, listid: "rank", search_criteria: SORTBY_RANK),
       ::Downloaders::GameSearch.new(prefix: :one_player_game_1, listid: "minplayers", search_criteria: ONE_PLAYER_GAMES_1),
       ::Downloaders::GameSearch.new(prefix: :one_player_game_2, listid: "minplayers", search_criteria: ONE_PLAYER_GAMES_2),
-      # ::Downloaders::GameSearch.new(prefix: :vote, listid: "numvoters", search_criteria: SORTBY_VOTES),
       ::Downloaders::GeekList.new(prefix: :ccc, listid: 370740, reverse_rank: false), # December 2025
       ::Downloaders::GeekList.new(prefix: :couples, listid: 373534, reverse_rank: false), # 2025
       ::Downloaders::GeekList.new(prefix: :solo, listid: 366471, reverse_rank: false), # 2025
 
-      # ::Downloaders::BgoData.new,
-      # ::Downloaders::BgbData.new,
       ::Downloaders::B2goData.new,
       ::Downloaders::SnakesData.new,
-      # ::Downloaders::TopPlayedData.new,
       *PLAYER_COUNTS,
       *PLAYTIMES,
       *CATEGORIES,
