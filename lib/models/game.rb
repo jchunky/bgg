@@ -4,7 +4,6 @@ module Models
   class Game
     class << self
       def learned = @learned ||= read_list("learned.txt")
-      def replayed = @replayed ||= read_list("replayed.txt")
       def played = @played ||= read_list("played_games.txt")
 
       private
@@ -28,9 +27,7 @@ module Models
       def source_labels
         [
           (:b2go if b2go?),
-          (:bgb if bgb?),
           (:ccc if ccc?),
-          (:preorder if preorder?),
           (:snakes if snakes?),
         ]
       end
@@ -82,8 +79,31 @@ module Models
       end
     end
 
+    concerning :PlayerCount do
+      def player_count
+        return @player_count if defined?(@player_count)
+
+        @player_count = calculate_player_count
+      end
+
+      def min_player_count
+        @min_player_count ||= (1..12).find { |count| send(:"player_#{count}?") } || 0
+      end
+
+      def max_player_count
+        @max_player_count ||= (1..12).to_a.reverse.find { |count| send(:"player_#{count}?") } || 0
+      end
+
+      private
+
+      def calculate_player_count
+        return nil if min_player_count.zero?
+
+        [min_player_count, max_player_count].compact.uniq.join("-")
+      end
+    end
+
     concerning :GameData do
-      def bgb? = bgb == true && !preorder?
       def competitive? = group == "competitive"
       def crowdfunded? = kickstarter? || gamefound? || backerkit?
       def learned? = self.class.learned.include?(name)
@@ -91,15 +111,16 @@ module Models
       def one_player? = max_player_count == 1
       def play_rank? = (play_rank > 0)
       def played? = self.class.played.include?(name)
-      def player_count = [min_player_count, max_player_count].compact.uniq.join("-")
       def player_count_range = (min_player_count..max_player_count)
-      def preorder? = (preorder == true)
-      def replayed? = self.class.replayed.include?(name)
       def snakes? = snakes == true
       def snakes_category = snakes_location.to_i
       def snakes_location_label = null?(snakes_location) ? nil : snakes_location
       def soloable? = max_player_count == 1 || (coop? && min_player_count == 1)
       def two_player? = max_player_count == 2
+
+      def max_playtime
+        @max_playtime ||= (15..360).step(15).find { |time| send(:"playtime_#{time}?") } || 0
+      end
 
       def votes_per_year
         days_published = ((Time.now.year - year.to_i) * 365) + Time.now.yday
@@ -116,13 +137,6 @@ module Models
         when two_player? then "2-player"
         else "competitive"
         end
-      end
-
-      def min_player_count
-        return 1 if one_player_game_1?
-        return 1 if one_player_game_2?
-
-        super
       end
     end
 

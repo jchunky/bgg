@@ -14,6 +14,14 @@ module Config
     SUBDOMAINS = Config::Categories::SUBDOMAINS.map do |prefix, listid, items_per_page|
       ::Downloaders::CategoryGames.new(prefix:, listid:, items_per_page:, object_type: "family")
     end
+    PLAYER_COUNTS = (1..12).map do |count|
+    # PLAYER_COUNTS = (1..2).map do |count|
+      ::Downloaders::GameSearch.new(prefix: :"player_#{count}", listid: "playerrangetype", search_criteria: "#{SORTBY_RANK}&range[minplayers][max]=#{count}&range[maxplayers][min]=#{count}&playerrangetype=normal")
+    end
+    PLAYTIMES = [15, 30, 45, 60, 90, 120, 150, 180, 210, 240, 300, 360].map do |playtime|
+    # PLAYTIMES = [60].map do |playtime|
+      ::Downloaders::GameSearch.new(prefix: :"playtime_#{playtime}", listid: "playtime", search_criteria: "#{SORTBY_RANK}&range[playtime][max]=#{playtime}")
+    end
     DOWNLOADERS = [
       ::Downloaders::GameSearch.new(prefix: :bgg, listid: "rank", search_criteria: SORTBY_RANK),
       ::Downloaders::GameSearch.new(prefix: :one_player_game_1, listid: "minplayers", search_criteria: ONE_PLAYER_GAMES_1),
@@ -23,11 +31,13 @@ module Config
       ::Downloaders::GeekList.new(prefix: :couples, listid: 373534, reverse_rank: false), # 2025
       ::Downloaders::GeekList.new(prefix: :solo, listid: 366471, reverse_rank: false), # 2025
 
-      ::Downloaders::BgoData.new,
-      ::Downloaders::BgbData.new,
+      # ::Downloaders::BgoData.new,
+      # ::Downloaders::BgbData.new,
       ::Downloaders::B2goData.new,
       ::Downloaders::SnakesData.new,
-      ::Downloaders::TopPlayedData.new,
+      # ::Downloaders::TopPlayedData.new,
+      *PLAYER_COUNTS,
+      *PLAYTIMES,
       *CATEGORIES,
       *SUBDOMAINS,
     ].freeze
