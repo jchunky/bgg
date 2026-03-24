@@ -11,7 +11,6 @@ module Config
       def child_overrides = data["child_overrides"]
       def keep = data["keep"]
       def skirmish_games = data["skirmish_games"]
-      def weight_overrides = data["weight_overrides"]
 
       private
 
