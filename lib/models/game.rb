@@ -27,6 +27,7 @@ module Models
       def source_labels
         [
           (:b2go if b2go?),
+          (:bgp if bgp?),
           (:ccc if ccc?),
           (:snakes if snakes?),
         ]
@@ -142,6 +143,7 @@ module Models
 
     concerning :Customize do
       def b2go? = b2go == true || Config::GameLists.b2go_overrides.include?(name)
+      def bgp? = bgp == true
       def banned? = banned_game? || banned_series? || Config::GameLists.banned_categories.any? { send("#{it}?") }
       def banned_game? = Config::GameLists.banned_games.include?(name)
       def banned_series? = Config::GameLists.banned_series.any? { name.start_with?(it) }

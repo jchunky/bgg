@@ -31,6 +31,7 @@ module Config
       ::Downloaders::GeekList.new(prefix: :solo, listid: 366471, reverse_rank: false), # 2025
 
       ::Downloaders::B2goData.new,
+      ::Downloaders::BgpData.new,
       ::Downloaders::SnakesData.new,
       *PLAYER_COUNTS,
       *PLAYTIMES,
