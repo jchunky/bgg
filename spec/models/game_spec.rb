@@ -153,19 +153,19 @@ RSpec.describe Models::Game do
 
   describe "#player_count" do
     it "returns range when min and max differ" do
-      game = described_class.new(player_2_rank: 1, player_3_rank: 1, player_4_rank: 1)
+      game = described_class.new(minplayers: 2, maxplayers: 4)
       expect(game.player_count).to eq("2-4")
     end
 
     it "returns single number when min equals max" do
-      game = described_class.new(player_1_rank: 1)
+      game = described_class.new(minplayers: 1, maxplayers: 1)
       expect(game.player_count).to eq("1")
     end
   end
 
   describe "#player_count_range" do
     it "returns a range from min to max" do
-      game = described_class.new(player_1_rank: 1, player_2_rank: 1, player_3_rank: 1, player_4_rank: 1)
+      game = described_class.new(minplayers: 1, maxplayers: 4)
       expect(game.player_count_range).to eq(1..4)
     end
   end
@@ -182,58 +182,58 @@ RSpec.describe Models::Game do
     end
 
     it "returns '1-player' for solo games" do
-      game = described_class.new(player_1_rank: 1)
+      game = described_class.new(minplayers: 1, maxplayers: 1)
       expect(game.group).to eq("1-player")
     end
 
     it "returns '2-player' for two player games" do
-      game = described_class.new(player_2_rank: 1)
+      game = described_class.new(minplayers: 1, maxplayers: 2)
       expect(game.group).to eq("2-player")
     end
 
     it "returns 'competitive' for other games" do
-      game = described_class.new(player_2_rank: 1, player_3_rank: 1, player_4_rank: 1)
+      game = described_class.new(minplayers: 2, maxplayers: 4)
       expect(game.group).to eq("competitive")
     end
   end
 
   describe "#one_player?" do
     it "returns true for solo games" do
-      game = described_class.new(player_1_rank: 1)
+      game = described_class.new(minplayers: 1, maxplayers: 1)
       expect(game.one_player?).to be true
     end
 
     it "returns false for multiplayer games" do
-      game = described_class.new(player_1_rank: 1, player_2_rank: 1, player_3_rank: 1, player_4_rank: 1)
+      game = described_class.new(minplayers: 1, maxplayers: 4)
       expect(game.one_player?).to be false
     end
   end
 
   describe "#two_player?" do
     it "returns true for 2 player max games" do
-      game = described_class.new(player_1_rank: 1, player_2_rank: 1)
+      game = described_class.new(minplayers: 1, maxplayers: 2)
       expect(game.two_player?).to be true
     end
 
     it "returns false for other games" do
-      game = described_class.new(player_1_rank: 1, player_2_rank: 1, player_3_rank: 1, player_4_rank: 1)
+      game = described_class.new(minplayers: 1, maxplayers: 4)
       expect(game.two_player?).to be false
     end
   end
 
   describe "#soloable?" do
     it "returns true for solo games" do
-      game = described_class.new(player_1_rank: 1)
+      game = described_class.new(minplayers: 1, maxplayers: 1)
       expect(game.soloable?).to be true
     end
 
     it "returns true for coop games starting at 1 player" do
-      game = described_class.new(coop_rank: 1, player_1_rank: 1, player_2_rank: 1, player_3_rank: 1, player_4_rank: 1)
+      game = described_class.new(coop_rank: 1, minplayers: 1, maxplayers: 4)
       expect(game.soloable?).to be true
     end
 
     it "returns false for non-coop multiplayer games" do
-      game = described_class.new(player_2_rank: 1, player_3_rank: 1, player_4_rank: 1)
+      game = described_class.new(minplayers: 2, maxplayers: 4)
       expect(game.soloable?).to be false
     end
   end
@@ -276,7 +276,7 @@ RSpec.describe Models::Game do
 
   describe "#competitive?" do
     it "returns true when group is competitive" do
-      game = described_class.new(player_2_rank: 1, player_3_rank: 1, player_4_rank: 1)
+      game = described_class.new(minplayers: 2, maxplayers: 4)
       expect(game.competitive?).to be true
     end
 

@@ -79,26 +79,13 @@ module Models
     end
 
     concerning :PlayerCount do
+      def min_player_count = minplayers.to_i
+      def max_player_count = maxplayers.to_i
+
       def player_count
-        return @player_count if defined?(@player_count)
-
-        @player_count = calculate_player_count
-      end
-
-      def min_player_count
-        @min_player_count ||= (1..12).find { |count| send(:"player_#{count}?") } || 0
-      end
-
-      def max_player_count
-        @max_player_count ||= (1..12).to_a.reverse.find { |count| send(:"player_#{count}?") } || 0
-      end
-
-      private
-
-      def calculate_player_count
         return nil if min_player_count.zero?
 
-        [min_player_count, max_player_count].compact.uniq.join("-")
+        [min_player_count, max_player_count].uniq.join("-")
       end
     end
 
@@ -114,9 +101,7 @@ module Models
       def soloable? = max_player_count == 1 || (coop? && min_player_count == 1)
       def two_player? = max_player_count == 2
 
-      def max_playtime
-        @max_playtime ||= (15..360).step(15).find { |time| send(:"playtime_#{time}?") } || 0
-      end
+      def max_playtime = maxplaytime.to_i
 
       def votes_per_year
         days_published = ((Time.now.year - year.to_i) * 365) + Time.now.yday

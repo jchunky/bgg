@@ -54,6 +54,10 @@ module Downloaders
         rating_count: row["usersrated"].to_i,
         weight: row["avgweight"].to_f,
         year: row["yearpublished"].to_i,
+        minplayers: row["minplayers"].to_i,
+        maxplayers: row["maxplayers"].to_i,
+        minplaytime: row["minplaytime"].to_i,
+        maxplaytime: row["maxplaytime"].to_i,
         "#{prefix}_rank": row["rank"].to_i,
       )
     end
