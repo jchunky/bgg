@@ -135,13 +135,15 @@ module Models
     concerning :Display do
       def displayable?
         return false if weight.round(1) > 2.2
-        return false if !played?
+        return false if played?
         return false if !b2go?
         return true if learned?
         return true if keep?
         return false if campaign?
         return false if banned?
         return false if min_player_count != 1
+        # return false if !soloable?
+        # return false if price == 0
 
         true
       end
