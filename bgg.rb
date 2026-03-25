@@ -22,7 +22,10 @@ class Bgg
 
     @games = Services::GameRanker.new.call(Services::GameAggregator.new.call)
       .select(&:displayable?)
-      .sort_by { |g| -g.weight }
+
+    Services::WeightEnricher.new.call(@games)
+
+    @games.sort_by! { |g| -g.weight }
 
     write_output
   end
