@@ -3,7 +3,7 @@
 module Downloaders
   class BgpData
     BASE_URL = "https://www.boardgameprices.com"
-    CRAWL_DELAY = 2
+    CRAWL_DELAY = 1
     EUR_TO_CAD = 1.58
 
     CANADIAN_STORES = {
