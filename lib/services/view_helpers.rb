@@ -9,5 +9,12 @@ module Services
     def float(value, decimals: 1)
       value.to_f.zero? ? "" : format("%0.#{decimals}f", value)
     end
+
+    def store_links(game)
+      links = game.bgp_store_links
+      return "" unless links.is_a?(Hash)
+
+      links.map { |name, url| url ? %(<a href="#{url}">#{name}</a>) : name }.join(", ")
+    end
   end
 end

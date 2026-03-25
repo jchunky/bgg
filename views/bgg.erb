@@ -97,7 +97,7 @@
           <td class="number <%= 'bad' if bad_conditions[:bad_player_count] %>"><%= int(game.player_count) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_playtime] %>"><%= int(game.max_playtime) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_price] %>"><%= int(game.price) %></td>
-          <td><%= game.bgp_stores != 0 ? game.bgp_stores : ''  %></td>
+          <td><%= store_links(game) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_b2go_price] %>"><%= int(game.b2go_price) %></td>
           <td><%= game.subdomains %></td>
           <td><%= game.played? ? "played" : nil %></td>

@@ -44,29 +44,31 @@ module Downloaders
       doc.css("div.searchinfocontainer").filter_map do |container|
         name = container.at_css("span.name")&.text&.strip
         price_text = container.at_css("span.price")&.text
+        link = container.at_css("a")&.[]("href")
         next if name.blank? || price_text.nil?
 
         eur_price = price_text.delete("€").strip.tr(",", ".").to_f
         cad_price = (eur_price * EUR_TO_CAD).round
+        product_url = link ? "#{BASE_URL}#{link}" : nil
 
         Models::Game.new(
           name:,
           bgp: true,
           bgp_price: cad_price,
-          bgp_stores: store_name,
+          bgp_store_links: { store_name => product_url },
         )
       end
     end
 
     def combine(dupes)
-      stores = dupes.map(&:bgp_stores).uniq.join(", ")
+      links = dupes.map(&:bgp_store_links).reduce(:merge)
       best_price = dupes.map(&:bgp_price).min
 
       Models::Game.new(
         name: dupes.first.name,
         bgp: true,
         bgp_price: best_price,
-        bgp_stores: stores,
+        bgp_store_links: links,
       )
     end
 
