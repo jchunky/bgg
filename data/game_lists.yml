@@ -144,3 +144,18 @@ skirmish_games:
   - "Tiny Epic Tactics"
   - "Unmatched Adventures: Tales to Amaze"
   - "Wroth"
+
+weight_overrides:
+  "Annapurna": 1.60
+  "Boblin's Rebellion": 2.50
+  "Bone Wars": 3.88
+  "Drinkopoly": 1.00
+  "Everdell Farshore": 2.21
+  "Free Ride USA": 2.40
+  "Globetrotting": 1.73
+  "Golden Cup": 1.83
+  "Golfie": 1.07
+  "Nutty Squirrels of the Oakwood Forest": 1.75
+  "Silicon Valley": 2.50
+  "Square One": 1.90
+  "Stamp Swap": 2.85

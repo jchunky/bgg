@@ -130,6 +130,7 @@ module Models
       def child? = super || Config::GameLists.child_overrides.include?(name)
       def keep? = Config::GameLists.keep.include?(name)
       def skirmish? = Config::GameLists.skirmish_games.include?(name)
+      def weight = Config::GameLists.weight_overrides.fetch(name, super)
     end
 
     concerning :Display do
