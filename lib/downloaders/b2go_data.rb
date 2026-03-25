@@ -39,11 +39,15 @@ module Downloaders
       name = product["name"]
       return if name.blank?
 
+      players = product["players"] || {}
+
       Models::Game.new(
         name:,
-        bgg_id: product["bggId"],
         b2go: true,
         b2go_price: best_rental_price(product),
+        minplayers: players["from"].to_i,
+        maxplayers: players["to"].to_i,
+        maxplaytime: product["time"].to_i,
       )
     end
 

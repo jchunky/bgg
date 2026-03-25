@@ -46,7 +46,7 @@ module Downloaders
 
     def build_game(row)
       Models::Game.new(
-        bgg_id: row["objectid"],
+        bgg_id: row["objectid"].to_i,
         href: row["href"],
         name: row["name"],
         rank: row["rank"].to_i,
@@ -54,10 +54,6 @@ module Downloaders
         rating_count: row["usersrated"].to_i,
         weight: row["avgweight"].to_f,
         year: row["yearpublished"].to_i,
-        minplayers: row["minplayers"].to_i,
-        maxplayers: row["maxplayers"].to_i,
-        minplaytime: row["minplaytime"].to_i,
-        maxplaytime: row["maxplaytime"].to_i,
         "#{prefix}_rank": row["rank"].to_i,
       )
     end
