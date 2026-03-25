@@ -59,9 +59,11 @@ module Downloaders
       a1 = c1.css("a")[0]
       a3 = c3.css("a")[0]
       span3 = c3.css("span")[0]
+      href = a3["href"]
 
       Models::Game.new(
-        href: a3["href"],
+        bgg_id: href[/\/(\d+)\//, 1]&.to_i,
+        href:,
         name: a3.content,
         rating: c5.content.to_f,
         rating_count: c6.content.to_i,

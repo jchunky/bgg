@@ -46,6 +46,7 @@ module Downloaders
 
     def build_game(row)
       Models::Game.new(
+        bgg_id: row["objectid"],
         href: row["href"],
         name: row["name"],
         rank: row["rank"].to_i,

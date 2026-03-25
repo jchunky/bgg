@@ -41,6 +41,7 @@ module Downloaders
 
       Models::Game.new(
         name:,
+        bgg_id: product["bggId"],
         b2go: true,
         b2go_price: best_rental_price(product),
       )
