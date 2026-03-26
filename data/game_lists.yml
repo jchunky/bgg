@@ -147,6 +147,7 @@ skirmish_games:
 
 weight_overrides:
   "Annapurna": 1.60
+  "Big Easy Busking": 2.00
   "Boblin's Rebellion": 2.50
   "Bone Wars": 3.88
   "Drinkopoly": 1.00
@@ -155,7 +156,11 @@ weight_overrides:
   "Globetrotting": 1.73
   "Golden Cup": 1.83
   "Golfie": 1.07
+  "Kiwi Chow Down": 2.36
+  "Monster Soup": 1.00
   "Nutty Squirrels of the Oakwood Forest": 1.75
   "Silicon Valley": 2.50
   "Square One": 1.90
   "Stamp Swap": 2.85
+
+
