@@ -79,13 +79,11 @@ module Models
     end
 
     concerning :PlayerCount do
-      def min_player_count = minplayers.to_i
-      def max_player_count = maxplayers.to_i
-
       def player_count
-        return nil if min_player_count.zero?
-
-        [min_player_count, max_player_count].uniq.join("-")
+        @player_count ||= Models::PlayerCount.new(
+          min: minplayers.to_i,
+          max: maxplayers.to_i,
+        )
       end
     end
 
@@ -93,13 +91,12 @@ module Models
       def competitive? = group == "competitive"
       def crowdfunded? = kickstarter? || gamefound? || backerkit?
       def learned? = self.class.learned.include?(name)
-      def price = bgp_price.to_f.round
-      def one_player? = max_player_count == 1
+      def one_player? = player_count.one_player?
       def play_rank? = (play_rank > 0)
       def played? = self.class.played.include?(name)
-      def player_count_range = (min_player_count..max_player_count)
-      def soloable? = max_player_count == 1 || (coop? && min_player_count == 1)
-      def two_player? = max_player_count == 2
+      def price = bgp_price.to_f.round
+      def soloable? = player_count.soloable?(coop: coop?)
+      def two_player? = player_count.two_player?
 
       def max_playtime = maxplaytime.to_i
 
@@ -142,7 +139,7 @@ module Models
         return true if keep?
         return false if campaign?
         return false if banned?
-        return false if min_player_count != 1
+        return false if player_count.min != 1
         # return false if !soloable?
         # return false if price == 0
 

@@ -152,21 +152,14 @@ RSpec.describe Models::Game do
   end
 
   describe "#player_count" do
-    it "returns range when min and max differ" do
+    it "returns a PlayerCount value object" do
       game = described_class.new(minplayers: 2, maxplayers: 4)
-      expect(game.player_count).to eq("2-4")
+      expect(game.player_count).to eq(Models::PlayerCount.new(min: 2, max: 4))
     end
 
-    it "returns single number when min equals max" do
-      game = described_class.new(minplayers: 1, maxplayers: 1)
-      expect(game.player_count).to eq("1")
-    end
-  end
-
-  describe "#player_count_range" do
-    it "returns a range from min to max" do
-      game = described_class.new(minplayers: 1, maxplayers: 4)
-      expect(game.player_count_range).to eq(1..4)
+    it "converts string values to integers" do
+      game = described_class.new(minplayers: "1", maxplayers: "4")
+      expect(game.player_count).to eq(Models::PlayerCount.new(min: 1, max: 4))
     end
   end
 
