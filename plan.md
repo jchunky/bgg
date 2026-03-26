@@ -6,14 +6,13 @@
 2. ~~Extract `PlayerCount` value object~~ (e1c1174)
 3. ~~Extract `Weight` value object~~ (a444b09)
 
+## Additional Commits
+
+4. ~~Remove `displayable?` from Weight~~ (ba37772)
+5. ~~Extract `NormalizedName` value object~~ (9289860)
+
 ## Improvement Opportunities
 
-- Game model is still 154 lines (target: 100). The `key` method
-  (17 lines of chained gsubs) is a candidate for its own value
-  object (`GameKey` or `NormalizedName`).
-- The `Customize` concern's `weight` method now memoizes a
-  `Weight` object but still does override resolution itself.
-  Could move override logic into a factory method on Weight.
-- Template still has inline `!(1...3).cover?(game.weight&.round(1))`
-  — could use `weight.displayable?` or a similar predicate for the
-  "bad weight" highlight (the threshold differs: 2.2 vs 3.0).
+- Game model is now 140 lines (target: 100). Remaining candidates:
+  `votes_per_year` computation, `group` classification, or the
+  `Customize` concern could move to a service/policy object.
