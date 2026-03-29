@@ -55,7 +55,7 @@ module Downloaders
       rental = product.dig("prices", "rental")
 
       weekly = weekly_price(rental, "discountA") ||
-        weekly_price(rental, "regular")
+               weekly_price(rental, "regular")
 
       (weekly.to_f / 100).round
     end

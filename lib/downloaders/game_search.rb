@@ -62,7 +62,7 @@ module Downloaders
       href = a3["href"]
 
       Models::Game.new(
-        bgg_id: href[/\/(\d+)\//, 1]&.to_i,
+        bgg_id: href[%r{/(\d+)/}, 1]&.to_i,
         href:,
         name: a3.content,
         rating: c5.content.to_f,
