@@ -18,18 +18,9 @@ module Models
     end
 
     concerning :Categories do
-      def category_label = @category_label ||= [*categories, *source_labels].compact.sort.join(", ")
+      def category_label = @category_label ||= categories.sort.join(", ")
       def categories = @categories ||= Config::Downloaders::CATEGORIES.map(&:prefix).select { send(:"#{it}?") }
       def subdomains = @subdomains ||= Config::Downloaders::SUBDOMAINS.map(&:prefix).select { send(:"#{it}?") }.join(", ")
-
-      private
-
-      def source_labels
-        [
-          (:b2go if b2go?),
-          (:bgp if bgp?),
-        ]
-      end
     end
 
     concerning :Attributes do
