@@ -124,11 +124,9 @@ module Models
         # return true if learned?
         # return true if keep?
         # return false if campaign?
-        return false if banned?
+        # return false if banned?
         return false if player_count.min != 1
         return false unless soloable?
-
-        # return false if !(solo? && coop?)
         # return false if price == 0
 
         true

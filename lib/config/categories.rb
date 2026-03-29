@@ -3,29 +3,9 @@
 module Config
   module Categories
     CATEGORIES = [
-      # publisher
-      # [:buttonshy, 26991, 50, "company"],
-
       # category
       [:dexterity, 1032, 50, "property"],
       # [:miniatures, 1047, 50, "property"],
-
-      # mechanism
-
-      # [:area_majority, 2080, 50, "property"],
-      [:campaign, 2822, 50, "property"],
-      [:coop, 2023, 50, "property"],
-      # [:cyoa, 2851, 50, "property"],
-      [:dice_rolling, 2072, 50, "property"],
-      [:modular_board, 2011, 50, "property"],
-      [:realtime, 2831, 50, "property"],
-      [:set_collection, 2004, 50, "property"],
-      # [:solitaire, 2819, 50, "property"],
-      [:solo, 2819, 50, "property"],
-      # [:storytelling, 2027, 50, "property"],
-      [:tile_placement, 2002, 50, "property"],
-      [:traitor, 2814, 50, "property"],
-      [:worker_placement, 2082, 50, "property"],
 
       # family
       # [:apple_app_store, 104952, 50, "family"],
@@ -45,6 +25,28 @@ module Config
       # [:backerkit, 76292, 50, "family"],
       # [:gamefound, 66292, 50, "family"],
       # [:kickstarter, 8374, 50, "family"],
+
+      # mechanism
+      # [:area_majority, 2080, 50, "property"],
+      # [:bluffing, 1023, 50, "property"],
+      [:campaign, 2822, 50, "property"],
+      [:coop, 2023, 50, "property"],
+      # [:cyoa, 2851, 50, "property"],
+      # [:deck_building, 2664, 50, "property"],
+      # [:dice_rolling, 2072, 50, "property"],
+      # [:hand_management, 2040, 50, "property"],
+      # [:modular_board, 2011, 50, "property"],
+      [:realtime, 2831, 50, "property"],
+      # [:set_collection, 2004, 50, "property"],
+      # [:solitaire, 2819, 50, "property"],
+      # [:solo, 2819, 50, "property"],
+      # [:storytelling, 2027, 50, "property"],
+      # [:tile_placement, 2002, 50, "property"],
+      [:traitor, 2814, 50, "property"],
+      # [:worker_placement, 2082, 50, "property"],
+
+      # publisher
+      # [:buttonshy, 26991, 50, "company"],
     ].freeze
 
     SUBDOMAINS = [
