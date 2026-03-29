@@ -4,7 +4,8 @@ module Downloaders
   class BgpData
     BASE_URL = "https://www.boardgameprices.com"
     CRAWL_DELAY = 1
-    EUR_TO_CAD = 1.58
+    FALLBACK_EUR_TO_CAD = 1.58
+    EXCHANGE_RATE_URL = "https://api.frankfurter.app/latest?from=EUR&to=CAD"
 
     CANADIAN_STORES = {
       574 => "BoardGamesNMore",
@@ -25,6 +26,13 @@ module Downloaders
     end
 
     private
+
+    def eur_to_cad
+      @eur_to_cad ||= Utils::HttpFetcher
+        .json(EXCHANGE_RATE_URL, crawl_delay: 0) { it.dig("rates", "CAD") }
+    rescue
+      FALLBACK_EUR_TO_CAD
+    end
 
     def fetch_store(store_id, store_name)
       (1..).each.with_object([]) do |page, result|
@@ -48,7 +56,7 @@ module Downloaders
         next if name.blank? || price_text.nil?
 
         eur_price = price_text.delete("€").strip.tr(",", ".").to_f
-        cad_price = (eur_price * EUR_TO_CAD).round
+        cad_price = (eur_price * eur_to_cad).round
         product_url = link ? "#{BASE_URL}#{link}" : nil
 
         Models::Game.new(
