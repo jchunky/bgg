@@ -105,14 +105,11 @@ module Models
     end
 
     concerning :Customize do
-      def b2go? = b2go == true || Config::GameLists.b2go_overrides.include?(name)
+      def b2go? = b2go == true
       def bgp? = bgp == true
       def banned? = banned_game? || banned_series? || Config::GameLists.banned_categories.any? { send("#{it}?") }
       def banned_game? = Config::GameLists.banned_games.include?(name)
       def banned_series? = Config::GameLists.banned_series.any? { name.start_with?(it) }
-      def child? = super || Config::GameLists.child_overrides.include?(name)
-      def keep? = Config::GameLists.keep.include?(name)
-      def skirmish? = Config::GameLists.skirmish_games.include?(name)
       def weight = Config::GameLists.weight_overrides.fetch(name, super)
     end
 
@@ -122,7 +119,6 @@ module Models
         return false if played?
         return false unless b2go?
         return true if learned?
-        return true if keep?
         # return false if campaign?
         return false if banned?
         return false if player_count.min != 1
