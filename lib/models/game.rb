@@ -98,9 +98,10 @@ module Models
     concerning :Customize do
       def b2go? = b2go == true
       def bgp? = bgp == true
-      def banned? = banned_game? || banned_series? || Config::GameLists.banned_categories.any? { send("#{it}?") }
+      def banned? = banned_game? || banned_series? || banned_categories?
       def banned_game? = Config::GameLists.banned_games.include?(name)
       def banned_series? = Config::GameLists.banned_series.any? { name.start_with?(it) }
+      def banned_categories? = Config::GameLists.banned_categories.any? { send("#{it}?") }
       def weight = Config::GameLists.weight_overrides.fetch(name, super)
     end
 
