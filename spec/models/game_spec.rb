@@ -27,6 +27,15 @@ RSpec.describe Models::Game do
       game2 = described_class.new(name: "A Game of Cat and Mouth")
       expect(game1.key).to eq(game2.key)
     end
+
+    it "resolves aliased names for matching" do
+      allow(Config::GameLists).to receive(:name_aliases)
+        .and_return("B2GO Title" => "BGG Title")
+
+      b2go_game = described_class.new(name: "B2GO Title")
+      bgg_game = described_class.new(name: "BGG Title")
+      expect(b2go_game.key).to eq(bgg_game.key)
+    end
   end
 
   describe "#merge" do

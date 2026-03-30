@@ -6,6 +6,7 @@ module Config
       def banned_categories = data["banned_categories"].map(&:to_sym)
       def banned_games = data["banned_games"]
       def banned_series = data["banned_series"]
+      def name_aliases = data["name_aliases"]
       def weight_overrides = data["weight_overrides"]
 
       private

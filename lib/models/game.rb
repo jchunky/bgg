@@ -45,7 +45,11 @@ module Models
       end
 
       def key
-        @key ||= Models::NormalizedName.from(name)
+        @key ||= Models::NormalizedName.from(resolved_name)
+      end
+
+      def resolved_name
+        Config::GameLists.name_aliases.fetch(name, name)
       end
 
       private

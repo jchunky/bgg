@@ -78,6 +78,9 @@ banned_series:
   - "Tiny Epic"
   - "Unlock!"
 
+name_aliases: {}
+  # "b2go name": "BGG name"
+
 weight_overrides:
   "Annapurna": 1.60
   "Atlantis Exodus": 3.29
