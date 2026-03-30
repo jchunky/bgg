@@ -78,8 +78,31 @@ banned_series:
   - "Tiny Epic"
   - "Unlock!"
 
-name_aliases: {}
-  # "b2go name": "BGG name"
+name_aliases:
+  "5-Minute Mystery: The Museum of Everything": "5-Minute Mystery"
+  "Arkham Horror: 3rd Edition": "Arkham Horror (Third Edition)"
+  "Atlantis Rising": "Atlantis Rising (Second Edition)"
+  "Bardsung: Legend of the Ancient Forge": "Bardsung"
+  "Darkest Dungeon": "Darkest Dungeon: The Board Game"
+  "Detective: Vienna Connection": "Vienna Connection"
+  "Dresden Files": "The Dresden Files Cooperative Card Game"
+  "Elder Scrolls: Betrayal of the Second Era": "The Elder Scrolls: Betrayal of the Second Era"
+  "Expeditions: A Sequel to Sycthe": "Expeditions"
+  "Final Girl: Core Box": "Final Girl"
+  "Flatline: A Fuse Aftershock Game": "Flatline"
+  "Frostpunk": "Frostpunk: The Board Game"
+  "Horrified: America Monsters": "Horrified: American Monsters"
+  "Kick-Ass": "Kick-Ass: The Board Game"
+  "Lord of the Rings: Journeys in Middle-Earth": "The Lord of the Rings: Journeys in Middle-Earth"
+  "Mansions of Madness: 2nd Edition": "Mansions of Madness: Second Edition"
+  "My First Orchard (My Very First Games)": "First Orchard"
+  "Sherlock Holmes: Carlton House & Queen's Park": "Sherlock Holmes Consulting Detective: Carlton House & Queen's Park"
+  "Sherlock Holmes: Jack the Ripper & West End Adventures": "Sherlock Holmes Consulting Detective: Jack the Ripper & West End Adventures"
+  "Sherlock Holmes: Thames Murders and Other Cases": "Sherlock Holmes Consulting Detective: The Thames Murders & Other Cases"
+  "Sherlock Holmes: The Baker Street Irregulars": "Sherlock Holmes Consulting Detective: The Baker Street Irregulars"
+  "Street Masters III: Tide of the Dragon": "Street Masters: Tide of the Dragon"
+  "Waste Knights (2nd Edition)": "Waste Knights: Second Edition"
+  "Zombicide: Night of the Living Dead": "Night of the Living Dead: A Zombicide Game"
 
 weight_overrides:
   "Annapurna": 1.60
