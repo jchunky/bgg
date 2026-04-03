@@ -111,7 +111,7 @@ module Models
 
     concerning :Display do
       def displayable?
-        # return false if weight.round(1) > 2.2
+        return false if weight.round(1) > 2.2
         return false if played?
         return false unless b2go?
         return true if learned?
