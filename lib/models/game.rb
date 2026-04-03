@@ -19,7 +19,7 @@ module Models
 
     concerning :Categories do
       def category_label = @category_label ||= categories.sort.join(", ")
-      def categories = @categories ||= Config::Downloaders::CATEGORIES.map(&:prefix).select { send(:"#{it}?") }
+      def categories = @categories ||= Config::Downloaders::CATEGORIES.select(&:display).map(&:prefix).select { send(:"#{it}?") }
       def subdomains = @subdomains ||= Config::Downloaders::SUBDOMAINS.map(&:prefix).select { send(:"#{it}?") }.join(", ")
     end
 
