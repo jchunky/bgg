@@ -9,6 +9,8 @@
     .dataTable td { white-space: nowrap; }
     .bga { background-color: #dce9d5; }
     .learned { background-color: lightgreen; }
+    .played { background-color: lightblue; }
+    .banned { background-color: #f0a0a0; }
     .pill {
       padding: 4px 8px;
       margin-left: 8px;
@@ -57,8 +59,6 @@
         <th>Stores</th>
         <th>B2GO Price</th>
         <th>Subdomain</th>
-        <th>Played</th>
-        <th>Banned</th>
         <th>Category</th>
       </tr>
     </thead>
@@ -85,6 +85,8 @@
           <td>
             <a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a>
             <% if game.learned? %><span class="pill learned">L</span><% end %>
+            <% if game.played? %><span class="pill played">P</span><% end %>
+            <% if game.banned? %><span class="pill banned">B</span><% end %>
           </td>
           <td><%= game.group %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_weight] %>"><%= float(game.weight) %></td>
@@ -100,8 +102,6 @@
           <td><%= store_links(game) %></td>
           <td class="number <%= 'bad' if bad_conditions[:bad_b2go_price] %>"><%= int(game.b2go_price) %></td>
           <td><%= game.subdomains %></td>
-          <td><%= game.played? ? "played" : nil %></td>
-          <td><%= game.banned? ? "banned" : nil %></td>
           <td class="<%= 'bga' if game.bga? %>"><%= game.category_label %></td>
         </tr>
       <% end %>
