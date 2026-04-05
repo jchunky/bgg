@@ -30,7 +30,7 @@ module Downloaders
     def eur_to_cad
       @eur_to_cad ||= Utils::HttpFetcher
         .json(EXCHANGE_RATE_URL, crawl_delay: 0) { it.dig("rates", "CAD") }
-    rescue
+    rescue StandardError
       FALLBACK_EUR_TO_CAD
     end
 
