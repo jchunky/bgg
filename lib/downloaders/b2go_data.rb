@@ -44,6 +44,7 @@ module Downloaders
       Models::Game.new(
         name:,
         b2go: true,
+        b2go_id: product["id"],
         b2go_price: best_rental_price(product),
         minplayers: players["from"].to_i,
         maxplayers: players["to"].to_i,
