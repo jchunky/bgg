@@ -1,6 +1,6 @@
 <head>
   <style>
-    body { width: 60%; }
+    body { max-width: 95%; margin: 0 auto; }
     .bold { font-weight: bold; }
     .dataTable { font-family: sans-serif; border-collapse: collapse; font-size: 8pt; margin-top: 20px; }
     .dataTable tr:nth-child(even) { background-color: #f2f2f2; }
@@ -40,6 +40,7 @@
   </script>
 </head>
 <body>
+  <p><%= @games.size %> games</p>
   <table id="games">
     <thead>
       <tr>
