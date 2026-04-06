@@ -83,8 +83,20 @@
             <td class="number rating <%= 'bad' if row.bad?(:rating) %>"><%= row.rating %></td>
             <td class="number player-count <%= 'bad' if row.bad?(:player_count) %>"><%= row.player_count %></td>
             <td class="number playtime <%= 'bad' if row.bad?(:playtime) %>"><%= row.playtime %></td>
-            <td class="number <%= 'bad' if row.bad?(:price) %>"><% if row.bgp_url %><a href="<%= row.bgp_url %>"><span class="price"><%= row.price %></span></a><% else %><span class="price"><%= row.price %></span><% end %></td>
-            <td class="number <%= 'bad' if row.bad?(:b2go_price) %>"><% if row.b2go_url %><a href="<%= row.b2go_url %>"><span class="b2go-price"><%= row.b2go_price %></span></a><% else %><span class="b2go-price"><%= row.b2go_price %></span><% end %></td>
+            <td class="number <%= 'bad' if row.bad?(:price) %>">
+              <% if row.bgp_url %>
+                <a href="<%= row.bgp_url %>"><span class="price"><%= row.price %></span></a>
+              <% else %>
+                <span class="price"><%= row.price %></span>
+              <% end %>
+            </td>
+            <td class="number <%= 'bad' if row.bad?(:b2go_price) %>">
+              <% if row.b2go_url %>
+                <a href="<%= row.b2go_url %>"><span class="b2go-price"><%= row.b2go_price %></span></a>
+              <% else %>
+                <span class="b2go-price"><%= row.b2go_price %></span>
+              <% end %>
+            </td>
             <td class="subdomain"><%= row.subdomains %></td>
             <td class="category <%= 'bga' if row.bga? %>"><%= row.category_label %></td>
           </tr>
