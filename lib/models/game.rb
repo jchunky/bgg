@@ -69,7 +69,7 @@ module Models
     end
 
     concerning :GameData do
-      def competitive? = group == "competitive"
+      def competitive? = group.nil?
       def crowdfunded? = kickstarter? || gamefound? || backerkit?
       def learned? = self.class.learned.include?(name)
       def one_player? = player_count.one_player?
@@ -90,11 +90,10 @@ module Models
 
       def group
         case
-        when party? then "party"
-        when coop? then "coop"
-        when one_player? then "1-player"
-        when two_player? then "2-player"
-        else "competitive"
+        when party? then "P"
+        when coop? then "C"
+        when one_player? then "1"
+        when two_player? then "2"
         end
       end
     end
