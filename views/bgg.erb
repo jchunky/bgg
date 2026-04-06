@@ -95,8 +95,8 @@
             <td class="number rating <%= 'bad' if bad_conditions[:bad_rating] %>"><%= float(game.rating) %></td>
             <td class="number player-count <%= 'bad' if bad_conditions[:bad_player_count] %>"><%= game.player_count.unknown? ? "" : game.player_count %></td>
             <td class="number playtime <%= 'bad' if bad_conditions[:bad_playtime] %>"><%= int(game.max_playtime) %></td>
-            <td class="number price <%= 'bad' if bad_conditions[:bad_price] %>"><% if game.bgp_url %><a href="<%= game.bgp_url %>"><%= int(game.price) %></a><% else %><%= int(game.price) %><% end %></td>
-            <td class="number b2go-price <%= 'bad' if bad_conditions[:bad_b2go_price] %>"><% if game.b2go_url %><a href="<%= game.b2go_url %>"><%= int(game.b2go_price) %></a><% else %><%= int(game.b2go_price) %><% end %></td>
+            <td class="number <%= 'bad' if bad_conditions[:bad_price] %>"><% if game.bgp_url %><a href="<%= game.bgp_url %>"><span class="price"><%= int(game.price) %></span></a><% else %><span class="price"><%= int(game.price) %></span><% end %></td>
+            <td class="number <%= 'bad' if bad_conditions[:bad_b2go_price] %>"><% if game.b2go_url %><a href="<%= game.b2go_url %>"><span class="b2go-price"><%= int(game.b2go_price) %></span></a><% else %><span class="b2go-price"><%= int(game.b2go_price) %></span><% end %></td>
             <td class="subdomain"><%= game.subdomains %></td>
             <td class="category <%= 'bga' if game.bga? %>"><%= game.category_label %></td>
           </tr>
