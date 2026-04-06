@@ -5,9 +5,9 @@ require "open-uri"
 module Utils
   class CachedFile < Data.define(:url, :extension, :crawl_delay)
     def read
-      content = cache_expired? ? fetch_from_url : File.read(file)
+      content = cache_miss? ? fetch_from_url : File.read(file)
       result = yield(content)
-      File.write(file, content) if cache_expired?
+      File.write(file, content) if cache_miss?
       result
     rescue StandardError => e
       handle_error(e)
@@ -21,7 +21,7 @@ module Utils
       URI.parse(url).open.read
     end
 
-    def cache_expired?
+    def cache_miss?
       !File.exist?(file)
     end
 
