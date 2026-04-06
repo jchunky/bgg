@@ -88,19 +88,9 @@ module Models
         (rating_count / years_published).round
       end
 
-      def group
-        case
-        when party? then "party"
-        when coop? then "coop"
-        when one_player? then "1-player"
-        when two_player? then "2-player"
-        else "competitive"
-        end
-      end
-
-      def formatted_group
-        { "party" => "P", "coop" => "C", "1-player" => "1", "2-player" => "2" }[group]
-      end
+      def game_group = @game_group ||= Models::GameGroup.for(self)
+      def group = game_group.name
+      def formatted_group = game_group.abbr
     end
 
     concerning :Customize do
