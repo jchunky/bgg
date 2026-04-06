@@ -5,7 +5,6 @@ require "erb"
 require "json"
 require "net/http"
 require "nokogiri"
-require "ostruct"
 require "uri"
 require "yaml"
 

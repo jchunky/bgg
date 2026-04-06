@@ -5,48 +5,16 @@ module Config
     CATEGORIES = [
       # category
       [:dexterity, 1032, 50, "property"],
-      # [:miniatures, 1047, 50, "property"],
 
       # family
-      # [:apple_app_store, 104952, 50, "family"],
-      # [:bga, 70360, 50, "family"],
       [:digital_hybrid, 41489, 50, "family"],
-      # [:escaperoom, 36900, 50, "family"],
-      # [:google_play, 78432, 50, "family"],
-      # [:exit, 36963, 50, "family"],
-      # [:limited_replayability, 72224, 50, "family"],
-      # [:oniverse, 9976, 50, "family"],
-      # [:roll_and_write, 41222, 50, "family"],
-      # [:steam, 77349, 50, "family"],
-      # [:unlock, 39442, 50, "family"],
       [:werewolf, 2989, 50, "family"],
 
-      # kickstarter
-      # [:backerkit, 76292, 50, "family"],
-      # [:gamefound, 66292, 50, "family"],
-      # [:kickstarter, 8374, 50, "family"],
-
       # mechanism
-      # [:area_majority, 2080, 50, "property"],
-      # [:bluffing, 1023, 50, "property"],
       [:campaign, 2822, 50, "property"],
       [:coop, 2023, 50, "property", false],
-      # [:cyoa, 2851, 50, "property"],
-      # [:deck_building, 2664, 50, "property"],
-      # [:dice_rolling, 2072, 50, "property"],
-      # [:hand_management, 2040, 50, "property"],
-      # [:modular_board, 2011, 50, "property"],
       [:realtime, 2831, 50, "property"],
-      # [:set_collection, 2004, 50, "property"],
-      # [:solitaire, 2819, 50, "property"],
-      # [:solo, 2819, 50, "property"],
-      # [:storytelling, 2027, 50, "property"],
-      # [:tile_placement, 2002, 50, "property"],
       [:traitor, 2814, 50, "property"],
-      # [:worker_placement, 2082, 50, "property"],
-
-      # publisher
-      # [:buttonshy, 26991, 50, "company"],
     ].freeze
 
     SUBDOMAINS = [
