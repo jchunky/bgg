@@ -23,17 +23,21 @@ module Models
 
     concerning :Categories do
       def category_label = @category_label ||= categories.sort.join(", ")
-      def categories = @categories ||= Config::Downloaders::CATEGORIES.select(&:display).map(&:prefix).select { send(:"#{it}?") }
-      def subdomains = @subdomains ||= Config::Downloaders::SUBDOMAINS.map(&:prefix).select { send(:"#{it}?") }.map { it[0].upcase }.join
+      def categories = @categories ||= Config::Downloaders::CATEGORIES.select(&:display).map(&:prefix).select { ranked_in?(it) }
+      def subdomains = @subdomains ||= Config::Downloaders::SUBDOMAINS.map(&:prefix).select { ranked_in?(it) }.map { it[0].upcase }.join
     end
 
     concerning :Attributes do
+      def ranked_in?(category)
+        !null?(send(:"#{category}_rank"))
+      end
+
       def method_missing(method_name, *args)
         attribute_name = method_name.to_s.chomp("=").chomp("?").to_sym
         if method_name.to_s.end_with?("=")
           attributes[attribute_name] = args.first
         elsif method_name.to_s.end_with?("?")
-          !null?(send(:"#{attribute_name}_rank"))
+          ranked_in?(attribute_name)
         else
           attributes[attribute_name]
         end
@@ -107,7 +111,7 @@ module Models
       def banned? = banned_game? || banned_series? || banned_categories?
       def banned_game? = Config::GameLists.banned_games.include?(name)
       def banned_series? = Config::GameLists.banned_series.any? { name.start_with?(it) }
-      def banned_categories? = Config::GameLists.banned_categories.any? { send("#{it}?") }
+      def banned_categories? = Config::GameLists.banned_categories.any? { ranked_in?(it) }
 
       def weight = Config::GameLists.weight_overrides.fetch(name, super)
     end
