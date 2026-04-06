@@ -115,6 +115,5 @@ module Models
 
       def weight = Config::GameLists.weight_overrides.fetch(name, super)
     end
-
   end
 end

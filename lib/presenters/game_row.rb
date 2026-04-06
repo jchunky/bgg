@@ -5,7 +5,7 @@ module Presenters
     include Services::ViewHelpers
 
     THRESHOLDS = {
-      year: (...Time.now.year - 5),
+      year: (...(Time.now.year - 5)),
       weight: 1...3,
       rank: 1...500,
       rating: 7..,
@@ -19,9 +19,18 @@ module Presenters
       votes_per_year_rank: 1...500,
     }.freeze
 
-    delegate :name, :href, :learned?, :played?, :banned?,
-             :formatted_group, :subdomains, :category_label,
-             :bga?, :bgp_url, :b2go_url, to: :@game
+    delegate :name,
+             :href,
+             :learned?,
+             :played?,
+             :banned?,
+             :formatted_group,
+             :subdomains,
+             :category_label,
+             :bga?,
+             :bgp_url,
+             :b2go_url,
+             to: :@game
 
     def initialize(game)
       @game = game

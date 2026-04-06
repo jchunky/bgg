@@ -9,6 +9,5 @@ module Services
     def float(value, decimals: 1)
       value.to_f.zero? ? "" : format("%0.#{decimals}f", value)
     end
-
   end
 end
