@@ -3,8 +3,12 @@
 module Models
   class Game
     class << self
-      def learned = @learned ||= read_list("learned.txt")
-      def played = @played ||= read_list("played_games.txt")
+      def learned = @learned ||= read_list("learned.txt").freeze
+      def played = @played ||= read_list("played_games.txt").freeze
+
+      def reset!
+        @learned = @played = nil
+      end
 
       private
 
