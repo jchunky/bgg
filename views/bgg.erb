@@ -79,8 +79,8 @@
           %>
           <tr>
             <td class="number year <%= 'bad' if bad_conditions[:bad_year] %>"><%= int(game.year) %></td>
-            <td class="game-name">
-              <a href="https://boardgamegeek.com<%= game.href %>"><%= game.name %></a>
+            <td>
+              <a href="https://boardgamegeek.com<%= game.href %>"><span class="game-name"><%= game.name %></span></a>
               <% if game.learned? %><span class="pill learned">L</span><% end %>
               <% if game.played? %><span class="pill played">P</span><% end %>
               <% if game.banned? %><span class="pill banned">B</span><% end %>
