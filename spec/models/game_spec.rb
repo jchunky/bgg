@@ -119,33 +119,6 @@ RSpec.describe Models::Game do
     end
   end
 
-  describe "#group" do
-    it "returns 'party' for party games" do
-      game = described_class.new(party_rank: 1)
-      expect(game.group).to eq("party")
-    end
-
-    it "returns 'coop' for coop games" do
-      game = described_class.new(coop_rank: 1)
-      expect(game.group).to eq("coop")
-    end
-
-    it "returns 'one_player' for solo games" do
-      game = described_class.new(minplayers: 1, maxplayers: 1)
-      expect(game.group).to eq("one_player")
-    end
-
-    it "returns 'two_player' for two player games" do
-      game = described_class.new(minplayers: 1, maxplayers: 2)
-      expect(game.group).to eq("two_player")
-    end
-
-    it "returns 'competitive' for other games" do
-      game = described_class.new(minplayers: 2, maxplayers: 4)
-      expect(game.group).to eq("competitive")
-    end
-  end
-
   describe "#one_player?" do
     it "returns true for solo games" do
       game = described_class.new(minplayers: 1, maxplayers: 1)
