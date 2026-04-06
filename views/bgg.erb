@@ -20,7 +20,7 @@
     .number { text-align: right; }
     .bad { background-color: silver; }
     #games { max-height: 70vh; overflow-y: auto; } /* keep body rows scrollable */
-    h2 { font-family: Arial; margin-top: 30px; }
+    h2 { font-family: Arial; margin: 0; }
     #games thead th {
       position: sticky;   /* let header stick while you scroll */
       top: 0;             /* pin to the top of the scroll area */
@@ -35,13 +35,19 @@
     $(function() {
       $('#games').DataTable({
         order: [[3, 'desc']],
-        paging: false
+        paging: false,
+        layout: {
+          topStart: function() {
+            var h2 = document.createElement('h2');
+            h2.textContent = 'Games (<%= @games.size %>)';
+            return h2;
+          }
+        }
       });
     });
   </script>
 </head>
 <body>
-  <h2>Games (<%= @games.size %>)</h2>
   <table id="games">
     <thead>
       <tr>
