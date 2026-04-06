@@ -59,6 +59,7 @@ module Presenters
     def bad_value(field)
       case field
       when :player_count then @game.player_count.min
+      when :playtime then @game.max_playtime
       when :rating then @game.rating&.round(1)
       when :weight then @game.weight&.round(1)
       when :votes, :votes_rank then @game.rating_count_rank
