@@ -71,15 +71,18 @@ module Models
     concerning :GameData do
       def crowdfunded? = kickstarter? || gamefound? || backerkit?
       def learned? = self.class.learned.include?(name)
-      def one_player? = player_count.one_player?
       def play_rank? = (play_rank > 0)
       def played? = self.class.played.include?(name)
-      def price = bgp_price.to_f.round
       def soloable? = player_count.soloable?(coop: coop?)
+
+      def one_player? = player_count.one_player?
       def two_player? = player_count.two_player?
       def competitive? = player_count.competitive?
 
+      def price = bgp_price.to_f.round
       def max_playtime = maxplaytime.to_i
+      def formatted_group = game_group.abbr
+      def game_group = @game_group ||= Models::GameGroup.for(self)
 
       def votes_per_year
         days_published = ((Time.now.year - year.to_i) * 365) + Time.now.yday
@@ -87,23 +90,23 @@ module Models
 
         (rating_count / years_published).round
       end
-
-      def formatted_group = game_group.abbr
-      def game_group = @game_group ||= Models::GameGroup.for(self)
     end
 
     concerning :Customize do
+      def displayable? = Models::DisplayFilter.new(self).displayable?
+
       def b2go? = b2go == true
       def b2go_url = b2go_id ? "https://www.boardgame2go.com/login/?guest=true&detail=#{b2go_id}" : nil
       def bgp? = bgp == true
       def bgp_url = bgp_store_links.is_a?(Hash) ? bgp_store_links.values.compact.first : nil
+
       def banned? = banned_game? || banned_series? || banned_categories?
       def banned_game? = Config::GameLists.banned_games.include?(name)
       def banned_series? = Config::GameLists.banned_series.any? { name.start_with?(it) }
       def banned_categories? = Config::GameLists.banned_categories.any? { send("#{it}?") }
+
       def weight = Config::GameLists.weight_overrides.fetch(name, super)
     end
 
-    def displayable? = Models::DisplayFilter.new(self).displayable?
   end
 end
