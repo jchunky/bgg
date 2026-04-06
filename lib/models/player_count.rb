@@ -6,6 +6,7 @@ module Models
     def range = (min..max)
     def one_player? = max == 1
     def two_player? = max == 2
+    def competitive? = max >= 3
     def soloable?(coop:) = one_player? || (coop && min == 1)
     def unknown? = min.zero?
   end

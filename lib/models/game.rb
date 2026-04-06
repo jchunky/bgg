@@ -69,7 +69,6 @@ module Models
     end
 
     concerning :GameData do
-      def competitive? = group == "competitive"
       def crowdfunded? = kickstarter? || gamefound? || backerkit?
       def learned? = self.class.learned.include?(name)
       def one_player? = player_count.one_player?
@@ -78,6 +77,7 @@ module Models
       def price = bgp_price.to_f.round
       def soloable? = player_count.soloable?(coop: coop?)
       def two_player? = player_count.two_player?
+      def competitive? = player_count.competitive?
 
       def max_playtime = maxplaytime.to_i
 
@@ -114,6 +114,7 @@ module Models
         # return false if campaign?
         return false if banned?
         return false if player_count.min != 1
+
         # return false unless soloable?
         # return false if price == 0
 
