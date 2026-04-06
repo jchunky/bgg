@@ -103,6 +103,7 @@ module Models
       def b2go? = b2go == true
       def b2go_url = b2go_id ? "https://www.boardgame2go.com/login/?guest=true&detail=#{b2go_id}" : nil
       def bgp? = bgp == true
+      def bgp_url = bgp_store_links.is_a?(Hash) ? bgp_store_links.values.compact.first : nil
       def banned? = banned_game? || banned_series? || banned_categories?
       def banned_game? = Config::GameLists.banned_games.include?(name)
       def banned_series? = Config::GameLists.banned_series.any? { name.start_with?(it) }
