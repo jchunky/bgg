@@ -7,16 +7,16 @@ module Presenters
     THRESHOLDS = {
       year: (...(Time.now.year - 5)),
       weight: 1...3,
-      rank: 1...500,
+      rank: 1...1000,
       rating: 7..,
       player_count: 1..2,
       playtime: 1...60,
       price: 1..30,
       b2go_price: 1..13,
-      votes: 1...500,
-      votes_rank: 1...500,
-      votes_per_year: 1...500,
-      votes_per_year_rank: 1...500,
+      votes: 1...1000,
+      votes_rank: 1...1000,
+      votes_per_year: 1...1000,
+      votes_per_year_rank: 1...1000,
     }.freeze
 
     delegate :name,
