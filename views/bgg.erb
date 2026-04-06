@@ -89,7 +89,7 @@
               <% if game.played? %><span class="pill played">P</span><% end %>
               <% if game.banned? %><span class="pill banned">B</span><% end %>
             </td>
-            <td class="group"><%= game.group %></td>
+            <td class="group"><%= game.formatted_group %></td>
             <td class="number weight <%= 'bad' if bad_conditions[:bad_weight] %>"><%= float(game.weight) %></td>
             <td class="number votes <%= 'bad' if bad_conditions[:bad_rating_count] %>"><%= int(game.rating_count) %></td>
             <td class="number votes-rank <%= 'bad' if bad_conditions[:bad_rating_count_rank] %>"><%= int(game.rating_count_rank) %></td>
