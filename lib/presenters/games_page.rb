@@ -2,11 +2,11 @@
 
 module Presenters
   class GamesPage
-    include Services::ViewHelpers
-
     def initialize(games)
-      @games = games
+      @rows = games.map { Presenters::GameRow.new(it) }
     end
+
+    def game_count = @rows.size
 
     def render
       template = File.read("views/bgg.erb")
