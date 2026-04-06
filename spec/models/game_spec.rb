@@ -130,14 +130,14 @@ RSpec.describe Models::Game do
       expect(game.group).to eq("coop")
     end
 
-    it "returns '1-player' for solo games" do
+    it "returns 'one_player' for solo games" do
       game = described_class.new(minplayers: 1, maxplayers: 1)
-      expect(game.group).to eq("1-player")
+      expect(game.group).to eq("one_player")
     end
 
-    it "returns '2-player' for two player games" do
+    it "returns 'two_player' for two player games" do
       game = described_class.new(minplayers: 1, maxplayers: 2)
-      expect(game.group).to eq("2-player")
+      expect(game.group).to eq("two_player")
     end
 
     it "returns 'competitive' for other games" do

@@ -88,9 +88,9 @@ module Models
         (rating_count / years_published).round
       end
 
-      def game_group = @game_group ||= Models::GameGroup.for(self)
       def group = game_group.name
       def formatted_group = game_group.abbr
+      def game_group = @game_group ||= Models::GameGroup.for(self)
     end
 
     concerning :Customize do
