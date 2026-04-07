@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Models
-  PlayerCount = Data.define(:min, :max) do
+  class PlayerCount < Data.define(:min, :max)
     def to_s = [min, max].uniq.join("-")
     def range = (min..max)
     def soloable?(coop:) = one_player? || (coop && min == 1)

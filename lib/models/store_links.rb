@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module Models
-  StoreLinks = Data.define(:links) do
-    EMPTY = new(links: {}).freeze # rubocop:disable Lint/ConstantDefinitionInBlock
+  class StoreLinks < Data.define(:links)
+    EMPTY = new(links: {}).freeze
 
     def best_url
       links.values.compact.first

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module Models
-  GameGroup = Data.define(:key, :abbr) do
-    ALL = [ # rubocop:disable Lint/ConstantDefinitionInBlock
+  class GameGroup < Data.define(:key, :abbr)
+    ALL = [
       new(:party?, "P"),
       new(:coop?, "C"),
       new(:one_player?, "1"),

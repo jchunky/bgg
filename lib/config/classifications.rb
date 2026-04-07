@@ -2,7 +2,7 @@
 
 module Config
   module Classifications
-    Classification = Data.define(:prefix, :listid, :items_per_page, :object_type, :visible) do
+    class Classification < Data.define(:prefix, :listid, :items_per_page, :object_type, :visible)
       def self.build(prefix:, listid:, items_per_page:, object_type:, visible: true)
         new(prefix:, listid:, items_per_page:, object_type:, visible:)
       end

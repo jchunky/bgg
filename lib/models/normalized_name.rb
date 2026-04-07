@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module Models
-  NormalizedName = Data.define(:value) do
-    ORDINALS = { # rubocop:disable Lint/ConstantDefinitionInBlock
+  class NormalizedName < Data.define(:value)
+    ORDINALS = {
       "1st" => "1",
       "first" => "1",
       "2nd" => "2",
@@ -17,7 +17,7 @@ module Models
       "sixth" => "6",
     }.freeze
 
-    ORDINALS_PATTERN = /\b(#{ORDINALS.keys.join("|")})\b/ # rubocop:disable Lint/ConstantDefinitionInBlock
+    ORDINALS_PATTERN = /\b(#{ORDINALS.keys.join("|")})\b/
 
     def self.from(name)
       normalized = name.to_s

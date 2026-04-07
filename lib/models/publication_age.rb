@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Models
-  PublicationAge = Data.define(:year) do
+  class PublicationAge < Data.define(:year)
     def years_published
       days_published.to_f / 365
     end
