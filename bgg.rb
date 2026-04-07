@@ -13,7 +13,7 @@ Loader.setup
 
 class Bgg
   def run
-    Config::Downloaders::DOWNLOADERS.each do |downloader|
+    Config::Sources::DOWNLOADERS.each do |downloader|
       p [downloader.prefix, "listid: #{downloader.listid}", downloader.games.size]
     end
 

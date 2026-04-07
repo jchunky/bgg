@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Config
-  module Downloaders
+  module Sources
     NO_EXPANSIONS = "nosubtypes[]=boardgameexpansion"
     SORTBY_RANK = "#{NO_EXPANSIONS}&sort=rank".freeze
     ONE_PLAYER_GAMES_1 = "#{SORTBY_RANK}&range[minplayers][max]=1&floatrange[avgweight][max]=2.5".freeze

@@ -12,7 +12,7 @@ module Services
     private
 
     def all_games
-      Config::Downloaders::DOWNLOADERS.flat_map(&:games)
+      Config::Sources::DOWNLOADERS.flat_map(&:games)
     end
 
     def group_games

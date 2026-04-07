@@ -23,8 +23,8 @@ module Models
 
     concerning :Categories do
       def category_label = @category_label ||= categories.sort.join(", ")
-      def categories = @categories ||= Config::Downloaders::CATEGORIES.select(&:display).map(&:prefix).select { ranked_in?(it) }
-      def subdomains = @subdomains ||= Config::Downloaders::SUBDOMAINS.map(&:prefix).select { ranked_in?(it) }.map { it[0].upcase }.join
+      def categories = @categories ||= Config::Sources::CATEGORIES.select(&:display).map(&:prefix).select { ranked_in?(it) }
+      def subdomains = @subdomains ||= Config::Sources::SUBDOMAINS.map(&:prefix).select { ranked_in?(it) }.map { it[0].upcase }.join
     end
 
     concerning :Attributes do
