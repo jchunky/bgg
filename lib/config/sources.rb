@@ -17,7 +17,7 @@ module Config
       ::Downloaders::BggSearch.new(prefix: :bgg, listid: "rank", search_criteria: SORTBY_RANK),
       ::Downloaders::BggSearch.new(prefix: :one_player_game_1, listid: "minplayers", search_criteria: ONE_PLAYER_GAMES_1),
       ::Downloaders::BggSearch.new(prefix: :one_player_game_2, listid: "minplayers", search_criteria: ONE_PLAYER_GAMES_2),
-      ::Downloaders::B2goData.new,
+      ::Downloaders::B2goRentals.new,
       ::Downloaders::BgpData.new,
       *CATEGORIES,
       *SUBDOMAINS,

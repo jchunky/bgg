@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Downloaders
-  class B2goData
+  class B2goRentals
     BASE_URL = "https://backend.boardgame2go.com/api/v1/products/"
     LIMIT = 200
 
