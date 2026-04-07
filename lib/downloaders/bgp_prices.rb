@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Downloaders
-  class BgpData
+  class BgpPrices
     BASE_URL = "https://www.boardgameprices.com"
     CRAWL_DELAY = 1
     FALLBACK_EUR_TO_CAD = 1.58

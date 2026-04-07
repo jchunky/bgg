@@ -18,7 +18,7 @@ module Config
       ::Downloaders::BggSearch.new(prefix: :one_player_game_1, listid: "minplayers", search_criteria: ONE_PLAYER_GAMES_1),
       ::Downloaders::BggSearch.new(prefix: :one_player_game_2, listid: "minplayers", search_criteria: ONE_PLAYER_GAMES_2),
       ::Downloaders::B2goRentals.new,
-      ::Downloaders::BgpData.new,
+      ::Downloaders::BgpPrices.new,
       *CATEGORIES,
       *SUBDOMAINS,
     ].freeze
