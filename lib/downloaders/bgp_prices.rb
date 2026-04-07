@@ -63,7 +63,7 @@ module Downloaders
           name:,
           bgp: true,
           bgp_price: cad_price,
-          bgp_store_links: { store_name => product_url },
+          bgp_store_links: Models::StoreLinks.new(links: { store_name => product_url }),
         )
       end
     end
@@ -72,12 +72,7 @@ module Downloaders
       links = dupes.map(&:bgp_store_links).reduce(:merge)
       best_price = dupes.map(&:bgp_price).min
 
-      Models::Game.new(
-        name: dupes.first.name,
-        bgp: true,
-        bgp_price: best_price,
-        bgp_store_links: links,
-      )
+      Models::Game.new(name: dupes.first.name, bgp: true, bgp_price: best_price, bgp_store_links: links)
     end
 
     def next_page?(doc)
