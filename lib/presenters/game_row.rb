@@ -2,7 +2,7 @@
 
 module Presenters
   class GameRow
-    include Services::ViewHelpers
+    include Presenters::ViewHelpers
 
     THRESHOLDS = {
       year: (...(Time.now.year - 5)),

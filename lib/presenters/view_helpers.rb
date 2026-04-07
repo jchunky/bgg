@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Services
+module Presenters
   module ViewHelpers
     def int(value)
       value.to_i.zero? ? "" : value
