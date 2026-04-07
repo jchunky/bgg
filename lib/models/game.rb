@@ -32,6 +32,10 @@ module Models
         !null?(send(:"#{category}_rank"))
       end
 
+      def valid_bgg_id?
+        bgg_id.is_a?(Integer) && bgg_id.positive?
+      end
+
       def method_missing(method_name, *args)
         attribute_name = method_name.to_s.chomp("=").chomp("?").to_sym
         if method_name.to_s.end_with?("=")

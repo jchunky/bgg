@@ -20,9 +20,8 @@ module Services
       by_key = {}
 
       all_games.each do |game|
-        id = game.bgg_id
-        if id.is_a?(Integer) && id.positive?
-          (by_id[id] ||= []) << game
+        if game.valid_bgg_id?
+          (by_id[game.bgg_id] ||= []) << game
         else
           (by_key[game.key] ||= []) << game
         end
