@@ -17,7 +17,7 @@ class Bgg
       p [downloader.prefix, "listid: #{downloader.listid}", downloader.games.size]
     end
 
-    games = Services::GameRanker.new.call(Services::GameAggregator.new.call)
+    games = Models::Game.all
       .select(&:keep?)
       .sort_by { |g| -g.weight }
 

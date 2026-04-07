@@ -3,6 +3,10 @@
 module Models
   class Game
     class << self
+      def all
+        Services::GameRanker.new.call(Services::GameAggregator.new.call)
+      end
+
       def learned = @learned ||= read_list("learned.txt").freeze
       def played = @played ||= read_list("played_games.txt").freeze
 
