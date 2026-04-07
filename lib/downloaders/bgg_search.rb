@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Downloaders
-  class GameSearch < Struct.new(:listid, :prefix, :search_criteria)
+  class BggSearch < Struct.new(:listid, :prefix, :search_criteria)
     include Concerns::Paginator
 
     def games
