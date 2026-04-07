@@ -7,10 +7,10 @@ module Config
     ONE_PLAYER_GAMES_1 = "#{SORTBY_RANK}&range[minplayers][max]=1&floatrange[avgweight][max]=2.5".freeze
     ONE_PLAYER_GAMES_2 = "#{SORTBY_RANK}&range[minplayers][max]=1&floatrange[avgweight][min]=2.5".freeze
 
-    CATEGORIES = Config::Categories::CATEGORIES.map do |prefix, listid, items_per_page, object_type, display|
+    CATEGORIES = Config::Classifications::CATEGORIES.map do |prefix, listid, items_per_page, object_type, display|
       ::Downloaders::GeekdoCategories.new(prefix:, listid:, items_per_page:, object_type:, display: display.nil? || display)
     end
-    SUBDOMAINS = Config::Categories::SUBDOMAINS.map do |prefix, listid, items_per_page|
+    SUBDOMAINS = Config::Classifications::SUBDOMAINS.map do |prefix, listid, items_per_page|
       ::Downloaders::GeekdoCategories.new(prefix:, listid:, items_per_page:, object_type: "family")
     end
     DOWNLOADERS = [

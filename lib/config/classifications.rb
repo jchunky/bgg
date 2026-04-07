@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Config
-  module Categories
+  module Classifications
     CATEGORIES = [
       # category
       [:dexterity, 1032, 50, "property"],
