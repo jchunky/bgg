@@ -3,7 +3,7 @@
 module Services
   class GameAggregator
     def call
-      merge_groups(group_games)
+      merged_groups
         .select { |game| game.rank.positive? }
         .sort_by(&:rank)
         .uniq(&:name)
@@ -11,11 +11,13 @@ module Services
 
     private
 
-    def all_games
-      Config::Sources::DOWNLOADERS.flat_map(&:games)
+    def merged_groups
+      groups.map do |games|
+        games.reduce { |acc, game| game.merge(acc) }
+      end
     end
 
-    def group_games
+    def groups
       by_id = {}
       by_key = {}
 
@@ -32,6 +34,10 @@ module Services
       by_id.values + by_key.values
     end
 
+    def all_games
+      Config::Sources::DOWNLOADERS.flat_map(&:games)
+    end
+
     def fold_fuzzy_into_id_groups(by_id, by_key)
       id_keys = by_id.each_value.with_object({}) do |games, map|
         games.each { |g| map[g.key] = games }
@@ -41,12 +47,6 @@ module Services
         next unless id_keys.key?(key)
 
         id_keys[key].concat(by_key.delete(key))
-      end
-    end
-
-    def merge_groups(groups)
-      groups.map do |games|
-        games.reduce { |acc, game| game.merge(acc) }
       end
     end
   end
