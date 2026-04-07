@@ -13,9 +13,6 @@
     th.sort.asc::after { content: ' ↑'; opacity: 1; }
     th.sort.desc::after { content: ' ↓'; opacity: 1; }
     .bga { background-color: #dce9d5; }
-    .learned { background-color: lightgreen; }
-    .played { background-color: lightblue; }
-    .banned { background-color: #f0a0a0; }
     .pill {
       padding: 1px 5px;
       margin-left: 4px;
@@ -69,9 +66,7 @@
             <td class="number year <%= 'bad' if row.bad?(:year) %>"><%= row.year %></td>
             <td>
               <a href="https://boardgamegeek.com<%= row.href %>"><span class="game-name"><%= row.name %></span></a>
-              <% if row.learned? %><span class="pill learned">L</span><% end %>
-              <% if row.played? %><span class="pill played">P</span><% end %>
-              <% if row.banned? %><span class="pill banned">B</span><% end %>
+              <% row.pills.each do |pill| %><span class="pill" style="background-color: <%= pill.color %>"><%= pill.label %></span><% end %>
             </td>
             <td class="group"><%= row.formatted_group %></td>
             <td class="number weight <%= 'bad' if row.bad?(:weight) %>"><%= row.weight %></td>

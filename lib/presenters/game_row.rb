@@ -19,11 +19,16 @@ module Presenters
       votes_per_year_rank: 1...1000,
     }.freeze
 
+    Pill = Data.define(:key, :label, :color)
+
+    PILLS = [
+      Pill.new(key: :learned, label: "L", color: "lightgreen"),
+      Pill.new(key: :played, label: "P", color: "lightblue"),
+      Pill.new(key: :banned, label: "B", color: "#f0a0a0"),
+    ].freeze
+
     delegate :name,
              :href,
-             :learned?,
-             :played?,
-             :banned?,
              :formatted_group,
              :subdomains,
              :category_label,
@@ -49,6 +54,10 @@ module Presenters
     def playtime = int(@game.max_playtime)
     def price = int(@game.price)
     def b2go_price = int(@game.b2go_price)
+
+    def pills
+      PILLS.select { @game.send(:"#{it.key}?") }
+    end
 
     def player_count
       @game.player_count.unknown? ? "" : @game.player_count.to_s
