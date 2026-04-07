@@ -112,10 +112,17 @@ module Models
       def bgp? = bgp == true
       def bgp_url = bgp_store_links.is_a?(Models::StoreLinks) ? bgp_store_links.best_url : nil
 
-      def banned? = banned_game? || banned_series? || banned_categories?
-      def banned_game? = Config::GameLists.banned_games.include?(name)
-      def banned_series? = Config::GameLists.banned_series.any? { name.start_with?(it) }
-      def banned_categories? = Config::GameLists.banned_categories.any? { ranked_in?(it) }
+      def banned?
+        @ban_list ||= Models::BanList.new(name:, ranked_categories: ranked_category_set)
+        @ban_list.banned?
+      end
+
+      private
+
+      def ranked_category_set
+        all_prefixes = (Config::Sources::CATEGORIES + Config::Sources::SUBDOMAINS).map(&:prefix)
+        all_prefixes.select { ranked_in?(it) }.to_set
+      end
 
       def weight = Config::GameLists.weight_overrides.fetch(name, super)
     end
