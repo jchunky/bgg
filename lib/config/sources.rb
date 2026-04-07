@@ -8,12 +8,21 @@ module Config
     ONE_PLAYER_GAMES_2 = "#{SORTBY_RANK}&range[minplayers][max]=1&floatrange[avgweight][min]=2.5".freeze
 
     CATEGORIES = Config::Classifications::CATEGORIES.map do |c|
-      ::Downloaders::GeekdoCategories.new(prefix: c.prefix, listid: c.listid, items_per_page: c.items_per_page,
-                                          object_type: c.object_type, display: c.display)
+      ::Downloaders::GeekdoCategories.new(
+        prefix: c.prefix,
+        listid: c.listid,
+        items_per_page: c.items_per_page,
+        object_type: c.object_type,
+        display: c.display,
+      )
     end
     SUBDOMAINS = Config::Classifications::SUBDOMAINS.map do |c|
-      ::Downloaders::GeekdoCategories.new(prefix: c.prefix, listid: c.listid, items_per_page: c.items_per_page,
-                                          object_type: c.object_type)
+      ::Downloaders::GeekdoCategories.new(
+        prefix: c.prefix,
+        listid: c.listid,
+        items_per_page: c.items_per_page,
+        object_type: c.object_type,
+      )
     end
     DOWNLOADERS = [
       ::Downloaders::BggSearch.new(prefix: :bgg, listid: "rank", search_criteria: SORTBY_RANK),
