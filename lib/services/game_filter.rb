@@ -2,8 +2,6 @@
 
 module Services
   class GameFilter < SimpleDelegator
-    def self.to_proc = ->(game) { new(game).keep? }
-
     def keep?
       return false if weight.round(1) > 2.2
       return false if played?
