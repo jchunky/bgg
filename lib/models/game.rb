@@ -111,10 +111,11 @@ module Models
       def game_group = @game_group ||= Models::GameGroup.for(self)
 
       def votes_per_year
-        days_published = ((Time.now.year - year.to_i) * 365) + Time.now.yday
-        years_published = days_published.to_f / 365
+        (rating_count / publication_age.years_published).round
+      end
 
-        (rating_count / years_published).round
+      def publication_age
+        @publication_age ||= Models::PublicationAge.new(year: year.to_i)
       end
     end
 
