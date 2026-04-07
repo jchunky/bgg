@@ -41,7 +41,7 @@ module Presenters
       @game = game
     end
 
-    def bad?(field) = !THRESHOLDS[field]&.cover?(bad_value(field))
+    def bad?(field) = !THRESHOLDS[field]&.cover?(@game.comparable_value_for(field))
 
     def year = int(@game.year)
     def weight = float(@game.weight)
@@ -64,17 +64,5 @@ module Presenters
     end
 
     private
-
-    def bad_value(field)
-      case field
-      when :player_count then @game.player_count.min
-      when :playtime then @game.max_playtime
-      when :rating then @game.rating&.round(1)
-      when :weight then @game.weight&.round(1)
-      when :votes, :votes_rank then @game.rating_count_rank
-      when :votes_per_year, :votes_per_year_rank then @game.votes_per_year_rank
-      else @game.send(field)
-      end
-    end
   end
 end

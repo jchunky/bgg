@@ -80,6 +80,20 @@ module Models
       end
     end
 
+    concerning :ComparableValues do
+      def comparable_value_for(field)
+        case field
+        when :player_count then player_count.min
+        when :playtime then max_playtime
+        when :rating then rating&.round(1)
+        when :weight then weight&.round(1)
+        when :votes, :votes_rank then rating_count_rank
+        when :votes_per_year, :votes_per_year_rank then votes_per_year_rank
+        else send(field)
+        end
+      end
+    end
+
     concerning :GameData do
       def crowdfunded? = kickstarter? || gamefound? || backerkit?
       def learned? = self.class.learned.include?(name)
