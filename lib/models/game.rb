@@ -120,7 +120,7 @@ module Models
     end
 
     concerning :Customize do
-      def displayable? = Services::GameFilter.new(self).keep?
+      def keep? = Services::GameFilter.new(self).keep?
 
       def b2go? = b2go == true
       def b2go_url = b2go_id ? "https://www.boardgame2go.com/login/?guest=true&detail=#{b2go_id}" : nil
