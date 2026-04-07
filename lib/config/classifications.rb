@@ -2,9 +2,9 @@
 
 module Config
   module Classifications
-    Classification = Data.define(:prefix, :listid, :items_per_page, :object_type, :display) do
-      def self.build(prefix:, listid:, items_per_page:, object_type:, display: true)
-        new(prefix:, listid:, items_per_page:, object_type:, display:)
+    Classification = Data.define(:prefix, :listid, :items_per_page, :object_type, :visible) do
+      def self.build(prefix:, listid:, items_per_page:, object_type:, visible: true)
+        new(prefix:, listid:, items_per_page:, object_type:, visible:)
       end
     end
 
@@ -18,7 +18,7 @@ module Config
 
       # mechanism
       Classification.build(prefix: :campaign, listid: 2822, items_per_page: 50, object_type: "property"),
-      Classification.build(prefix: :coop, listid: 2023, items_per_page: 50, object_type: "property", display: false),
+      Classification.build(prefix: :coop, listid: 2023, items_per_page: 50, object_type: "property", visible: false),
       Classification.build(prefix: :realtime, listid: 2831, items_per_page: 50, object_type: "property"),
       Classification.build(prefix: :traitor, listid: 2814, items_per_page: 50, object_type: "property"),
     ].freeze

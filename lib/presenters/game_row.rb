@@ -62,7 +62,5 @@ module Presenters
     def player_count
       @game.player_count.unknown? ? "" : @game.player_count.to_s
     end
-
-    private
   end
 end

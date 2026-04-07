@@ -13,7 +13,7 @@ module Config
         listid: c.listid,
         items_per_page: c.items_per_page,
         object_type: c.object_type,
-        display: c.display,
+        visible: c.visible,
       )
     end
     SUBDOMAINS = Config::Classifications::SUBDOMAINS.map do |c|

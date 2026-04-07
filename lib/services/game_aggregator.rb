@@ -43,7 +43,7 @@ module Services
         games.each { |g| map[g.key] = games }
       end
 
-      by_key.keys.each do |key|
+      by_key.keys.each do |key| # rubocop:disable Style/HashEachMethods -- keys.each needed; block deletes from by_key
         next unless id_keys.key?(key)
 
         id_keys[key].concat(by_key.delete(key))

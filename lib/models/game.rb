@@ -23,7 +23,7 @@ module Models
 
     concerning :Categories do
       def category_label = @category_label ||= categories.sort.join(", ")
-      def categories = @categories ||= Config::Sources::CATEGORIES.select(&:display).map(&:prefix).select { ranked_in?(it) }
+      def categories = @categories ||= Config::Sources::CATEGORIES.select(&:visible).map(&:prefix).select { ranked_in?(it) }
       def subdomains = @subdomains ||= Config::Sources::SUBDOMAINS.map(&:prefix).select { ranked_in?(it) }.map { it[0].upcase }.join
     end
 
@@ -131,8 +131,6 @@ module Models
         @ban_list ||= Models::BanList.new(name:, ranked_categories: ranked_category_set)
         @ban_list.banned?
       end
-
-      private
 
       def ranked_category_set
         all_prefixes = (Config::Sources::CATEGORIES + Config::Sources::SUBDOMAINS).map(&:prefix)

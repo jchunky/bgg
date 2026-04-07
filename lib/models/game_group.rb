@@ -2,7 +2,7 @@
 
 module Models
   GameGroup = Data.define(:key, :abbr) do
-    ALL = [
+    ALL = [ # rubocop:disable Lint/ConstantDefinitionInBlock
       new(:party?, "P"),
       new(:coop?, "C"),
       new(:one_player?, "1"),

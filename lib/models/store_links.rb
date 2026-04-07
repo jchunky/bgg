@@ -2,7 +2,7 @@
 
 module Models
   StoreLinks = Data.define(:links) do
-    EMPTY = new(links: {}).freeze
+    EMPTY = new(links: {}).freeze # rubocop:disable Lint/ConstantDefinitionInBlock
 
     def best_url
       links.values.compact.first
