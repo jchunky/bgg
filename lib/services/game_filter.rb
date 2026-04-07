@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Models
+module Services
   class GameFilter < SimpleDelegator
     def self.to_proc = ->(game) { new(game).displayable? }
 
