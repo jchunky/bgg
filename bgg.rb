@@ -18,7 +18,7 @@ class Bgg
     end
 
     games = Services::GameRanker.new.call(Services::GameAggregator.new.call)
-      .select(&:displayable?)
+      .select(&Models::GameFilter)
       .sort_by { |g| -g.weight }
 
     File.write("index.html", Presenters::GamesPage.new(games).render)

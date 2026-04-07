@@ -101,8 +101,6 @@ module Models
     end
 
     concerning :Customize do
-      def displayable? = Models::GameFilter.new(self).displayable?
-
       def b2go? = b2go == true
       def b2go_url = b2go_id ? "https://www.boardgame2go.com/login/?guest=true&detail=#{b2go_id}" : nil
       def bgp? = bgp == true
