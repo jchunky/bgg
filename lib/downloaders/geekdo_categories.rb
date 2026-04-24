@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 module Downloaders
-  class GeekdoCategories < Struct.new(:listid, :prefix, :items_per_page, :object_type, :visible)
+  class GeekdoCategories < Struct.new(:category)
     include Concerns::Paginator
+
+    delegate :listid, :prefix, :items_per_page, :object_type, :visible, to: :category
 
     def games
       @games ||= content_for_pages
