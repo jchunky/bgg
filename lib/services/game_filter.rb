@@ -12,7 +12,7 @@ module Services
       return false if player_count.min != 1
       return false if rank.to_i > 500
 
-      # return false unless soloable?
+      return false unless soloable?
       # return false if price == 0
 
       true
